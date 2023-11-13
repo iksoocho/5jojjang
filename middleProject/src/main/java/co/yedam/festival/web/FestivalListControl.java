@@ -25,24 +25,39 @@ public class FestivalListControl implements Command {
 		FestivalService svc = new FestivalServiceImpl();
 		
 		
-		
 		String selectday = (String)req.getParameter("brdDate");
 		
-		List <FestivalVO> daylist = svc.dayList(selectday); 
+		//System.out.println(selectday);
 		
-		System.out.println(svc.dayList("2023-11-01"));
+		List <FestivalVO> list = svc.dayList(selectday); 
 		
-		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+		System.out.println( svc.dayList(selectday) );
 		
-		String json = gson.toJson(daylist);  //맵을 넘김 
+		req.setAttribute("list", list);
 		
-		resp.setContentType("text/json;charset=utf-8");
 		
 		try {
-			resp.getWriter().print(json);  //result에 값이 보내짐 
-		} catch (IOException e) {
+			req.getRequestDispatcher("WEB-INF/festival/festivalList.jsp")
+			.forward(req, resp);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		
 		}
+		
+		//Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+		
+		//String json = gson.toJson(daylist);  
+		
+		//resp.setContentType("text/json;charset=utf-8");
+		
+		//try {
+		//	resp.getWriter().print(json);  
+		//} catch (IOException e) {
+		//	e.printStackTrace();
+		//}
+		
+	
 		
 	}
 	

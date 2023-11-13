@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h3>index</h3>
-	<jsp:forward page="main.do"></jsp:forward>
+<jsp:forward page="main.do"></jsp:forward>
 </body>
 </html>
