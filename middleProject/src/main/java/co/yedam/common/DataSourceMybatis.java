@@ -16,6 +16,7 @@ public class DataSourceMybatis {
 
 	public static SqlSessionFactory getInstance() {
 		String resource = "config/mybatis-config.xml";
+<<<<<<< HEAD
 		InputStream inputStream = null;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
@@ -24,6 +25,16 @@ public class DataSourceMybatis {
 		}
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		
+=======
+		InputStream inputStream=null;
+		try {
+			inputStream = Resources.getResourceAsStream(resource);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+>>>>>>> refs/heads/1
 		return sqlSessionFactory;
 	}
 }
