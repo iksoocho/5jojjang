@@ -2,16 +2,25 @@
 <!DOCTYPE mapper SYSTEM "mybatis-3-mapper.dtd">
 
 
-<mapper namespace="co.yedam.festival.mapper.festivalMapper"> 
+<mapper namespace="co.yedam.festival.mapper.FestivalMapper"> 
 
 	<select id="festivalList" resultType="co.yedam.festival.service.FestivalVO">     
 		select *from festival
 	</select>
-	dfsdfasd
+
 	
+<<<<<<< HEAD
 	<select id="dayList" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">     
+=======
+	<select id="dayList" resultType="co.yedam.festival.service.FestivalVO" parameterType ="string">     
+>>>>>>> refs/heads/2
 		select *from festival 
+<<<<<<< HEAD
 		where #{bdate} between startdate and enddate
+=======
+		where #{bdate} between fsdate and fedate
+		
+>>>>>>> refs/heads/2
 	</select>
 	
 
