@@ -8,12 +8,9 @@
 <meta charset="UTF-8">
 
 <title>Insert title here</title>
-브랜치 작동 연습입니다.hhhhh
-집에서 연습중입니다.
-다시 연습 
 
 </head>
 <body>
-
+	<h3>5조 중간프로젝트</h3>
 </body>
 </html>
