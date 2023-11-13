@@ -17,8 +17,8 @@
 				</dataSource>
 			</environment>
 		</environments>
+		
 	<mappers>
-		<mapper resource="co/yedam/product/mapper/ProductMapper.xml" />
-		<!-- <mapper class = "co.yedam.reply.mapper.ReplyMapper" /> -->
+		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
 	</mappers>
 </configuration>

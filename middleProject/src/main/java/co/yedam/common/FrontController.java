@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.yedam.board.web.BoardListControl;
-import co.yedam.board.web.GetBoardControl;
+
+import co.yedam.festival.web.FestivalListControl;
 
 
 
@@ -25,7 +25,8 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		
 		 													
-		map.put("/productInfo.do" , new GetBoardControl());  //상품상세 보기 
+		map.put("/festivalList.do" , new FestivalListControl());  
+		map.put("/main.do", new MainControl());
 		
 		
 	}	

@@ -10,8 +10,8 @@ public interface FestivalMapper {
 
 	
 
-	List <FestivalVO> festivalList();  
-	List <FestivalVO> datefestivalList();
+	List <FestivalVO> festivalList(); 
+	List <FestivalVO> dayList(String day);  
 	
 	
 }
