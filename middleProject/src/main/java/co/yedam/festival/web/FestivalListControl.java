@@ -1,7 +1,5 @@
 package co.yedam.festival.web;
 
-
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;

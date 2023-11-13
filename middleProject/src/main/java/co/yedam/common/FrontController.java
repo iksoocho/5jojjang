@@ -34,31 +34,21 @@ public class FrontController extends HttpServlet{
 		
 		
 		map.put("/main.do", new MainControl());
+		//map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
 
+				map.put("/getQna.do", new GetQnaControl()); //상세화면보기
+
+				
+				map.put("/addQnaForm.do", new AddQnaFormControl()); //qna 글 등록폼
+				map.put("/addQna.do", new AddQnaControl()); // 글 등록
+				
+				map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); //수정 폼
+				map.put("/modifyQna.do", new ModifyQnaControl());  //qna글 수정하기
 	
 	}	
 	
 	
-	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {    
-
-		
-
-		//map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
-
-		map.put("/getQna.do", new GetQnaControl()); //상세화면보기
-
-		
-		map.put("/addQnaForm.do", new AddQnaFormControl()); //qna 글 등록폼
-		map.put("/addQna.do", new AddQnaControl()); // 글 등록
-		
-		map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); //수정 폼
-		map.put("/modifyQna.do", new ModifyQnaControl());  //qna글 수정하기
-		
-		
-		
-
-	} //init
+	
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
