@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>메인.jsp</title>
 </head>
 <body>
 <h3>메인</h3>
