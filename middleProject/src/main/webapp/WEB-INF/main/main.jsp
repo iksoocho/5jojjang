@@ -7,9 +7,8 @@
 
 <meta charset="UTF-8">
 
-<title>Insert title here444</title>
-
-브랜치 쓰는법 연습 중
+<title>Insert title here</title>
+브랜치 작동 연습
 
 
 </head>
