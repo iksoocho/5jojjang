@@ -6,12 +6,7 @@
 
 
 <meta charset="UTF-8">
-<<<<<<< HEAD
-<title>Insert title hereㅎㅎㅎ</title>
 
-=======
-<title>Insert title hereㅋㅋㅋㅋㅋㅋㅋㅋ</title>
->>>>>>> refs/heads/4
 </head>
 <body>
 
