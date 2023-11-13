@@ -24,7 +24,7 @@ public class MainExe {
 		
 		List<MemberVO> list = svc.memberList();
 		
-		System.out.println(list);
+		list.forEach(item->System.out.println(item));
 		
 		
 		
