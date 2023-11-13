@@ -11,7 +11,7 @@ public interface FestivalMapper {
 	
 
 	List <FestivalVO> festivalList();  
-	List <FestivalVO> datefestivalList();
+	List <FestivalVO> dayList();
 	
 	
 }

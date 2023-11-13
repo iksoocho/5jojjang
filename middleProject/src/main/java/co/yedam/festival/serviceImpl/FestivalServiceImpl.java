@@ -14,7 +14,7 @@ public class FestivalServiceImpl implements FestivalService {
 	}
 
 	@Override
-	public List<FestivalVO> datefestivalList() {
+	public List<FestivalVO> dayList() {
 		
 		return null;
 	}

@@ -9,8 +9,9 @@
 	</select>
 	
 	
-	<select id="datefestivalList" resultType="co.yedam.festival.service.FestivalVO">     
+	<select id="dayList" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">     
 		select *from festival 
+		where #{bdate} between startdate and enddate
 	</select>
 	
 
