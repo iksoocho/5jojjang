@@ -9,7 +9,7 @@
 
 <title>Insert title here444</title>
 
-브랜치 쓰는법 연습 중
+브랜치 쓰는법 연습 중입니다.
 
 </head>
 <body>
