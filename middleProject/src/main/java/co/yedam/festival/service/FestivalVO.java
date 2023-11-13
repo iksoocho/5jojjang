@@ -7,6 +7,7 @@ import lombok.Data;
 public class FestivalVO {
 	
 	private String fcode;
+	private String fname;
 	private String fphone;
 	private String fplace;
 	private int fprice;
@@ -16,5 +17,4 @@ public class FestivalVO {
 	private String flat;
 	private String flng;
 	private String fcontent;
-	
 }

@@ -10,13 +10,13 @@ public interface FestivalMapper {
 
 	
 
-<<<<<<< HEAD
-	List <FestivalVO> festivalList();  
+
+
+
 	List <FestivalVO> dayList();
-=======
-	List <FestivalVO> festivalList(); 
+
+
 	List <FestivalVO> dayList(String day);  
->>>>>>> refs/heads/2
-	
+
 	
 }

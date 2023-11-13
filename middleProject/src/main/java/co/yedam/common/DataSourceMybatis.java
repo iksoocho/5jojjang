@@ -11,19 +11,24 @@ public class DataSourceMybatis {
 	
 	private static SqlSessionFactory sqlSessionFactory;
 	
-	private DataSourceMybatis() {
-	}
 
+	private  DataSourceMybatis() {}
+	
 	public static SqlSessionFactory getInstance() {
 		String resource = "config/mybatis-config.xml";
 		InputStream inputStream = null;
 		try {
 			inputStream = Resources.getResourceAsStream(resource);
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		
 		return sqlSessionFactory;
 	}
+
+	
 }
+
+
