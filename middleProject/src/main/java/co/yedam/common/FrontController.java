@@ -26,8 +26,15 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		
 		 													
+<<<<<<< HEAD
 		map.put("/productInfo.do" , new GetBoardControl());  //상품상세 보기 
 		
+=======
+		map.put("/festivalList.do" , new FestivalListControl());  
+		map.put("/main.do", new MainControl());
+		map.put("/main.dddddo", new MainControl());
+		map.put("/main.dddddodmdmdddkdk", new MainControl());
+>>>>>>> refs/remotes/origin/2
 		
 	}	
 	
