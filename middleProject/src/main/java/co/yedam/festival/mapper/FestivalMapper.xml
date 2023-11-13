@@ -7,7 +7,7 @@
 	<select id="festivalList" resultType="co.yedam.festival.service.FestivalVO">     
 		select *from festival
 	</select>
-	
+	dfsdfasd
 	
 	<select id="datefestivalList" resultType="co.yedam.festival.service.FestivalVO">     
 		select *from festival 
