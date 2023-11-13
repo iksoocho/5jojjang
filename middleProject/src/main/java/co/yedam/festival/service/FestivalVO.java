@@ -13,7 +13,7 @@ public class FestivalVO {
 	private String fimage;
 	private String fsdate;
 	private String fedate;
-	private double flat;
-	private double flng;
+	private String flat;
+	private String flng;
 	private String fcontent;
 }
