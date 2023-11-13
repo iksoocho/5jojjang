@@ -12,7 +12,7 @@ import co.yedam.qna.service.QnaService;
 import co.yedam.qna.service.QnaVO;
 import co.yedam.qna.serviceImpl.QnaServiceImpl;
 
-public class qnaListControl implements Command {
+public class QnaListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
