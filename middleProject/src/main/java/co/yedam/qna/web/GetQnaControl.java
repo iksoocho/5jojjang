@@ -11,7 +11,7 @@ import co.yedam.qna.service.QnaService;
 import co.yedam.qna.service.QnaVO;
 import co.yedam.qna.serviceImpl.QnaServiceImpl;
 
-public class getQnaControl implements Command {
+public class GetQnaControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
