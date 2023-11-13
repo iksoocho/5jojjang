@@ -20,6 +20,10 @@ public class FrontController extends HttpServlet{
 	@Override
 	public void init() throws ServletException {
 		
+		
+		System.out.println("오후7시  1번 커밋! ");
+		
+		
 		map.put("/main.do", new MainControl());
 		
 		
