@@ -27,6 +27,11 @@ public class DataSourceMybatis {
 		
 		return sqlSessionFactory;
 	}
+<<<<<<< HEAD
 	
 }
 
+=======
+}
+
+>>>>>>> refs/remotes/origin/2

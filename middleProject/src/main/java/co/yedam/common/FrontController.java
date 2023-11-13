@@ -34,7 +34,14 @@ public class FrontController extends HttpServlet{
 		
 		
 		map.put("/main.do", new MainControl());
-		
+
+	
+	}	
+	
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {    
+
 		
 
 		//map.put("/qnaList.do", new QnaListControl()); //전체 목록보기

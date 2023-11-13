@@ -10,6 +10,7 @@ public class MainControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+
 		// TODO Auto-generated method stub
 		
 		try {
@@ -22,6 +23,20 @@ public class MainControl implements Command {
 		
 		
 
-	}
+	
 
+		
+				try {  
+					req.getRequestDispatcher("WEB-INF/festival/festivalList.jsp") 
+					.forward(req, resp);
+				} catch (Exception e) {
+					
+					e.printStackTrace();
+				}
+		
+		
+		
+		
+	}	
+		
 }

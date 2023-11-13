@@ -7,6 +7,7 @@ import lombok.Data;
 public class FestivalVO {
 	
 	private String fcode;
+	private String fname;
 	private String fphone;
 	private String fplace;
 	private int fprice;
