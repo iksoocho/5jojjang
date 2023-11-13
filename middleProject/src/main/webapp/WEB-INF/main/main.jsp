@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here씨발</title>
+<title>Insert title hereggg</title>
 </head>
 <body>
 
