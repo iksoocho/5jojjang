@@ -3,15 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
 <meta charset="UTF-8">
-
-<title>Insert title here</title>
-브랜치 작동 연습입니다.hhhhh
-
+<title>QnA 전체 리스트 보기 </title>
 </head>
 <body>
-<h3>메인</h3>
+
 </body>
 </html>

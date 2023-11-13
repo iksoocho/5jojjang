@@ -51,7 +51,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.yedam.qna.web.qnaListControl;
+import co.yedam.qna.web.QnaListControl;
+import co.yedam.qna.web.getQnaControl;
 
 public class FrontController extends HttpServlet{
 
@@ -61,11 +62,18 @@ public class FrontController extends HttpServlet{
 	@Override
 	public void init() throws ServletException {
 		
-		map.put("/qnaList.do", new qnaListControl()); 
-		
-	
+		map.put("/main.do", new MainControl());
 		
 		
+		map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
+		map.put("/getQna.do", new getQnaControl()); //상세화면보기
+		
+		map.put("/tQna.do", new getQnaControl()); //수정 폼
+		map.put("/getQna.do", new getQnaControl());  //qna글 수정하기
+		
+		
+		
+
 	} //init
 
 	@Override
@@ -75,11 +83,7 @@ public class FrontController extends HttpServlet{
 		req.setCharacterEncoding("UTF-8"); //요청정보의 한글 인코딩 방식
 		
 		String url = req.getRequestURI(); // 어떤 정보요청했는지 반환함 :getRequestURI- http://localhost:8080/helloJSP/??.do 에서
-		
-		// helloJSP/??.do 이게 UR
-		String context = req.getServletContext().getContextPath(); // helloJSP;
-			
-		
+		String context = req.getServletContext().getContextPath(); // helloJSP;		
 		String page = url.substring(context.length()); // 프로젝트명. 콘솔 : /firstServlet.do
 			
 		
