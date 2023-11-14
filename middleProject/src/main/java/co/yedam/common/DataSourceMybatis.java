@@ -12,6 +12,7 @@ public class DataSourceMybatis {
 	private static SqlSessionFactory sqlSessionFactory;
 	
 
+
 	private  DataSourceMybatis() {}
 	
 	public static SqlSessionFactory getInstance() {
@@ -29,3 +30,9 @@ public class DataSourceMybatis {
 	}
 	
 }
+
+
+
+
+
+

@@ -9,7 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.yedam.qna.web.getQnaControl;
+
+
+
+import co.yedam.qna.web.AddQnaControl;
+import co.yedam.qna.web.AddQnaFormControl;
+import co.yedam.qna.web.GetQnaControl;
+import co.yedam.qna.web.ModifyQnaControl;
+import co.yedam.qna.web.ModifyQnaFormControl;
+
+
+import co.yedam.festival.web.DayListControl;
+import co.yedam.festival.web.FestivalListControl;
+
 
 
 
@@ -21,19 +33,34 @@ public class FrontController extends HttpServlet{
 	@Override
 	public void init() throws ServletException {
 		
+
+		
+		System.out.println("오후7시  1번 커밋! ");
+		
+		
 		map.put("/main.do", new MainControl());
-		
-		
 		//map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
-		map.put("/getQna.do", new getQnaControl()); //상세화면보기
-		
-		map.put("/tQna.do", new getQnaControl()); //수정 폼
-		map.put("/getQna.do", new getQnaControl());  //qna글 수정하기
-		
-		
+
+				map.put("/getQna.do", new GetQnaControl()); //상세화면보기
+
+				
+				map.put("/addQnaForm.do", new AddQnaFormControl()); //qna 글 등록폼
+				map.put("/addQna.do", new AddQnaControl()); // 글 등록
+				
+				map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); //수정 폼
+				map.put("/modifyQna.do", new ModifyQnaControl());  //qna글 수정하기
+
+		map.put("/main.do", new MainControl());											
+		map.put("/calendar.do" , new FestivalListControl());  
+		map.put("/dayList.do" , new DayListControl());
+
 		
 
-	} //init
+	
+	}	
+	
+	
+	
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,3 +81,4 @@ public class FrontController extends HttpServlet{
 	}
 
 }
+
