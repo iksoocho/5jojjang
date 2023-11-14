@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	<h3>5조 중간프로젝트</h3>
+	<h3>5조 중간프로젝트 입니다.</h3>
 	<c:choose>
 		<c:when test="${empty loginId }">
 			<div class="sidebar-heading border-bottom bg-light">
