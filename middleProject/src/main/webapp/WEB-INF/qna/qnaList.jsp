@@ -6,7 +6,7 @@
 
 <form action="modifyQnaForm.do" name="qnaForm">
 	<input type="hidden" name="qno" value="${qno.qno }">
-	<table border="1" class="table">
+	<table border="1" >
 
 
 <h3>QnA전체 리스트보기</h3>
@@ -26,7 +26,7 @@
 		<c:forEach items="${qlist }" var="vo">
 			<tr>
 				<td>${vo.qno }</td>
-				<td><a href="getBoard.do?bno=${vo.qno }"> ${vo.qtitle }</a></td>
+				<td><a href="getQna.do?qno=${vo.qno }"> ${vo.qtitle }</a></td>
 				<td>${vo.qid }</td>
 				<td>${vo.qwriteDate }</td>
 			
@@ -40,7 +40,7 @@
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
 <div class= "pagination"></div>
-	<p><a href="addQnaForm.do"> Qna 등록화면 </a></p>
+	<p><a href="addQnaForm.do"> Qna 게시글 등록화면 </a></p>
 	
 <script>
 //Qna 리스트 페이징 하기

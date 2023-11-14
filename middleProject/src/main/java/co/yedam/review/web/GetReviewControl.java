@@ -4,9 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Command;
-import co.yedam.review.Service.ReviewService;
-import co.yedam.review.Service.ReviewVO;
-import co.yedam.review.ServiceImpl.ReviewServiceImpl;
+import co.yedam.review.service.ReviewService;
+import co.yedam.review.service.ReviewVO;
+import co.yedam.review.serviceImpl.ReviewServiceImpl;
 
 public class GetReviewControl implements Command {
 
@@ -14,7 +14,7 @@ public class GetReviewControl implements Command {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		//String path = "qna/qnaList.tiles";
 		
-		String rno = req.getParameter("rno"); //파라미터:qno(게시글번호) 이걸로 나중에 만들기~! 
+		String rno = req.getParameter("rno"); 
 		ReviewService svc = new ReviewServiceImpl();
 		ReviewVO vo = svc.getReview(Integer.parseInt(rno));
 				

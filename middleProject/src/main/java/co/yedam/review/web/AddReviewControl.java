@@ -7,9 +7,9 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import co.yedam.common.Command;
-import co.yedam.review.Service.ReviewService;
-import co.yedam.review.Service.ReviewVO;
-import co.yedam.review.ServiceImpl.ReviewServiceImpl;
+import co.yedam.review.service.ReviewService;
+import co.yedam.review.service.ReviewVO;
+import co.yedam.review.serviceImpl.ReviewServiceImpl;
 
 public class AddReviewControl implements Command {
 

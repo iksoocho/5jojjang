@@ -1,4 +1,4 @@
-package co.yedam.review.Service;
+package co.yedam.review.service;
 
 import lombok.Data;
 

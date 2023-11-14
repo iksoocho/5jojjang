@@ -18,7 +18,9 @@ public class GetQnaControl implements Command {
 		
 		//String path = "qna/qnaList.tiles";
 		
+		
 		String qno = req.getParameter("qno"); //파라미터:qno(게시글번호) 이걸로 나중에 만들기~! 
+		System.out.println("qno" + qno);
 		QnaService svc = new QnaServiceImpl();
 		QnaVO vo = svc.getQna(Integer.parseInt(qno));
 		

@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Command;
-import co.yedam.review.Service.ReviewService;
-import co.yedam.review.Service.ReviewVO;
-import co.yedam.review.ServiceImpl.ReviewServiceImpl;
+import co.yedam.review.service.ReviewService;
+import co.yedam.review.service.ReviewVO;
+import co.yedam.review.serviceImpl.ReviewServiceImpl;
 
 public class ModifyReviewControl implements Command {
 

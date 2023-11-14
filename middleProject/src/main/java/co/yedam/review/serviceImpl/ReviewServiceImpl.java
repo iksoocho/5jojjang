@@ -1,15 +1,14 @@
-package co.yedam.review.ServiceImpl;
+package co.yedam.review.serviceImpl;
 
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSourceMybatis;
-import co.yedam.qna.mapper.QnaMapper;
-import co.yedam.qna.service.QnaVO;
-import co.yedam.review.Service.ReviewService;
-import co.yedam.review.Service.ReviewVO;
+
 import co.yedam.review.mapper.ReviewMapper;
+import co.yedam.review.service.ReviewService;
+import co.yedam.review.service.ReviewVO;
 
 public class ReviewServiceImpl implements ReviewService {
 

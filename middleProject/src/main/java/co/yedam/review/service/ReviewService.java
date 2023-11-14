@@ -1,6 +1,9 @@
-package co.yedam.review.Service;
+package co.yedam.review.service;
 
 import java.util.List;
+
+
+
 
 public interface ReviewService {
 	

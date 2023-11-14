@@ -2,7 +2,7 @@ package co.yedam.review.mapper;
 
 import java.util.List;
 
-import co.yedam.review.Service.ReviewVO;
+import co.yedam.review.service.ReviewVO;
 
 
 public interface ReviewMapper {

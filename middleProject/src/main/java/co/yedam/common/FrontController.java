@@ -67,8 +67,8 @@ public class FrontController extends HttpServlet{
 		map.put("/modifyReviewForm.do", new ModifyReviewFormControl()); //수정 폼
 		map.put("/modifyReview.do", new ModifyReviewControl());  //리뷰글 수정하기
 		
-		map.put("/deleteReviewForm.do", new RemoveReviewFormControl()); // 리뷰 삭제 폼
-		map.put("/deleteReview.do", new RemoveReviewControl()); //리뷰 삭제
+		map.put("/removeReviewForm.do", new RemoveReviewFormControl()); // 리뷰 삭제 폼
+		map.put("/removeReview.do", new RemoveReviewControl()); //리뷰 삭제
 		
 		
 
