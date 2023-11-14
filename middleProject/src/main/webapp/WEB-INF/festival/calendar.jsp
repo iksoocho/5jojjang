@@ -79,10 +79,13 @@
 	
 	</div>
 	
+	<!-- 더보기 버튼생성, totalList.do로 이동 -->
+
 	<!-- 게시글 목록 -->
 	<div id="boardList">
 	
 	</div>
+	
 	
 
 
