@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!DOCTYPE html>
 
@@ -78,18 +77,15 @@
 	<div id="calendar">
 	
 	</div>
-	
+
 	<!-- 더보기 버튼생성, totalList.do로 이동 -->
-		
-	
-	<input type="button" value="축제 전체보기">
+
 	
 	<script>
-	document.getElementById('#btn').addEventListener('click', function(e){
-	console.log(e);
-	
-	})
-	</script>
+
+	<!-- 더보기 버튼생성 -->
+	<button onclick="selectAllFestival()" value="축제 전체 보기"></button>
+
 	<!-- 게시글 목록 -->
 	<div id="boardList">
 	
@@ -106,7 +102,7 @@
 	
 	
 	
-<script>
+ <script>
 	var lastCkVal = "true";
 	var lastOverlapCK = "true";
 	var lastOverlapCKtime = "true";
@@ -160,6 +156,22 @@
 	    
 		
 	}
-	</script>
 	
+	 function selectAllFestival() {
+	        fetch('totalList.do', {
+	            Accept: "application/json",
+	            method: 'post',
+	            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+	        })
+	        .then(resolve => resolve.json())
+	        .then(result => {
+	            console.log(result);
+	            alert("성공");
+	        })
+	        .catch(err => console.log(err));
+	    }
+	</script>
+
 </body>
+
+</html>
