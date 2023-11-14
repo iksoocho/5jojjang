@@ -1,8 +1,6 @@
 package co.yedam.common;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,7 +32,7 @@ public class LoginControl implements Command {
 			session.setAttribute("loginId", id);
 			session.setAttribute("name", vo.getName());
 			session.setAttribute("responsibility", vo.getResponsibility());
-			req.setAttribute("loginResult", "success"); // 성공 시
+			
 			
 			try {
 				resp.sendRedirect("main.do");
@@ -43,8 +41,6 @@ public class LoginControl implements Command {
 				e.printStackTrace();
 			}
 		} else {
-			req.setAttribute("loginResult", "fail");
-			
 			try {
 				resp.sendRedirect("loginForm.do");
 			} catch (IOException e) {

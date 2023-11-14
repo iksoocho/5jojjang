@@ -1,8 +1,10 @@
 package co.yedam.common;
 
 
-import java.util.ArrayList;
 import java.util.List;
+
+
+
 
 import co.yedam.member.service.MemberService;
 import co.yedam.member.service.MemberVO;
@@ -20,14 +22,16 @@ public class MainExe {
 		
 		MemberService svc = new MemberServiceImpl();
 		
-		List<MemberVO> list = svc.memberList();
+		MemberVO vo = new MemberVO();
+		vo.setName("조익수");
+		vo.setMid("cho");
+		vo.setPass("pass");
+		vo.setSsn("ssn");
+		vo.setPhone("phone");
+		vo.setEmail("email");
 		
-		List<String> midList = new ArrayList<>();
-		for (MemberVO member : list) {
-		    midList.add(member.getMid());
-		}
+		System.out.println(svc.addMember(vo));
 		
-		System.out.println(midList);
 		
 		
 		

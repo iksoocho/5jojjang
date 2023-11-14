@@ -14,7 +14,7 @@ public class MainControl implements Command {
 
 		// TODO Auto-generated method stub
 		try {
-			req.getRequestDispatcher("main/main.tiles").forward(req, resp);
+			req.getRequestDispatcher("WEB-INF/main/main.jsp").forward(req, resp);
 		} catch (ServletException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

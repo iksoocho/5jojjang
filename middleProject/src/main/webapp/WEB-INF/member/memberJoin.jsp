@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +16,7 @@
 			</tr>
 			<tr>
 				<th>아이디</th>
-				<td><input id="id" type="text" class="form-control" name="mid"></td>
+				<td><input type="text" class="form-control" name="mid"></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
@@ -51,14 +50,11 @@
 	    var name = document.getElementsByName("name")[0].value;
 	    var mid = document.getElementsByName("mid")[0].value;
 	    var pass = document.getElementsByName("pass")[0].value;
-		
-	    
-	    if()
+
 	    // 필수 입력 필드 검사
 	    if (name === '' || mid === '' || pass === '') {
 	        alert('값을 입력하세요.');
 	    } else {
-	    	alert('회원 가입 성공')
 	        // 유효성 검사 통과 시 폼 제출
 	        document.getElementById("join").submit();
 	    }

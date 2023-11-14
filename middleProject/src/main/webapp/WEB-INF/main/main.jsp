@@ -3,12 +3,35 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<head>
+
+
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+
+브랜치 작동 연습입니다.hhhhh
+집에서 연습중입니다.
 
 
 
+<title>메인.jsp</title>
 
-	<%-- <h3>5조 중간프로젝트</h3>
 
+</head>
+<body>
+<<<<<<< HEAD
+	<h3>5조 중간프로젝트 입니다.</h3>
+=======
+
+
+<h3>메인</h3>
+
+	<a href="calendar.do">달력으로</a>
+
+
+	<h3>5조 중간프로젝트</h3>
+>>>>>>> refs/heads/develope
 	<c:choose>
 		<c:when test="${empty loginId }">
 			<div class="sidebar-heading border-bottom bg-light">
@@ -43,6 +66,6 @@
 			<a href="myPageForm.do">마이 페이지</a>
 		</c:otherwise>
 	</c:choose>
- --%>
 
+</body>
 </html>
