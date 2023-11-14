@@ -15,6 +15,8 @@ import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
 
+
+
 public class FrontController extends HttpServlet {   //??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기 위해 나눠놈
 
 	Map<String, Command> map = new HashMap<>();
@@ -54,6 +56,7 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 
 		Command controller = map.get(page);
 		controller.execute(req, resp);
+
 
 	}
 
