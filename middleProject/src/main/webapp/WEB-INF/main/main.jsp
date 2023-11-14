@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<a href="calendar.do">달력으로</a>
 </body>
 </html>

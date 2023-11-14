@@ -3,7 +3,7 @@
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -73,17 +73,18 @@
 </style>
 </head>
 <body>
-	<!--  -->
-	<div  id="calendarDiv">
-		<div id="calendar" ></div>
+	
+	
+	<div id="calendar">
+	
 	</div>
 	
 	<!-- 게시글 목록 -->
 	<div id="boardList">
-	<c:forEach items="${list }" var="vo">
-	<p>${vo.fname }</p>
-	</c:forEach>
+	
 	</div>
+	
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
@@ -132,7 +133,7 @@
 	    var encodedVal = encodeURIComponent(val);
 
 	    
-	    fetch('festivalList.do',{
+	    fetch('dayList.do',{
 	    	method: 'post',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 			body: 'brdDate='+encodedVal

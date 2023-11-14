@@ -22,22 +22,10 @@ public class FestivalListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		FestivalService svc = new FestivalServiceImpl();
-		
-		
-		String selectday = (String)req.getParameter("brdDate");
-		
-		//System.out.println(selectday);
-		
-		List <FestivalVO> list = svc.dayList(selectday); 
-		
-		System.out.println( svc.dayList(selectday) );
-		
-		req.setAttribute("list", list);
-		
+	
 		
 		try {
-			req.getRequestDispatcher("WEB-INF/festival/festivalList.jsp")
+			req.getRequestDispatcher("WEB-INF/festival/calendar.jsp")
 			.forward(req, resp);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

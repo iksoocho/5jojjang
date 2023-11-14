@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalListControl;
 
 
@@ -24,9 +24,11 @@ public class FrontController extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		
-		 													
-		map.put("/festivalList.do" , new FestivalListControl());  
-		map.put("/main.do", new MainControl());
+		map.put("/main.do", new MainControl());											
+		map.put("/calendar.do" , new FestivalListControl());  
+		map.put("/dayList.do" , new DayListControl());
+
+		
 	
 	}	
 	
