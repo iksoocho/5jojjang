@@ -18,14 +18,15 @@
 					<div class="card h-100">
 						<!-- Sale badge-->
 						<div class="badge bg-dark text-white position-absolute"
-							style="top: 0.5rem; right: 0.5rem">Sale</div>
-						<a href="productInfo.do?pcode=${vo.fname }"><img
-							class="card-img-top" src="images/${vo.fname }.jpg" alt="..." /></a>
+							style="top: 0.5rem; right: 0.5rem">개최중</div>
+						<img
+							class="card-img-top" src="resources/images/${vo.fimage }" alt="..." />
 						<!-- Product details-->
 						<div class="card-body p-4">
 							<div class="text-center">
 								<!-- Product name-->
-								<h5 class="fw-bolder">${vo.fname }</h5>
+								<a href="festivalInfo.do?fno=${vo.fcode }">
+								<h5 class="fw-bolder">${vo.fname }</h5></a>
 								<div
 									class="d-flex justify-content-center small text-warning mb-2">
 									<%-- <c:forEach var="i" begin="1" end="${vo.likeIt }">
@@ -33,7 +34,7 @@
 									</c:forEach> --%>
 								</div>
 							</div>
-							<span > ${vo.fname }</span> ~ ${vo.fname }
+							<span > ${vo.fcontent }</span>
 						</div>
 					</div>
 					<!-- Product actions-->

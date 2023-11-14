@@ -18,7 +18,7 @@ public class FestivalServiceImpl implements FestivalService {
 	@Override
 	public List<FestivalVO> festivalList() {
 		
-		return null; //나중에 바꾸기
+		return mapper.festivalList(); //나중에 바꾸기
 	}
 
 	@Override
@@ -27,7 +27,12 @@ public class FestivalServiceImpl implements FestivalService {
 		return mapper.dayList(day);
 	}
 
-	
+
+	@Override
+	public FestivalVO getfestivalInfo(String fcode) {
+		// TODO Auto-generated method stub
+		return mapper.festival(fcode);
+	}
 	
 	
 }
