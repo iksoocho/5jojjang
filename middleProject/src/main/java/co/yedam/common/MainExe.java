@@ -22,9 +22,15 @@ public class MainExe {
 		
 		MemberService svc = new MemberServiceImpl();
 		
-		List<MemberVO> list = svc.memberList();
+		MemberVO vo = new MemberVO();
+		vo.setName("조익수");
+		vo.setMid("cho");
+		vo.setPass("pass");
+		vo.setSsn("ssn");
+		vo.setPhone("phone");
+		vo.setEmail("email");
 		
-		list.forEach(item->System.out.println(item));
+		System.out.println(svc.addMember(vo));
 		
 		
 		

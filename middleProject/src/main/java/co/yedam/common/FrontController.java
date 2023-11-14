@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.member.web.JoinControl;
+import co.yedam.member.web.JoinFormControl;
+
 public class FrontController extends HttpServlet {   //??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기 위해 나눠놈
 
 	Map<String, Command> map = new HashMap<>();
@@ -17,6 +20,15 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 	public void init() throws ServletException {
 		//메인페이지
 		map.put("/main.do", new MainControl());
+		
+		//로그인
+		map.put("/loginForm.do", new LoginFormControl());
+		map.put("/login.do", new LoginControl());
+		map.put("/logout.do", new LogoutControl());
+		
+		//회원가입, 회원 정보 수정, 회원 탈퇴
+		map.put("/joinForm.do", new JoinFormControl()); //회원가입 화면
+		map.put("/join.do", new JoinControl());
 		
 
 	}
