@@ -25,6 +25,7 @@ public class WishControl implements Command {
 		vo.setFcode(fno);
 		vo.setWid(id);
 		
+		//뭐고 왜 커밋안되는데..?
 		
 		if(svc.addWish(vo)) {
 			try {
