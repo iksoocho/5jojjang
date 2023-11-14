@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
+import co.yedam.member.web.ModifyFormControl;
+import co.yedam.member.web.ModifyMemberControl;
+import co.yedam.member.web.MyPageFormControl;
 
 public class FrontController extends HttpServlet {   //??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기 위해 나눠놈
 
@@ -26,9 +29,14 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
 		
-		//회원가입, 회원 정보 수정, 회원 탈퇴
+		//회원가입
 		map.put("/joinForm.do", new JoinFormControl()); //회원가입 화면
 		map.put("/join.do", new JoinControl());
+		
+		//마이페이지(회원정보 수정, 회원 탈퇴 등등)
+		map.put("/myPageForm.do", new MyPageFormControl());
+		map.put("/modifyForm.do", new ModifyFormControl());
+		map.put("/modifyMember.do", new ModifyMemberControl());
 		
 
 	}

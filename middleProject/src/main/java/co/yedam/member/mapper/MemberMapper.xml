@@ -17,6 +17,9 @@
 	<insert id="insert" parameterType="co.yedam.member.service.MemberVO">
 		insert into member(mid,name,pass,ssn,phone,email) values(#{mid}, #{name}, #{pass}, #{ssn} ,#{phone},#{email})
 	</insert>
-
+	
+	<update id="update" parameterType="co.yedam.member.service.MemberVO">
+		update member set name=#{name},pass=#{pass},phone=#{phone} where mid=#{mid}
+	</update>
 
 </mapper>

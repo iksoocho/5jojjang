@@ -35,7 +35,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public boolean aditMember(MemberVO vo) {
 		// TODO Auto-generated method stub
-		return false;
+		return mapper.update(vo)==1;
 	}
 
 	@Override

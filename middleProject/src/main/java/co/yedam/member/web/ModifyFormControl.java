@@ -1,20 +1,20 @@
-package co.yedam.common;
-
-import java.io.IOException;
+package co.yedam.member.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class LogoutControl implements Command {
+import co.yedam.common.Command;
+
+public class ModifyFormControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		req.getSession().invalidate();
-		//세연 삭제후 메인으로 이동
+String path = "WEB-INF/member/modifyForm.jsp";
+		
 		try {
-			resp.sendRedirect("main.do");
-		} catch (IOException e) {
+			req.getRequestDispatcher(path).forward(req, resp);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
