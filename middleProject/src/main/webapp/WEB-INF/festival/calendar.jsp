@@ -80,7 +80,16 @@
 	</div>
 	
 	<!-- 더보기 버튼생성, totalList.do로 이동 -->
-
+		
+	
+	<input type="button" value="축제 전체보기">
+	
+	<script>
+	document.getElementById('#btn').addEventListener('click', function(e){
+	console.log(e);
+	
+	})
+	</script>
 	<!-- 게시글 목록 -->
 	<div id="boardList">
 	
