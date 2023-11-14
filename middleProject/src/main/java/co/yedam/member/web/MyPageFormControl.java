@@ -1,25 +1,23 @@
-package co.yedam.common;
+package co.yedam.member.web;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MainControl implements Command {
+import co.yedam.common.Command;
+
+public class MyPageFormControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-
-
 		// TODO Auto-generated method stub
+		String path = "WEB-INF/member/myPage.jsp";
+		
 		try {
-			req.getRequestDispatcher("WEB-INF/main/main.jsp").forward(req, resp);
-		} catch (ServletException | IOException e) {
+			req.getRequestDispatcher(path).forward(req, resp);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 
 }
