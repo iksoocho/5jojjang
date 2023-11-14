@@ -14,7 +14,7 @@ public class JoinFormControl implements Command {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
 		
-		String path = "WEB-INF/member/memberJoin.jsp";
+		String path = "member/memberJoin.tiles";
 		
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);

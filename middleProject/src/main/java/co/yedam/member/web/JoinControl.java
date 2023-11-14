@@ -1,8 +1,9 @@
 package co.yedam.member.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,7 +41,18 @@ public class JoinControl implements Command {
 		
 		
 		MemberService svc = new MemberServiceImpl();
-		Map<String, Object> map = new HashMap<>();
+		
+		List<MemberVO> list = svc.memberList();
+		List<String> midList = new ArrayList<>();
+		for (MemberVO member : list) {
+		    midList.add(member.getMid());
+		}
+		
+		System.out.println(midList);
+		 req.setAttribute("midList", midList);
+		
+		
+		
 		
 		if(svc.addMember(vo)) {
 			try {
