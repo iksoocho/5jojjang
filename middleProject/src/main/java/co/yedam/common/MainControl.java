@@ -27,7 +27,7 @@ public class MainControl implements Command {
 
 		
 				try {  
-					req.getRequestDispatcher("WEB-INF/festival/festivalList.jsp") 
+					req.getRequestDispatcher("WEB-INF/main/main.jsp") 
 					.forward(req, resp);
 				} catch (Exception e) {
 					
