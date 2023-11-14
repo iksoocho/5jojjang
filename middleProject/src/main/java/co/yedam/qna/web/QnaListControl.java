@@ -22,6 +22,12 @@ public class QnaListControl implements Command {
 		QnaService svc = new QnaServiceImpl();
 		List<QnaVO> list = svc.qnaList();
 		req.setAttribute("qlist", list);
+			
+		
+		//** 리스트페이지에 페이징 해야함! 근데 일단 보류.. 일케하면안됨.
+//		String qno = req.getParameter("qno");
+//		QnaVO vo = svc.getQna(Integer.parseInt(qno));
+//		req.setAttribute("qno", vo);
 		
 		// 나중에 경로 path로 바꾸기! 
 		try {

@@ -9,7 +9,7 @@
 
 	<select id="select"
 		resultType="co.yedam.qna.service.QnaVO" parameterType="int">
-		select * from qna where qno = #{qno}
+		select * from qna where qno=#{qno}
 	</select>
 	
 	<insert id="insert"
