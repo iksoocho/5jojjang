@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
@@ -39,6 +40,12 @@ import co.yedam.review.web.ReviewListControl;
 
 
 
+=======
+
+import co.yedam.festival.web.DayListControl;
+import co.yedam.festival.web.FestivalInfoControl;
+import co.yedam.festival.web.FestivalListControl;
+>>>>>>> refs/heads/3
 
 
 public class FrontController extends HttpServlet {   //??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기 위해 나눠놈
@@ -56,6 +63,7 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
 		
+<<<<<<< HEAD
 		//회원가입
 		map.put("/joinForm.do", new JoinFormControl()); //회원가입 화면
 		map.put("/join.do", new JoinControl());
@@ -71,10 +79,14 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 
 		map.put("/addQnaForm.do", new AddQnaFormControl()); //qna 글 등록폼
 		map.put("/addQna.do", new AddQnaControl()); // 글 등록
+=======
+//		System.out.println("오후7시  1번 커밋! ");
+>>>>>>> refs/heads/3
 		
 		map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); //수정 폼
 		map.put("/modifyQna.do", new ModifyQnaControl());  //qna글 수정하기
 		
+<<<<<<< HEAD
 		map.put("/removeQnaForm.do", new RemoveQnaFormControl()); //qna 삭제 폼
 		map.put("/removeQna.do", new RemoveQnaControl()); //qna 삭제
 		
@@ -97,17 +109,43 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		map.put("/removeReviewForm.do", new RemoveReviewFormControl()); // 리뷰 삭제 폼
 		map.put("/removeReview.do", new RemoveReviewControl()); //리뷰 삭제
 		
+=======
+//		map.put("/main.do", new MainControl());
+//		//map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
+//
+//				map.put("/getQna.do", new GetQnaControl()); //상세화면보기
+//
+//				
+//				map.put("/addQnaForm.do", new AddQnaFormControl()); //qna 글 등록폼
+//				map.put("/addQna.do", new AddQnaControl()); // 글 등록
+//				
+//				map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); //수정 폼
+//				map.put("/modifyQna.do", new ModifyQnaControl());  //qna글 수정하기
+>>>>>>> refs/heads/3
 
 		map.put("/main.do", new MainControl());											
+<<<<<<< HEAD
 		//map.put("/calendar.do" , new FestivalListControl());  
 		//map.put("/dayList.do" , new DayListControl());
 
+=======
+		map.put("/calendar.do" , new FestivalListControl());  
+		map.put("/dayList.do" , new DayListControl());
+		map.put("/festivalInfo.do", new FestivalInfoControl());
+>>>>>>> refs/heads/3
 		
+<<<<<<< HEAD
 	
+=======
+>>>>>>> refs/heads/3
 	}	
 	
+<<<<<<< HEAD
 	
 
+=======
+
+>>>>>>> refs/heads/3
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//요청정보의 한글 인코딩 방식
@@ -126,3 +164,4 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 	}
 
 }
+

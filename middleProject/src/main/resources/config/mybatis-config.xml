@@ -19,8 +19,12 @@
 		</environments>
 	<mappers>
 
+<<<<<<< HEAD
 
 		<mapper resource="co/yedam/member/mapper/MemberMapper.xml" />
+=======
+		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
+>>>>>>> refs/heads/3
 
 
 		<mapper resource="co/yedam/qna/mapper/QnaMapper.xml" />

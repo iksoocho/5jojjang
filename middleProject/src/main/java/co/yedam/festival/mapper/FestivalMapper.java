@@ -12,7 +12,8 @@ public interface FestivalMapper {
 
 
 	List <FestivalVO> festivalList();  
-	List <FestivalVO> dayList();
+	List <FestivalVO> dayList(String day);
+	FestivalVO festival(String fcode);
 	
 
 
