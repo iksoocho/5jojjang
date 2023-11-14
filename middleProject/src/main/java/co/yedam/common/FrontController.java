@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
@@ -36,6 +37,14 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.ReviewListControl;
 >>>>>>> refs/heads/1
+=======
+import co.yedam.festival.web.CalendarControl;
+import co.yedam.festival.web.DayListControl;
+import co.yedam.festival.web.FestivalInfoControl;
+import co.yedam.wish.web.WishControl;
+
+
+>>>>>>> refs/remotes/origin/2
 
 
 
@@ -52,6 +61,7 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		//메인페이지
 =======
 		
+<<<<<<< HEAD
 >>>>>>> refs/heads/1
 		map.put("/main.do", new MainControl());
 		
@@ -109,6 +119,20 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 
 	}
 
+=======
+		map.put("/main.do", new MainControl());											
+		map.put("/calendar.do" , new CalendarControl());  
+		map.put("/dayList.do" , new DayListControl()); //지정된날찌에 해당하는 
+		
+		map.put("/festivalInfo.do" , new FestivalInfoControl());
+		map.put("/wish.do" , new WishControl());
+		
+		
+	
+	}	
+	
+	
+>>>>>>> refs/remotes/origin/2
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//요청정보의 한글 인코딩 방식

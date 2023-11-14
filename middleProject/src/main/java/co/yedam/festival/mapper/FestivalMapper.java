@@ -10,8 +10,14 @@ public interface FestivalMapper {
 
 	
 
+<<<<<<< HEAD
 	List <FestivalVO> festivalList();  
 	List <FestivalVO> dayList();
 	
+=======
+	List <FestivalVO> festivalList(); 
+	List <FestivalVO> dayList(String day);  
+	public FestivalVO select (String pno);
+>>>>>>> refs/remotes/origin/2
 	
 }

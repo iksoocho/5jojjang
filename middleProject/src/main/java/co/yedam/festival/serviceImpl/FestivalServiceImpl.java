@@ -19,6 +19,12 @@ public class FestivalServiceImpl implements FestivalService {
 		return null;
 	}
 
+	@Override
+	public FestivalVO select(String pno) {  //한건 상세조회
+	      
+		return mapper.select(pno);
+	}
+
 	
 	
 	
