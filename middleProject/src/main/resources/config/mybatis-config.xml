@@ -20,5 +20,6 @@
 		
 	<mappers>
 		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
+		<mapper resource="co/yedam/wish/mapper/WishMapper.xml" />
 	</mappers>
 </configuration>

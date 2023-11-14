@@ -30,6 +30,12 @@ public class FestivalServiceImpl implements FestivalService {
 		return mapper.dayList(day);  //해당 날짜 조회
 	}
 
+	@Override
+	public FestivalVO select(String pno) {  //한건 상세조회
+	      
+		return mapper.select(pno);
+	}
+
 	
 	
 	

@@ -10,8 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.festival.web.CalendarControl;
 import co.yedam.festival.web.DayListControl;
-import co.yedam.festival.web.FestivalListControl;
+import co.yedam.festival.web.FestivalInfoControl;
+import co.yedam.wish.web.WishControl;
+
+
 
 
 
@@ -25,9 +29,12 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		
 		map.put("/main.do", new MainControl());											
-		map.put("/calendar.do" , new FestivalListControl());  
-		map.put("/dayList.do" , new DayListControl());
-
+		map.put("/calendar.do" , new CalendarControl());  
+		map.put("/dayList.do" , new DayListControl()); //지정된날찌에 해당하는 
+		
+		map.put("/festivalInfo.do" , new FestivalInfoControl());
+		map.put("/wish.do" , new WishControl());
+		
 		
 	
 	}	

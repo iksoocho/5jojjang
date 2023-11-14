@@ -13,19 +13,17 @@
 
 			<c:forEach items="${list }" var="vo">
 
-				<!-- 상품목록 -->
+			
 				<div class="col mb-5">
 					<div class="card h-100">
 						<!-- Sale badge-->
-						<div class="badge bg-dark text-white position-absolute"
-							style="top: 0.5rem; right: 0.5rem">Sale</div>
-						<a href="productInfo.do?pcode=${vo.fname }"><img
-							class="card-img-top" src="images/${vo.fname }.jpg" alt="..." /></a>
+						<a href="productInfo.do?pcode=${vo.fcode }"><img
+							class="card-img-top" src="images/${vo.fimage }" alt="..." /></a>
 						<!-- Product details-->
 						<div class="card-body p-4">
 							<div class="text-center">
 								<!-- Product name-->
-								<h5 class="fw-bolder">${vo.fname }</h5>
+								<h5 class="fw-bolder"><a href="festivalInfo.do?fno=${vo.fcode}">${vo.fname }</a></h5>
 								<div
 									class="d-flex justify-content-center small text-warning mb-2">
 									<%-- <c:forEach var="i" begin="1" end="${vo.likeIt }">
@@ -33,7 +31,8 @@
 									</c:forEach> --%>
 								</div>
 							</div>
-							<span > ${vo.fname }</span> ~ ${vo.fname }
+							<span > ${vo.fcontent }</span> 
+							<p> ${vo.fsdate }~${vo.fedate }</p>
 						</div>
 					</div>
 					<!-- Product actions-->
@@ -46,6 +45,8 @@
 
 			</c:forEach>
 
+			
+   	
 		</div>
 	</div>
 </section>
