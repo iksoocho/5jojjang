@@ -9,14 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
-=======
+
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.RemoveQnaControl;
@@ -36,36 +34,28 @@ import co.yedam.review.web.ModifyReviewControl;
 import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.ReviewListControl;
->>>>>>> refs/heads/1
-=======
+
 import co.yedam.festival.web.CalendarControl;
 import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.wish.web.WishControl;
 
 
->>>>>>> refs/remotes/origin/2
 
 
 
-<<<<<<< HEAD
+
+
 public class FrontController extends HttpServlet {   //??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기 위해 나눠놈
 
 	Map<String, Command> map = new HashMap<>();
 
-=======
->>>>>>> refs/heads/1
 	@Override
 	public void init() throws ServletException {
-<<<<<<< HEAD
-		//메인페이지
-=======
-		
-<<<<<<< HEAD
->>>>>>> refs/heads/1
+
 		map.put("/main.do", new MainControl());
 		
-<<<<<<< HEAD
+
 		//로그인
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
@@ -74,18 +64,16 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		//회원가입
 		map.put("/joinForm.do", new JoinFormControl()); //회원가입 화면
 		map.put("/join.do", new JoinControl());
-=======
+
 	//Qna	
 		map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
 		map.put("/getQna.do", new GetQnaControl()); //상세화면보기
->>>>>>> refs/heads/1
-		
-<<<<<<< HEAD
+
 		//마이페이지(회원정보 수정, 회원 탈퇴 등등)
 		map.put("/myPageForm.do", new MyPageFormControl());
 		map.put("/modifyForm.do", new ModifyFormControl());
 		map.put("/modifyMember.do", new ModifyMemberControl());
-=======
+
 		map.put("/addQnaForm.do", new AddQnaFormControl()); //qna 글 등록폼
 		map.put("/addQna.do", new AddQnaControl()); // 글 등록
 		
@@ -114,12 +102,7 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		map.put("/removeReviewForm.do", new RemoveReviewFormControl()); // 리뷰 삭제 폼
 		map.put("/removeReview.do", new RemoveReviewControl()); //리뷰 삭제
 		
->>>>>>> refs/heads/1
-		
 
-	}
-
-=======
 		map.put("/main.do", new MainControl());											
 		map.put("/calendar.do" , new CalendarControl());  
 		map.put("/dayList.do" , new DayListControl()); //지정된날찌에 해당하는 
@@ -132,7 +115,7 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 	}	
 	
 	
->>>>>>> refs/remotes/origin/2
+
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//요청정보의 한글 인코딩 방식

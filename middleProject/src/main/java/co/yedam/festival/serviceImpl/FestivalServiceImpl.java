@@ -32,6 +32,12 @@ public class FestivalServiceImpl implements FestivalService {
 		return mapper.select(pno);
 	}
 
+	@Override
+	public List<FestivalVO> dayList(String day) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	
