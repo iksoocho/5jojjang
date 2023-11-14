@@ -14,6 +14,7 @@
 
 		where #{day} between fsdate and fedate
 	</select>
+	
 	<select id="festival" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
 	select * from festival
 	where fcode=#{fcode}

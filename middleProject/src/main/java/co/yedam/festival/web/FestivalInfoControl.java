@@ -13,9 +13,10 @@ public class FestivalInfoControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		String fname = req.getParameter("fno");
+		String fcode = req.getParameter("fno");
+		System.out.println(fcode);
 		FestivalService svc = new FestivalServiceImpl();
-		FestivalVO vo = svc.getfestivalInfo(fname);
+		FestivalVO vo = svc.getfestivalInfo(fcode);
 		
 		req.setAttribute("vo", vo);
 		System.out.println(vo);		
