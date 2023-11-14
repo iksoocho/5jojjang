@@ -20,11 +20,8 @@ public class FestivalServiceImpl implements FestivalService {
 		return null;
 	}
 
-	@Override
-	public List<FestivalVO> dayList() {
-		
-		return mapper.dayList();
-	}
+	
+
 
 	@Override
 	public FestivalVO select(String pno) {  //한건 상세조회
@@ -37,6 +34,7 @@ public class FestivalServiceImpl implements FestivalService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 	
 	

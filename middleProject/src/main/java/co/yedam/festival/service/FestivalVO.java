@@ -10,8 +10,7 @@ public class FestivalVO {
 	private String fname;
 	private String fphone;
 	private String fplace;
-	private int fprice1;	
-	private int fprice2;
+	private int fprice;
 	private String fimage;
 	private String fsdate;
 	private String fedate;

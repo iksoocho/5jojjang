@@ -17,13 +17,6 @@
 
 	</select>
 	
-	
-	<select id="select" resultType="co.yedam.festival.service.FestivalVO" parameterType ="string">     
-		
-		select *from festival where fcode =#{fno} 
-		
-	</select>
-	
 
 </mapper>
 	

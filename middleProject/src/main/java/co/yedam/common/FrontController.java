@@ -8,7 +8,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 
+=======
+
+<<<<<<< 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/2
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
@@ -36,12 +43,22 @@ import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.ReviewListControl;
 
 import co.yedam.festival.web.CalendarControl;
+=======
+>>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
 import co.yedam.festival.web.DayListControl;
+<<<<<<< 2
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.wish.web.WishControl;
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/2
+=======
+import co.yedam.festival.web.FestivalListControl;
+>>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
+>>>>>>> refs/remotes/origin/2
 
 
 
@@ -104,12 +121,9 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		
 
 		map.put("/main.do", new MainControl());											
-		map.put("/calendar.do" , new CalendarControl());  
-		map.put("/dayList.do" , new DayListControl()); //지정된날찌에 해당하는 
-		
-		map.put("/festivalInfo.do" , new FestivalInfoControl());
-		map.put("/wish.do" , new WishControl());
-		
+		map.put("/calendar.do" , new FestivalListControl());  
+		map.put("/dayList.do" , new DayListControl());
+
 		
 	
 	}	
