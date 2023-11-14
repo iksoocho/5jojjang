@@ -99,8 +99,8 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		
 
 		map.put("/main.do", new MainControl());											
-		map.put("/calendar.do" , new FestivalListControl());  
-		map.put("/dayList.do" , new DayListControl());
+		//map.put("/calendar.do" , new FestivalListControl());  
+		//map.put("/dayList.do" , new DayListControl());
 
 		
 	
