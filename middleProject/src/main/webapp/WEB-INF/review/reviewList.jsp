@@ -4,12 +4,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<form action="modifyQnaForm.do" name="qnaForm">
-	<input type="hidden" name="qno" value="${qno.qno }">
-	<table border="1" >
+<form action="modifyReviewForm.do" name="reviewForm">
+<input type="hidden" name="rno" value="${rno.rno }">
+<table border="1" >
 
 
-<h3>QnA전체 리스트보기</h3>
+<h3>Review 전체 리스트보기</h3>
 
 <table border="1">
 	<thead>
@@ -18,18 +18,21 @@
 			<th>제목</th>
 			<th>작성자(id)</th>
 			<th>작성일자</th>
+			<th>이미지</th>
+			
 		</tr>
 	</thead>
 
 	<tbody>
 
-		<c:forEach items="${qlist }" var="vo">
+		<c:forEach items="${rlist }" var="vo">
 			<tr>
-				<td>${vo.qno }</td>
-				<td><a href="getQna.do?qno=${vo.qno }"> ${vo.qtitle }</a></td>
-				<td>${vo.qid }</td>
-				<td>${vo.qwriteDate }</td>
-			
+				<td>${vo.rno }</td>
+				<td><a href="getReview.do?rno=${vo.rno }"> ${vo.rtitle }</a></td>
+				<td>${vo.rid }</td>
+				<td>${vo.rwriteDate }</td>
+				<td><input src ="${vo.rimage}"  name="image" width="200"></td> 
+				
 			</tr>
 		</c:forEach>
 
@@ -40,7 +43,7 @@
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
 <div class= "pagination"></div>
-	<p><a href="addQnaForm.do"> Qna 게시글 등록화면 </a></p>
+	<p><a href="addReviewForm.do"> REVIEW 게시글 등록화면 </a></p>
 	
 <script>
 //Qna 리스트 페이징 하기

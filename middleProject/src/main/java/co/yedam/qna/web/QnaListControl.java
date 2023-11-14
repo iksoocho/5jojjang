@@ -1,6 +1,7 @@
 package co.yedam.qna.web;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -11,32 +12,31 @@ import co.yedam.qna.service.QnaService;
 import co.yedam.qna.service.QnaVO;
 import co.yedam.qna.serviceImpl.QnaServiceImpl;
 
-public class GetQnaControl implements Command {
+public class QnaListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
 		//String path = "qna/qnaList.tiles";
 		
-		
-		String qno = req.getParameter("qno"); //파라미터:qno(게시글번호) 이걸로 나중에 만들기~! 
-		System.out.println("qno" + qno);
 		QnaService svc = new QnaServiceImpl();
-		QnaVO vo = svc.getQna(Integer.parseInt(qno));
+		List<QnaVO> list = svc.qnaList();
+		req.setAttribute("qlist", list);
+			
 		
-			System.out.println("vo" + vo);
+		//** 리스트페이지에 페이징 해야함! 근데 일단 보류.. 일케하면안됨.
+//		String qno = req.getParameter("qno");
+//		QnaVO vo = svc.getQna(Integer.parseInt(qno));
+//		req.setAttribute("qno", vo);
 		
-		req.setAttribute("qno", vo);
-		
+		// 나중에 경로 path로 바꾸기! 
 		try {
-			req.getRequestDispatcher("WEB-INF/qna/getQna.jsp").forward(req, resp);
+			req.getRequestDispatcher("WEB-INF/qna/qnaList.jsp").forward(req, resp);
 		} catch (Exception e) {
+			
 			e.printStackTrace();
-		}
-		
-		
-		
-		
-	}
+		} 
+
+	} //execute
 
 }
