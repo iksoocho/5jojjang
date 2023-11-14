@@ -47,17 +47,41 @@
 	
 	<script>
 	function checkNull() {
-	    var name = document.getElementsByName("name")[0].value;
+	   var name = document.getElementsByName("name")[0].value;
 	    var mid = document.getElementsByName("mid")[0].value;
 	    var pass = document.getElementsByName("pass")[0].value;
 
 	    // 필수 입력 필드 검사
-	    if (name === '' || mid === '' || pass === '') {
+	     if (name === '' || mid === '' || pass === '') {
 	        alert('값을 입력하세요.');
 	    } else {
 	        // 유효성 검사 통과 시 폼 제출
-	        document.getElementById("join").submit();
-	    }
+	       
+	        fetch('checkId.do',{
+		    	method: 'post',
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+				body: 'mid='+ mid
+		    })
+		    .then(resolve=>resolve.json())
+		    .then(result=>{
+		    	console.log(result.retCode)
+		    	if(result.retCode=="OK"){
+		    		if(confirm("회원가입 하실텨?")){
+		   	    	 	alert('회원 가입 성공')
+		   	    		document.getElementById("join").submit();
+		   	     	}else{
+		   	    	 alert('취소');
+		   	     	}
+		    	}else{
+		    		alert('중복된 아이디 입니다.');
+		    		return false;
+		    	}
+		    })
+		    .catch(err=>console.log(err))
+	    }  
+	    
+	     
+	   
 	}
 	</script>
 </body>

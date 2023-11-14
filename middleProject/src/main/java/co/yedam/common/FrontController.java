@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.member.web.CheckIdControl;
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
@@ -40,12 +41,6 @@ import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.wish.web.WishControl;
 
-
-
-
-
-
-
 public class FrontController extends HttpServlet {   //??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기 위해 나눠놈
 
 	Map<String, Command> map = new HashMap<>();
@@ -64,6 +59,7 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		//회원가입
 		map.put("/joinForm.do", new JoinFormControl()); //회원가입 화면
 		map.put("/join.do", new JoinControl());
+		map.put("/checkId.do", new CheckIdControl());
 
 	//Qna	
 		map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
@@ -103,7 +99,7 @@ public class FrontController extends HttpServlet {   //??.do 로 끝나면 항�
 		map.put("/removeReview.do", new RemoveReviewControl()); //리뷰 삭제
 		
 
-		map.put("/main.do", new MainControl());											
+		//map.put("/main.do", new MainControl());											
 		map.put("/calendar.do" , new CalendarControl());  
 		map.put("/dayList.do" , new DayListControl()); //지정된날찌에 해당하는 
 		

@@ -10,7 +10,7 @@ public class LoginFormControl implements Command {
 		// TODO Auto-generated method stub
 
 		
-		String path = "WEB-INF/main/loginForm.jsp";
+		String path = "main/loginForm.tiles";
 		
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);
