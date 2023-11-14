@@ -7,14 +7,9 @@
 
 
 <meta charset="UTF-8">
-<<<<<<< HEAD
 
-
-=======
-
->>>>>>> refs/heads/4
 <title>Insert title here</title>
-<<<<<<< HEAD
+
 브랜치 작동 연습입니다.hhhhh
 집에서 연습중입니다.
 
@@ -22,18 +17,16 @@
 
 <title>메인.jsp</title>
 
-=======
 
->>>>>>> refs/heads/4
 </head>
 <body>
-<<<<<<< HEAD
+
 
 <h3>메인</h3>
 
 	<a href="calendar.do">달력으로</a>
 
-=======
+
 	<h3>5조 중간프로젝트</h3>
 	<c:choose>
 		<c:when test="${empty loginId }">
@@ -69,6 +62,6 @@
 			<a href="myPageForm.do">마이 페이지</a>
 		</c:otherwise>
 	</c:choose>
->>>>>>> refs/heads/4
+
 </body>
 </html>
