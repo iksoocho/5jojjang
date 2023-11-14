@@ -30,10 +30,9 @@
 		<!-- <mapper class = "co.yedam.reply.mapper.ReplyMapper" /> -->
 
 		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
-<<<<<<< 2
+
 		<mapper resource="co/yedam/wish/mapper/WishMapper.xml" />
 
-=======
->>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
+
 	</mappers>
 </configuration>

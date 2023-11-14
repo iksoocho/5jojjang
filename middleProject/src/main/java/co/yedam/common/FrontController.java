@@ -8,14 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-<<<<<<< HEAD
 
-=======
-
-<<<<<<< 2
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/2
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
@@ -42,23 +35,8 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.ReviewListControl;
 
-import co.yedam.festival.web.CalendarControl;
-=======
->>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
-import co.yedam.festival.web.DayListControl;
-<<<<<<< 2
-import co.yedam.festival.web.FestivalInfoControl;
-import co.yedam.wish.web.WishControl;
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/2
-=======
-import co.yedam.festival.web.FestivalListControl;
->>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
->>>>>>> refs/remotes/origin/2
 
 
 

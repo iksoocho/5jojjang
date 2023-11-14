@@ -36,6 +36,15 @@ public class FestivalServiceImpl implements FestivalService {
 	}
 
 
+
+
+	@Override
+	public List<FestivalVO> dayList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	
 	
 	

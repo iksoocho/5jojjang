@@ -12,25 +12,13 @@
 
 aaaaaaa
 
-
-
-<title>메인.jsp</title>
-
-
-</head>
-<body>
-<<<<<<< HEAD
 	<h3>5조 중간프로젝트 입니다.</h3>
-=======
 
 
-<h3>메인</h3>
-
-	<a href="calendar.do">달력으로</a>
 
 
-	<h3>5조 중간프로젝트</h3>
->>>>>>> refs/heads/develope
+
+
 	<c:choose>
 		<c:when test="${empty loginId }">
 			<div class="sidebar-heading border-bottom bg-light">
