@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.review.mapper.ReviewMapper">
+
+<select id="selectList"
+		resultType="co.yedam.review.service.ReviewVO">
+		select * from review order by rno
+	</select>
+
+	<select id="select" resultType="co.yedam.review.service.ReviewVO"
+		parameterType="int">
+		select * from review where rno = #{seq_rno}
+	</select>
+
+<!-- 조휘수	<update id="updateCnt" parameterType="int"> -->
+<!-- 		update board set -->
+<!-- 		view_cnt=view_cnt+1 where board_no=#{boardNo} -->
+<!-- 	</update> -->
+
+	<insert id="insertReview"
+		parameterType="co.yedam.review.service.ReviewVO">
+		insert into review(rno, rtitle, rcontent, rwritedate, rimage)
+		values (seq_rno.nextval, #{rtitle}, #{rcontent}, sysdate, #{rimage})
+	</insert>
+
+	<update id="updateReview"
+		parameterType="co.yedam.review.service.ReviewVO">
+		update review set rtitle=#{rtitle}, rcontent=#{rcontent}, rimage=nvl(#{rimage},
+		rimage), last_update=sysdate where rno=#{seq_rno}
+	</update>
+
+	<delete id="deleteReview" parameterType="int">
+		delete from review where rno =#{seq_rno}
+	</delete>
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

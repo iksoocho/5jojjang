@@ -10,12 +10,12 @@
 	<insert id="insertReply"
 		parameterType="co.yedam.reply.service.ReplyVO">
 		insert into reply(rpno, rpqno, rpcontent)
-		values (#{rpno},#{rpqno},#{rpcontent})
+		values (seq_rpno.nextval,#{rpqno},#{rpcontent})
 	</insert>
 
 
 	<delete id="deleteReply" parameterType="int">
-		delete from reply where rpno=#{rpno}
+		delete from reply where rpno=#{seq_rpno}
 	</delete>
 
 
