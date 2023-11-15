@@ -9,7 +9,7 @@ public class PageDTO {
 	int qno; //어떤글에 대한 페이지넘버인지 알게
 	
 	//생성자
-	public PageDTO(int boardNo, int total, int currentPage) {
+	public PageDTO(int qno, int total, int currentPage) {
 		//실제 마지막페이지
 		int realEnd = (int)Math.ceil(total / 5.0);
 				
