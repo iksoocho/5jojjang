@@ -18,12 +18,12 @@
 		<td><input type="text" class="form-control" name="pass"></td>
 	</tr>
 	<tr>
-		<td colspan="2"><input type="submit" class="btn btn-primary" value="로그인"></td>
+		<td colspan="2"><input type="submit" class="btn btn-primary"  value="로그인"></td>
 	</tr>
 	
 	</table>
 
-</form> 
+	</form> 
 <script>
 
 </script>
