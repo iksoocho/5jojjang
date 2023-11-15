@@ -14,35 +14,12 @@ public class DayListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-<<<<<<< HEAD
-		
-		
-		
-		
-		FestivalService svc = new FestivalServiceImpl();
-		
-		
-		String selectday = (String)req.getParameter("brdDate");
-		
-	
-		
-		//List <FestivalVO> list = svc.dayList(selectday); //선택 날짜에 해당하는 축제목록 리스트 
-		
-		//System.out.println(svc.dayList(selectday) );
-		
-		//req.setAttribute("list", list);
-		
-		
-=======
->>>>>>> refs/heads/3
 
 		FestivalService svc = new FestivalServiceImpl();
 
 		String selectday = (String) req.getParameter("brdDate");
 
 		List<FestivalVO> list = svc.dayList(selectday); // 선택 날짜에 해당하는 축제목록 리스트
-
-//		System.out.println(svc.dayList(selectday));
 
 		req.setAttribute("list", list);
 		try {

@@ -13,15 +13,11 @@ public class MainControl implements Command {
 		try {
 
 			req.getRequestDispatcher("main/main.tiles").forward(req, resp);
-
-<<<<<<< HEAD
 		} catch (Exception e) {
 
 			e.printStackTrace();
 		}
 
-=======
->>>>>>> refs/heads/3
 	}
 
 }
