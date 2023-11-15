@@ -2,7 +2,7 @@
 <!DOCTYPE mapper SYSTEM "mybatis-3-mapper.dtd">
 
 
-<mapper namespace="co.yedam.festival.mapper.festivalMapper"> 
+<mapper namespace="co.yedam.festival.mapper.FestivalMapper"> 
 
 	<select id="festivalList" resultType="co.yedam.festival.service.FestivalVO">     
 		select *from festival
@@ -24,8 +24,14 @@
 
 		where #{day} between fsdate and fedate
 
+
+=======
+>>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 	</select>
-	
+	<select id="festival" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
+	select * from festival
+	where fcode=#{fcode}
+	</select>
 
 </mapper>
 	

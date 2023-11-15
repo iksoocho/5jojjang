@@ -12,11 +12,20 @@ public interface FestivalMapper {
 
 
 
-
 	List <FestivalVO> dayList();
 
 
 	List <FestivalVO> dayList(String day);  
 
+
+	List <FestivalVO> festivalList();  
+
+	FestivalVO festival(String fcode);
 	
+
+
+
+
+
+
 }
