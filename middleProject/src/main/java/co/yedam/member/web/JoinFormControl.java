@@ -14,10 +14,10 @@ public class JoinFormControl implements Command {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
 		
-		String path = "WEB-INF/member/memberJoin.jsp";
+	
 		
 		try {
-			req.getRequestDispatcher(path).forward(req, resp);
+			req.getRequestDispatcher("member/memberJoin.tiles").forward(req, resp);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
