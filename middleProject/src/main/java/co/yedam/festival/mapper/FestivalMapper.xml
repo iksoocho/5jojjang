@@ -2,26 +2,24 @@
 <!DOCTYPE mapper SYSTEM "mybatis-3-mapper.dtd">
 
 
-<mapper namespace="co.yedam.festival.mapper.FestivalMapper"> 
+<mapper namespace="co.yedam.festival.mapper.FestivalMapper">
 
-	<select id="festivalList" resultType="co.yedam.festival.service.FestivalVO">     
-		select *from festival
-	</select>
+   <select id="festivalList"
+      resultType="co.yedam.festival.service.FestivalVO">
+      select *from festival
 
-	
-	<select id="dayList" resultType="co.yedam.festival.service.FestivalVO" parameterType ="string">     
-		select *from festival 
-		where #{day} between fsdate and fedate
-		
-	</select>
-	
-	
-	<select id="select" resultType="co.yedam.festival.service.FestivalVO" parameterType ="string">     
-		
-		select *from festival where fcode =#{fno} 
-		
-	</select>
-	
+   </select>
+   <select id="dayList"
+      resultType="co.yedam.festival.service.FestivalVO"
+      parameterType="string">
+      select *from festival
+      where #{day} between fsdate and fedate
+   </select>
 
-	</mapper>
-	
+   <select id="festival"
+      resultType="co.yedam.festival.service.FestivalVO"
+      parameterType="string"> select * from festival where fcode=#{fcode}
+   </select>
+
+</mapper>
+   

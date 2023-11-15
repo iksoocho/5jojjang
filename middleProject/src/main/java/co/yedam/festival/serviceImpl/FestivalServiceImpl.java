@@ -10,33 +10,24 @@ import co.yedam.festival.service.FestivalService;
 import co.yedam.festival.service.FestivalVO;
 
 public class FestivalServiceImpl implements FestivalService {
-	
-	
-	SqlSession sqlSession = DataSourceMybatis.getInstance().openSession(true);  
-	FestivalMapper mapper = sqlSession.getMapper(FestivalMapper.class);
-	
 
-
+	SqlSession session = DataSourceMybatis.getInstance().openSession(true);
+	FestivalMapper mapper = session.getMapper(FestivalMapper.class);
 
 	@Override
 	public List<FestivalVO> festivalList() {
-		
-		return mapper.festivalList();   //전체 축제 조회
+		return mapper.festivalList(); // 전체조회
+	}
+	
+
+	@Override  //한건 상세 조회 
+	public FestivalVO getfestivalInfo(String fcode) {
+		return mapper.festival(fcode);
 	}
 
-	@Override
+	@Override  //날짜에 해당하는 축제 리스트 불러오기 
 	public List<FestivalVO> dayList(String day) {
-		
-		return mapper.dayList(day);  //해당 날짜 조회
+		return mapper.dayList(day);
 	}
 
-	@Override
-	public FestivalVO select(String pno) {  //한건 상세조회
-	      
-		return mapper.select(pno);
-	}
-
-	
-	
-	
 }

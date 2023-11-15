@@ -4,14 +4,12 @@ import java.util.List;
 
 import co.yedam.festival.service.FestivalVO;
 
-
-
 public interface FestivalMapper {
 
-	
+	List<FestivalVO> dayList(String day);
 
-	List <FestivalVO> festivalList(); 
-	List <FestivalVO> dayList(String day);  
-	public FestivalVO select (String pno);
-	
+	List<FestivalVO> festivalList();
+
+	FestivalVO festival(String fcode);
+
 }

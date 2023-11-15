@@ -15,17 +15,22 @@ public class WishControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 	
-		String fno = req.getParameter("fno"); 
-		String id = req.getParameter("id"); 
+		String fno = req.getParameter("fno");
+		String wid = req.getParameter("wid");
 		
-		WishService svc = new WishServiceImpl();
 		
 		WishVO vo = new WishVO();
-	
-		vo.setFcode(fno);
-		vo.setWid(id);
 		
+<<<<<<< HEAD
 		//뭐고 왜 커밋안되는데..?
+=======
+		vo.setFcode(fno);
+		vo.setWid(wid);
+		
+		System.out.println(vo);
+		
+		WishService svc = new WishServiceImpl();
+>>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
 		
 		if(svc.addWish(vo)) {
 			try {
@@ -43,13 +48,8 @@ public class WishControl implements Command {
 			}
 		}
 		
-		
-		
-		
-		
 	
-		
-		
+
 	}
 
 }
