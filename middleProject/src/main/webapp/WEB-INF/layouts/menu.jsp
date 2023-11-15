@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav id="nav">
 	<ul>
+
 	<c:choose>
 		<c:when test="${empty loginId }">
 			<li><a class="icon solid fa-home" href="loginForm.do"><span>로그인</span></a></li>
@@ -39,6 +40,11 @@
 
 
 <!-- <ul>
+
+		<li><a class="icon solid fa-home" href="calendar.do"><span>축제일정보기</span></a></li>
+		<li><a href="#" class="icon fa-chart-bar"><span>Dropdown</span></a>
+			<ul>
+
 				<li><a href="#">Lorem ipsum dolor</a></li>
 				<li><a href="#">Magna phasellus</a></li>
 				<li><a href="#">Etiam dolore nisl</a></li>

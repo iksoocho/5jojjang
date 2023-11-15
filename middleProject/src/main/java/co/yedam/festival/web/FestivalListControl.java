@@ -9,11 +9,13 @@ public class FestivalListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-		// TODO Auto-generated method stub
+		
+		String path = "festival/calendar.tiles";
+		
 		try {
-			req.getRequestDispatcher("WEB-INF/festival/calendar.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 
 		}

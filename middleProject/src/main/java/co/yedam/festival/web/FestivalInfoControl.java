@@ -16,12 +16,12 @@ public class FestivalInfoControl implements Command {
 		String fname = req.getParameter("fno");
 		FestivalService svc = new FestivalServiceImpl();
 		FestivalVO vo = svc.getfestivalInfo(fname);
-		
+		String path = "festival/festivalInfo.tiles";
 		req.setAttribute("vo", vo);
 		System.out.println(vo);		
 		
 		try {
-			req.getRequestDispatcher("WEB-INF/festival/festivalInfo.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
