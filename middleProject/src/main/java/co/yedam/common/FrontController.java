@@ -10,12 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.member.web.CheckIdControl;
-
+import co.yedam.member.web.CheckModifyControl;
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
+import co.yedam.member.web.RemoveFormControl;
+import co.yedam.member.web.RemoveMemberControl;
 import co.yedam.member.web.getMemberControl;
 
 import co.yedam.qna.web.AddQnaControl;
@@ -58,24 +60,26 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
-		map.put("/logout.do", new LogoutControl());
-		map.put("/checkLogin.do", new CheckLoginControl());
+		map.put("/logout.do", new LogoutControl()); 
+		map.put("/checkLogin.do", new CheckLoginControl()); //로그인 실패 경고창
 
 		// 회원가입
 		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면
 		map.put("/join.do", new JoinControl());
-		map.put("/checkId.do", new CheckIdControl());
-		
-
-		// Qna
-		map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
-		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
+		map.put("/checkId.do", new CheckIdControl()); //회원가입시 아이디 중복 체크
 
 		// 마이페이지(회원정보 수정, 회원 탈퇴 등등)
 		map.put("/myPageForm.do", new MyPageFormControl());
 		map.put("/getMember.do", new getMemberControl());
 		map.put("/modifyForm.do", new ModifyFormControl());
 		map.put("/modifyMember.do", new ModifyMemberControl());
+		map.put("/checkModify.do", new CheckModifyControl()); //회원 정보 수정 확인 경고창
+		map.put("/removeForm.do", new RemoveFormControl());
+		map.put("/removeMember.do", new RemoveMemberControl());
+
+		// Qna
+		map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
+		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
 
 		map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
 		map.put("/addQna.do", new AddQnaControl()); // 글 등록
@@ -127,7 +131,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/festivalInfo.do", new FestivalInfoControl());
 
 		// map.put("/main.do", new MainControl());
-		//map.put("/calendar.do", new CalendarControl());
+		// map.put("/calendar.do", new CalendarControl());
 		map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는
 	}
 

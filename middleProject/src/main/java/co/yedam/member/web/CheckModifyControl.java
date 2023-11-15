@@ -10,7 +10,7 @@ import co.yedam.member.service.MemberService;
 import co.yedam.member.service.MemberVO;
 import co.yedam.member.serviceImpl.MemberServiceImpl;
 
-public class ModifyMemberControl implements Command {
+public class CheckModifyControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
@@ -23,16 +23,17 @@ public class ModifyMemberControl implements Command {
 		
 		MemberService svc = new MemberServiceImpl();
 		
+		System.out.println(vo);
 		if(svc.aditMember(vo)) {
 			try {
-				resp.sendRedirect("logout.do");
+				resp.getWriter().print("{\"retCode\":\"OK\"}");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
 			try {
-				resp.sendRedirect("modyfyMember.do");
+				resp.getWriter().print("{\"retCode\":\"NG\"}");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
