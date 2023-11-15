@@ -15,13 +15,13 @@ public class WishControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 	
-		String fno = req.getParameter("fno");
+		String fcode = req.getParameter("fcode");
 		String wid = req.getParameter("wid");
 		
 		
 		WishVO vo = new WishVO();
 
-		vo.setFcode(fno);
+		vo.setFcode(fcode);
 		vo.setWid(wid);
 		
 		System.out.println(vo);

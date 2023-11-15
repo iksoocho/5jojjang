@@ -1,19 +1,17 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-=======
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<style>
+input {
+  width:50px;
+  height:30px;
+  font-size:20px;
+}
+</style>
 
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
-
-
-<<<<<<< HEAD
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-=======
 
 <!-- {vo} -->
 
@@ -24,7 +22,6 @@
 <p> <축제소개> : ${vo.fcontent }</p>		
 			
 						
-				
 						
 						
 <button type="button" id="jbtn">  <i >찜하기</i> </button>
@@ -32,34 +29,28 @@
 <br>
 <br>		
 
-<form>
-
-
-<input type="hidden" name="price1" value="${vo.fprice1 }">
-<input type="hidden" name="price2" value="${vo.fprice2 }">
-<input type="hidden" name="price2" value="${vo.fprice2 }">
-<input type="hidden" name="price2" value="${vo.fprice2 }">
 
 
 <table>
 
 <tr>
-<td>어른가격 ${vo.fprice1 }</td>
-<td><lable>수량을 선택하세요   <input type="number" name="snum" min="1" max="5" value="1"></lable></td>
+<td>어른 ${vo.fprice1 } 원</td>
+<td><lable>수량 : <input type="number" name="adcnt" onclick="total();"></lable></td>
 </tr>		
 
 
 <tr>
-<td>아동 가격 ${vo.fprice2 }</td>
-<td><lable>수량을 선택하세요 <input type="number" name="snum" min="1" max="5" value="1"></lable></td>
+<td>아동  ${vo.fprice2 } 원</td>
+<td><lable>수량 : <input type="number" name="chcnt" onclick="total();"></lable></td>
 </tr>	
 </table>
 
-</form>
-	
+<h3>총 금액</h3>
+<h3 id = 'total'> </h3>
 
-<button type="button" id="byebtn">  <i >바로구매하기</i> </button>
-<button type="button" id="cartbtn">  <i >장바구니에 담기</i> </button>
+<button type="button" id="cartbtn" > <i >장바구니에 담기</i> </button>
+<button type="button" id="byebtn" >  <i >바로구매하기</i> </button>
+
 
 
 
@@ -68,9 +59,10 @@
 								
 <script>
 
-let user = "user1";
+let user = "user01";
+
 document.getElementById('jbtn').addEventListener('click',function(e){
-	fetch('wish.do?fno='+'${vo.fcode }' + '&wid=' + user)
+	fetch('wish.do?fcode='+'${vo.fcode }' + '&wid=' + user)
 	.then(resolve => resolve.json())
 	.then(result => {
 		console.log(result);
@@ -80,112 +72,58 @@ document.getElementById('jbtn').addEventListener('click',function(e){
 			alert('찜 추가 실패 ');
 		}
 	})
+	.catch(err => console.log(err));
 			
 });//찜추가이벤트 
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
 
 
 
 
-<<<<<<< HEAD
-<section class="py-5">
-	<div class="container px-4 px-lg-5 my-5">
-		<div class="row gx-4 gx-lg-5 align-items-center">
-			<div class="col-md-6">
-				<img class="card-img-top mb-5 mb-md-0" src="resources/images/${fno.fimage }" alt="..." />
-			</div>
-			<div class="col-md-6">
-				<div class="small mb-1">${fno.fcode }</div>
-				<h1 class="display-5 fw-bolder">${fno.fname }</h1>
-				<div class="fs-5 mb-5">
-					<span class="text-decoration-line-through">${fno.fprice1 }원</span> <span>${fno.fprice2
-									}원</span>
-				</div>
-				<p class="lead">${fno.fcontent }</p>
-			</div>
-		</div>
-	</div>
-</section>
-=======
 document.getElementById('cartbtn').addEventListener('click',function(e){
-	fetch('cart.do?fno='+'${vo.fcode }'+'&cid=' +user + '&adcnt' + )
+	
+	let adcnt =document.querySelector('input[name=adcnt]').value;
+	let chcnt =document.querySelector('input[name=chcnt]').value;
+	fetch('cart.do?fcode='+'${vo.fcode }' + '&cid=' + user +'&adcnt=' + adcnt +'&chcnt=' + chcnt )
 	.then(resolve => resolve.json())
 	.then(result => {
 		console.log(result);
 		if(result.retCode == 'OK'){
-			alert('장바구니에 추가되었습니다');
+			alert('장바구니 목록에 추가되었습니다');
 		}else{
-			alert('장바구니 추가 실패 ');
+			alert('장바구니 ');
 		}
 	})
+	.catch(err => console.log(err));
 			
-}); //장바구니 담기 이벤트 
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
+});//장바구니 추가 이벤트 
 
 
 
 
-<<<<<<< HEAD
-<button id="btn">찜하기</button>
-=======
-document.getElementById('jbtn').addEventListener('click',function(e){
-	fetch('wish.do?fno='+'${vo.fcode }' + '&wid=' + user)
-	.then(resolve => resolve.json())
-	.then(result => {
-		console.log(result);
-		if(result.retCode == 'OK'){
-			alert('찜 목록에 추가되었습니다');
-		}else{
-			alert('찜 추가 실패 ');
-		}
-	})
-			
-}); //바로구매 버튼 
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
+function total(){
+	
+	let fprice1 = "${vo.fprice1 }";  //어른가격 
+	let fprice2 = "${vo.fprice2 }";  //아동가격 
+	let adcnt = document.querySelector('input[name=adcnt]').value;  //어른티켓갯수
+	let chcnt = document.querySelector('input[name=chcnt]').value;  //아동티켓갯수
+	
+	let adtotal = adcnt*fprice1;
+	let chtotal = chcnt*fprice2;
+	
+	let total = adtotal + chtotal;  //어른 + 아이 총 합계
+	
+	console.log(total);
+	
+	document.getElementById('total').innerHTML = total;
+	
+	 
+}
 
-<button id="btn">바로결제</button>
 
-<button id="btn">장바구니</button>
-
-<<<<<<< HEAD
-<script>
-=======
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
-
-<<<<<<< HEAD
-let user1 = "user";
-=======
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
-
-<<<<<<< HEAD
-document.getElementById('btn').addEventListener('click', function (e) {
-fetch('wish.do?fno=' + "${fno.fcode }" + '&id=' + user1)
-		.then(resolve => resolve.json())
-		.then(result => {
-			console.log(result);
-			if (result.retCode == 'OK') {
-				alert('찜 추가가 완료되었습니다');
-				document.getElementById('btn').style.display = 'none';   //찜하고 나면 버튼 사라지게 //나갔다 들어오면 상태가 유지되어야함..
-			} else {
-				alert('찜 추가 실패');
-			}
-		})
-		.catch(err => console.log(err));
-}//then
-	//이벤트
-);
-=======
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
-
-<<<<<<< HEAD
-</script>
-=======
 
 
 </script>
 
 							
 				
-				
-	
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
+
