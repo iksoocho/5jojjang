@@ -28,10 +28,14 @@
 =======
 >>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 	</select>
+<<<<<<< 2
 	<select id="festival" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
 	select * from festival
 	where fcode=#{fcode}
 	</select>
+=======
+	
+>>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
 
 </mapper>
 	

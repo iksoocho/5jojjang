@@ -16,11 +16,15 @@ public interface FestivalMapper {
 
 
 	List <FestivalVO> dayList(String day);  
+<<<<<<< 2
 
 
 	List <FestivalVO> festivalList();  
 
 	FestivalVO festival(String fcode);
+=======
+	
+>>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
 	
 
 

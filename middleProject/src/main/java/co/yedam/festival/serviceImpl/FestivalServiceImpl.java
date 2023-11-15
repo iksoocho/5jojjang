@@ -28,6 +28,7 @@ public class FestivalServiceImpl implements FestivalService {
 
 	
 
+<<<<<<< 2
 
 	@Override
 
@@ -48,6 +49,8 @@ public class FestivalServiceImpl implements FestivalService {
 
 	}
 =======
+=======
+>>>>>>> e58ee0c 1114 진짜 한ㄱ바가지다...하. 찜 버튼까지 완료
 	
 >>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 
