@@ -20,17 +20,14 @@ public class WishControl implements Command {
 		
 		
 		WishVO vo = new WishVO();
-		
-<<<<<<< HEAD
-		//뭐고 왜 커밋안되는데..?
-=======
+
 		vo.setFcode(fno);
 		vo.setWid(wid);
 		
 		System.out.println(vo);
 		
 		WishService svc = new WishServiceImpl();
->>>>>>> branch '2' of https://github.com/iksoocho/5jojjang.git
+
 		
 		if(svc.addWish(vo)) {
 			try {
