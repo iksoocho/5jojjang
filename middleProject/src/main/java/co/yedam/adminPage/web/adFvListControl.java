@@ -17,7 +17,7 @@ public class adFvListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 
-		//String path = "admin/adFvList.tiles";
+		String path = "adminPage/adFvList.tiles";
 		
 		//얘는 전체목록 보여줄 애
 		AdminService svc = new AdminServiceImpl();
@@ -30,7 +30,7 @@ public class adFvListControl implements Command {
 
 		// 나중에 경로 path로 바꾸기! 
 		try {
-			req.getRequestDispatcher("WEB-INF/admin/adFvList.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			
 			e.printStackTrace();

@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import co.yedam.common.Command;
-import co.yedam.qna.service.QnaService;
-import co.yedam.qna.service.QnaVO;
-import co.yedam.qna.serviceImpl.QnaServiceImpl;
+
 
 public class AddQnaFormControl implements Command {
 

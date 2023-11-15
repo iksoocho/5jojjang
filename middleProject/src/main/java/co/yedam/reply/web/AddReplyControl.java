@@ -19,17 +19,17 @@ public class AddReplyControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-		//String path = "board/boardList.tiles";
+		
 		
 		//파라메터
-		String rpqno = req.getParameter("rpqno");
-		String reply = req.getParameter("reply"); //내용
+		String rpqno = req.getParameter("rpqno"); //게시글번호
+		String rpcontent = req.getParameter("rpcontent"); //내용
 		
 		
 		
 		ReplyVO vo = new ReplyVO();
-		vo.setRpqno(Integer.parseInt(rpqno));
-		vo.setRpcontent(reply);
+		vo.setRpqno(Integer.parseInt(rpqno)); //게시글 번호 받아서
+		vo.setRpcontent(rpcontent); //댓글내용
 		//vo.setReplyer(replyer);
 		
 		

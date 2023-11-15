@@ -16,7 +16,7 @@ public class GetQnaControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		//String path = "qna/qnaList.tiles";
+		String path = "qna/getQna.tiles";
 		
 		
 		String qno = req.getParameter("qno"); //파라미터:qno(게시글번호) 이걸로 나중에 만들기~! 
@@ -30,7 +30,7 @@ public class GetQnaControl implements Command {
 		req.setAttribute("qno", vo);
 		
 		try {
-			req.getRequestDispatcher("WEB-INF/qna/getQna.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

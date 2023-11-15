@@ -19,7 +19,7 @@ public class QnaListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		//String path = "qna/qnaList.tiles";
+		String path = "qna/qnaList.tiles";
 		
 		//얘는 전체목록 보여줄 애
 		QnaService svc = new QnaServiceImpl();
@@ -39,13 +39,13 @@ public class QnaListControl implements Command {
 		
 		
 		PageDTO dto = new PageDTO(svc.getTotalCnt(), Integer.parseInt(page));
-		//req.setAttribute("paging", dto);
+		req.setAttribute("paging", dto);
 		
 			System.out.println("dto : " + dto); 
 
 		// 나중에 경로 path로 바꾸기! 
 		try {
-			req.getRequestDispatcher("WEB-INF/qna/qnaList.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			
 			e.printStackTrace();

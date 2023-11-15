@@ -45,7 +45,7 @@
 	
 <script>
 
-//Qna 리스트 페이징 하기!
+/* //Qna 리스트 페이징 하기!
 function makePaging(dto={}){
 		document.querySelector('.pagination').innerHTML = '';
 		//페이지를 만들고
@@ -80,11 +80,17 @@ function makePaging(dto={}){
 				e.preventDefault(); // form, a => 링크 기능을 차단하고 아랫부분을 계쏙 실행하겠습니다~
 				page = elem.getAttribute('href');
 				
+				
+				fetch('qnaList.do?page=' + page)
+				.then(resolve => reslove.json())
+				.then(result)
+				
+				console.log(result);
 			})
 		})
 	} //makePaging
 
-	makePaging(dto);
+	makePaging(paging); */
 
 
 </script> 

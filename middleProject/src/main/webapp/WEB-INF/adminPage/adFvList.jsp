@@ -36,11 +36,11 @@
 		<c:forEach items="${flist }" var="vo">
 			<tr>
 				<td>${vo.fcode }</td>
-				<%-- <td><a href="getadFv.do?fcodeo=${vo.fcode }"> ${vo.fname }</a></td> --%>
+				<td><a href="getadFv.do?fcode=${vo.fcode }"> ${vo.fname }</a></td>
 				<td> ${vo.fname }</td>
-				<td>${vo.phone }</td>
-				<td>${vo.place }</td>
-				<td>${vo.image }</td>
+				<td>${vo.fphone }</td>
+				<td>${vo.fplace }</td>
+				<td>${vo.fimage }</td>
 				<td>${vo.fsdate }</td>
 				<td>${vo.fedate }</td>
 				<td>${vo.flat }</td>

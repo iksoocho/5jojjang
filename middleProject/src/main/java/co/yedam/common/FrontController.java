@@ -40,6 +40,9 @@ import co.yedam.review.web.ReviewListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
 import co.yedam.adminPage.web.adFvListControl;
+import co.yedam.adminPage.web.addAdFvControl;
+import co.yedam.adminPage.web.addAdFvFormControl;
+import co.yedam.adminPage.web.getAdFvControl;
 import co.yedam.festival.web.DayListControl;
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
@@ -112,15 +115,13 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 
 		map.put("/main.do", new MainControl());
 
-		// map.put("/calendar.do" , new FestivalListControl());
-		// map.put("/dayList.do" , new DayListControl());
+		
 
 		map.put("/calendar.do", new FestivalListControl());
 		map.put("/dayList.do", new DayListControl());
 		map.put("/festivalInfo.do", new FestivalInfoControl());
 
-		// map.put("/main.do", new MainControl());
-		// map.put("/calendar.do", new CalendarControl());
+
 		map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는
 
 		map.put("/main.do", new MainControl());
@@ -128,9 +129,11 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/dayList.do", new DayListControl());
 		
 		//관리자 축제관리페이지 
-		map.put("/adFvlist.do", new adFvListControl());
-		//map.put("/getadFv.do", new getAdFvControl());
-		//map.put("/addAdFv.do", new addAdFvControl());
+		map.put("/adFvList.do", new adFvListControl());
+		map.put("/getadFv.do", new getAdFvControl());
+		map.put("/addAdFvForm.do", new addAdFvFormControl());
+		map.put("/addAdFv.do", new addAdFvControl());
+		//map.put("/modifyAdFvForm.do", new modAdFvFormControl());
 		//map.put("/modifyAdFv.do", new modAdFvControl());
 		//map.put("/deleteAdFv.do", new delAdFvControl());
 	
