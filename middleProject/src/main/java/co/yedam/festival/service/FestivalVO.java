@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 
 public class FestivalVO {
-	
+
 	private String fcode;
 	private String fname;
 	private String fphone;

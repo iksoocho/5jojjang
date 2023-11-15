@@ -20,13 +20,15 @@ public class FestivalServiceImpl implements FestivalService {
 	}
 
 	@Override
-	public FestivalVO getfestivalInfo(String fcode) {
-		return mapper.festival(fcode);
+
+	public FestivalVO select(String pno) { // 한건 상세조회
+
+		return null;
 	}
 
 	@Override
-	public FestivalVO select(String pno) {
-		return null;
+	public FestivalVO getfestivalInfo(String fcode) {
+		return mapper.festival(fcode);
 	}
 
 	@Override

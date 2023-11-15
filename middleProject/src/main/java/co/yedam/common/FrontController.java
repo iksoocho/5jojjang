@@ -37,16 +37,12 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.ReviewListControl;
 
-import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
-
 import co.yedam.festival.web.DayListControl;
-import co.yedam.festival.web.FestivalInfoControl;
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
 													// 위해 나눠놈
-
 	Map<String, Command> map = new HashMap<>();
 
 	@Override
@@ -125,6 +121,10 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// map.put("/main.do", new MainControl());
 		// map.put("/calendar.do", new CalendarControl());
 		map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는
+
+		map.put("/main.do", new MainControl());
+		map.put("/calendar.do", new FestivalListControl());
+		map.put("/dayList.do", new DayListControl());
 	}
 
 	@Override
