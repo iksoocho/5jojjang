@@ -17,7 +17,7 @@ public interface FestivalMapper {
 	
 
 
-	List <FestivalVO> dayList(String day);  
+	 
 
 	public FestivalVO select (String pno);
 

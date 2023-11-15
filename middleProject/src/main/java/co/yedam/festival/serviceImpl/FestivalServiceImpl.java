@@ -41,9 +41,20 @@ public class FestivalServiceImpl implements FestivalService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public List<FestivalVO> dayList(String day) {
-		
+	
 
+
+
+
+	
+
+
+	
+
+	@Override
+	public FestivalVO getfestivalInfo(String fcode) {
+		// TODO Auto-generated method stub
+		return mapper.festival(fcode);
 	}
 
 
@@ -53,15 +64,6 @@ public class FestivalServiceImpl implements FestivalService {
 	public List<FestivalVO> dayList() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-
-	
-
-	@Override
-	public FestivalVO getfestivalInfo(String fcode) {
-		// TODO Auto-generated method stub
-		return mapper.festival(fcode);
 	}
 
 	
