@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.cart.web.CartControl;
 import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
@@ -38,6 +39,7 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
+import co.yedam.wish.web.WishControl;
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
    // 위해 나눠놈
@@ -47,11 +49,17 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
    public void init() throws ServletException {
 
       map.put("/main.do", new MainControl());
-
-      map.put("/festivalInfo.do", new FestivalInfoControl()); // 하나 상세조회
-      map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는 축제 보여주기
+      
+      //축제관련 
+      map.put("/festivalInfo.do", new FestivalInfoControl()); // 축제 하나 상세조회
+      map.put("/dayList.do", new DayListControl()); // 지정된날짜에 해당하는 축제 보여주기
       map.put("/totalList.do", new TotalListControl()); // 전체 축제조회
       map.put("/calendar.do", new FestivalListControl()); // 전체 달력
+      
+      //찜하기
+      map.put("/wish.do", new WishControl()); 
+      //장바구니담기
+      map.put("/cart.do", new CartControl()); 
       
       // 로그인
       map.put("/loginForm.do", new LoginFormControl());
