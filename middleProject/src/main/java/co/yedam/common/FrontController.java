@@ -16,6 +16,7 @@ import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
+import co.yedam.member.web.getMemberControl;
 
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
@@ -58,11 +59,13 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
+		map.put("/checkLogin.do", new CheckLoginControl());
 
 		// 회원가입
 		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면
 		map.put("/join.do", new JoinControl());
 		map.put("/checkId.do", new CheckIdControl());
+		
 
 		// Qna
 		map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
@@ -70,6 +73,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 
 		// 마이페이지(회원정보 수정, 회원 탈퇴 등등)
 		map.put("/myPageForm.do", new MyPageFormControl());
+		map.put("/getMember.do", new getMemberControl());
 		map.put("/modifyForm.do", new ModifyFormControl());
 		map.put("/modifyMember.do", new ModifyMemberControl());
 
