@@ -12,10 +12,10 @@
 	<select id="dayList"
 		resultType="co.yedam.festival.service.FestivalVO"
 		parameterType="string">
-
-		select *from festival
-		where #{bdate} between fsdate and
-		fedate
+		
+		select *from festival 
+      where #{day} between fsdate and fedate
+	
 	</select>
 
 	<select id="festival"

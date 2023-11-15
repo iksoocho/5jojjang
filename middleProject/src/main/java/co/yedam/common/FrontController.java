@@ -114,17 +114,12 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// map.put("/calendar.do" , new FestivalListControl());
 		// map.put("/dayList.do" , new DayListControl());
 
-		map.put("/calendar.do", new FestivalListControl());
-		map.put("/dayList.do", new DayListControl());
-		map.put("/festivalInfo.do", new FestivalInfoControl());
-
-		// map.put("/main.do", new MainControl());
-		// map.put("/calendar.do", new CalendarControl());
-		map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는
-
-		map.put("/main.do", new MainControl());
-		map.put("/calendar.do", new FestivalListControl());
-		map.put("/dayList.do", new DayListControl());
+		
+		map.put("/festivalInfo.do", new FestivalInfoControl());  // 하나 상세조회 
+		map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는 축제 보여주기 
+		map.put("/main.do", new MainControl());  //메인 
+		map.put("/calendar.do", new FestivalListControl()); //전체 달력 
+	
 	}
 
 	@Override

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <nav id="nav">
 	<ul>
-		<li><a class="icon solid fa-home" href="index.html"><span>Introduction</span></a></li>
+		<li><a class="icon solid fa-home" href="calendar.do"><span>축제일정보기</span></a></li>
 		<li><a href="#" class="icon fa-chart-bar"><span>Dropdown</span></a>
 			<ul>
 				<li><a href="#">Lorem ipsum dolor</a></li>
