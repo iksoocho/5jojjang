@@ -27,6 +27,11 @@
 	<delete id="delete" parameterType="int">
 		delete from qna where qno=#{seq_qno}
 	</delete>
+	
+	<select id="getTotalCnt" resultType="int">
+		select count(*) from qna
+		where qno = #{seq_qno}
+	</select>
 
 
 

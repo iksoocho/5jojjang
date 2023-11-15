@@ -12,6 +12,8 @@ public interface QnaMapper {
 	public int update(QnaVO vo);
 	public int delete(int qno);
 
+	//페이징하려고
+	public int getTotalCnt(int qno);
 	
 	//public int updateCnt(int boardNo); //조회수
 }

@@ -76,7 +76,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
 		map.put("/addQna.do", new AddQnaControl()); // 글 등록
 
-//		System.out.println("오후7시  1번 커밋! ");
+
 
 		map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); // 수정 폼
 		map.put("/modifyQna.do", new ModifyQnaControl()); // qna글 수정하기

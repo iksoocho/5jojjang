@@ -50,7 +50,7 @@
 
 	</table>
 </form>
-
+<!-- 
 <h3> Qna 게시글에 댓글 등록하기</h3>
 <table>
 <tr>
@@ -61,6 +61,7 @@
 </table>
 
 <h3> Qna 게시글 댓글 목록 - 관리자가 다는 답글! </h3>
+
 <ul id="replylist">
 	<li style="display: none" id="template"><span>rpno</span><b>관리자의 댓글영역</b>
 	<span>관리자</span><button>삭제</button></li>
@@ -75,7 +76,6 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 	document.forms.myForm.submit(); //myform의 submit 이벤트를 removeform.do로 바꿔주는 거.
 });
 
-//댓글 - **로그인파트 봐야 더 지정할수 있을듯..
 let rqpno = "${qno.qno}"
 let writer = "${admin}"
 //댓글 쓰면 한줄 들어가게.
@@ -87,8 +87,9 @@ let writer = "${admin}"
 				alert('권한이 없습니다');
 			}
 				//console.log(e.target.parentElement); //button태그 상위 : li
+				
 			//삭제 서블릿 호출하기.
-			fetch('removeReply.do?rpqno='+ reply.rpqno)
+			fetch('removeReply.do?rpno='+ reply.rpno)
 			.then(resolve => resolve.json())
 			.then(result => {
 					//console.log("result.retCode", result.retCode )
@@ -123,11 +124,12 @@ let writer = "${admin}"
 			alert('댓글못달지롱');
 			return; 
 		}
-		//쓰려면 ajax호출해야함. - bno, wirter, reply 값을 servlet쪽으로 전달하도록 하겠음
+		//쓰려면 ajax호출해야함. - bno, wirter, reply 값을 ser
+		vlet쪽으로 전달하도록 하겠음
 		fetch('addReply.do', {
 			method: 'post',
 			headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
-			body: 'rpqno=' + rpqno + '&reply='+reply +'&replyer='+admin 
+			body: 'rpqno=' + rpqno + '&reply='+reply +'&replyer='+ admin 
 			
 		})
 		.then(resolve => resolve.json())
@@ -140,5 +142,7 @@ let writer = "${admin}"
 			}
 		})
 	});
+	
 </script>
 
+ -->

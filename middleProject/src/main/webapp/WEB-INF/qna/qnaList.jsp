@@ -5,8 +5,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <form action="modifyQnaForm.do" name="qnaForm">
-	<input type="hidden" name="qno" value="${qno.qno }">
-	<table border="1" >
+<input type="hidden" name="qno" value="${qno.qno }">
+
+<table border="1" >
 
 
 <h3>QnA전체 리스트보기</h3>
@@ -40,70 +41,18 @@
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
 <div class= "pagination"></div>
-	<p><a href="addQnaForm.do"> Qna 게시글 등록화면 </a></p>
+<p><a href="addQnaForm.do"> Qna 게시글 등록화면 </a></p>
 	
 <script>
-//Qna 리스트 페이징 하기
-//댓글 전체목록 보여주기
-	let bno ="${qno.qno }";
-	let writer = "${logId }"; 
-		//or 요렇게 bno = document.querySelector('.boardNo').innerHTML;
-	let page = 1;	//지금 있는 페이지에 초록색 표시하려고 썼음 
-	
-	function showList(pg = 1)	{ //페이지 초기값 넣어준거임.
-		//안보이는 li의 첫번째 요소만 제외하고(template용도기 때문에!) 지우겠다 하는거임 for 초기화! 
-		document.querySelectorAll('#list li:not(:nth-of-type(1))').forEach(li => li.remove()); //초기화시키려고! 안하면 중복되서 또 밑에 리스트 뜨니까!
-		fetch('replyList.do?bno=' + bno + '&page=' + pg) //페이지 안넘겨서 첨에 딱오면 1페이지로 하게끔 한거.
-	.then(resolve => resolve.json())
-	.then(result => {
-		
-		
-		//댓글쓰면 마지막페이지에 보이도록 하기 위함
-		if(pg < 0){
-			let page = showList(Math.ceil(result.dto.total/5))
-			showList(page);
-			return;
-		}
-		
-		
-		// 댓글 삭제해서 전체 댓글 수 줄면 페이지도 조정되도록! 
-		if(pg > Math.ceil(result.dto.total/5)){
-			page = Math.ceil(result.dto.total/5)
-			showList(page);
-		}
-		
-		//댓글 없는 곳 페이지표시 안보이게
-		if(result.dto.total == 0){
-			return;
-		}
-		
-		//result에 있는 list에 대한 한건 한건해서 목록 그려주는거
-		result.list.forEach(reply => {
-			let li = makeRow(reply);
 
-			//ul > li 생성
-			document.querySelector('#list').append(li);
-			
-		})
-			//page생성
-				//console.log("dto는 뭘까요" , result.dto);
-			makePaging(result.dto); 
-			
-	})
-	.catch(err => console.log(err));
-	
-	}//function showList
-	
-	showList();
-	
-//page생성 - dto정보가 넘어오니까(startpage, endpage 등드등) => 페이지숫자버튼만들기
-	function makePaging(dto={}){
+//Qna 리스트 페이징 하기!
+function makePaging(dto={}){
 		document.querySelector('.pagination').innerHTML = '';
 		//페이지를 만들고
 		if(dto.prev){
 			let aTag = document.createElement('a');
 			aTag.setAttribute('href', dto.startPage - 1);
-			aTag.innerHTML = ">&laquo;";
+			aTag.innerHTML = ">>";
 			document.querySelector('.pagination').append(aTag);
 		}
 		for(let i=dto.startPage; i<=dto.endPage; i++){
@@ -119,10 +68,9 @@
 		if(dto.next){
 			let aTag = document.createElement('a');
 			aTag.setAttribute('href', dto.endPage + 1);
-			aTag.innerHTML = "&raquo";
+			aTag.innerHTML = ">>";
 			document.querySelector('.pagination').append(aTag);
 		} 
-		
 		
 		
 		
@@ -135,11 +83,11 @@
 			})
 		})
 	} //makePaging
-	
 
+	makePaging(qlist.dto);
 
-
-</script>
+-->
+</script> 
 
 
 
