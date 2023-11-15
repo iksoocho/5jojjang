@@ -4,17 +4,28 @@
 <tiles-definitions>
  
  
-  <definition name="festivalpage" template="/WEB-INF/layout/template.jsp">
+  <definition name="festivalpage" template="/WEB-INF/layouts/template.jsp">
     <put-attribute name="title" value="메인페이지" />
-    <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
-    <put-attribute name="body" value="/WEB-INF/layout/body.jsp" />
-    <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    <put-attribute name="header" value="/WEB-INF/layouts/header.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/layouts/menu.jsp" />
+    <put-attribute name="body" value="/WEB-INF/layouts/body.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
   </definition>
   
+  <definition name ="WILDCARD:*/*" extends="festivalpage">          
+    	<put-attribute name="body" value="/WEB-INF/main/{1}.jsp" /> 	
+  	</definition>
+  	
+  <definition name="festivalpage" template="/WEB-INF/layouts/template.jsp">
+    <put-attribute name="title" value="메인페이지" />
+    <put-attribute name="header" value="/WEB-INF/layouts/header.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/layouts/menu.jsp" />
+    <put-attribute name="body" value="/WEB-INF/layouts/body.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
+  </definition>
   
-  
-    <definition name ="WILDCARD:festival/*" extends="festivalpage">          
-    	<put-attribute name="body" value="/WEB-INF/festival/{1}.jsp" /> 	
+  <definition name ="WILDCARD:*/*" extends="festivalpage">          
+    	<put-attribute name="body" value="/WEB-INF/main/{2}.jsp" /> 	
   	</definition>
   
   

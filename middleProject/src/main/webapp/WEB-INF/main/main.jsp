@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-<head>
+<h3>5조 중간프로젝트</h3>
+
 
 
 <meta charset="UTF-8">
@@ -14,10 +15,7 @@ jjjjjjjjjjj
 
 	<h3>5조 중간프로젝트 입니다.</h3>
 
-
-
-
-
+<body>
 
 	<c:choose>
 		<c:when test="${empty loginId }">
@@ -55,4 +53,3 @@ jjjjjjjjjjj
 	</c:choose>
 
 </body>
-</html>

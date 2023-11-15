@@ -40,7 +40,8 @@ public class JoinControl implements Command {
 		
 		
 		MemberService svc = new MemberServiceImpl();
-		Map<String, Object> map = new HashMap<>();
+		
+		
 		
 		if(svc.addMember(vo)) {
 			try {

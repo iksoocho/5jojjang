@@ -9,6 +9,8 @@ public interface MemberService {
 	public boolean aditMember(MemberVO vo);
 	public boolean removeMember(String mid);
 	
+	
+	
 	//로그인 처리
 	public MemberVO loginCheck(String id, String pw);
 }
