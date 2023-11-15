@@ -37,7 +37,7 @@
 	</tbody>
 </table>
 
-
+<div id="paging"></div>
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
 <div class= "pagination"></div>
@@ -79,14 +79,14 @@ function makePaging(dto={}){
 			elem.addEventListener('click', function(e){
 				e.preventDefault(); // form, a => 링크 기능을 차단하고 아랫부분을 계쏙 실행하겠습니다~
 				page = elem.getAttribute('href');
-				showList(page);
+				
 			})
 		})
 	} //makePaging
 
-	makePaging(qlist.dto);
+	makePaging(dto);
 
--->
+
 </script> 
 
 

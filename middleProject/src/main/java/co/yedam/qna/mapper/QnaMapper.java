@@ -13,7 +13,7 @@ public interface QnaMapper {
 	public int delete(int qno);
 
 	//페이징하려고
-	public int getTotalCnt(int qno);
+	public int getTotalCnt();
 	
 	//public int updateCnt(int boardNo); //조회수
 }

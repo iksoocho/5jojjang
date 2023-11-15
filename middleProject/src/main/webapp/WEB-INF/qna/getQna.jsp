@@ -50,7 +50,8 @@
 
 	</table>
 </form>
-<!-- 
+
+
 <h3> Qna 게시글에 댓글 등록하기</h3>
 <table>
 <tr>
@@ -67,7 +68,7 @@
 	<span>관리자</span><button>삭제</button></li>
 </ul>
 
-	<p><a href="qnaList.do"> back to QnA List </a></p>
+	<p><a href="qnaList.do"> Back to QnA List </a></p>
 
 <script>
 //글 삭제버튼
@@ -77,13 +78,13 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 });
 
 let rqpno = "${qno.qno}"
-let writer = "${admin}"
+let writer = "${logId}"
 //댓글 쓰면 한줄 들어가게.
 	function makeRow(reply){
 		
 		function deleteCallback(e){
 			//** 관리자가 아니면 댓글 못쓰도록! 조건 걸어줘야 함! - 이부분은 로그인 하는거랑 맞춰봐야함.
-			if(writer != administrator){
+			if(member.responsibility != 'admin'){
 				alert('권한이 없습니다');
 			}
 				//console.log(e.target.parentElement); //button태그 상위 : li
@@ -92,7 +93,7 @@ let writer = "${admin}"
 			fetch('removeReply.do?rpno='+ reply.rpno)
 			.then(resolve => resolve.json())
 			.then(result => {
-					//console.log("result.retCode", result.retCode )
+					console.log("result.retCode", result.retCode )
 				if(result.retCode == 'OK'){
 					alert('SUCCESS');
 					e.target.parentElement.remove();
@@ -109,7 +110,7 @@ let writer = "${admin}"
 		//console.log(temp);
 		temp.querySelector('span:nth-of-type(1)').innerHTML = reply.rpno; //스판태그의 첫번째 애를 가져올거임
 		temp.querySelector('b').innerHTML = reply.rcotent;
-		temp.querySelector('span:nth-of-type(2)').innerHTML = admin //관리자가해야함! 
+		temp.querySelector('span:nth-of-type(2)').innerHTML = ${logId} //관리자가해야함! 
 		temp.querySelector('button').addEventListener('click', deleteCallback);
 		return temp;
 	} //makeRow
@@ -120,7 +121,7 @@ let writer = "${admin}"
 		
 		let reply = document.querySelector('#content').value ; //input태그니까 value가 있는거
 		
-		if(!rpqno || writer != admin || !reply){
+		if(!rpqno || member.responsibility != admin || !reply){
 			alert('댓글못달지롱');
 			return; 
 		}
@@ -129,7 +130,7 @@ let writer = "${admin}"
 		fetch('addReply.do', {
 			method: 'post',
 			headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
-			body: 'rpqno=' + rpqno + '&reply='+reply +'&replyer='+ admin 
+			body: 'rpqno=' + rpqno + '&reply='+reply 
 			
 		})
 		.then(resolve => resolve.json())
@@ -145,4 +146,3 @@ let writer = "${admin}"
 	
 </script>
 
- -->

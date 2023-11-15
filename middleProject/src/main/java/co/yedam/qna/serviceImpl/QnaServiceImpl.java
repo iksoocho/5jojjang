@@ -40,8 +40,8 @@ public class QnaServiceImpl implements QnaService {
 	}
 	
 	@Override
-	public int getTotalCnt(int qno) {
-		return mapper.getTotalCnt(qno);
+	public int getTotalCnt() {
+		return mapper.getTotalCnt();
 	}
 
 }

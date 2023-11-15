@@ -39,6 +39,7 @@ import co.yedam.review.web.ReviewListControl;
 
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
+import co.yedam.adminPage.web.adFvListControl;
 import co.yedam.festival.web.DayListControl;
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
@@ -125,6 +126,17 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/main.do", new MainControl());
 		map.put("/calendar.do", new FestivalListControl());
 		map.put("/dayList.do", new DayListControl());
+		
+		//관리자 축제관리페이지 
+		map.put("/adFvlist.do", new adFvListControl());
+		//map.put("/getadFv.do", new getAdFvControl());
+		//map.put("/addAdFv.do", new addAdFvControl());
+		//map.put("/modifyAdFv.do", new modAdFvControl());
+		//map.put("/deleteAdFv.do", new delAdFvControl());
+	
+		
+		
+		
 	}
 
 	@Override

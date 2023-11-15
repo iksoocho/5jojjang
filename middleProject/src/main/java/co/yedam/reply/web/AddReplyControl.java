@@ -23,7 +23,8 @@ public class AddReplyControl implements Command {
 		
 		//파라메터
 		String rpqno = req.getParameter("rpqno");
-		String reply = req.getParameter("reply"); //내용.
+		String reply = req.getParameter("reply"); //내용
+		
 		
 		
 		ReplyVO vo = new ReplyVO();

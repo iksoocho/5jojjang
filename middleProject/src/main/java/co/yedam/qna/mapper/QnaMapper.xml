@@ -4,7 +4,18 @@
 
 	<select id="selectList"
 		resultType="co.yedam.qna.service.QnaVO">
-		select * from qna order by qno
+		
+			<![CDATA[
+		select *
+		from(
+		select /*+INDEX(r qna_pk)*/ rownum rn, r.*
+		from qna r
+		
+		)a
+		where a.rn > (#{page}-1)*5
+		and a.rn <= (#{page})*5
+		]]>
+		
 	</select>
 
 	<select id="select"
@@ -30,7 +41,7 @@
 	
 	<select id="getTotalCnt" resultType="int">
 		select count(*) from qna
-		where qno = #{seq_qno}
+		
 	</select>
 
 

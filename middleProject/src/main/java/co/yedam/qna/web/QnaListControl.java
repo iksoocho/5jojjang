@@ -26,17 +26,22 @@ public class QnaListControl implements Command {
 		List<QnaVO> list = svc.qnaList();
 		req.setAttribute("qlist", list);
 		
-		System.out.println("qnalist : " + list);
+			System.out.println("qnalist : " + list);
 		
 		//페이지 계산하기
-		String rpqno = req.getParameter("rpqno"); //원본 글 번호 알면 목록 가져오도록 파라메터 하나 받아옴
+		
 		String page = req.getParameter("page"); 
 		page = page == null? "1" : page; //페이지 파라메터가 없으면 걍 1페이지 보여주겠음.
+		/*
+		 * String currentPage = req.getParameter("currentPage"); String startPage =
+		 * req.getParameter("startPage"); String endPage = req.getParameter("endPage");
+		 */
 		
-	
-		PageDTO dto = new PageDTO(Integer.parseInt(rpqno), svc.getTotalCnt(Integer.parseInt(rpqno)), Integer.parseInt(page));
 		
-		System.out.println("dto : " + dto); 
+		PageDTO dto = new PageDTO(svc.getTotalCnt(), Integer.parseInt(page));
+		//req.setAttribute("paging", dto);
+		
+			System.out.println("dto : " + dto); 
 
 		// 나중에 경로 path로 바꾸기! 
 		try {

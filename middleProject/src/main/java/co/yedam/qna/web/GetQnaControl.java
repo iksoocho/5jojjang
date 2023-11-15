@@ -25,6 +25,7 @@ public class GetQnaControl implements Command {
 		QnaVO vo = svc.getQna(Integer.parseInt(qno));
 		
 			System.out.println("vo" + vo);
+			
 		
 		req.setAttribute("qno", vo);
 		

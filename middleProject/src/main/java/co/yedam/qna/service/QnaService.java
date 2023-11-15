@@ -11,6 +11,6 @@ public interface QnaService {
 	public boolean removeQna(int qno);
 	
 	//전체 게시글 건수
-	public int getTotalCnt(int qno);
+	public int getTotalCnt();
 	
 }
