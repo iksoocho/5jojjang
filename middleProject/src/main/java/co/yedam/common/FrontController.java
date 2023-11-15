@@ -21,7 +21,12 @@ public class FrontController extends HttpServlet{
 	// init -> service
 	@Override
 	public void init() throws ServletException {
-		
+
+		map.put("/main.do", new MainControl());											
+		map.put("/calendar.do" , new FestivalListControl());  
+		map.put("/totalList.do" , new TotalListControl());  
+		map.put("/dayList.do" , new DayListControl());
+		map.put("/festivalInfo.do", new FestivalInfoControl());
 
 		
 //		System.out.println("오후7시  1번 커밋! ");
@@ -39,11 +44,6 @@ public class FrontController extends HttpServlet{
 //				map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); //수정 폼
 //				map.put("/modifyQna.do", new ModifyQnaControl());  //qna글 수정하기
 
-		map.put("/main.do", new MainControl());											
-		map.put("/calendar.do" , new FestivalListControl());  
-		map.put("/totalList.do" , new TotalListControl());  
-		map.put("/dayList.do" , new DayListControl());
-		map.put("/festivalInfo.do", new FestivalInfoControl());
 		
 	}	
 	

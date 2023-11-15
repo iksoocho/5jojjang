@@ -16,29 +16,30 @@ import co.yedam.festival.serviceImpl.FestivalServiceImpl;
 
 public class TotalListControl implements Command {
 
-	
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-		FestivalService svc = new FestivalServiceImpl();
-		List<FestivalVO> list = svc.festivalList();
-		Gson gson = new GsonBuilder().create();
-        try {
-			resp.getWriter().println(gson.toJson(list));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		req.setAttribute("list", list);
-		System.out.println(list);
-		try {
-			req.getRequestDispatcher("WEB-INF/festival/calendar.jsp")
-			.forward(req, resp);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		
-		}
-	}
 
+		FestivalService svc = new FestivalServiceImpl();
+
+		List<FestivalVO> list = svc.festivalList(); // 선택 날짜에 해당하는 축제목록 리스트
+
+		req.setAttribute("list", list);
+		try {
+			req.getRequestDispatcher("WEB-INF/festival/dayList.jsp").forward(req, resp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+//		FestivalService svc = new FestivalServiceImpl();
+//		List<FestivalVO> list = svc.festivalList();
+//		Gson gson = new GsonBuilder().create();
+//        try {
+//        	resp.setContentType("text/json;charset=utf-8"); //데이터 땡겨올때 깨지는거 해결
+//			resp.getWriter().println(gson.toJson(list));
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+
+	}
 }

@@ -17,13 +17,6 @@ public class MainControl implements Command {
 			e.printStackTrace();
 		}
 
-		try {
-			req.getRequestDispatcher("WEB-INF/main/main.jsp").forward(req, resp);
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-
 	}
 
 }
