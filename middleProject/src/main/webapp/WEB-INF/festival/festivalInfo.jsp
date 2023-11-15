@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!-- festival section-->
+<<<<<<< HEAD
 <section class="py-5">
 	<div class="container px-4 px-lg-5 my-5">
 		<div class="row gx-4 gx-lg-5 align-items-center">
@@ -40,7 +41,10 @@
 	</div>
 	</div>
 </section>
+=======
+>>>>>>> refs/heads/2
 
+<<<<<<< HEAD
 <!-- festival list section-->
 <section class="py-5 bg-light">
 	<div class="container px-4 px-lg-5 mt-5">
@@ -86,12 +90,42 @@
 		</div>
 	</div>
 </section>
+=======
+<style>
+  
+  
+  
+>>>>>>> refs/heads/2
 
 
+</style>
 
-<script>
+<!-- {vo} -->
 
+<h3>${vo.fname }</h3>
+<p class="time_num">축제 진행 중</p>
+<p>${vo.fsdate } ~${vo.fedate }</p>	
+<img src="resources/images/${vo.fimage }" alt="..." />
+<p> <축제소개> : ${vo.fcontent }</p>		
+						
+						
+				
+						
+						
+<button class="btn btn-outline-dark flex-shrink-0" type="button">
+		<i class="bi-cart-fill me-1">찜하기</i>  </button>
 
+						
+<button class="btn btn-outline-dark flex-shrink-0" type="button">
+		<i class="bi-cart-fill me-1">바로 구매하기 </i>  </button>
 
+						
+<button class="btn btn-outline-dark flex-shrink-0" type="button">
+		<i class="bi-cart-fill me-1">장바구니에 담기</i>  </button>
 
-</script>
+				
+								
+								
+				
+				
+	
