@@ -1,5 +1,7 @@
 package co.yedam.festival.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,15 +16,15 @@ public class FestivalInfoControl implements Command {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 
 
+		FestivalService svc = new FestivalServiceImpl();
 		
 		String fcode = req.getParameter("fno");
-	
-		FestivalService svc = new FestivalServiceImpl();
-
-		FestivalVO vo = svc.getfestivalInfo(fcode);
 		String path = "festival/festivalInfo.tiles";
+		FestivalVO vo = svc.getfestivalInfo(fcode);
+		
+		List<FestivalVO> list = svc.selectLike(fcode); //별점 높은순 목록
 
-
+		req.setAttribute("list", list);
 		req.setAttribute("vo", vo);
 		System.out.println(vo);		
 		

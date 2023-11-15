@@ -30,4 +30,11 @@ public class FestivalServiceImpl implements FestivalService {
 		return mapper.dayList(day);
 	}
 
+
+	@Override
+	public List<FestivalVO> selectLike(String fcode) {  //별점 높은순
+		// TODO Auto-generated method stub
+		return mapper.selectLike(fcode);
+	}
+
 }
