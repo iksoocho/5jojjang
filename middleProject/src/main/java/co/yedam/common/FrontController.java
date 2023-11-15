@@ -121,21 +121,12 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/calendar.do", new FestivalListControl());
 		map.put("/dayList.do", new DayListControl());
 		map.put("/festivalInfo.do", new FestivalInfoControl());
-<<<<<<< HEAD
-
-		//map.put("/main.do", new MainControl());											
-		//map.put("/calendar.do" , new CalendarControl());  
-		map.put("/dayList.do" , new DayListControl()); //지정된날찌에 해당하는 
-
-	}
-=======
 
 		// map.put("/main.do", new MainControl());
-		//map.put("/calendar.do", new CalendarControl());
+		// map.put("/calendar.do", new CalendarControl());
 		map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는
 	}
 
->>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 요청정보의 한글 인코딩 방식

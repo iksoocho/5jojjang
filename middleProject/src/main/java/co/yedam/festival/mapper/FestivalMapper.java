@@ -4,32 +4,12 @@ import java.util.List;
 
 import co.yedam.festival.service.FestivalVO;
 
-
-
 public interface FestivalMapper {
 
-	
+	List<FestivalVO> dayList(String day);
 
-
-
-	List <FestivalVO> dayList();
-
-
-	List <FestivalVO> dayList(String day);  
-
-
-	List <FestivalVO> festivalList();  
+	List<FestivalVO> festivalList();
 
 	FestivalVO festival(String fcode);
-	
-
-
-<<<<<<< HEAD
-
-=======
-	 
->>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
-
-
 
 }
