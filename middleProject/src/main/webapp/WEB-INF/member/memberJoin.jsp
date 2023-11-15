@@ -20,7 +20,11 @@
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type="text" class="form-control" name="pass"></td>
+				<td><input type="text" class="form-control" name="pass" ></td>
+			</tr>
+			<tr>
+				<th>비밀번호 확인</th>
+				<td><input type="text" class="form-control" name="checkPass" ></td>
 			</tr>
 			<tr>
 				<th>주민 등록 번호</th>
@@ -38,7 +42,7 @@
 			<tr>
 				<td colspan="2" align="center">
 				 
-				<button type="button" onclick="checkNull()">회원가입</button>
+				<input type="button" onclick="checkNull()" value="회원가입">
 				<input type="reset" class="btn btn-warning" value="초기화"></td>
 			</tr>
 		</table>
@@ -50,6 +54,8 @@
 	   var name = document.getElementsByName("name")[0].value;
 	    var mid = document.getElementsByName("mid")[0].value;
 	    var pass = document.getElementsByName("pass")[0].value;
+	    var checkPass = document.getElementsByName("checkPass")[0].value;
+	    
 
 	    // 필수 입력 필드 검사
 	     if (name === '' || mid === '' || pass === '') {
@@ -65,16 +71,21 @@
 		    .then(resolve=>resolve.json())
 		    .then(result=>{
 		    	console.log(result.retCode)
-		    	if(result.retCode=="OK"){
-		    		if(confirm("회원가입 하실텨?")){
-		   	    	 	alert('회원 가입 성공')
-		   	    		document.getElementById("join").submit();
-		   	     	}else{
-		   	    	 alert('취소');
-		   	     	}
-		    	}else{
+		    	if(result.retCode=="NG"){
 		    		alert('중복된 아이디 입니다.');
 		    		return false;
+		    	}else{
+		    		if(pass!=checkPass){
+		    			alert('비밀번호가 일치하지 않습니다.')
+		    		}else{
+		    			if(confirm("회원가입 하시겠습니까?")){
+				    	 	alert('회원 가입 성공')
+				    		document.getElementById("join").submit();
+				     	}else{
+				    	 alert('취소');
+				     	}
+		    		}
+		    		
 		    	}
 		    })
 		    .catch(err=>console.log(err))
@@ -82,6 +93,8 @@
 	    
 	     
 	   
+	    
+	     
 	}
 	</script>
 </body>
