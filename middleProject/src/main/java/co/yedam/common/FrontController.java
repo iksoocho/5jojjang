@@ -39,7 +39,11 @@ import co.yedam.review.web.ReviewListControl;
 
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
+<<<<<<< HEAD
 import co.yedam.festival.web.DayListControl;
+=======
+import co.yedam.festival.web.TotalListControl;
+>>>>>>> refs/heads/3
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
 													// 위해 나눠놈
@@ -48,6 +52,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 	@Override
 	public void init() throws ServletException {
 
+<<<<<<< HEAD
 		map.put("/main.do", new MainControl());
 
 		// 로그인
@@ -72,7 +77,17 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
 		map.put("/addQna.do", new AddQnaControl()); // 글 등록
 
+=======
+		map.put("/main.do", new MainControl());											
+		map.put("/calendar.do" , new FestivalListControl());  
+		map.put("/totalList.do" , new TotalListControl());  
+		map.put("/dayList.do" , new DayListControl());
+		map.put("/festivalInfo.do", new FestivalInfoControl());
+
+		
+>>>>>>> refs/heads/3
 //		System.out.println("오후7시  1번 커밋! ");
+<<<<<<< HEAD
 
 		map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); // 수정 폼
 		map.put("/modifyQna.do", new ModifyQnaControl()); // qna글 수정하기
@@ -126,6 +141,25 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/calendar.do", new FestivalListControl());
 		map.put("/dayList.do", new DayListControl());
 	}
+=======
+		
+		
+//		map.put("/main.do", new MainControl());
+//		//map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
+//
+//				map.put("/getQna.do", new GetQnaControl()); //상세화면보기
+//
+//				
+//				map.put("/addQnaForm.do", new AddQnaFormControl()); //qna 글 등록폼
+//				map.put("/addQna.do", new AddQnaControl()); // 글 등록
+//				
+//				map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); //수정 폼
+//				map.put("/modifyQna.do", new ModifyQnaControl());  //qna글 수정하기
+
+		
+	}	
+	
+>>>>>>> refs/heads/3
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -7,6 +7,7 @@
 	<select id="festivalList"
 		resultType="co.yedam.festival.service.FestivalVO">
 		select *from festival
+<<<<<<< HEAD
 	</select>
 
 	<select id="dayList"
@@ -16,11 +17,27 @@
 		select *from festival
 		where #{bdate} between fsdate and
 		fedate
+=======
 	</select>
+	
+	
+	<select id="dayList" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">     
+		select *from festival 
+		where #{day} between fsdate and fedate
+
+>>>>>>> refs/heads/3
+	</select>
+<<<<<<< HEAD
 
 	<select id="festival"
 		resultType="co.yedam.festival.service.FestivalVO"
 		parameterType="string"> select * from festival where fcode=#{fcode}
+=======
+	
+	<select id="festival" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
+	select * from festival
+	where fcode=#{fcode}
+>>>>>>> refs/heads/3
 	</select>
 
 </mapper>
