@@ -24,7 +24,11 @@ public interface FestivalMapper {
 	
 
 
+<<<<<<< HEAD
 
+=======
+	 
+>>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 
 
 

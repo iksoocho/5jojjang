@@ -41,20 +41,20 @@ public class FestivalServiceImpl implements FestivalService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+<<<<<<< HEAD
 	public List<FestivalVO> dayList(String day) {
 >>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 		
 
 	}
+=======
+	
+>>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 
 
 
 
-	@Override
-	public List<FestivalVO> dayList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 
 <<<<<<< HEAD
@@ -69,6 +69,15 @@ public class FestivalServiceImpl implements FestivalService {
 	public FestivalVO getfestivalInfo(String fcode) {
 		// TODO Auto-generated method stub
 		return mapper.festival(fcode);
+	}
+
+
+
+
+	@Override
+	public List<FestivalVO> dayList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
