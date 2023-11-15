@@ -104,41 +104,7 @@
 	<button onclick="selectAllFestival()" value="축제 전체 보기">축제 전체보기</button>
 	<!--게시글 목록-->
 	<div id="boardList">
-		<!-- 	<div class="container px-4 px-lg-5 mt-5"> -->
-		<!-- 		<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> -->
-		<!-- 				상품목록 -->
-		<!-- 				<div class="col mb-5" style="display:none;" id="templeateNode"> -->
-		<!-- 					<div class="card h-100"> -->
-		<!-- 						Sale badge -->
-		<!-- 						<div class="badge bg-dark text-white position-absolute" -->
-		<!-- 							style="top: 0.5rem; right: 0.5rem">개최중</div> -->
-		<!-- 						<img -->
-		<!-- 							class="card-img-top" src="resources/images/해맞이축제.jpg" alt="..." /> -->
-		<!-- 						Product details -->
-		<!-- 						<div class="card-body p-4"> -->
-		<!-- 							<div class="text-center"> -->
-		<!-- 								Product name -->
-		<!-- 								<a href="festivalInfo.do?fno=1"> -->
-		<!-- 								<h5 class="fw-bolder">이름</h5></a> -->
-		<!-- 								<div -->
-		<!-- 									class="d-flex justify-content-center small text-warning mb-2"> -->
-		<%-- 									<c:forEach var="i" begin="1" end="${vo.likeIt }">
-<%-- 										<div class="bi-star-fill"></div> --%>
-		<%-- 									</c:forEach> --%> --%>
-		<!-- 								</div> -->
-		<!-- 							</div> -->
-		<!-- 							<span >내용</span> -->
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 					Product actions -->
-		<!-- 					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> -->
-		<!-- 						<div class="text-center"> -->
 
-		<!-- 						</div> -->
-		<!-- 					</div> -->
-		<!-- 				</div> -->
-		<!-- 		</div> -->
-		<!-- 	</div> -->
 	</div>
 	<script>
 		var lastCkVal = "true";
