@@ -10,14 +10,11 @@ import co.yedam.member.service.MemberService;
 import co.yedam.member.service.MemberVO;
 import co.yedam.member.serviceImpl.MemberServiceImpl;
 
-
-
-public class LoginControl implements Command {
+public class CheckLoginControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		
 		String id = req.getParameter("mid");
 		String pw = req.getParameter("pass");
 		
@@ -26,18 +23,16 @@ public class LoginControl implements Command {
 		MemberService svc = new MemberServiceImpl();
 		
 		MemberVO vo = svc.loginCheck(id, pw);
+		
+		
 		if (vo != null) {
 			//session > 서버와 클라이언트(웹브라우저) 연결되면 캐쉬를 삭제하거나 페이지를 닫지 않는 이상 사라지지 않고 가지고 있음
-			HttpSession session = req.getSession();
-			session.setAttribute("loginId", id);
-			session.setAttribute("loginPass", pw);
-			session.setAttribute("name", vo.getName());
-			session.setAttribute("responsibility", vo.getResponsibility());
+			
 		
 			
 			try {
 				resp.getWriter().print("{\"retCode\":\"OK\"}");
-				resp.sendRedirect("main.do");
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -45,14 +40,12 @@ public class LoginControl implements Command {
 		} else {
 			try {
 				resp.getWriter().print("{\"retCode\":\"NG\"}");
-				resp.sendRedirect("loginForm.do");
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		
 	}
 
 }

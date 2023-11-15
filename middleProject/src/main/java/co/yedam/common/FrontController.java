@@ -20,6 +20,10 @@ import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
+
+import co.yedam.member.web.getMemberControl;
+
+
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
@@ -71,19 +75,43 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
       map.put("/join.do", new JoinControl());
       map.put("/checkId.do", new CheckIdControl());
 
+
       // Qna
       map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
       map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
+
+		// 로그인
+		map.put("/loginForm.do", new LoginFormControl());
+		map.put("/login.do", new LoginControl());
+		map.put("/logout.do", new LogoutControl());
+		map.put("/checkLogin.do", new CheckLoginControl());
+
+
 
       // 마이페이지(회원정보 수정, 회원 탈퇴 등등)
       map.put("/myPageForm.do", new MyPageFormControl());
       map.put("/modifyForm.do", new ModifyFormControl());
       map.put("/modifyMember.do", new ModifyMemberControl());
 
+		// 회원가입
+		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면
+		map.put("/join.do", new JoinControl());
+		map.put("/checkId.do", new CheckIdControl());
+		
+
+
       map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
       map.put("/addQna.do", new AddQnaControl()); // 글 등록
 
+
 //      System.out.println("오후7시  1번 커밋! ");
+
+		// 마이페이지(회원정보 수정, 회원 탈퇴 등등)
+		map.put("/myPageForm.do", new MyPageFormControl());
+		map.put("/getMember.do", new getMemberControl());
+		map.put("/modifyForm.do", new ModifyFormControl());
+		map.put("/modifyMember.do", new ModifyMemberControl());
+
 
       map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); // 수정 폼
       map.put("/modifyQna.do", new ModifyQnaControl()); // qna글 수정하기
