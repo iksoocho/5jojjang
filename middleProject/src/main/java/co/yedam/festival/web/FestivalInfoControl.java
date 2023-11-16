@@ -25,7 +25,9 @@ public class FestivalInfoControl implements Command {
 		List<FestivalVO> list = svc.selectLike(fcode); //별점 높은순 목록
 
 		req.setAttribute("list", list);
+		
 		req.setAttribute("vo", vo);
+		
 		System.out.println(vo);		
 		
 		try {

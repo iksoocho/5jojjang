@@ -25,7 +25,7 @@ a {
 							<!-- Sale badge-->
 							<div class="badge bg-dark text-white position-absolute"
 								style="top: 0.5rem; right: 0.5rem">개최중</div>
-							<img class="card-img-top" src="resources/images/${vo.fimage }"
+							<img class="card-img-top" src="resources/images/${vo.fimage }" style="height:360px;"
 								alt="..." />
 							<!-- Product details-->
 							<div class="card-body p-4">

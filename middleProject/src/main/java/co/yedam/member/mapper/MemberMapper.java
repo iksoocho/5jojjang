@@ -11,7 +11,7 @@ public interface MemberMapper {
 	public MemberVO select(String mid);
 	public int insert(MemberVO vo);
 	public int update(MemberVO vo);
-	public int delete(MemberVO vo);
+	public int delete(String mid);
 	
 	public MemberVO getUser(@Param("id") String id, @Param("pw") String pw);
 }

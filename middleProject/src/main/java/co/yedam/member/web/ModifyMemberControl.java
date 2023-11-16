@@ -25,7 +25,7 @@ public class ModifyMemberControl implements Command {
 		
 		if(svc.aditMember(vo)) {
 			try {
-				resp.sendRedirect("myPageForm.do");
+				resp.sendRedirect("logout.do");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

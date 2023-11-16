@@ -21,5 +21,10 @@
 	<update id="update" parameterType="co.yedam.member.service.MemberVO">
 		update member set name=#{name},pass=#{pass},phone=#{phone} where mid=#{mid}
 	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from member where mid = #{mid }
+	</delete>
+	
 
 </mapper>

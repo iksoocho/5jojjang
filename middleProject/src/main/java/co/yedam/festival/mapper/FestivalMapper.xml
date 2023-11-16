@@ -20,8 +20,9 @@
       resultType="co.yedam.festival.service.FestivalVO"
       parameterType="string"> select * from festival where fcode=#{fcode}
    </select>
-
-	<select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
+   
+   
+   <select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
 	  <![CDATA[  
 	     SELECT *
 	  	 FROM 
@@ -33,5 +34,6 @@
 	      WHERE ROWNUM <= 3 and fcode != #{fno}
    	]]>
 	</select>
+  
 </mapper>
    

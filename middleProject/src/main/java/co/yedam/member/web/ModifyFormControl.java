@@ -10,7 +10,7 @@ public class ModifyFormControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-String path = "WEB-INF/member/modifyForm.jsp";
+		String path = "member/modifyForm.tiles";
 		
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);
