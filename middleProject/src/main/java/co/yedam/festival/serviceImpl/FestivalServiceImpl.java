@@ -32,8 +32,13 @@ public class FestivalServiceImpl implements FestivalService {
 
 
 	@Override
+<<<<<<< HEAD
 	public List<FestivalVO> selectLike(String fcode) {  //별점 높은순
 		// TODO Auto-generated method stub
+=======
+	public List<FestivalVO> selectLike(String fcode) {
+		
+>>>>>>> refs/heads/develope
 		return mapper.selectLike(fcode);
 	}
 

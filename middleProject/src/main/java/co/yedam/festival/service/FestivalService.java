@@ -10,5 +10,9 @@ public interface FestivalService {
 
 	public FestivalVO getfestivalInfo(String fcode);// 페스티벌 이름 선택하면 상세페이지로 이동 메소드
 
+<<<<<<< HEAD
 	List<FestivalVO> selectLike(String fcode);  //별점 높은순 목록 4개 띄우기
+=======
+	List<FestivalVO> selectLike(String fcode);
+>>>>>>> refs/heads/develope
 }

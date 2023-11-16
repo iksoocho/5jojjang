@@ -12,6 +12,9 @@ public class AddQnaControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+		
+		
+		
 		QnaVO vo = new QnaVO();
 		
 		req.getMethod().equals("GET");
