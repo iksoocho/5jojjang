@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.qna.mapper.QnaMapper">
+
+	<select id="selectList"
+		resultType="co.yedam.qna.service.QnaVO">
+		select * from qna order by qno
+	</select>
+
+	<select id="select"
+		resultType="co.yedam.qna.service.QnaVO" parameterType="int">
+		select * from qna where qno = #{seq_qno}
+	</select>
+	
+	<insert id="insert"
+		parameterType="co.yedam.qna.service.QnaVO">
+		insert into qna(qno, qid, qtitle, qcontent, qwritedate, qlastupdate, qpass)
+		values (seq_qno.nextval, #{qid},#{qtitle},#{qcontent},#{qwritedate}, #{qlast_update}, #{qpass})
+	</insert>
+
+	<update id="update"
+		parameterType="co.yedam.qna.service.QnaVO">
+		update qna set qtitle=#{qtitle}, qcontent=#{qcontent}, qpass=#{qpass} where qno=#{qno}
+	</update>
+
+
+	<delete id="delete" parameterType="int">
+		delete from qna where qno=#{seq_qno}
+	</delete>
+
+
+
+
+
+
+
+
+
+
+
+</mapper>
