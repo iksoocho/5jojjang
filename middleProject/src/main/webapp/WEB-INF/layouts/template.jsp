@@ -8,8 +8,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<<<<<<< HEAD
-=======
 	<head>
 		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -25,53 +23,33 @@
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
->>>>>>> refs/heads/4
 
-<<<<<<< HEAD
-<head>
-	<title>Strongly Typed by HTML5 UP</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+			<!-- Header -->
+				<section id="header">
+					<div class="container">
+						<!-- header -->
+							<tiles:insertAttribute name="menu"></tiles:insertAttribute>
+						
 
-<body class="homepage is-preload">
-	<div id="page-wrapper">
+						<!-- Menu -->
+						
+						 
+						<tiles:insertAttribute name="header"></tiles:insertAttribute>	
 
-		<!-- Header -->
-		<section id="header">
-			<div class="container">
-				<!-- header -->
-				<tiles:insertAttribute name="header"></tiles:insertAttribute>
+					</div>
+				</section>
 
+			<!-- Features -->
+			<tiles:insertAttribute name="body"></tiles:insertAttribute>
 
-				<!-- Menu -->
-				<tiles:insertAttribute name="menu"></tiles:insertAttribute>
+			<!-- Footer -->
+			<tiles:insertAttribute name="footer"></tiles:insertAttribute>
+					
 
+		</div>
 
 		<!-- Scripts -->
 			
 
-
-			</div>
-		</section>
-
-		<!-- Features -->
-		<tiles:insertAttribute name="body"></tiles:insertAttribute>
-
-		<!-- Footer -->
-		<tiles:insertAttribute name="footer"></tiles:insertAttribute>
-
-
-	</div>
-
-
-</body>
-
+	</body>
 </html>
