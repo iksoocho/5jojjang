@@ -12,6 +12,7 @@ public class GetReviewControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+		
 		String path = "review/getReview.tiles";
 		
 		String rno = req.getParameter("rno"); 

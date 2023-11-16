@@ -23,7 +23,7 @@ public class QListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-
+		//혹시몰라서 일단 둠.. paging 때문에
 
 		/*
 		String qno = req.getParameter("qno");

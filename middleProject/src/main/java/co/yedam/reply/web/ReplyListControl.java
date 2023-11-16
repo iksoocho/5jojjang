@@ -21,7 +21,7 @@ public class ReplyListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 	
-		//String path = "reply/replyList.tiles";
+	
 		
 		String rpqno = req.getParameter("rpqno"); //원본 글 번호 알면 목록 가져오도록 파라메터 하나 받아옴
 

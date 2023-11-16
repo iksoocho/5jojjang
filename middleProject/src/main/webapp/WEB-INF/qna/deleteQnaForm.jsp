@@ -21,6 +21,7 @@
 			</tr>
 			
 			<tr>
+			<th>내용</th>
 				<td colspan="2"><textarea cols="40" rows="5"
 						name="content">${vo.qcontent}</textarea></td>
 			</tr>

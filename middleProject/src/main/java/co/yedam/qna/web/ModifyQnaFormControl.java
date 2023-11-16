@@ -15,6 +15,8 @@ public class ModifyQnaFormControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+		String path = "qna/modifyQnaForm.tiles";
+		
 		String qno = req.getParameter("qno"); 
 		
 		QnaService svc = new QnaServiceImpl();
@@ -24,7 +26,7 @@ public class ModifyQnaFormControl implements Command {
 		
 		//수정폼열기
 		try {
-			req.getRequestDispatcher("WEB-INF/qna/modifyQnaForm.jsp").forward(req, resp);
+			req.getRequestDispatcher("path").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

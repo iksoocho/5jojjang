@@ -33,9 +33,9 @@ public class ModifyQnaControl implements Command {
 
 			
 			QnaService svc = new QnaServiceImpl();
-			if (svc.editQna(vo)) { // 정상적으로 등록됐으면 보드목록으로 간다
+			if (svc.editQna(vo)) { 
 				try {
-					resp.sendRedirect("qnaList.do"); // 저장하고 등록 추가된 정보 나옴
+					resp.sendRedirect("qnaList.do"); 
 				} catch (Exception e) {
 					
 					e.printStackTrace();
