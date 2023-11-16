@@ -23,15 +23,15 @@
 
 	<select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
 	  <![CDATA[  
-     SELECT *
-   FROM 
-       (
-           SELECT *
-           FROM festival
-           ORDER BY likeIt DESC
-       )
-      WHERE ROWNUM <= 3 and fcode != #{fno}
-   ]]>
+	     SELECT *
+	  	 FROM 
+	       (
+	           SELECT *
+	           FROM festival
+	           ORDER BY likeIt DESC
+	       )
+	      WHERE ROWNUM <= 3 and fcode != #{fno}
+   	]]>
 	</select>
 </mapper>
    
