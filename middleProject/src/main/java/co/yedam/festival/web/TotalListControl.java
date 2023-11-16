@@ -30,16 +30,8 @@ public class TotalListControl implements Command {
 			e.printStackTrace();
 		}
 
-//		FestivalService svc = new FestivalServiceImpl();
-//		List<FestivalVO> list = svc.festivalList();
-//		Gson gson = new GsonBuilder().create();
-//        try {
-//        	resp.setContentType("text/json;charset=utf-8"); //데이터 땡겨올때 깨지는거 해결
-//			resp.getWriter().println(gson.toJson(list));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		System.out.println(list);
+		
 
 	}
 }
