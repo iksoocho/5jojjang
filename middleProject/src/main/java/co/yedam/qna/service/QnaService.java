@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface QnaService {
 	
-	public List<QnaVO> qnaList();
+	public List<QnaVO> qnaList(int page);
 	public QnaVO getQna(int qno);
 	public boolean addQna(QnaVO vo);
 	public boolean editQna(QnaVO vo);

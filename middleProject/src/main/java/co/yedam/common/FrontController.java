@@ -24,6 +24,7 @@ import co.yedam.qna.web.RemoveQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
 import co.yedam.qna.web.ModifyQnaControl;
 import co.yedam.qna.web.ModifyQnaFormControl;
+import co.yedam.qna.web.QListControl;
 import co.yedam.qna.web.QnaListControl;
 import co.yedam.reply.web.AddReplyControl;
 import co.yedam.reply.web.RemoveReplyControl;
@@ -43,6 +44,7 @@ import co.yedam.adminPage.web.adFvListControl;
 import co.yedam.adminPage.web.addAdFvControl;
 import co.yedam.adminPage.web.addAdFvFormControl;
 import co.yedam.adminPage.web.getAdFvControl;
+import co.yedam.adminPage.web.modAdFvFormControl;
 import co.yedam.festival.web.DayListControl;
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
@@ -67,6 +69,8 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// Qna
 		map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
 		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
+		map.put("/qnaList2.do", new QListControl()); // 상세화면보기
+				
 
 		// 마이페이지(회원정보 수정, 회원 탈퇴 등등)
 		map.put("/myPageForm.do", new MyPageFormControl());
@@ -133,7 +137,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/getadFv.do", new getAdFvControl());
 		map.put("/addAdFvForm.do", new addAdFvFormControl());
 		map.put("/addAdFv.do", new addAdFvControl());
-		//map.put("/modifyAdFvForm.do", new modAdFvFormControl());
+		map.put("/modifyAdFvForm.do", new modAdFvFormControl());
 		//map.put("/modifyAdFv.do", new modAdFvControl());
 		//map.put("/deleteAdFv.do", new delAdFvControl());
 	

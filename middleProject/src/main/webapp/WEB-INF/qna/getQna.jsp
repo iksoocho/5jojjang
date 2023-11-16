@@ -61,6 +61,8 @@
 </tr>
 </table>
 
+<input type="hidden" name="mid" value="${loginId }">
+
 <h3> Qna 게시글 댓글 목록 - 관리자가 다는 답글! </h3>
 
 <ul id="replylist">
@@ -85,7 +87,7 @@ let reply = "${rpcontent}"
 		
 		function deleteCallback(e){
 			//** 관리자가 아니면 댓글 못쓰도록! 조건 걸어줘야 함! - 이부분은 로그인 하는거랑 맞춰봐야함.
-			if(member.responsibility.equals('user')){
+			if(responsibility.equals('user')){
 				alert('권한이 없습니다');
 			}
 				//console.log(e.target.parentElement); //button태그 상위 : li
@@ -110,8 +112,8 @@ let reply = "${rpcontent}"
 		temp.style.display = "block";
 		//console.log(temp);
 		temp.querySelector('span:nth-of-type(1)').innerHTML = reply.rpno; //스판태그의 첫번째 애를 가져올거임
-		temp.querySelector('b').innerHTML = reply.rpcotent;
-		temp.querySelector('span:nth-of-type(2)').innerHTML = ${logId} //관리자가해야함! 
+		temp.querySelector('b').innerHTML = reply.rpcontent;
+		temp.querySelector('span:nth-of-type(2)').innerHTML = mid //관리자가해야함! 
 		temp.querySelector('button').addEventListener('click', deleteCallback);
 		return temp;
 	} //makeRow
@@ -121,8 +123,9 @@ let reply = "${rpcontent}"
 	document.querySelector('#addReply').addEventListener('click', function(e){
 		
 		let reply = document.querySelector('#content').value ; //input태그니까 value가 있는거
-		
-		if(!rpqno || member.responsibility != 'admin' || !rpcontent){
+		let mid = document.getElementsByName('mid')[0].value;
+		//if(!rpqno || responsibility != 'admin' || !rpcontent){
+			if( mid != ("admin") ){
 			alert('관리자만 댓글 작성 가능');
 			return; 
 		}
