@@ -36,12 +36,7 @@
 
 		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
 
-<<<<<<< HEAD
-		<!-- <mapper resource="co/yedam/wish/mapper/WishMapper.xml" /> -->
 
-=======
-		<!--<mapper resource="co/yedam/wish/mapper/WishMapper.xml" />  -->
->>>>>>> refs/heads/1
 
 
 	</mappers>
