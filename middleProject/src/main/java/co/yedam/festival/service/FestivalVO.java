@@ -18,4 +18,5 @@ public class FestivalVO {
 	private String flat;
 	private String flng;
 	private String fcontent;
+	private String likeIt;
 }

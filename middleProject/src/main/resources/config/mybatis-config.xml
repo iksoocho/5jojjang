@@ -32,6 +32,7 @@
 
 		<mapper resource="co/yedam/reply/mapper/ReplyMapper.xml" />
 		<mapper resource="co/yedam/cart/mapper/CartMapper.xml" />
+		<mapper resource="co/yedam/payment/mapper/PaymentMapper.xml" />
 		
 
 		

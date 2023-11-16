@@ -20,6 +20,7 @@ import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
+import co.yedam.payment.web.paymentFormControl;
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
@@ -39,7 +40,9 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
+import co.yedam.wish.web.DrewWishListControl;
 import co.yedam.wish.web.WishControl;
+import co.yedam.wish.web.WishListControl;
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
    // 위해 나눠놈
@@ -60,6 +63,10 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
       map.put("/wish.do", new WishControl()); 
       //장바구니담기
       map.put("/cart.do", new CartControl()); 
+      //결제하기
+      map.put("/paymentForm.do", new paymentFormControl()); 
+      
+      
       
       // 로그인
       map.put("/loginForm.do", new LoginFormControl());
@@ -79,7 +86,11 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
       map.put("/myPageForm.do", new MyPageFormControl());
       map.put("/modifyForm.do", new ModifyFormControl());
       map.put("/modifyMember.do", new ModifyMemberControl());
-
+      map.put("/wishList.do", new WishListControl());  // 찜목록페이지 띄우기
+      map.put("/drewwishList.do", new DrewWishListControl());  // 찜 목록 그려주기 
+      
+      
+      
       map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
       map.put("/addQna.do", new AddQnaControl()); // 글 등록
 
