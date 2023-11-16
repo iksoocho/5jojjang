@@ -1,5 +1,7 @@
 package co.yedam.cart.serviceImpl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.cart.mapper.CartMapper;
@@ -18,6 +20,15 @@ public class CartServiceImpl implements CartService{
 		
 		return mapper.insert(vo) == 1;
 	}
+
+
+	@Override
+	public List<CartVO> cartList(String mid) {
+		
+		return mapper.cartList(mid);
+	}
+
+
 
 	
 	

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.cart.web.CartControl;
+import co.yedam.cart.web.CartListControl;
 import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
@@ -29,7 +30,7 @@ import co.yedam.member.web.RemoveMemberControl;
 
 import co.yedam.member.web.getMemberControl;
 
-import co.yedam.payment.web.paymentFormControl;
+
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
@@ -51,7 +52,7 @@ import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
 
-import co.yedam.wish.web.DrewWishListControl;
+
 import co.yedam.wish.web.WishControl;
 import co.yedam.wish.web.WishListControl;
 
@@ -72,11 +73,11 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/calendar.do", new FestivalListControl()); // 전체 달력
 
 		// 찜하기
-		map.put("/wish.do", new WishControl());
-		// 장바구니담기
-		map.put("/cart.do", new CartControl());
-		// 결제하기
-		map.put("/paymentForm.do", new paymentFormControl());
+		map.put("/wish.do", new WishControl());  //찜추가하기
+		map.put("/wishList.do", new WishListControl()); // 찜목록 보기
+		// 장바구니
+		map.put("/cart.do", new CartControl()); //장바구니추가하기
+		map.put("/cartList.do", new CartListControl()); //장바구니 목록 보기
 
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());
@@ -111,8 +112,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
 		map.put("/qnaList2.do", new QListControl()); // 상세화면보기
 
-		map.put("/wishList.do", new WishListControl()); // 찜목록페이지 띄우기
-		map.put("/drewwishList.do", new DrewWishListControl()); // 찜 목록 그려주기
+		
 
 		map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
 		map.put("/addQna.do", new AddQnaControl()); // 글 등록
@@ -152,6 +152,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/removeReview.do", new RemoveReviewControl()); // 리뷰 삭제
 
 	}
+
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

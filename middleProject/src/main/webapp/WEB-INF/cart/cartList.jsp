@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
 
 <style>
 body {
@@ -171,35 +169,67 @@ td {
 }
 </style>
 
-
 <body>
+	<section class="cart">
+		<div class="cart__information">
+			<ul>
+				<li>장바구니 상품은 최대 30일간 저장됩니다.</li>
+				<li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
+			</ul>
+		</div>
 
 
-	<c:forEach items="${list}" var="vo">
-		<table>
+		<table class="cart__list">
+			<form>
 			<thead>
 				<tr>
-					<th>축제명</th>
-					<th>축제시작일</th>
-					<th>축제종료일</th>
-					<th>어른티켓가격</th>
-					<th>아동티켓가격</th>
+					<td><input type="checkbox"></td>
+					<td colspan="2">상품정보</td>
+					<td>옵션</td>
+					<td>상품금액</td>
 
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td onClick="location.href='festivalInfo.do?fno=${vo.fcode }'" style="cursor:pointer; font-weight:bold;" >${vo.fname }</td>
-					<td>${vo.fsdate }</td>
-					<td>${vo.fedate }</td>
-					<td>${vo.fprice1 }</td>
-					<td>${vo.fprice2 }</td>
-				</tr>
-				
-			</tbody>
-		</table>
-	</c:forEach>
 
+			<c:forEach items="${list}" var="vo">
+				<tbody>
+					<tr class="cart__list__detail">
+						<td><input type="checkbox"></td>
+						<td><img src="resources/images/${vo.fimage }" alt="..."></td>
+						<td><a href="#">${vo.fname }</a><span class="cart__list__smartstore"> 오조짱축제</span>
+							<p>축제기간 : ${vo.fsdate } ~ ${vo.fedate }</p> <sapn class="price">어른:${vo.fprice1 }원 , 아동:${vo.fprice2 }원</sapn></td>
+						<td class="cart__list__option">
+							<p>수량 : 어른 ${vo.adcnt }매, 아동 ${vo.chcnt }매</p>
+						</td>
+						<td><span class="price"> ${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</span><br></td>
+					</tr>
+				</tbody>
+			</c:forEach>
+
+			<tfoot>
+				<tr>
+					<td colspan="3"><input type="checkbox">
+						<button class="cart__list__optionbtn">선택상품 삭제</button>
+						<button class="cart__list__optionbtn">선택상품 찜</button></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
+			</form>
+		</table>
+
+
+		<div class="cart__mainbtns">
+			<button class="cart__bigorderbtn right">결제하기</button>
+			<p>총 합계</p>
+			<c:forEach items="${list}" var="vo">  
+			<p id="total">${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</p>
+			</c:forEach>
+			
+			
+		</div>
+	</section>
+</body>
 
 
 
