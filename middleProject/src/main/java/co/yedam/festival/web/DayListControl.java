@@ -14,32 +14,29 @@ public class DayListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+
 		
-		
-		
+			
 		
 		FestivalService svc = new FestivalServiceImpl();
 		
 		
 		String selectday = (String)req.getParameter("brdDate");
-		
+		System.out.println(selectday);
 	
 		
-		//List <FestivalVO> list = svc.dayList(selectday); //선택 날짜에 해당하는 축제목록 리스트 
+		List <FestivalVO> list = svc.dayList(selectday); //선택 날짜에 해당하는 축제목록 리스트 
 		
-		//System.out.println(svc.dayList(selectday) );
+		System.out.println(svc.dayList(selectday) );
 		
-		//req.setAttribute("list", list);
-		
+		req.setAttribute("list", list);
 		
 
-		try {  
-			req.getRequestDispatcher("WEB-INF/festival/dayList.jsp") 
-			.forward(req, resp);
+		try {
+			req.getRequestDispatcher("WEB-INF/festival/dayList.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 
 	}
 

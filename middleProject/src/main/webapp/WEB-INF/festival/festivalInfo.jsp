@@ -1,76 +1,124 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<!-- festival section-->
-<section class="py-5">
-	<div class="container px-4 px-lg-5 my-5">
-		<div class="row gx-4 gx-lg-5 align-items-center">
-			<div class="col-md-6">
-				<img class="card-img-top mb-5 mb-md-0"
-					src="resources/images/${vo.fimage }" alt="..." />
-			</div>
-			<div class="col-md-6">
-				<div class="small mb-1">축제코드 : ${vo.fcode }</div>
-				<h1 class="display-5 fw-bolder">${vo.fname }</h1>
-				<div class="fs-5 mb-5">
-					<span class="text-decoration-line-through">${vo.fprice1 }</span> <span>${vo.fprice2 }</span>
-				</div>
-				<p class="lead">${vo.fcontent }</p>
-				<div class="d-flex">
-					<input class="form-control text-center me-3" id="inputQuantity"
-						type="num" value="1" style="max-width: 3rem" />
-					<button class="btn btn-outline-dark flex-shrink-0" type="button">
-						<i class="bi-cart-fill me-1"></i> 티켓 구매하러가기
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
 
-<!-- festival list section-->
-<section class="py-5 bg-light">
-	<div class="container px-4 px-lg-5 mt-5">
-		<h2 class="fw-bolder mb-4">festivalInfo</h2>
-			<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-		<c:forEach items="${list }" var="vo" end="3">
-				<!-- 상품목록 -->
-				<div class="col mb-5">
-					<div class="card h-100">
-						<!-- Sale badge-->
-						<div class="badge bg-dark text-white position-absolute"
-							style="top: 0.5rem; right: 0.5rem">개최중</div>
-						<!-- Product image-->
-						<img class="card-img-top"
-							src="resources/images/${vo.fimage }" alt="..." />
-						<!-- Product details-->
-						<div class="card-body p-4">
-							<div class="text-center">
-								<!-- Product name-->
-								<h5 class="fw-bolder">${vo.fcontent }</h5>
-								<!-- Product reviews-->
-								<div
-									class="d-flex justify-content-center small text-warning mb-2">
-									<%--<c:forEach var="i" begin="1" end="${vo. }">
-										<div class="bi-star-fill"></div>
-									</c:forEach>--> --%>
-								</div>
-								<!-- Product price-->
-								<span class="text-muted text-decoration-line-through">대인 : ${vo.fprice1 }원</span>
-								소인 : ${vo.fprice2 }원
-							</div>
-						</div>
-						<!-- Product actions-->
-						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">티켓 구매하러가기</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				</c:forEach>
-			</div>
-	</div>
-</section>
+
+
+
+<!-- {vo} -->
+
+<h3>${vo.fname }</h3>
+<p class="time_num">축제 진행 중</p>
+<p>${vo.fsdate } ~${vo.fedate }</p>	
+<img src="resources/images/${vo.fimage }" alt="..." />
+<p> <축제소개> : ${vo.fcontent }</p>		
+			
+						
+				
+						
+						
+<button type="button" id="jbtn">  <i >찜하기</i> </button>
+
+<br>
+<br>		
+
+<form>
+
+
+<input type="hidden" name="price1" value="${vo.fprice1 }">
+<input type="hidden" name="price2" value="${vo.fprice2 }">
+<input type="hidden" name="price2" value="${vo.fprice2 }">
+<input type="hidden" name="price2" value="${vo.fprice2 }">
+
+
+<table>
+
+<tr>
+<td>어른가격 ${vo.fprice1 }</td>
+<td><lable>수량을 선택하세요   <input type="number" name="snum" min="1" max="5" value="1"></lable></td>
+</tr>		
+
+
+<tr>
+<td>아동 가격 ${vo.fprice2 }</td>
+<td><lable>수량을 선택하세요 <input type="number" name="snum" min="1" max="5" value="1"></lable></td>
+</tr>	
+</table>
+
+</form>
+	
+
+<button type="button" id="byebtn">  <i >바로구매하기</i> </button>
+<button type="button" id="cartbtn">  <i >장바구니에 담기</i> </button>
+
+
+
+								
+								
+								
+<script>
+
+let user = "user1";
+document.getElementById('jbtn').addEventListener('click',function(e){
+	fetch('wish.do?fno='+'${vo.fcode }' + '&wid=' + user)
+	.then(resolve => resolve.json())
+	.then(result => {
+		console.log(result);
+		if(result.retCode == 'OK'){
+			alert('찜 목록에 추가되었습니다');
+		}else{
+			alert('찜 추가 실패 ');
+		}
+	})
+			
+});//찜추가이벤트 
+
+
+
+
+document.getElementById('cartbtn').addEventListener('click',function(e){
+	fetch('cart.do?fno='+'${vo.fcode }'+'&cid=' +user + '&adcnt' + )
+	.then(resolve => resolve.json())
+	.then(result => {
+		console.log(result);
+		if(result.retCode == 'OK'){
+			alert('장바구니에 추가되었습니다');
+		}else{
+			alert('장바구니 추가 실패 ');
+		}
+	})
+			
+}); //장바구니 담기 이벤트 
+
+
+
+
+document.getElementById('jbtn').addEventListener('click',function(e){
+	fetch('wish.do?fno='+'${vo.fcode }' + '&wid=' + user)
+	.then(resolve => resolve.json())
+	.then(result => {
+		console.log(result);
+		if(result.retCode == 'OK'){
+			alert('찜 목록에 추가되었습니다');
+		}else{
+			alert('찜 추가 실패 ');
+		}
+	})
+			
+}); //바로구매 버튼 
+
+
+
+
+
+
+
+
+</script>
+
+							
+				
+				
+	

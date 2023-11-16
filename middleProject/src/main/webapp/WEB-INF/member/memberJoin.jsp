@@ -20,11 +20,11 @@
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type="text" class="form-control" name="pass" ></td>
+				<td><input type="password" class="form-control" name="pass" ></td>
 			</tr>
 			<tr>
 				<th>비밀번호 확인</th>
-				<td><input type="text" class="form-control" name="checkPass" ></td>
+				<td><input type="password" class="form-control" name="checkPass" ></td>
 			</tr>
 			<tr>
 				<th>주민 등록 번호</th>
@@ -55,11 +55,14 @@
 	    var mid = document.getElementsByName("mid")[0].value;
 	    var pass = document.getElementsByName("pass")[0].value;
 	    var checkPass = document.getElementsByName("checkPass")[0].value;
+	    var ssn = document.getElementsByName("ssn")[0].value;
+	    var phone = document.getElementsByName("phone")[0].value;
+	    var email = document.getElementsByName("email")[0].value;
 	    
 
 	    // 필수 입력 필드 검사
-	     if (name === '' || mid === '' || pass === '') {
-	        alert('값을 입력하세요.');
+	     if (name === '' || mid === '' || pass === '' || checkPass === '' ||ssn === '' ||phone === '' ||email === '' ) {
+	        alert('값을 모두 입력하세요.');
 	    } else {
 	        // 유효성 검사 통과 시 폼 제출
 	       

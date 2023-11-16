@@ -28,13 +28,13 @@
 		<mapper resource="co/yedam/reply/mapper/ReplyMapper.xml" />
 		<!-- <mapper class = "co.yedam.reply.mapper.ReplyMapper" /> -->
 		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
-		<mapper resource="co/yedam/wish/mapper/WishMapper.xml" />
+		<mapper resource="co/yedam/wish/mapper/WishMapper.xml" />  
 
 		<mapper resource="co/yedam/reply/mapper/ReplyMapper.xml" />
 
 		<!-- <mapper class = "co.yedam.reply.mapper.ReplyMapper" /> -->
 
-		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
+		
 
 
 

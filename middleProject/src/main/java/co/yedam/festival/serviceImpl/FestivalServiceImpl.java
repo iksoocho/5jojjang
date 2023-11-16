@@ -16,24 +16,18 @@ public class FestivalServiceImpl implements FestivalService {
 
 	@Override
 	public List<FestivalVO> festivalList() {
-		return mapper.festivalList(); // 나중에 바꾸기
+		return mapper.festivalList(); // 전체조회
 	}
+	
 
-	@Override
-
-	public FestivalVO select(String pno) { // 한건 상세조회
-
-		return null;
-	}
-
-	@Override
+	@Override  //한건 상세 조회 
 	public FestivalVO getfestivalInfo(String fcode) {
 		return mapper.festival(fcode);
 	}
 
-	@Override
+	@Override  //날짜에 해당하는 축제 리스트 불러오기 
 	public List<FestivalVO> dayList(String day) {
-		return null;
+		return mapper.dayList(day);
 	}
 
 }
