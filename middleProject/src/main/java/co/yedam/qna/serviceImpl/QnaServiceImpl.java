@@ -15,8 +15,8 @@ public class QnaServiceImpl implements QnaService {
 	QnaMapper mapper = sqlSession.getMapper(QnaMapper.class);//인터페이스 , 실제인스턴스
 	
 	@Override
-	public List<QnaVO> qnaList() {
-		return mapper.selectList();
+	public List<QnaVO> qnaList(int page) {
+		return mapper.selectList(page);
 	}
 
 	@Override
@@ -40,8 +40,8 @@ public class QnaServiceImpl implements QnaService {
 	}
 	
 	@Override
-	public int getTotalCnt(int qno) {
-		return mapper.getTotalCnt(qno);
+	public int getTotalCnt() {
+		return mapper.getTotalCnt();
 	}
 
 }

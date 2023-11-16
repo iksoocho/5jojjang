@@ -16,6 +16,7 @@ public class AddReviewFormControl implements Command {
 		
 		HttpSession session = req.getSession();
 		
+		String path = "review/addReviewForm.tiles";
 		 
 		if(session.getAttribute("logId") == null){
 			try {
@@ -26,7 +27,7 @@ public class AddReviewFormControl implements Command {
 		} else {
 
 	try {
-		req.getRequestDispatcher("WEB-INF/review/addReviewForm.jsp") //로그인정보있으면 등록화면으로 이동.
+		req.getRequestDispatcher(path) //로그인정보있으면 등록화면으로 이동.
 		.forward(req, resp);
 	} catch (ServletException e) {
 		e.printStackTrace();

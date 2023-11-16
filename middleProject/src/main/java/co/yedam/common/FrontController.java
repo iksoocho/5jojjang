@@ -29,6 +29,7 @@ import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
 import co.yedam.qna.web.ModifyQnaControl;
 import co.yedam.qna.web.ModifyQnaFormControl;
+import co.yedam.qna.web.QListControl;
 import co.yedam.qna.web.QnaListControl;
 import co.yedam.qna.web.RemoveQnaControl;
 import co.yedam.qna.web.RemoveQnaFormControl;
@@ -43,7 +44,17 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
-import co.yedam.wish.web.WishControl;
+
+
+import co.yedam.festival.web.FestivalInfoControl;
+import co.yedam.festival.web.FestivalListControl;
+import co.yedam.adminPage.web.adFvListControl;
+import co.yedam.adminPage.web.addAdFvControl;
+import co.yedam.adminPage.web.addAdFvFormControl;
+import co.yedam.adminPage.web.getAdFvControl;
+import co.yedam.adminPage.web.modAdFvFormControl;
+import co.yedam.festival.web.DayListControl;
+
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
    // 위해 나눠놈
@@ -61,7 +72,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
       map.put("/calendar.do", new FestivalListControl()); // 전체 달력
       
       //찜하기
-      map.put("/wish.do", new WishControl()); 
+      //map.put("/wish.do", new WishControl()); 
       //장바구니담기
       map.put("/cart.do", new CartControl()); 
       
@@ -100,8 +111,13 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		
 
 
-      map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
-      map.put("/addQna.do", new AddQnaControl()); // 글 등록
+
+		// Qna
+		map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
+		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
+		map.put("/qnaList2.do", new QListControl()); // 상세화면보기
+				
+
 
 
 //      System.out.println("오후7시  1번 커밋! ");
@@ -172,5 +188,5 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
       controller.execute(req, resp);
 
    }
-
 }
+

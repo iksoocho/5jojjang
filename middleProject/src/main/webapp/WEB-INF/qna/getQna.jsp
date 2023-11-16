@@ -50,7 +50,8 @@
 
 	</table>
 </form>
-<!-- 
+
+
 <h3> Qna 게시글에 댓글 등록하기</h3>
 <table>
 <tr>
@@ -60,6 +61,8 @@
 </tr>
 </table>
 
+<input type="hidden" name="mid" value="${loginId }">
+
 <h3> Qna 게시글 댓글 목록 - 관리자가 다는 답글! </h3>
 
 <ul id="replylist">
@@ -67,7 +70,7 @@
 	<span>관리자</span><button>삭제</button></li>
 </ul>
 
-	<p><a href="qnaList.do"> back to QnA List </a></p>
+	<p><a href="qnaList.do"> 돌아가기  </a></p>
 
 <script>
 //글 삭제버튼
@@ -76,14 +79,15 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 	document.forms.myForm.submit(); //myform의 submit 이벤트를 removeform.do로 바꿔주는 거.
 });
 
-let rqpno = "${qno.qno}"
-let writer = "${admin}"
+let rpqno = "${rpqno}"
+let writer = "${logId}"
+let reply = "${rpcontent}"
 //댓글 쓰면 한줄 들어가게.
 	function makeRow(reply){
 		
 		function deleteCallback(e){
 			//** 관리자가 아니면 댓글 못쓰도록! 조건 걸어줘야 함! - 이부분은 로그인 하는거랑 맞춰봐야함.
-			if(writer != administrator){
+			if(responsibility.equals('user')){
 				alert('권한이 없습니다');
 			}
 				//console.log(e.target.parentElement); //button태그 상위 : li
@@ -92,7 +96,7 @@ let writer = "${admin}"
 			fetch('removeReply.do?rpno='+ reply.rpno)
 			.then(resolve => resolve.json())
 			.then(result => {
-					//console.log("result.retCode", result.retCode )
+					console.log("result.retCode", result.retCode )
 				if(result.retCode == 'OK'){
 					alert('SUCCESS');
 					e.target.parentElement.remove();
@@ -108,8 +112,8 @@ let writer = "${admin}"
 		temp.style.display = "block";
 		//console.log(temp);
 		temp.querySelector('span:nth-of-type(1)').innerHTML = reply.rpno; //스판태그의 첫번째 애를 가져올거임
-		temp.querySelector('b').innerHTML = reply.rcotent;
-		temp.querySelector('span:nth-of-type(2)').innerHTML = admin //관리자가해야함! 
+		temp.querySelector('b').innerHTML = reply.rpcontent;
+		temp.querySelector('span:nth-of-type(2)').innerHTML = mid //관리자가해야함! 
 		temp.querySelector('button').addEventListener('click', deleteCallback);
 		return temp;
 	} //makeRow
@@ -119,17 +123,17 @@ let writer = "${admin}"
 	document.querySelector('#addReply').addEventListener('click', function(e){
 		
 		let reply = document.querySelector('#content').value ; //input태그니까 value가 있는거
-		
-		if(!rpqno || writer != admin || !reply){
-			alert('댓글못달지롱');
+		let mid = document.getElementsByName('mid')[0].value;
+		//if(!rpqno || responsibility != 'admin' || !rpcontent){
+			if( mid != ("admin") ){
+			alert('관리자만 댓글 작성 가능');
 			return; 
 		}
-		//쓰려면 ajax호출해야함. - bno, wirter, reply 값을 ser
-		vlet쪽으로 전달하도록 하겠음
+		//쓰려면 ajax호출해야함. - bno, wirter, reply 값을 servlet쪽으로 전달하도록 하겠음
 		fetch('addReply.do', {
 			method: 'post',
 			headers: {'Content-Type' : 'application/x-www-form-urlencoded'},
-			body: 'rpqno=' + rpqno + '&reply='+reply +'&replyer='+ admin 
+			body: 'rpqno=' + rpqno + '&rpcontent='+ reply
 			
 		})
 		.then(resolve => resolve.json())
@@ -145,4 +149,3 @@ let writer = "${admin}"
 	
 </script>
 
- -->

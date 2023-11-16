@@ -22,7 +22,9 @@
 
 	<mappers>
 		<mapper resource="co/yedam/member/mapper/MemberMapper.xml" />
+		
 		<mapper resource="co/yedam/qna/mapper/QnaMapper.xml" />
+
 		<mapper resource="co/yedam/review/mapper/ReviewMapper.xml" />
 
 		<mapper resource="co/yedam/reply/mapper/ReplyMapper.xml" />
@@ -30,11 +32,17 @@
 		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
 		<mapper resource="co/yedam/wish/mapper/WishMapper.xml" />  
 
+
+		<mapper resource="co/yedam/review/mapper/ReviewMapper.xml" />
+
 		<mapper resource="co/yedam/reply/mapper/ReplyMapper.xml" />
-
-		<!-- <mapper class = "co.yedam.reply.mapper.ReplyMapper" /> -->
-
+		<mapper resource="co/yedam/adminPage/mapper/AdminMapper.xml" />
 		
+		
+	
+		<mapper resource="co/yedam/festival/mapper/FestivalMapper.xml" />
+	<!-- 	<mapper resource="co/yedam/wish/mapper/WishMapper.xml" /> -->
+
 
 
 
