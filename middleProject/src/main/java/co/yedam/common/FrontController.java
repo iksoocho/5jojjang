@@ -15,11 +15,19 @@ import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
 import co.yedam.festival.web.TotalListControl;
 import co.yedam.member.web.CheckIdControl;
+
+import co.yedam.member.web.CheckModifyControl;
+
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
+
+
+
+import co.yedam.member.web.RemoveFormControl;
+import co.yedam.member.web.RemoveMemberControl;
 
 import co.yedam.member.web.getMemberControl;
 
@@ -94,8 +102,13 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
+
 		map.put("/logout.do", new LogoutControl());
 		map.put("/checkLogin.do", new CheckLoginControl());
+
+
+		map.put("/logout.do", new LogoutControl()); 
+		map.put("/checkLogin.do", new CheckLoginControl()); //로그인 실패 경고창
 
 
 
@@ -107,6 +120,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 회원가입
 		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면
 		map.put("/join.do", new JoinControl());
+
 		map.put("/checkId.do", new CheckIdControl());
 		
 
@@ -119,6 +133,9 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 				
 
 
+		map.put("/checkId.do", new CheckIdControl()); //회원가입시 아이디 중복 체크
+
+
 
 //      System.out.println("오후7시  1번 커밋! ");
 
@@ -127,6 +144,15 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/getMember.do", new getMemberControl());
 		map.put("/modifyForm.do", new ModifyFormControl());
 		map.put("/modifyMember.do", new ModifyMemberControl());
+
+
+		map.put("/checkModify.do", new CheckModifyControl()); //회원 정보 수정 확인 경고창
+		map.put("/removeForm.do", new RemoveFormControl());
+		map.put("/removeMember.do", new RemoveMemberControl());
+
+		// Qna
+		map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
+		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
 
 
       map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); // 수정 폼
@@ -177,6 +203,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
       // 요청정보의 한글 인코딩 방식
       req.setCharacterEncoding("UTF-8");
 
+
       System.out.println("FrontController");
       String uri = req.getRequestURI(); // http://localhost:8080/helloJSP/??.do 에서 helloJSP/??.do가 uri >>어떤 url이 들어오냐에
       // 따라 다른 매소드들을 적용하기위해
@@ -186,7 +213,12 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 
       Command controller = map.get(page);
       controller.execute(req, resp);
+	}
+
+
+      
 
    }
-}
+
+
 

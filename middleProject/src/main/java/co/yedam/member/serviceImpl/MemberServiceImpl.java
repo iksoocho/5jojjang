@@ -41,7 +41,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public boolean removeMember(String mid) {
 		// TODO Auto-generated method stub
-		return false;
+		return mapper.delete(mid)==1;
 	}
 
 	@Override

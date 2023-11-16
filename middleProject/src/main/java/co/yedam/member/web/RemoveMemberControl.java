@@ -7,23 +7,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Command;
 import co.yedam.member.service.MemberService;
-import co.yedam.member.service.MemberVO;
 import co.yedam.member.serviceImpl.MemberServiceImpl;
 
-public class ModifyMemberControl implements Command {
+public class RemoveMemberControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		MemberVO vo = new MemberVO();
-		vo.setName(req.getParameter("name"));
-		vo.setPass(req.getParameter("pass"));
-		vo.setPhone(req.getParameter("phone"));
-		vo.setMid(req.getParameter("mid"));
+		
+		String mid = req.getParameter("mid");
 		
 		MemberService svc = new MemberServiceImpl();
 		
-		if(svc.aditMember(vo)) {
+		if(svc.removeMember(mid)) {
 			try {
 				resp.sendRedirect("logout.do");
 			} catch (IOException e) {
@@ -38,6 +34,8 @@ public class ModifyMemberControl implements Command {
 				e.printStackTrace();
 			}
 		}
+		
+		
 	}
 
 }
