@@ -54,7 +54,7 @@
 
 
 
-<<<<<<< HEAD
+
 <!-- <ul>
 
 		<li><a class="icon solid fa-home" href="calendar.do"><span>축제일정보기</span></a></li>
@@ -72,5 +72,4 @@
 					</ul></li>
 				<li><a href="#">Veroeros feugiat</a></li>
 			</ul> -->
-=======
->>>>>>> refs/heads/1
+
