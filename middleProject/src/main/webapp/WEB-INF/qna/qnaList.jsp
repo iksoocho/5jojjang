@@ -8,12 +8,31 @@
 
 <input type="hidden" name="qno" value="${qno.qno }">
 
-
-
-
 <h3>QnA전체 리스트보기</h3>
 
 
+<table border="1">
+	<thead>
+		<tr>
+			<th>qno</th>
+			<th>title</th>
+			<th>writer</th>
+			<th>date</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<c:forEach items="${qlist }" var="vo">
+			<tr>
+				<td>${vo.qno }</td>
+				<td><a href="getQna.do?qno=${vo.qno }"> ${vo.qtitle }</a></td>
+				<td>${vo.qid }</td>
+				<td>${vo.qwriteDate }</td>
+			</tr>
+		</c:forEach>
+
+	</tbody>
+</table>
 
 <div id="paging"></div>
 
@@ -30,40 +49,31 @@
 </ul> -->
 
 <div style="display: none" id = "list" ></div>
-<table id = "template">
-
-<tr >
-<th >글번호</th>
-<th>제목</th>
-<th>작성자</th>
-<th>내용</th>
-<th>작성시간</th>
-</tr>
-
-</table>
 
 
 <div class="pagination"></div>
 
 
 
+
+<!--  
 <script>
 
 	
 //qna 전체목록 보여주기
 	
-	let writer = "${logId }"; 
-		//or 요렇게 bno = document.querySelector('.boardNo').innerHTML;
+	//let writer = "${logId }"; 
+		
+
 	let page = 1;	//지금 있는 페이지에 초록색 표시하려고 썼음 
 	
-	function showList(pg = 1)	{ //페이지 초기값 넣어준거임.
-		//안보이는 li의 첫번째 요소만 제외하고(template용도기 때문에!) 지우겠다 하는거임 for 초기화! 
-		document.querySelectorAll('#list li:not(:nth-of-type(1))') 
-		fetch('qnaList2.do?page=' + pg) //페이지 안넘겨서 첨에 딱오면 1페이지로 하게끔 한거.
-	.then(resolve => resolve.json())
-	.then(result => {
+	function showList(pg = 1)	{ 
+		document.querySelectorAll('#li td:not(:nth-of-type(1))').forEach(li => li.remove()); 
+		fetch('qnaList2.do?page=' + pg) 
+		.then(resolve => resolve.json())
+		.then(result => {
 		console.log("result" , result);
-		//댓글쓰면 마지막페이지에 보이도록 하기 위함
+	
 		
 		if(pg < 0){
 			let page = showList(Math.ceil(result.dto.total/5))
@@ -85,13 +95,14 @@
 		//result에 있는 list에 대한 한건 한건해서 목록 그려주는거
 		result.list.forEach(item => {
 			let li = makeRow(item);
-
+				console.log('li 값 나와라', li);
+			
 			//ul > li 생성
-			document.querySelector('#list').append(li);
+			document.querySelector('#tbody').append(li);
 			
 		})
 			//page생성
-				//console.log("dto는 뭘까요" , result.dto);
+				console.log("dto는 뭘까요" , result.dto);
 			makePaging(result.dto); 
 			
 	})
@@ -110,7 +121,7 @@
 		if(dto.prev){
 			let aTag = document.createElement('a');
 			aTag.setAttribute('href', dto.startPage - 1);
-			aTag.innerHTML = ">&laquo;";
+			aTag.innerHTML = ">>";
 			document.querySelector('.pagination').append(aTag);
 		}
 		for(let i=dto.startPage; i<=dto.endPage; i++){
@@ -126,7 +137,7 @@
 		if(dto.next){
 			let aTag = document.createElement('a');
 			aTag.setAttribute('href', dto.endPage + 1);
-			aTag.innerHTML = "&raquo";
+			aTag.innerHTML = "<<";
 			document.querySelector('.pagination').append(aTag);
 		} 
 		
@@ -137,7 +148,7 @@
 		document.querySelectorAll('.pagination').forEach(elem =>{
 			elem.addEventListener('click', function(e){
 				e.preventDefault(); // form, a => 링크 기능을 차단하고 아랫부분을 계쏙 실행하겠습니다~
-				page = elem.getAttribute('href');
+				pg = elem.getAttribute('href');
 				showList(page);
 			})
 		})
@@ -147,28 +158,11 @@
 
 
 
-	//댓글 쓰면 한줄 들어가게.
-	function makeRow(list){
-		
-		
-		let temp = document.querySelector('#template').cloneNode(true); //디폴트가 false인데 true로! ** cloneNode 
-		console.log('temp값 나와라', temp); //temp 콘솔에 찍으면 table 나옴.
-		
-		temp.style.display = "block";
-		
-		temp.querySelector('th:nth-of-type(1)').innerHTML = list.qno; 
-		temp.querySelector('th:nth-of-type(2)').innerHTML = list.qtitle;
-		temp.querySelector('th:nth-of-type(3)').innerHTML = list.qid;
-		temp.querySelector('th:nth-of-type(4)').innerHTML = list.qcontent;
-		temp.querySelector('th:nth-of-type(5)').innerHTML = list.qwritedate; 
-		
-		
-		return temp;
-			
-	} //makeRow
+	
 	
 
 	</script>
+-->
 </html>
 
 

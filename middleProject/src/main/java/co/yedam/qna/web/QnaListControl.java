@@ -25,7 +25,20 @@ public class QnaListControl implements Command {
 
 		String path = "qna/qnaList.tiles";
 
-	
+		QnaService svc = new QnaServiceImpl();
+		List<QnaVO> list = svc.qnaList();
+			System.out.println("list" + list);
+		req.setAttribute("qlist", list);
+		
+		try {
+			req.getRequestDispatcher(path).forward(req, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);

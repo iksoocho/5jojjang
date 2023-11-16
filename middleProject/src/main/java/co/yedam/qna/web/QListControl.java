@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,11 +23,15 @@ public class QListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		
+
+
+		/*
+		String qno = req.getParameter("qno");
 		
 		String page = req.getParameter("page");
 		page = page == null ? "1" : page;
-
+			System.out.println("page : " + page);
+		
 		QnaService svc = new QnaServiceImpl();
 
 		PageDTO dto = new PageDTO(svc.getTotalCnt(), Integer.parseInt(page));
@@ -51,7 +56,7 @@ public class QListControl implements Command {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-		
+		*/
 		
 	}
 
