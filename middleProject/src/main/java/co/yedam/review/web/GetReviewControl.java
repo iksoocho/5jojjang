@@ -12,7 +12,7 @@ public class GetReviewControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-		//String path = "qna/qnaList.tiles";
+		String path = "review/getReview.tiles";
 		
 		String rno = req.getParameter("rno"); 
 		ReviewService svc = new ReviewServiceImpl();
@@ -21,7 +21,7 @@ public class GetReviewControl implements Command {
 		req.setAttribute("rno", vo);
 				
 		try {
-			req.getRequestDispatcher("WEB-INF/review/getReview.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

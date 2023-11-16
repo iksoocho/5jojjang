@@ -3,9 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
-<form action="modifyQnaForm.do" name="qnaForm">
+<form action="modifyReviewForm.do" name="reiewForm">
 
 	<input type="hidden" name="rno" value="${rno.rno }">
+	<input type="hidden" name="mid" value="${loginId }">
 	<table border="1" >
 		<tr>
 			<th>글번호</th>
