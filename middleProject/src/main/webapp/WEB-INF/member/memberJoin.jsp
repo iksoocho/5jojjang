@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>네이버 회원가입 폼</title>
     <link rel="icon" href="./images/images2/favicon.png">
-    <link rel="stylesheet" href="./quiz07.css">
+    <!-- <link rel="stylesheet" href="./quiz07.css"> -->
 	
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
@@ -53,6 +53,12 @@ a{
 }
 
 .member b{
+    /* border: 1px solid #000; */
+    display: block; /*수직 정렬하기 */
+    margin-bottom: 5px;
+}
+
+.member h1 {
     /* border: 1px solid #000; */
     display: block; /*수직 정렬하기 */
     margin-bottom: 5px;
@@ -170,9 +176,11 @@ color:#fff
 	</style>
 </head>
 <body>
-	<h3>회원 가입</h3>
+	
 	<form id="join" action="join.do" method="post">
+	
 		<div class="member">
+		<h1 class="title">회원 가입</h1>
         <!-- 1. 로고 -->
         <!-- <img class="logo" src="./images/images2/logo-naver.png"> -->
 
@@ -195,43 +203,36 @@ color:#fff
         </div>
 
         <!-- 3. 필드(생년월일) -->
-        <div class="field birth">
-            <b>생년월일</b>
+        <div class="field birth" name="ssn">
+            <b>주민 등록 번호</b>
             <div>
-                <input type="number" placeholder="년(4자)">                
-                <select>
-                    <option value="">월</option>
-                    <option value="">1월</option>
-                    <option value="">2월</option>
-                    <option value="">3월</option>
-                    <option value="">4월</option>
-                    <option value="">5월</option>
-                    <option value="">6월</option>
-                    <option value="">7월</option>
-                    <option value="">8월</option>
-                    <option value="">9월</option>
-                    <option value="">10월</option>
-                    <option value="">11월</option>
-                    <option value="">12월</option>
-                </select>
-                <input type="number" placeholder="일">
+                <input type="text" placeholder="앞자리(6자)" name="fssn" maxlength="6">                
+                <!-- <select id="month">
+                    <option name="month" value="0">월</option>
+                    <option name="month" value="1">1월</option>
+                    <option name="month" value="2">2월</option>
+                    <option name="month" value="3">3월</option>
+                    <option name="month" value="4">4월</option>
+                    <option name="month" value="5">5월</option>
+                    <option name="month" value="6">6월</option>
+                    <option name="month" value="7">7월</option>
+                    <option name="month" value="8">8월</option>
+                    <option name="month" value="9">9월</option>
+                    <option name="month" value="10">10월</option>
+                    <option name="month" value="11">11월</option>
+                    <option name="month" value="12">12월</option>
+                </select> -->
+                <input type="password" placeholder="뒷자리(7자리)" name="bssn" maxlength="7">
             </div>
         </div>
 
         <!-- 4. 필드(성별) -->
-        <div class="field gender">
-            <b>성별</b>
-            <div>
-                <label><input type="radio" name="gender">남자</label>
-                <label><input type="radio" name="gender">여자</label>
-                <label><input type="radio" name="gender">선택안함</label>
-            </div>
-        </div>
+       
 
         <!-- 5. 이메일_전화번호 -->
         <div class="field">
-            <b>본인 확인 이메일<small>(선택)</small></b>
-            <input type="email" placeholder="선택입력" name="email">
+            <b>본인 확인 이메일<small></small></b>
+            <input type="email" placeholder="직접입력" name="email">
         </div>
         
         <div class="field tel-number">
@@ -263,16 +264,17 @@ color:#fff
 	    var mid = document.getElementsByName("mid")[0].value;
 	    var pass = document.getElementsByName("pass")[0].value;
 	    var checkPass = document.getElementsByName("checkPass")[0].value;
-	    const year = document.querySelector('.field.birth input[type="number"]:nth-child(1)').value;
-	    const month = document.querySelector('.field.birth select').value;
-	    const day = document.querySelector('.field.birth input[type="number"]:nth-child(3)').value;
-	    var ssn = year+month+day;
+	    var fssn = document.getElementsByName("fssn")[0].value;
+	    var bssn = document.getElementsByName("bssn")[0].value;
+	    
 	    var phone = document.getElementsByName("phone")[0].value;
 	    var email = document.getElementsByName("email")[0].value;
 	    
+	   
+	    
 
 	    // 필수 입력 필드 검사
-	     if (name === '' || mid === '' || pass === '' || checkPass === '' ||year === '' || month === '' || day === '' ||phone === '' ||email === '' ) {
+	     if (name === '' || mid === '' || pass === '' || checkPass === '' ||fssn === '' || bssn === ''  ||phone === '' ||email === '' ) {
 	        alert('값을 모두 입력하세요.');
 	    } else {
 	        // 유효성 검사 통과 시 폼 제출

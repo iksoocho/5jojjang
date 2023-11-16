@@ -32,8 +32,9 @@ public class JoinControl implements Command {
 		MemberVO vo = new MemberVO();
 		vo.setName(req.getParameter("name"));
 		vo.setMid(req.getParameter("mid"));
-		vo.setPass(req.getParameter("pass"));
-		vo.setSsn(req.getParameter("ssn"));
+		String pass = UserSha256.encrypt(req.getParameter("pass"));
+		vo.setPass(pass);
+		vo.setSsn(req.getParameter("fssn")+"-"+req.getParameter("bssn"));
 		vo.setPhone(req.getParameter("phone"));
 		vo.setEmail(req.getParameter("email"));
 		

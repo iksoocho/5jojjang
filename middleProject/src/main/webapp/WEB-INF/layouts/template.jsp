@@ -9,6 +9,13 @@
 -->
 <html>
 	<head>
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	
 		<title>Strongly Typed by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -21,13 +28,13 @@
 				<section id="header">
 					<div class="container">
 						<!-- header -->
-						<tiles:insertAttribute name="header"></tiles:insertAttribute>	
+							<tiles:insertAttribute name="menu"></tiles:insertAttribute>
 						
 
 						<!-- Menu -->
 						
-						 <tiles:insertAttribute name="menu"></tiles:insertAttribute>
-							
+						 
+						<tiles:insertAttribute name="header"></tiles:insertAttribute>	
 
 					</div>
 				</section>
@@ -42,12 +49,7 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			
 
 	</body>
 </html>
