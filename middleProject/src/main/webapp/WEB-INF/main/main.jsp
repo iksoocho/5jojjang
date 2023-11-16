@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <h3>5조 중간프로젝트</h3>
@@ -13,7 +13,7 @@
 
 
 
-	<h3>5조 중간프로젝트 입니다.깃 테스트</h3>
+<h3>5조 중간프로젝트 입니다.깃 테스트</h3>
 
 <body>
 
@@ -22,12 +22,15 @@
 			<div class="sidebar-heading border-bottom bg-light">
 				<h5>guest</h5>
 			</div>
-			
+
 		</c:when>
 
 		<c:otherwise>
 			<div class="sidebar-heading border-bottom bg-light">
-				<h5>(${loginId })님 환영합니다 <c:if test="${loginId=='admin'}">${responsibility }</c:if></h5>
+				<h5>
+					(${loginId })님 환영합니다
+					<c:if test="${loginId=='admin'}">${responsibility }</c:if>
+				</h5>
 			</div>
 		</c:otherwise>
 	</c:choose>

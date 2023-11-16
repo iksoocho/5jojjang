@@ -39,7 +39,7 @@ public class LoginControl implements Command {
 		
 			
 			try {
-				resp.getWriter().print("{\"retCode\":\"OK\"}");
+				
 				resp.sendRedirect("main.do");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -47,7 +47,7 @@ public class LoginControl implements Command {
 			}
 		} else {
 			try {
-				resp.getWriter().print("{\"retCode\":\"NG\"}");
+				
 				resp.sendRedirect("loginForm.do");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
