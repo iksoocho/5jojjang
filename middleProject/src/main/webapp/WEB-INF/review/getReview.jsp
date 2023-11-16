@@ -3,13 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
-<form action="modifyQnaForm.do" name="qnaForm">
+<form action="modifyReviewForm.do" name="reiewForm">
 
 	<input type="hidden" name="rno" value="${rno.rno }">
+	<input type="hidden" name="mid" value="${loginId }">
 	<table border="1" >
 		<tr>
 			<th>글번호</th>
-			<td class="qno">${rno.rno }</td>
+			<td class="rno">${rno.rno }</td>
 		</tr>
 		
 		<tr>
@@ -30,13 +31,20 @@
 			<td>${rno.rid }</td>
 		</tr>
 		
-
+		<tr>
+			<th>이미지</th>
+			<c:if test="${!empty rno.rimage }">
+				<td><img style="align: center" width="80px" src="images/${rno.rimage }"></td>
+			</c:if>
+		
+		</tr>
 		
 		<tr>
+			<th>내용</th>
 			<td colspan="4" align="center">
 			
 			<c:choose>
-				<c:when test="${!empty loginId && loginId == qno.qid}">
+				<c:when test="${!empty logininId && logininId == rno.rid}">
 					<input type="submit" value="수정">
 					<input type="button" value="삭제">
 				</c:when>
