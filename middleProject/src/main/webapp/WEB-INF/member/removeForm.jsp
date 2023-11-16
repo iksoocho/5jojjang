@@ -34,6 +34,7 @@
 		var passCheck = document.getElementsByName("passCheck")[0].value;
 		var pass = document.getElementsByName("pass")[0].value;
 		
+		
 		if(passCheck == pass){
 			if(confirm('회원 탈퇴 하시겠습니까?')){
     			alert('다시 로그인 해 주세요.');
