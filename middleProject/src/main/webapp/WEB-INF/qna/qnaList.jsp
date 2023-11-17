@@ -225,9 +225,8 @@
 <script src="adminResource/js2/datatables-simple-demo.js"></script>
 <link href="adminResource/css2/styles.css" rel="stylesheet" />
 
-<<<<<<< HEAD
-<h3>QnA전체 리스트보기</h3>
 
+<<<<<<< HEAD
 
 <table border="1">
 	<thead>
@@ -397,6 +396,9 @@ qna랑 review 게시판 아래에 페이징해야됨!
 =======
 
 >>>>>>> refs/heads/4
+=======
+
+>>>>>>> branch 'develope' of https://github.com/iksoocho/5jojjang.git
 
 
 
