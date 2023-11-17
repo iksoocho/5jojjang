@@ -45,7 +45,7 @@
 								<li><a class="dropdown-item"
 									href="getMember.do?mid=${loginId }">회원 정보</a></li>
 
-								<li><a class="dropdown-item" href="#!">찜 목록</a></li>
+								<li><a class="dropdown-item" href="wishList.do?mid=${loginId }">찜 목록</a></li>
 								<li><a class="dropdown-item" href="#!">구매 내역</a></li>
 							</ul></li>
 					</c:otherwise>
@@ -69,11 +69,16 @@
 
 
 
+
 				<li class="nav-item"><a class="nav-link" href="reviewList.do">리뷰게시판</a></li>
+
+			
+
 				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 
 			</ul>
-			<form class="d-flex">
+			  <form class="d-flex" action="cartList.do">
+			  <input type = "hidden" name="midd" value="${loginId }">
 				<button class="btn btn-outline-dark" type="submit">
 					<i class="bi-cart-fill me-1"></i> Cart <span
 						class="badge bg-dark text-white ms-1 rounded-pill">0</span>

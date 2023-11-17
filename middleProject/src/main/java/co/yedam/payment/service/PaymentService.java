@@ -1,7 +1,5 @@
 package co.yedam.payment.service;
 
 public interface PaymentService {
-
-	public boolean addPayment(PaymentVO vo);
-	
+	public boolean appPayment(PaymentVO vo); //결제정보 입력
 }

@@ -14,7 +14,7 @@ public interface WishMapper {
 	
 	public List <WishVO> wishList(String mid); //해당아이디가 찜한 목록 전부 가져오기 
 	
-	
+	public int delete (int wno); //찜삭제 
 	
 	
 }

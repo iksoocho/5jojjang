@@ -9,9 +9,10 @@ public interface FestivalMapper {
 	List<FestivalVO> dayList(String day);
 
 	List<FestivalVO> festivalList();
+	
+	List<FestivalVO> selectLike(String fcode);
 
 	FestivalVO festival(String fcode);
 	
-	List<FestivalVO> selectLike(String fcode);
 	
 }
