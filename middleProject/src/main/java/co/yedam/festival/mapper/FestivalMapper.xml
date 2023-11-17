@@ -24,31 +24,15 @@
    
    <select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
 	  <![CDATA[  
-	     SELECT *
-	  	 FROM 
-	       (
-	           SELECT *
-	           FROM festival
-	           ORDER BY likeIt DESC
-	       )
-	      WHERE ROWNUM <= 3 and fcode != #{fno}
+	   select * from (select * from 
+           (SELECT *
+           FROM festival
+           where likeit >=4)
+           ORDER BY dbms_random.value
+           ) b
+           where rownum <= 3 and fcode != #{fno}
    	]]>
 	</select>
-   
-   
-   
-
-	<select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
-	  <![CDATA[  
-	     SELECT *
-	  	 FROM 
-	       (
-	           SELECT *
-	           FROM festival
-	           ORDER BY likeIt DESC
-	       )
-	      WHERE ROWNUM <= 3 and fcode != #{fno}
-   	]]>
-	</select>
+  
 </mapper>
    

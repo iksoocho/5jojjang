@@ -76,7 +76,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 장바구니담기
 		map.put("/cart.do", new CartControl());
 		// 결제하기
-		map.put("/paymentForm.do", new paymentFormControl());
+		//map.put("/paymentForm.do", new paymentFormControl());
 
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());

@@ -14,6 +14,5 @@ public interface FestivalMapper {
 
 	FestivalVO festival(String fcode);
 	
-	List<FestivalVO> selectLike(String fcode);
 	
 }

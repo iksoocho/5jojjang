@@ -15,29 +15,21 @@ public class FestivalInfoControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 
-
 		FestivalService svc = new FestivalServiceImpl();
-		
+
 		String fcode = req.getParameter("fno");
 		String path = "festival/festivalInfo.tiles";
 		FestivalVO vo = svc.getfestivalInfo(fcode);
-		
-		List<FestivalVO> list = svc.selectLike(fcode); //별점 높은순 목록
 
-<<<<<<< HEAD
+		List<FestivalVO> list = svc.selectLike(fcode); // 별점 높은순 목록
+
 		req.setAttribute("list", list);
-=======
-		List<FestivalVO> list = svc.selectLike(fcode);
-		
->>>>>>> refs/heads/develope
+
 		req.setAttribute("vo", vo);
-		req.setAttribute("list", list);
-		
-		System.out.println(vo);		
-		
+
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
