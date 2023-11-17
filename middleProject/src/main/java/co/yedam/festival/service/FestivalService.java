@@ -11,4 +11,5 @@ public interface FestivalService {
 	public FestivalVO getfestivalInfo(String fcode);// 페스티벌 이름 선택하면 상세페이지로 이동 메소드
 
 	List<FestivalVO> selectLike(String fcode);
+
 }

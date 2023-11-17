@@ -236,12 +236,13 @@ function del(vo){
 }//삭제온클릭이벤트
 
 
-
-
-
-
 </script>
 
+<<<<<<< HEAD
 
 
 </html>
+=======
+</body>
+</html>
+>>>>>>> refs/remotes/origin/3
