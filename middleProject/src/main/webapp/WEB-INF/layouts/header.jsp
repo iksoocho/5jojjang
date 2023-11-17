@@ -40,7 +40,7 @@
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" id="navbarDropdown"
 							href="myPageForm.do" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false">마이 페이지</a>
+							aria-expanded="true">마이 페이지</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item"
 									href="getMember.do?mid=${loginId }">회원 정보</a></li>
@@ -70,7 +70,7 @@
 
 
 				<li class="nav-item"><a class="nav-link" href="">리뷰게시판</a></li>
-				<li class="nav-item"><a class="nav-link" href="">QNA</a></li>
+				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 
 			</ul>
 			<form class="d-flex">
