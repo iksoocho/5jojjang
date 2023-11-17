@@ -55,7 +55,7 @@
 				<c:choose>
 					<c:when
 						test="${!empty responsibility && responsibility == 'admin' }">
-						<<li class="nav-item"><a class="nav-link" href="">축제 관리</a></li>
+						<<li class="nav-item"><a class="nav-link" href="adFvList.do">축제 관리</a></li>
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item"><a class="nav-link" href="calendar.do">축제
@@ -69,7 +69,7 @@
 
 
 
-				<li class="nav-item"><a class="nav-link" href="">리뷰게시판</a></li>
+				<li class="nav-item"><a class="nav-link" href="reviewList.do">리뷰게시판</a></li>
 				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 
 			</ul>

@@ -20,17 +20,14 @@ public class AddReviewFormControl implements Command {
 		
 		
 		
-		try {
-			req.getRequestDispatcher(path).forward(req, resp);
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
 		/*
+		 * try { req.getRequestDispatcher(path).forward(req, resp); } catch
+		 * (ServletException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); } catch (IOException e) { // TODO Auto-generated catch
+		 * block e.printStackTrace(); }
+		 */
+		
+	
 		if(session.getAttribute("loginId") == null){
 			try {
 			resp.sendRedirect("loginForm.do"); // **로그인폼 주소 물어보기~ 
@@ -48,7 +45,7 @@ public class AddReviewFormControl implements Command {
 		e.printStackTrace();
 	}
 		}
-		*/
+		
 
 	}
 
