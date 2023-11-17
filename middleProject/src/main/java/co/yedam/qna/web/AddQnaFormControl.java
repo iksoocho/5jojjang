@@ -18,7 +18,7 @@ public class AddQnaFormControl implements Command {
 		HttpSession session = req.getSession();
 		String path = "qna/addQnaForm.tiles";
 		 
-		if(session.getAttribute("mid") == null){
+		if(session.getAttribute("loginId") == null){
 			try {
 			resp.sendRedirect("loginForm.do"); // **로그인폼 주소 물어보기~ 
 		}catch(IOException e) {

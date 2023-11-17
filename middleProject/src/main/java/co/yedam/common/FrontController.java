@@ -9,33 +9,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.adminPage.web.adFvListControl;
+import co.yedam.adminPage.web.adMainControl;
+import co.yedam.adminPage.web.addAdFvControl;
+import co.yedam.adminPage.web.addAdFvFormControl;
+import co.yedam.adminPage.web.delAdFvControl;
+import co.yedam.adminPage.web.delAdFvFormControl;
+import co.yedam.adminPage.web.getAdFvControl;
+import co.yedam.adminPage.web.modAdFvControl;
+import co.yedam.adminPage.web.modAdFvFormControl;
 import co.yedam.cart.web.CartControl;
 import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
 import co.yedam.festival.web.TotalListControl;
 import co.yedam.member.web.CheckIdControl;
-
 import co.yedam.member.web.CheckModifyControl;
-
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
-
 import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
-
 import co.yedam.member.web.getMemberControl;
-
 import co.yedam.payment.web.paymentFormControl;
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
 import co.yedam.qna.web.ModifyQnaControl;
 import co.yedam.qna.web.ModifyQnaFormControl;
-
 import co.yedam.qna.web.QnaListControl;
 import co.yedam.qna.web.RemoveQnaControl;
 import co.yedam.qna.web.RemoveQnaFormControl;
@@ -50,10 +53,10 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
-
 import co.yedam.wish.web.DrewWishListControl;
 import co.yedam.wish.web.WishControl;
 import co.yedam.wish.web.WishListControl;
+
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
 	// 위해 나눠놈
@@ -150,6 +153,48 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 
 		map.put("/removeReviewForm.do", new RemoveReviewFormControl()); // 리뷰 삭제 폼
 		map.put("/removeReview.do", new RemoveReviewControl()); // 리뷰 삭제
+
+
+		map.put("/main.do", new MainControl());
+		// map.put("/qnaList.do", new QnaListControl()); //전체 목록보기
+
+		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
+
+		map.put("/addQnaForm.do", new AddQnaFormControl()); // qna 글 등록폼
+		map.put("/addQna.do", new AddQnaControl()); // 글 등록
+
+		map.put("/modifyQnaForm.do", new ModifyQnaFormControl()); // 수정 폼
+		map.put("/modifyQna.do", new ModifyQnaControl()); // qna글 수정하기
+
+		map.put("/main.do", new MainControl());
+
+		
+
+		map.put("/calendar.do", new FestivalListControl());
+		map.put("/dayList.do", new DayListControl());
+		map.put("/festivalInfo.do", new FestivalInfoControl());
+
+
+		map.put("/dayList.do", new DayListControl()); // 지정된날찌에 해당하는
+
+		map.put("/main.do", new MainControl());
+		map.put("/calendar.do", new FestivalListControl());
+		map.put("/dayList.do", new DayListControl());
+		
+		//관리자 축제관리페이지 
+		map.put("/admain.do", new adMainControl());
+		map.put("/adFvList.do", new adFvListControl());
+		map.put("/getadFv.do", new getAdFvControl());
+		map.put("/addAdFvForm.do", new addAdFvFormControl());
+		map.put("/addAdFv.do", new addAdFvControl());
+		map.put("/modifyAdFvForm.do", new modAdFvFormControl());
+		map.put("/modifyAdFv.do", new modAdFvControl());
+		map.put("/deleteAdFvForm.do", new delAdFvFormControl());
+		map.put("/deleteAdFv.do", new delAdFvControl());
+	
+		
+		
+		
 
 	}
 

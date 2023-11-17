@@ -17,8 +17,21 @@ public class AddReviewFormControl implements Command {
 		HttpSession session = req.getSession();
 		
 		String path = "review/addReviewForm.tiles";
-		 
-		if(session.getAttribute("logId") == null){
+		
+		
+		
+		try {
+			req.getRequestDispatcher(path).forward(req, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		/*
+		if(session.getAttribute("loginId") == null){
 			try {
 			resp.sendRedirect("loginForm.do"); // **로그인폼 주소 물어보기~ 
 		}catch(IOException e) {
@@ -35,6 +48,7 @@ public class AddReviewFormControl implements Command {
 		e.printStackTrace();
 	}
 		}
+		*/
 
 	}
 

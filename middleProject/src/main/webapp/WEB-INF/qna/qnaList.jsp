@@ -1,6 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<<<<<<< HEAD
+=======
+
+<body>
+<div class="card mb-4">
+				<div class="card-header">
+					<i class="fas fa-table me-1"></i> 회원목록
+				</div>
+				<div class="card-body">
+					  <table id="datatablesSimple">
+            <thead>
+               <tr>
+                  <th>qno</th>
+                  <th>title</th>
+                  <th>writer</th>
+                  <th>date</th>
+               </tr>
+            </thead>
+
+            <tbody>
+               <c:forEach items="${qlist }" var="vo">
+                  <tr>
+                     <td>${vo.qno }</td>
+                     <td><a href="getQna.do?qno=${vo.qno }"> ${vo.qtitle }</a></td>
+                     <td>${vo.qid }</td>
+                     <td>${vo.qwriteDate }</td>
+                  </tr>
+               </c:forEach>
+
+            </tbody>
+         </table>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<p>
+	<a href="addQnaForm.do"> Qna 게시글 등록화면 </a>
+</p>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	crossorigin="anonymous"></script>
+<script src="adminResource/js/scripts.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+	crossorigin="anonymous"></script>
+<script src="adminResource/js/datatables-simple-demo.js"></script>
+
+
+<%--  ------------------------------------------------------------------------------ 
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<body>
+<div class="card mb-4">
+				<div class="card-header">
+					<i class="fas fa-table me-1"></i> QNA 목록
+				</div>
+				<div class="card-body">
+					<table id="datatablesSimple">
+						<thead>
+							<tr>
+								<th>게시물 번호</th>
+								<th>작성자</th>
+								<th>제목</th>
+								<th>내용</th>
+								<th>작성 일자</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<c:forEach items="${list }" var="user">
+								<tr>
+									<td>${user.qno }</td>
+									<td>${user.qid }</td>
+									<td>${user.qtitle }</td>
+									<td>${user.qcontent }</td>
+									<td>${user.qwriteDate }</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+</body>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	crossorigin="anonymous"></script>
+<script src="adminResource/js2/scripts.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+	crossorigin="anonymous"></script>
+<script src="adminResource/js2/datatables-simple-demo.js"></script>
+<link href="adminResource/css2/styles.css" rel="stylesheet" />
+
+
+ --%>
+<%-- 
+============================================================================================================
+
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!DOCTYPE html>
+<html>
+>>>>>>> refs/heads/1
 
 <body>
 	<!-- <section class="pt-2 pb-4">
@@ -137,24 +252,36 @@
 	</tbody>
 </table>
 
-<div id="paging"></div>
 
-<!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
 
-<p><a href="addQnaForm.do"> Qna 게시글 등록화면 </a></p>
-	
+
+
+
+
+
+
+================================================================================================================================== --%>
+
+<!-- <div id="paging"></div>
+
+qna랑 review 게시판 아래에 페이징해야됨! 
+
+<p>
+	<a href="addQnaForm.do"> Qna 게시글 등록화면 </a>
+</p>
+
 
 <h3>목록</h3>
 
-<!-- <ul id="list">
+<ul id="list">
 	<li style="display: none" id="template"><span>qno</span><b>qtitle</b>
 	<span>qid</span><span>qcontent</span><span>writedate</span><span>pass</span></li>
-</ul> -->
+</ul>
 
-<div style="display: none" id = "list" ></div>
+<div style="display: none" id="list"></div>
 
 
-<div class="pagination"></div>
+<div class="pagination"></div> -->
 
 
 
