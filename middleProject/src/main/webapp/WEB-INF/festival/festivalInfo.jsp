@@ -127,12 +127,6 @@ input {
 
 
 
-
-
-
-
-
-
 <input type = "hidden" id= "mid" value="${loginId }">							
 								
 								
@@ -166,6 +160,7 @@ document.getElementById('cartbtn').addEventListener('click',function(e){
 	
 	let adcnt =document.querySelector('input[name=adcnt]').value;
 	let chcnt =document.querySelector('input[name=chcnt]').value;
+	let tto
 	fetch('cart.do?fcode='+'${vo.fcode }' + '&cid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt )
 	.then(resolve => resolve.json())
 	.then(result => {

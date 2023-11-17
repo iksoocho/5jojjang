@@ -4,7 +4,8 @@
 	
 	<insert id ="insert" parameterType ="co.yedam.wish.service.WishVO">
 		insert into wish
-		values(#{fcode},#{wid})
+		values(seq_wish.nextval, #{fcode},#{wid}) 
+		
 	</insert >
 	
 	
@@ -18,8 +19,15 @@
 		select *
 		from wish w left join festival f on w.fcode =f.fcode
 		where wid =#{mid}
-
+		ORDER BY wno
+		
 	</select>
+	
+	<delete id = "delete" parameterType ="int">
+		delete from wish where wno = #{wno} 
+	</delete>
+
+
 	
 	
 	</mapper>

@@ -183,53 +183,69 @@ td {
 			<form>
 			<thead>
 				<tr>
-					<td><input type="checkbox"></td>
-					<td colspan="2">상품정보</td>
+					<td colspan="3">상품정보</td>
 					<td>옵션</td>
-					<td>상품금액</td>
+					<td colspan="1">상품금액</td>
+					<td>삭제</td>
+					
+					
 
 				</tr>
 			</thead>
 
 			<c:forEach items="${list}" var="vo">
 				<tbody>
-					<tr class="cart__list__detail">
-						<td><input type="checkbox"></td>
+					<tr class="cart__list__detail" id = "tr">
+						<td>${vo.cno }</td>
 						<td><img src="resources/images/${vo.fimage }" alt="..."></td>
-						<td><a href="#">${vo.fname }</a><span class="cart__list__smartstore"> 오조짱축제</span>
+						<td><a href="festivalInfo.do?fno=${vo.fcode }">${vo.fname }</a><span class="cart__list__smartstore"> 오조짱축제</span>
 							<p>축제기간 : ${vo.fsdate } ~ ${vo.fedate }</p> <sapn class="price">어른:${vo.fprice1 }원 , 아동:${vo.fprice2 }원</sapn></td>
 						<td class="cart__list__option">
 							<p>수량 : 어른 ${vo.adcnt }매, 아동 ${vo.chcnt }매</p>
 						</td>
-						<td><span class="price"> ${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</span><br></td>
+						<td><span class="price" > ${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</span><br></td>
+						<td><button class="cart__list__optionbtn" type="button" onclick="del(${vo.cno });">장바구니 삭제</button></td>
 					</tr>
 				</tbody>
 			</c:forEach>
 
-			<tfoot>
-				<tr>
-					<td colspan="3"><input type="checkbox">
-						<button class="cart__list__optionbtn">선택상품 삭제</button>
-						<button class="cart__list__optionbtn">선택상품 찜</button></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</tfoot>
+			
+		
 			</form>
 		</table>
 
 
 		<div class="cart__mainbtns">
 			<button class="cart__bigorderbtn right">결제하기</button>
-			<p>총 합계</p>
-			<c:forEach items="${list}" var="vo">  
-			<p id="total">${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</p>
-			</c:forEach>
-			
 			
 		</div>
 	</section>
 </body>
+
+
+<script>
+
+
+function del(vo){
+	let tr = document.getElementById('tr');
+	let cno = vo;
+	console.log(vo);
+	fetch('delCart.do?cno='+ cno)
+	.then(resolve => resolve.json())
+	.then(result => {
+	   console.log(result);
+	   if(result.retCode == 'OK'){
+	      alert('장바구니목록에서 삭제되었습니다');
+	      tr.remove();
+	   }else {
+	      alert('삭제실패');
+	   }
+	})//두번째then
+	.catch(err => console.log(err));
+}
+</script>
+
+
 
 
 

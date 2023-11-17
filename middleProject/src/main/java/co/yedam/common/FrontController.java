@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.cart.web.CartControl;
 import co.yedam.cart.web.CartListControl;
+import co.yedam.cart.web.DelCartControl;
 import co.yedam.festival.web.DayListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
@@ -51,8 +52,7 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
-
-
+import co.yedam.wish.web.DelWishControl;
 import co.yedam.wish.web.WishControl;
 import co.yedam.wish.web.WishListControl;
 
@@ -75,10 +75,11 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 찜하기
 		map.put("/wish.do", new WishControl());  //찜추가하기
 		map.put("/wishList.do", new WishListControl()); // 찜목록 보기
+		map.put("/delWish.do", new DelWishControl());  //찜 삭제 
 		// 장바구니
 		map.put("/cart.do", new CartControl()); //장바구니추가하기
 		map.put("/cartList.do", new CartListControl()); //장바구니 목록 보기
-
+		map.put("/delCart.do", new DelCartControl()); //장바구니 목록 보기
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());

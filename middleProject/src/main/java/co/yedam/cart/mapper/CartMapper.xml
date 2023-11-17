@@ -6,7 +6,7 @@
 
 	<insert id="insert" parameterType="co.yedam.cart.service.CartVO">
 		insert into cart 
-		values(#{fcode},#{cid},#{adcnt},#{chcnt})
+		values(seq_cart.nextval,#{fcode},#{cid},#{adcnt},#{chcnt})
 	</insert>
 	
 	
@@ -15,8 +15,14 @@
 		select *
 		from cart c left join festival f on c.fcode =f.fcode
 		where cid =#{mid}
+		ORDER BY cno
 
 	</select>
 	
+	<delete id = "delete" parameterType ="int">
+		delete from cart where cno = #{cno} 
+	</delete>
+
+
 
 </mapper>

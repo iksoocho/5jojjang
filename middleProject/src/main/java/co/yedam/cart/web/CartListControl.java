@@ -17,12 +17,12 @@ public class CartListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 	
-		String mid = req.getParameter("mid");
+		String mid = req.getParameter("midd");
 		
 		CartService svc = new CartServiceImpl();
 		
 		List <CartVO> list = svc.cartList(mid);
-		System.out.println(mid);
+	
 		req.setAttribute("list", list);
 		
 		try {

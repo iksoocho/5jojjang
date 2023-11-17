@@ -23,5 +23,6 @@ public class CartVO {
 	private String flng;
 	private String fcontent;
 	private String likeIt;
+	private int cno;
 	
 }

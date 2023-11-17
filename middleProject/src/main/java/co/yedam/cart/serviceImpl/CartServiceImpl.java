@@ -29,6 +29,13 @@ public class CartServiceImpl implements CartService{
 	}
 
 
+	@Override
+	public boolean removeCart(int cno) {
+		
+		return mapper.delete(cno) ==1;
+	}
+
+
 
 	
 	

@@ -36,6 +36,13 @@ public class WishServiceImpl implements WishService {
 	}
 
 
+	@Override
+	public boolean removeWish(int wno) {
+	
+		return mapper.delete(wno) == 1;
+	}
+
+
 	
 	
 }

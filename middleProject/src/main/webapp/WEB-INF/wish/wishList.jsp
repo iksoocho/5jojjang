@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -29,13 +30,13 @@ a {
 
 img {
 	display: block;
-	width: 80%;
+	width: 70%;
 	height: 80px;
 	margin: auto;
 }
 
 .cart {
-	width: 80%;
+	width: 50%;
 	margin: auto;
 	padding: 30px;
 }
@@ -171,35 +172,75 @@ td {
 }
 </style>
 
-
 <body>
+	<section class="cart">
+		<div class="cart__information">
+			<ul>
+				<li>찜 상품은 최대 30일간 저장됩니다.</li>
+			</ul>
+		</div>
 
 
-	<c:forEach items="${list}" var="vo">
-		<table>
-			<thead>
-				<tr>
-					<th>축제명</th>
-					<th>축제시작일</th>
-					<th>축제종료일</th>
-					<th>어른티켓가격</th>
-					<th>아동티켓가격</th>
+		<table class="cart__list">
+			<form>
+				<thead>
+					<tr>
+						<td colspan="3">내가 찜한 상품</td>
+						<td style="text-aline: center">삭제</td>
+					</tr>
+				</thead>
 
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td onClick="location.href='festivalInfo.do?fno=${vo.fcode }'" style="cursor:pointer; font-weight:bold;" >${vo.fname }</td>
-					<td>${vo.fsdate }</td>
-					<td>${vo.fedate }</td>
-					<td>${vo.fprice1 }</td>
-					<td>${vo.fprice2 }</td>
-				</tr>
-				
-			</tbody>
+				<c:forEach items="${list}" var="vo">
+					<tbody>
+						<tr class="cart__list__detail" id="tr">
+							<td>${vo.wno }</td>
+							<td><img src="resources/images/${vo.fimage }" alt="..."></td>
+							<td><a href="festivalInfo.do?fno=${vo.fcode }">${vo.fname }</a><span
+								class="cart__list__smartstore"> 오조짱축제</span>
+								<p>축제기간 : ${vo.fsdate } ~ ${vo.fedate }</p> <sapn class="price">어른:${vo.fprice1 }원
+								, 아동:${vo.fprice2 }원</sapn></td>
+							<td style="padding-left: 3%;"><button
+									class="cart__list__optionbtn" type="button" onclick="del(${vo.wno });">찜삭제</button></td>
+						</tr>
+					</tbody>
+				</c:forEach>
+			</form>
 		</table>
-	</c:forEach>
 
+		<div class="cart__mainbtns"></div>
+	</section>
+</body>
+
+
+<script>
+
+
+
+
+function del(vo){
+	let tr = document.getElementById('tr');
+	let wno = vo;
+	console.log(vo);
+	fetch('delWish.do?wno='+ wno)
+	.then(resolve => resolve.json())
+	.then(result => {
+	   console.log(result);
+	   if(result.retCode == 'OK'){
+	      alert('찜목록에서 삭제되었습니다');
+	      tr.remove();
+	   }else {
+	      alert('삭제실패');
+	   }
+	})//두번째then
+	.catch(err => console.log(err));
+}//삭제온클릭이벤트
+
+
+
+
+
+
+</script>
 
 
 

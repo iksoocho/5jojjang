@@ -67,14 +67,12 @@
 
 
 
-
-
 				<li class="nav-item"><a class="nav-link" href="">리뷰게시판</a></li>
 				<li class="nav-item"><a class="nav-link" href="">QNA</a></li>
 
 			</ul>
-			<form class="d-flex" action="cartList.do">
-			 <input type = "hidden" name= "mid" value="${loginId }">  
+			  <form class="d-flex" action="cartList.do">
+			  <input type = "hidden" name="midd" value="${loginId }">
 				<button class="btn btn-outline-dark" type="submit">
 					<i class="bi-cart-fill me-1"></i> Cart <span
 						class="badge bg-dark text-white ms-1 rounded-pill">0</span>
