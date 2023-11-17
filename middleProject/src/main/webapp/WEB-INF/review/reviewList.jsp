@@ -31,7 +31,8 @@
 				<td><a href="getReview.do?rno=${vo.rno }"> ${vo.rtitle }</a></td>
 				<td>${vo.rid }</td>
 				<td>${vo.rwriteDate }</td>
-				<td><input src ="${vo.rimage}"  name="image" width="200"></td> 
+				<td><input src ="images/${vo.rimage}"  name="image" width="200"></td> 
+				
 				
 			</tr>
 		</c:forEach>

@@ -22,23 +22,15 @@ public class QnaListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-
-		String path = "qna/qnaList.tiles";
-
+		
 		QnaService svc = new QnaServiceImpl();
 		List<QnaVO> list = svc.qnaList();
-			System.out.println("list" + list);
-		req.setAttribute("qlist", list);
-		
-		try {
-			req.getRequestDispatcher(path).forward(req, resp);
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String path = "qna/qnaList.tiles";
+
+
+		req.setAttribute("list", list);
+	
+
 
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);

@@ -87,9 +87,9 @@ color:#fff
     gap:10px; /*간격 벌려줄때 공식처럼 사용핟나 */
 }
 
-/* .field.birth div > * {  gap 사용한거랑 같은 효과를 줌 
-    flex:1;
-} */
+ .field.birth div > * {  /*gap 사용한거랑 같은 효과를 줌 */
+    flex:4;
+} 
 
 .field.tel-number div {
     display: flex;
@@ -124,13 +124,13 @@ color:#fff
 }
 
 .userpw{
-    background:url(./images/images2/icon-01.png) no-repeat center right 15px;
+    /* background:url(./images/images2/icon-01.png) no-repeat center right 15px; */
     background-size: 20px;
     background-color: #fff;
 }
 
 .userpw-confirm{
-    background:url(./images/images2/icon-02.png) no-repeat center right 15px;
+    /* background:url(./images/images2/icon-02.png) no-repeat center right 15px; */
     background-size: 20px;
     background-color: #fff;
 }
@@ -206,23 +206,9 @@ color:#fff
         <div class="field birth" name="ssn">
             <b>주민 등록 번호</b>
             <div>
-                <input type="text" placeholder="앞자리(6자)" name="fssn" maxlength="6">                
-                <!-- <select id="month">
-                    <option name="month" value="0">월</option>
-                    <option name="month" value="1">1월</option>
-                    <option name="month" value="2">2월</option>
-                    <option name="month" value="3">3월</option>
-                    <option name="month" value="4">4월</option>
-                    <option name="month" value="5">5월</option>
-                    <option name="month" value="6">6월</option>
-                    <option name="month" value="7">7월</option>
-                    <option name="month" value="8">8월</option>
-                    <option name="month" value="9">9월</option>
-                    <option name="month" value="10">10월</option>
-                    <option name="month" value="11">11월</option>
-                    <option name="month" value="12">12월</option>
-                </select> -->
-                <input type="password" placeholder="뒷자리(7자리)" name="bssn" maxlength="7">
+                <input type="text" placeholder="앞자리(6자)" name="fssn"   maxlength="6">                
+               
+                <input type="text" placeholder="주민등록번호 뒷자리(7자리)" name="bssn" pattern="[0-9]{7}" required title="7자리를 확인하세요" >
             </div>
         </div>
 
@@ -240,10 +226,9 @@ color:#fff
             <select>
                 <option value="">대한민국 +82</option>
             </select>
-            <div>
-                <input type="tel" placeholder="전화번호 입력" name="phone">
+            
+                <input type="text"  placeholder=" - 없이 입력하세요" name="phone" maxlength="11">
                 
-            </div>
            
         </div>
 
