@@ -16,11 +16,11 @@ public class ModifyQnaControl implements Command {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		//파라메터받아옴 -> 데이터수정 -> 목록이동.
 		
+			String qno = req.getParameter("qno");
 		
 			String title = req.getParameter("qtitle");
 			String content = req.getParameter("qcontent");
 			
-			String qno = req.getParameter("qno");
 			String pass = req.getParameter("qpass");
 			
 			

@@ -12,7 +12,7 @@ public interface AdminMapper {
 	public AdminVO select(String fcode); //하나
 	public int insert(AdminVO vo); // 추가
 	public int update(AdminVO vo); //수정
-	public int delete(String  fcode); //삭제
+	public int delete(String fcode); //삭제
 
 
 }

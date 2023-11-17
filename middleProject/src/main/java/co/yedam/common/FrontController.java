@@ -41,9 +41,13 @@ import co.yedam.review.web.ReviewListControl;
 import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
 import co.yedam.adminPage.web.adFvListControl;
+import co.yedam.adminPage.web.adMainControl;
 import co.yedam.adminPage.web.addAdFvControl;
 import co.yedam.adminPage.web.addAdFvFormControl;
+import co.yedam.adminPage.web.delAdFvControl;
+import co.yedam.adminPage.web.delAdFvFormControl;
 import co.yedam.adminPage.web.getAdFvControl;
+import co.yedam.adminPage.web.modAdFvControl;
 import co.yedam.adminPage.web.modAdFvFormControl;
 import co.yedam.festival.web.DayListControl;
 
@@ -133,13 +137,15 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/dayList.do", new DayListControl());
 		
 		//관리자 축제관리페이지 
+		map.put("/admain.do", new adMainControl());
 		map.put("/adFvList.do", new adFvListControl());
 		map.put("/getadFv.do", new getAdFvControl());
 		map.put("/addAdFvForm.do", new addAdFvFormControl());
 		map.put("/addAdFv.do", new addAdFvControl());
 		map.put("/modifyAdFvForm.do", new modAdFvFormControl());
-		//map.put("/modifyAdFv.do", new modAdFvControl());
-		//map.put("/deleteAdFv.do", new delAdFvControl());
+		map.put("/modifyAdFv.do", new modAdFvControl());
+		map.put("/deleteAdFvForm.do", new delAdFvFormControl());
+		map.put("/deleteAdFv.do", new delAdFvControl());
 	
 		
 		

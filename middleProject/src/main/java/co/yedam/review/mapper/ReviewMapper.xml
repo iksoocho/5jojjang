@@ -26,7 +26,7 @@
 	<update id="updateReview"
 		parameterType="co.yedam.review.service.ReviewVO">
 		update review set rtitle=#{rtitle}, rcontent=#{rcontent}, rimage=nvl(#{rimage},
-		rimage), last_update=sysdate where rno=#{seq_rno}
+		rimage) where rno=#{seq_rno}
 	</update>
 
 	<delete id="deleteReview" parameterType="int">

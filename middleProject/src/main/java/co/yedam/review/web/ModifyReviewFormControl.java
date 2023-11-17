@@ -15,6 +15,8 @@ public class ModifyReviewFormControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+		
+		String path = "review/modifyReviewForm.tiles";
 		String rno = req.getParameter("rno"); 
 		
 		ReviewService svc = new ReviewServiceImpl();
@@ -24,7 +26,7 @@ public class ModifyReviewFormControl implements Command {
 		
 		//수정화면오픈
 		try {
-			req.getRequestDispatcher("WEB-INF/review/modifyReviewForm.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -24,8 +24,8 @@
 	</update>
 
 
-	<delete id="delete" parameterType="int">
-		delete from festival  where fcode=#{fcode}
+	<delete id="delete" parameterType="string">
+		delete from festival where fcode=#{fcode}
 	</delete>
 	
 

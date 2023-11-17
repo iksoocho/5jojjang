@@ -44,7 +44,8 @@
 			<td colspan="4" align="center">
 			
 			<c:choose>
-				<c:when test="${!empty logininId && logininId == rno.rid}">
+				<%-- <c:when test="${!empty logininId && logininId == rno.rid}"> --%>
+				<c:when test="${!empty loginId}">
 					<input type="submit" value="수정">
 					<input type="button" value="삭제">
 				</c:when>

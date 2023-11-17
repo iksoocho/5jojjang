@@ -22,7 +22,7 @@
 	</c:choose>
 	<c:choose>
 		<c:when test="${!empty responsibility && responsibility == 'admin' }">
-			<li><a class="icon solid fa-cog" href=""><span>축제 관리</span></a></li>
+			<li><a class="icon solid fa-cog" href="adFvList.do"><span>축제 관리</span></a></li>
 		</c:when>
 		<c:otherwise>
 			<li><a class="icon solid fa-cog" href="calendar.do"><span>축제 일정</span></a></li>

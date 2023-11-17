@@ -24,8 +24,8 @@
 	
 	<insert id="insert"
 		parameterType="co.yedam.qna.service.QnaVO">
-		insert into qna(qno, qid, qtitle, qcontent, qwritedate, qlastupdate, qpass)
-		values (seq_qno.nextval, #{qid},#{qtitle},#{qcontent},#{qwritedate}, #{qlast_update}, #{qpass})
+		insert into qna(qno, qid, qtitle, qcontent,  qpass)
+		values (seq_qno.nextval, #{qid},#{qtitle},#{qcontent}, #{qpass})
 	</insert>
 
 	<update id="update"

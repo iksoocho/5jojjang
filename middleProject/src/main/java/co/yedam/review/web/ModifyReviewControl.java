@@ -18,17 +18,17 @@ public class ModifyReviewControl implements Command {
 		
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");
-	
-		
 		String rno = req.getParameter("rno");
+		String image = req.getParameter("image");
 		
 		
 		ReviewVO vo = new ReviewVO();
 		vo.setRtitle(title);
-		
 		vo.setRcontent(content);
 		vo.setRno(Integer.parseInt(rno));
+		vo.setRimage(image);
 		
+			System.out.println("모디파이리뷰보" + vo );
 
 		
 		ReviewService svc = new ReviewServiceImpl();

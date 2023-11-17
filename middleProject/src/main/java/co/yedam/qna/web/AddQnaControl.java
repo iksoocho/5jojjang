@@ -15,19 +15,25 @@ public class AddQnaControl implements Command {
 		
 		
 		
-		QnaVO vo = new QnaVO();
+	
 		
 		req.getMethod().equals("GET");
 			
 			// input에서 name이 파라메터임.
+			String qno = req.getParameter("qno");
 			String title = req.getParameter("qtitle");
 			String content = req.getParameter("qcontent");
 			String pass = req.getParameter("qpass");
 
+			
 			// form에 action넣고 일로 넘어온거임.
+			QnaVO vo = new QnaVO();
+			vo.setQno(Integer.parseInt(qno));
 			vo.setQtitle(title);
 			vo.setQcontent(content);
 			vo.setQpass(pass);
+			
+			System.out.println("큐앤에이 vo "+ vo);
 
 		QnaService svc = new QnaServiceImpl();
 		if(svc.addQna(vo)) { //정상적으로 등록됐으면 보드목록으로 간다

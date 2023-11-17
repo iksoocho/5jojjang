@@ -5,6 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
 <form action="modifyQnaForm.do" name="qnaForm">
+
 <input type="hidden" name="mid" value="${loginId }">
 <input type="hidden" name="responsibility" value="${responsibility }">
 
@@ -40,13 +41,14 @@
 			<td colspan="4" align="center">
 			
 			<c:choose>
-				<c:when test="${!empty loginId && loginId == qno.qid}">
+			<%-- 	<c:when test="${!empty loginId && loginId == qno.qid}"> --%>
+				<c:when test="${!empty loginId}" >
 					<input type="submit" value="수정">
 					<input type="button" value="삭제">
 				</c:when>
 				 <c:otherwise>
-					<input disabled type="submit" value="수정">
-					<input disabled type="button" value="삭제">
+					<input disabled type="submit" value="수정2">
+					<input disabled type="button" value="삭제2">
 				</c:otherwise>
 			</c:choose>
 			</td>
@@ -55,7 +57,16 @@
 	</table>
 </form>
 
+<script>
 
+document.querySelector('input[type=button]').addEventListener('click', function(e){
+	document.forms.qnaForm.action = 'removeQnaForm.do';
+	document.forms.qnaForm.submit();
+})
+
+</script>
+
+<!-- 
 <h3> Qna 게시글에 댓글 등록하기</h3>
 <table>
 <tr>
@@ -84,7 +95,7 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 });
 
 
-});
+
 
 let rpqno = "${qno.qno}"
 let writer = document.getElementsByName('mid').value
@@ -184,7 +195,9 @@ showList();
 				alert('ERROR');
 			}
 		})
+		.catch(err => console.log(err));
 	});
 	
 </script>
 
+ -->
