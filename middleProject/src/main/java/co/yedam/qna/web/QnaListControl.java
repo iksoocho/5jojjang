@@ -22,9 +22,12 @@ public class QnaListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-
+		
+		QnaService svc = new QnaServiceImpl();
+		List<QnaVO> list = svc.qnaList();
 		String path = "qna/qnaList.tiles";
 
+		req.setAttribute("list", list);
 	
 
 		try {

@@ -87,9 +87,9 @@ color:#fff
     gap:10px; /*간격 벌려줄때 공식처럼 사용핟나 */
 }
 
-/* .field.birth div > * {  gap 사용한거랑 같은 효과를 줌 
-    flex:1;
-} */
+ .field.birth div > * {  /*gap 사용한거랑 같은 효과를 줌 */
+    flex:4;
+} 
 
 .field.tel-number div {
     display: flex;
@@ -124,14 +124,14 @@ color:#fff
 }
 
 .userpw{
-   /*  background:url(./images/images2/icon-01.png) no-repeat center right 15px; */
+    /* background:url(./images/images2/icon-01.png) no-repeat center right 15px; */
     background-size: 20px;
     background-color: #fff;
 }
 
 .userpw-confirm{
-   /*  background:url(./images/images2/icon-02.png) no-repeat center right 15px;*/
-    background-size: 20px; 
+    /* background:url(./images/images2/icon-02.png) no-repeat center right 15px; */
+    background-size: 20px;
     background-color: #fff;
 }
 
@@ -172,9 +172,6 @@ color:#fff
 background-color: #2db400;
 color:#fff
 }
-  #selboxDirect {
-            display: none;
-        }
 
 	</style>
 </head>
@@ -206,26 +203,12 @@ color:#fff
         </div>
 
         <!-- 3. 필드(생년월일) -->
-        <div class="field birth" >
+        <div class="field birth" name="ssn">
             <b>주민 등록 번호</b>
             <div>
-                <input type="text" placeholder="앞자리(6자)" name="fssn" maxlength="6">                
-                <!-- <select id="month">
-                    <option name="month" value="0">월</option>
-                    <option name="month" value="1">1월</option>
-                    <option name="month" value="2">2월</option>
-                    <option name="month" value="3">3월</option>
-                    <option name="month" value="4">4월</option>
-                    <option name="month" value="5">5월</option>
-                    <option name="month" value="6">6월</option>
-                    <option name="month" value="7">7월</option>
-                    <option name="month" value="8">8월</option>
-                    <option name="month" value="9">9월</option>
-                    <option name="month" value="10">10월</option>
-                    <option name="month" value="11">11월</option>
-                    <option name="month" value="12">12월</option>
-                </select> -->
-                <input type="password" placeholder="뒷자리(7자리)" name="bssn" maxlength="7">
+                <input type="text" placeholder="앞자리(6자)" name="fssn"   maxlength="6">                
+               
+                <input type="text" placeholder="주민등록번호 뒷자리(7자리)" name="bssn" pattern="[0-9]{7}" required title="7자리를 확인하세요" >
             </div>
         </div>
 
@@ -233,39 +216,19 @@ color:#fff
        
 
         <!-- 5. 이메일_전화번호 -->
-        <!-- <div class="field">
+        <div class="field">
             <b>본인 확인 이메일<small></small></b>
             <input type="email" placeholder="직접입력" name="email">
-        </div> -->
-        <!-- 3. 필드(생년월일) -->
-        <div class="field birth">
-            <b>이메일</b>
-            <div>
-                <input type="text" name="email">                
-                <select id="selbox">
-                    <option value="gmail.com">gmail.com</option>
-                    <option value="naver.com">naver.com</option>
-                    <option value="daum.net">daum.net</option>
-                    <option value="yedam.co">yedam.co</option>
-                    <option value="direct">직접 입력</option>
-                   
-                </select>
-                <input type="text" id="selboxDirect" name="selboxDirect">
-               
-              
-            </div>
         </div>
-
         
         <div class="field tel-number">
             <b>휴대전화</b>
             <select>
                 <option value="">대한민국 +82</option>
             </select>
-            <div>
-                <input type="tel" placeholder="전화번호 입력" name="phone">
+            
+                <input type="text"  placeholder=" - 없이 입력하세요" name="phone" maxlength="11">
                 
-            </div>
            
         </div>
 
@@ -281,25 +244,6 @@ color:#fff
 	</form>
 	
 	<script>
-	/* document.addEventListener('DOMContentLoaded', function() {
-
-	    var selbox = document.getElementById('selbox');
-	    var selboxDirect = document.getElementById('selboxDirect');
-
-	     selboxDirect.style.display = 'none'; // 초기에는 숨겨진 상태 
-
-	    selbox.addEventListener('change', function() {
-	        if (selbox.value === 'direct') {
-	            selboxDirect.style.display = 'block'; // 직접입력 선택 시 나타냄
-	        } else {
-	            selboxDirect.style.display = 'none'; // 다른 옵션 선택 시 숨김
-	        }
-	    });
-
-	}); */
-	
-	
-	
 	function checkNull() {
 	   var name = document.getElementsByName("name")[0].value;
 	    var mid = document.getElementsByName("mid")[0].value;
@@ -333,10 +277,10 @@ color:#fff
 		    		return false;
 		    	}else{
 		    		if(pass!=checkPass){
-		    			alert('비밀번호가 일치하지 않습니다.');
+		    			alert('비밀번호가 일치하지 않습니다.')
 		    		}else{
 		    			if(confirm("회원가입 하시겠습니까?")){
-				    	 	alert('회원 가입 성공');
+				    	 	alert('회원 가입 성공')
 				    		document.getElementById("join").submit();
 				     	}else{
 				    	 alert('취소');
@@ -345,15 +289,15 @@ color:#fff
 		    		
 		    	}
 		    })
-		    .catch(err=>console.log(err));
+		    .catch(err=>console.log(err))
 	    }  
- 
+	    
+	     
+	   
+	    
+	     
 	}
-	
-	
-	
-	​
-</script>
+	</script>
 </body>
 	
 </html>

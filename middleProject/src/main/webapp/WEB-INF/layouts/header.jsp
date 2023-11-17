@@ -70,7 +70,7 @@
 
 
 				<li class="nav-item"><a class="nav-link" href="">리뷰게시판</a></li>
-				<li class="nav-item"><a class="nav-link" href="">QNA</a></li>
+				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 
 			</ul>
 			<form class="d-flex">

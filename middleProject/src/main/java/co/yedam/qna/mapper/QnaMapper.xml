@@ -5,15 +5,7 @@
 	<select id="selectList"
 		resultType="co.yedam.qna.service.QnaVO">
 		
-			<![CDATA[
-		select *
-		from(
-		select /*+INDEX(r qna_pk)*/ rownum rn, r.*
-		from qna r
-		)a
-		where a.rn > (#{page}-1)*5
-		and a.rn <= (#{page})*5
-		]]>
+		select * from qna
 		 
 	</select>
 

@@ -35,7 +35,7 @@ import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
 import co.yedam.qna.web.ModifyQnaControl;
 import co.yedam.qna.web.ModifyQnaFormControl;
-import co.yedam.qna.web.QListControl;
+
 import co.yedam.qna.web.QnaListControl;
 import co.yedam.qna.web.RemoveQnaControl;
 import co.yedam.qna.web.RemoveQnaFormControl;
@@ -109,7 +109,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// Qna
 		map.put("/qnaList.do", new QnaListControl()); // 전체 목록보기
 		map.put("/getQna.do", new GetQnaControl()); // 상세화면보기
-		map.put("/qnaList2.do", new QListControl()); // 상세화면보기
+		//map.put("/qnaList2.do", new QListControl()); // 상세화면보기
 
 		map.put("/wishList.do", new WishListControl()); // 찜목록페이지 띄우기
 		map.put("/drewwishList.do", new DrewWishListControl()); // 찜 목록 그려주기
