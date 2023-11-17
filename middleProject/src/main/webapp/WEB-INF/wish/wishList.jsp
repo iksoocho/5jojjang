@@ -31,16 +31,7 @@ function showlist (){
 
 };
 
-
-
-
-
 </script>
-
-
-
-
-
 
 </body>
 </html>

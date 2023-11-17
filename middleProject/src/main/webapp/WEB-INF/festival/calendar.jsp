@@ -166,9 +166,6 @@
 
       function selectAllFestival() {
 
-         //var encodedVal = encodeURIComponent(val);
-
-
          fetch('totalList.do')
             .then(resolve => resolve.text())
             .then(result => {

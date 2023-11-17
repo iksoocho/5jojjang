@@ -15,21 +15,17 @@ import co.yedam.festival.web.FestivalInfoControl;
 import co.yedam.festival.web.FestivalListControl;
 import co.yedam.festival.web.TotalListControl;
 import co.yedam.member.web.CheckIdControl;
-
 import co.yedam.member.web.CheckModifyControl;
-
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
-
 import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
-
 import co.yedam.member.web.getMemberControl;
-
-import co.yedam.payment.web.paymentFormControl;
+import co.yedam.payment.web.PaymentApproveControl;
+import co.yedam.payment.web.PaymentControl;
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
@@ -50,7 +46,6 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
-
 import co.yedam.wish.web.DrewWishListControl;
 import co.yedam.wish.web.WishControl;
 import co.yedam.wish.web.WishListControl;
@@ -76,7 +71,9 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 장바구니담기
 		map.put("/cart.do", new CartControl());
 		// 결제하기
-		//map.put("/paymentForm.do", new paymentFormControl());
+		map.put("/payment.do", new PaymentControl());
+		map.put("/paymentapprove.do", new PaymentApproveControl());
+		//map.put("/paymentList.do", new PaymentListControl());
 
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());

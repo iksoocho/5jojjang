@@ -23,11 +23,11 @@ input {
 				<div class="small mb-1">축제코드 : ${vo.fcode }</div>
 				<h1 class="display-5 fw-bolder">${vo.fname }</h1>
 				<div class="fs-5 mb-5">
-					🎫 티켓금액 : <span>어른 - ${vo.fprice1 }</span> <span>아동 -
-						${vo.fprice2 }</span>
+					🎫 티켓금액 : <span>어른 - ${vo.fprice1 }원</span> <span>아동 -
+						${vo.fprice2 }원</span>
 				</div>
 				<p class="lead">
-					<축제내용> : ${vo.fcontent }
+					<축제내용> : ${vo.fcontent } 
 				</p>
 				<div class="d-flex">
 					<button class="btn btn-outline-dark flex-shrink-0" type="button"
@@ -36,13 +36,13 @@ input {
 					</button>
 					<table>
 						<tr>
-							<td>어른 ${vo.fprice1 } 원</td>
+							<td>어른 ${vo.fprice1}원</td>
 							<td><lable>수량 : <input type="number" name="adcnt"
 									value="0" onclick="total();"></lable></td>
 						</tr>
 
 						<tr>
-							<td>아동 ${vo.fprice2 } 원</td>
+							<td>아동 ${vo.fprice2}원</td>
 							<td><lable>수량 : <input type="number" name="chcnt"
 									value="0" onclick="total();"></lable></td>
 						</tr>
@@ -53,9 +53,10 @@ input {
 				<h3 id='total'></h3>
 				<br> <span><button type="button" id="cartbtn">
 						<i>장바구니에 담기</i>
-					</button></span> <span><button type="button" id="byebtn">
-						<i>바로 구매하기</i>
+					</button></span> <span><button onclick="paybtn()" value="바로구매">
+						<i>바로구매</i>
 					</button></span>
+
 			</div>
 		</div>
 	</div>
@@ -98,40 +99,42 @@ input {
 		<div
 			class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 			<c:forEach items="${list }" var="vo">
-			<!-- 상품목록 -->
-			<div class="col mb-5">
-				<div class="card h-100">
-					<!-- Sale badge-->
-					<div class="badge bg-pink text-white position-absolute"
-						style="top: 0.5rem; right: 0.5rem">개최중</div>
-					<!-- Product image-->
-					<img class="card-img-top" src="resources/images/${vo.fimage}" style="height:360px;" alt="..." />
-					<!-- Product details-->
-					<div class="card-body p-4">
-						<div class="text-center">
-							<!-- Product name-->
-							<h5 class="fw-bolder">${vo.fname }</h5>
-							<!-- Product reviews-->
-							<div
-								class="d-flex justify-content-center small text-warning mb-2">
-								<c:forEach var="i" begin="1" end="${vo.likeIt }" step="1">
-									<div class="bi-star-fill"></div>
-								</c:forEach>
-							</div>
-							<!-- Product price-->
-							<span>어른 ${vo.fprice1 } 원</span> <span>아동 ${vo.fprice2 } 원</span>
+				<!-- 상품목록 -->
+				<div class="col mb-5">
+					<div class="card h-100">
+						<!-- Sale badge-->
+						<div class="badge bg-pink text-white position-absolute"
+							style="top: 0.5rem; right: 0.5rem">개최중</div>
+						<!-- Product image-->
+						<img class="card-img-top" src="resources/images/${vo.fimage}"
+							style="height: 360px;" alt="..." />
+						<!-- Product details-->
+						<div class="card-body p-4">
+							<div class="text-center">
+								<!-- Product name-->
+								<h5 class="fw-bolder">${vo.fname }</h5>
+								<!-- Product reviews-->
+								<div
+									class="d-flex justify-content-center small text-warning mb-2">
+									<c:forEach var="i" begin="1" end="${vo.likeIt }" step="1">
+										<div class="bi-star-fill"></div>
+									</c:forEach>
+								</div>
+								<!-- Product price-->
+								<span>어른 ${vo.fprice1 } 원</span> <span>아동 ${vo.fprice2 }
+									원</span>
 
+							</div>
 						</div>
-					</div>
-					<!-- Product actions-->
-					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-						<div class="text-center">
-							<a class="btn btn-outline-dark mt-auto" href="#">보러가기</a>
+						<!-- Product actions-->
+						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+							<div class="text-center">
+								<a class="btn btn-outline-dark mt-auto" href="#">보러가기</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</c:forEach>
+			</c:forEach>
 		</div>
 	</div>
 </section>
@@ -142,7 +145,7 @@ input {
 <script>
 
 
-let mid =document.getElementById("mid").value; 
+let mid =document.getElementById('mid').value; 
 
 document.getElementById('jbtn').addEventListener('click',function(e){
 	
@@ -203,25 +206,25 @@ function total(){
 	 
 };
 
+//바로구매
 
-
-/*document.getElementById('byebtn').addEventListener('click',function(e){
+function paybtn(){
 	
-	let adcnt = document.querySelector('input[name=adcnt]').value;  //어른티켓갯수
-	let chcnt = document.querySelector('input[name=chcnt]').value;  //아동티켓갯수
-	fetch('/paymentForm.do?fcode='+'${vo.fcode }' + '&pid=' + user +'&adcnt=' + adcnt +'&chcnt=' + chcnt +'&fimage=' + '${vo.fimage }' + '&fname=' + '${vo.fname }')
+	let adcnt = document.querySelector('input[name=adcnt]').value;
+	let chcnt = document.querySelector('input[name=chcnt]').value;
+	
+	fetch('payment.do?fcode='+'${vo.fcode }' + '&pid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt)
 	.then(resolve => resolve.json())
 	.then(result => {
 		console.log(result);
 		if(result.retCode == 'OK'){
-			alert('주문서로 이동합니다');
+			alert('성공');
 		}else{
 			alert('실패');
 		}
 	})
 	.catch(err => console.log(err));
-			
-});*///결제창 뜨게 하는 이벤트
+};
 
 </script>
 
