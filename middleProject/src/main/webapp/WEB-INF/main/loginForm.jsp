@@ -16,7 +16,7 @@
 	</tr>
 	<tr>
 		<th>비밀번호</th>
-		<td><input type="text" class="form-control" name="pass"></td>
+		<td><input type="password" class="form-control" name="pass"></td>
 	</tr>
 	<tr>
 		<td colspan="2"><input type="button" onclick="loginCheck()" value="로그인"></td>

@@ -17,6 +17,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         
+        
+        
+        
         <style>
         	.sidebar-heading border-bottom bg-light{
 	 		 padding: 10px;
