@@ -18,5 +18,6 @@ public class WishVO {
 	private String flat;
 	private String flng;
 	private String fcontent;
+	private int wno;
 	
 }

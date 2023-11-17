@@ -11,11 +11,10 @@ public class main {
 	public static void main(String[] args) {
 
 
-		WishService svc = new WishServiceImpl();
 		
-	     List <WishVO> list = svc.wishList("member");	
-	     
-	     System.out.println(list);
+		
+		
+		
 	}
 	
 
