@@ -197,13 +197,16 @@ td {
 				<tbody>
 					<tr class="cart__list__detail" id = "tr">
 						<td>${vo.cno }</td>
-						<td><img src="resources/images/${vo.fimage }" alt="..."></td>
+						<td><img src="resources/images/${vo.fimage }" alt="..." style="height: 130px; width:120px;"></td>
 						<td><a href="festivalInfo.do?fno=${vo.fcode }">${vo.fname }</a><span class="cart__list__smartstore"> 오조짱축제</span>
 							<p>축제기간 : ${vo.fsdate } ~ ${vo.fedate }</p> <sapn class="price">어른:${vo.fprice1 }원 , 아동:${vo.fprice2 }원</sapn></td>
 						<td class="cart__list__option">
-							<p>수량 : 어른 ${vo.adcnt }매, 아동 ${vo.chcnt }매</p>
+						<p>어른</p>
+							<input type="number" name="adcnt" style="width: 50px;" value="${vo.adcnt }" onclick="atotal(${vo.fprice1 });">
+						<p>아동</p>
+							<input type="number" name="chcnt" style="width: 50px;" value="${vo.chcnt }" onclick="ctotal(${vo.fprice2 });"> 
 						</td>
-						<td><span class="price" > ${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</span><br></td>
+						<td><span class="price" id="total"> ${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2} </span><br></td>
 						<td><button class="cart__list__optionbtn" type="button" onclick="del(${vo.cno });">장바구니 삭제</button></td>
 					</tr>
 				</tbody>
@@ -242,7 +245,67 @@ function del(vo){
 	   }
 	})//두번째then
 	.catch(err => console.log(err));
-}
+}//장바구니 삭제 
+
+
+
+let adtotal = 0;
+let chtotal = 0;
+
+//let adtotal = document.querySelector('input[name=adcnt]').value * fprice1;  //온클릭 함수가 실행이안되도 초기값이 0으로 되는거 방지하려고
+//let chtotal = document.querySelector('input[name=chcnt]').value * fprice2;   //온클릭 함수가 실행이안되도 초기값이 0으로 되는거 방지하려고
+//let fprice1 = 13000;
+//let fprice2 = 5000;
+
+function atotal(price){
+	
+
+	let adcnt = document.querySelector('input[name=adcnt]').value;   
+	
+	adtotal = adcnt*price;  //어른합 //숫자 
+	
+ 	//console.log("어른합계"+ adtotal);
+ 
+	
+ 	sum();
+ 	
+	
+};//어른합계계산 
+
+
+
+
+function ctotal(price){
+	
+	
+	let chcnt = document.querySelector('input[name=chcnt]').value; //숫자 
+	
+	chtotal = chcnt*price;   //숫자 
+
+	//console.log("아동 합계"+ chtotal); 
+	
+	sum();
+	  
+
+};//아동 합계
+
+
+
+
+function sum(){
+	
+	console.log("어른합"+ adtotal);
+	console.log("아이합"+ chtotal);
+	let sum = adtotal+chtotal;
+	console.log("최종최종합"+sum);
+	document.getElementById('total').innerHTML = sum;
+	
+	
+};
+
+
+
+
 </script>
 
 

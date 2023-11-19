@@ -17,15 +17,15 @@ public class FestivalInfoControl implements Command {
 
 		FestivalService svc = new FestivalServiceImpl();
 
-		String fcode = req.getParameter("fno");
+		String fcode = req.getParameter("fno"); 
 		String path = "festival/festivalInfo.tiles";
 		FestivalVO vo = svc.getfestivalInfo(fcode);
 
 		List<FestivalVO> list = svc.selectLike(fcode); // 별점 높은순 목록
 
-		req.setAttribute("list", list);
+		req.setAttribute("list", list);  //별점 리스트 
 
-		req.setAttribute("vo", vo);
+		req.setAttribute("vo", vo);  //상세조회 1건 
 
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);

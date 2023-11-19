@@ -49,8 +49,7 @@ input {
 					</table>
 				</div>
 				<br>
-				<h3>총 금액</h3>
-				<h3 id='total'></h3>
+				<p id='total' style="font-weight:bold; font-size: large;" > </p>
 				<br> <span><button type="button" id="cartbtn">
 						<i>장바구니에 담기</i>
 					</button></span> <span><button onclick="paybtn()" value="바로구매">
@@ -129,7 +128,7 @@ input {
 						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">보러가기</a>
+								<a class="btn btn-outline-dark mt-auto" href="festivalInfo.do?fno=${vo.fcode }">보러가기</a>
 							</div>
 						</div>
 					</div>
@@ -139,18 +138,12 @@ input {
 	</div>
 </section>
 
-<<<<<<< HEAD
 
 
 
 <input type = "hidden" id= "mid" value="${loginId }">							
 								
 								
-=======
-<input type="hidden" id="mid" value="${loginId }">
-
-
->>>>>>> refs/remotes/origin/3
 <script>
 
 
@@ -210,11 +203,9 @@ function total(){
 	
 	console.log(total);
 	
-	document.getElementById('total').innerHTML = total;
+	document.getElementById('total').innerHTML = '총 결제 금액 : '+ total+' 원';
 	
-	
-	 
-};
+}; //총합계 계산 
 
 //바로구매
 

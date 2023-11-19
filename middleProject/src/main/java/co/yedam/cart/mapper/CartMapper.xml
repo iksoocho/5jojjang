@@ -23,6 +23,16 @@
 		delete from cart where cno = #{cno} 
 	</delete>
 
+   
+   <select id = "cartCnt"  resultType="int" parameterType ="string">
+		
+		
+	select count(*)
+	from cart
+	where cid = #{cid}
 
+	</select>
+   
+   
 
 </mapper>
