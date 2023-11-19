@@ -4,23 +4,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<!-- <form action="modifyQnaForm.do" name="qnaForm"> -->
-<form>
+
+
 <%-- <input type="hidden" name="no" value="${qno.qno }"> --%>
 
-<table border="1" >
+<body>
+<div class="card mb-4">
+				<div class="card-header">
+					<i class="fas fa-table me-1"></i> QNA 목록
+				</div>
+<div class="card-body">
 
 
 <h3> 관리자 - 페스티발 전체 리스트보기</h3>
+<form action = 'addAdFvForm.do' name = 'insertForm'>
 
-<table border="1">
+	<table id="datatablesSimple">
 	<thead>
 		<tr>
 			<th>축제코드</th>
 			<th>축제명</th>
 			<th>연락처</th>
 			<th>위치</th>
-			<th>이미지삽입</th>
 			<th>시작날짜</th>
 			<th>종료날짜</th>
 			<th>위도</th>
@@ -28,19 +33,20 @@
 			<th>상세설명</th>
 			<th>가격1</th>
 			<th>가격2</th>
+			<th> </th>
 		</tr>
 	</thead>
 
 	<tbody>
 
 		<c:forEach items="${flist }" var="vo">
-			<tr>
+			<tr id="listTr">
 				<td>${vo.fcode }</td>
 				<td><a href="getadFv.do?fcode=${vo.fcode }"> ${vo.fname }</a></td>
-				<td> ${vo.fname }</td>
+				
 				<td>${vo.fphone }</td>
 				<td>${vo.fplace }</td>
-				<td>${vo.fimage }</td>
+				
 				<td>${vo.fsdate }</td>
 				<td>${vo.fedate }</td>
 				<td>${vo.flat }</td>
@@ -48,9 +54,80 @@
 				<td>${vo.fcontent }</td>
 				<td>${vo.fprice1 }</td>
 				<td>${vo.fprice2 }</td>
+				<td><input type="button" value="삭제"></td>
 			
 			</tr>
 		</c:forEach>
 
 	</tbody>
 </table>
+
+	<input type='submit' value='새 축제 등록하기'>
+	</form>
+
+		</div>
+			</div>
+	
+</body>
+	
+
+<script>
+/* function doDel(code) {
+    alert("삭제하시겠습니까");
+    
+    let tr = document.getElementById('listTr');
+    let fcode = code;
+    	
+    fetch('deleteAdFv.do?fcode='+ fcode)
+    .then(resolve => resolve.json())
+    .then(result => {
+    	if(result.retCode == 'OK'){
+    		alert('삭제 완료! ');
+    		tr.remove();
+    	}else{
+    		alert('삭제 실패! ');
+    	}
+    })
+   .catch(err => console.log(err));
+  }  
+   */
+document.querySelector('input[type=button]').addEventListener('click', function(e){
+	document.forms.insertForm.action = 'deleteAdFvForm.do'; 
+	document.forms.insertForm.submit(); 
+});
+
+  
+/*   
+function del(vo){
+	let tr = document.getElementById('tr');
+	let cno = vo;
+	console.log(vo);
+	fetch('delCart.do?cno='+ cno)
+	.then(resolve => resolve.json())
+	.then(result => {
+	   console.log(result);
+	   if(result.retCode == 'OK'){
+	      alert('장바구니목록에서 삭제되었습니다');
+	      tr.remove();
+	   }else {
+	      alert('삭제실패');
+	   }
+	})//두번째then
+	.catch(err => console.log(err));
+}
+ */
+
+
+
+</script>
+
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	crossorigin="anonymous"></script>
+<script src="adminResource/js2/scripts.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+	crossorigin="anonymous"></script>
+<script src="adminResource/js2/datatables-simple-demo.js"></script>
+<link href="adminResource/css2/styles.css" rel="stylesheet" />

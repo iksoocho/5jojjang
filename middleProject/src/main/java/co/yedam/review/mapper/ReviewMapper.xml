@@ -9,7 +9,7 @@
 
 	<select id="select" resultType="co.yedam.review.service.ReviewVO"
 		parameterType="int">
-		select * from review where rno = #{seq_rno}
+		select * from review where rno = #{seq2_rno}
 	</select>
 
 <!-- 조휘수	<update id="updateCnt" parameterType="int"> -->
@@ -20,7 +20,7 @@
 	<insert id="insertReview"
 		parameterType="co.yedam.review.service.ReviewVO">
 		insert into review(rno, rtitle, rcontent, rwritedate, rimage)
-		values (seq_rno.nextval, #{rtitle}, #{rcontent}, sysdate, #{rimage})
+		values (seq2_rno.nextval, #{rtitle}, #{rcontent}, #{rwrite_date}, #{rimage})
 	</insert>
 
 	<update id="updateReview"
