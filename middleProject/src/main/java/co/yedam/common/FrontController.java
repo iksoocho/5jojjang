@@ -28,7 +28,7 @@ import co.yedam.member.web.MyPageFormControl;
 
 import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
-
+import co.yedam.member.web.SelectFindIdOrPasswd;
 import co.yedam.member.web.getMemberControl;
 import co.yedam.member.web.modifyPasswdControl;
 import co.yedam.member.web.modifyPasswdFormControl;
@@ -90,6 +90,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/ckNumberForm.do", new CkNumberFormControl());
 		map.put("/modifyPasswdForm.do", new modifyPasswdFormControl());
 		map.put("/modifyPasswd.do", new modifyPasswdControl());
+		map.put("/SelectFindIdOrPasswd.do", new SelectFindIdOrPasswd()); //아이디찾기, 비번 찾기 고르는거 
 
 		// 회원가입
 		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면

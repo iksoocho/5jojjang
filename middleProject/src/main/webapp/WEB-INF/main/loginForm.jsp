@@ -25,20 +25,34 @@
   border-radius: 7px;
 }
 
-.box input,
-.box button {
-  padding: 15px;
+.box input{
+	 padding: 15px;
   font-size: 1.2em;
   border: none;
+  border-radius : 10px; 
+}
+.box button {
+  /* padding: 15px;
+  font-size: 1.2em;
+  border: none; */
+  padding: 10px;
+  height : 50px;
+    background: #00AE68;
+  border-radius : 10px;
+  border : none;
+}
+
+.box button:hover {
+  background: #21825B;
 }
 .box input {
   margin-bottom: 25px;
 }
-.box button {
+/* .box button {
   background-color: #ffe4c4;
   color: #547fb2;
   border-radius: 4px;
-}
+} */
 
 .sign-up-box {
   position: absolute;
@@ -105,14 +119,24 @@
 </style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<form id="login" action="login.do" method="post">
-	<div class="box">
+	<div class="box ">
   <input type="email" placeholder="ID" name="mid" />
   <input type="password" placeholder="Password" name="pass"/>
-  <button onclick="loginCheck()">Sign in</button>
-  <button onclick="findIdPasswd()" type="button"> 아이디/비밀번호 찾기</button>
+  <div class="d-flex justify-content-between">
+	  <button onclick="loginCheck()" style="width :100px">Sign in</button>
+	  <button onclick="findIdPasswd()" type="button"> 아이디/비밀번호 찾기</button>
+  </div>
 
   <div class="sign-up-box">
     <i class="material-icons"><a href="joinForm.do">create</a></i>
@@ -163,7 +187,7 @@
 	
 	function findIdPasswd(){
 		//window open으로 추후에 변경
-		window.open("findIdpasswdForm.do", "비밀번호 찾기", "width=500,height=300")
+		window.open("SelectFindIdOrPasswd.do", "비밀번호 찾기", "width=500,height=300")
 		//location.href = "findIdpasswdForm.do";
 	}
 </script>

@@ -28,7 +28,7 @@
 				//아이디 보내기
 				location.href="modifyPasswdForm.do?mid="+mid;
 			}else{
-				alert("인증번호 틀렸습니다. 다시 인증번호를 재발급해주세요");
+				alert("인증번호 틀렸습니다. 인증번호를 재발급해주세요");
 				//window.close();
 				//location.href="loginForm.do";
 			}

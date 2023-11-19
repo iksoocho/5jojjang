@@ -27,7 +27,10 @@
    <title>축제 일정</title>
 
    <style>
-      #calendar {}
+      #calendar {
+      	width : 600px;
+      	margin : 30px auto;
+      }
 
       .seatDiv {
          cursor: pointer;

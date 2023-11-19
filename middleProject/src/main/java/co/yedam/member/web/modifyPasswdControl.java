@@ -31,7 +31,7 @@ public class modifyPasswdControl implements Command {
 		PrintWriter w;
 		try {
 			w = resp.getWriter();
-	        w.write("<script>alert('"+msg+"');location.href='"+url+"';</script>");
+	        w.write("<script>alert('"+msg+"');window.close();</script>");
 			w.flush();
 			w.close();
 		} catch (IOException e) {
