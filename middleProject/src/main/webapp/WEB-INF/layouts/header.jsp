@@ -40,7 +40,7 @@
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" id="navbarDropdown"
 							href="myPageForm.do" role="button" data-bs-toggle="dropdown"
-							aria-expanded="true">마이 페이지</a>
+							aria-expanded="false">마이 페이지</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item"
 									href="getMember.do?mid=${loginId }">회원 정보</a></li>
@@ -55,7 +55,7 @@
 				<c:choose>
 					<c:when
 						test="${!empty responsibility && responsibility == 'admin' }">
-						<<li class="nav-item"><a class="nav-link" href="">축제 관리</a></li>
+						<li class="nav-item"><a class="nav-link" href="">축제 관리</a></li>
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item"><a class="nav-link" href="calendar.do">축제

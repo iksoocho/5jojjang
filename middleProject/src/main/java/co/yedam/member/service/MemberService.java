@@ -13,4 +13,11 @@ public interface MemberService {
 	
 	//로그인 처리
 	public MemberVO loginCheck(String id, String pw);
+	
+	//비밀번호, 아이디 찾기 메일 보내기
+	public void sendMail(String from, String email, String subject, String content);
+	
+	//비밀번호 변경
+	public boolean editPass(MemberVO vo);
+
 }

@@ -22,7 +22,8 @@ public class LoginControl implements Command {
 		String id = req.getParameter("mid");
 		String pass = req.getParameter("pass");
 		String pw = UserSha256.encrypt(req.getParameter("pass"));
-		
+		String mag = "아이디 혹은 비밀번호를 확인해 주세요";
+		String mag2 = "로그인 성공";
 		
 		//session > 서버와 클라이언트(웹브라우저) 연결되면 캐쉬를 삭제하거나 페이지를 닫지 않는 이상 사라지지 않고 가지고 있음
 		

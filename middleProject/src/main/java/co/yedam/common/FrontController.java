@@ -17,7 +17,9 @@ import co.yedam.festival.web.TotalListControl;
 import co.yedam.member.web.CheckIdControl;
 
 import co.yedam.member.web.CheckModifyControl;
-
+import co.yedam.member.web.CkNumberFormControl;
+import co.yedam.member.web.FindIdpasswdControl;
+import co.yedam.member.web.FindIdpasswdForm;
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
@@ -28,7 +30,8 @@ import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
 
 import co.yedam.member.web.getMemberControl;
-
+import co.yedam.member.web.modifyPasswdControl;
+import co.yedam.member.web.modifyPasswdFormControl;
 import co.yedam.payment.web.paymentFormControl;
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
@@ -82,6 +85,11 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
+		map.put("/findIdpasswdForm.do", new FindIdpasswdForm());
+		map.put("/findIdpasswd.do", new FindIdpasswdControl());
+		map.put("/ckNumberForm.do", new CkNumberFormControl());
+		map.put("/modifyPasswdForm.do", new modifyPasswdFormControl());
+		map.put("/modifyPasswd.do", new modifyPasswdControl());
 
 		// 회원가입
 		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면

@@ -112,6 +112,7 @@
   <input type="email" placeholder="ID" name="mid" />
   <input type="password" placeholder="Password" name="pass"/>
   <button onclick="loginCheck()">Sign in</button>
+  <button onclick="findIdPasswd()" type="button"> 아이디/비밀번호 찾기</button>
 
   <div class="sign-up-box">
     <i class="material-icons"><a href="joinForm.do">create</a></i>
@@ -158,6 +159,12 @@
 	    })
 	    .catch(err=>console.log(err))
 	    }
+	}
+	
+	function findIdPasswd(){
+		//window open으로 추후에 변경
+		window.open("findIdpasswdForm.do", "비밀번호 찾기", "width=500,height=300")
+		//location.href = "findIdpasswdForm.do";
 	}
 </script>
 </body>

@@ -73,7 +73,12 @@
 		    <version>1.16.0</version>
 		</dependency>
 
-
+		<!-- 메일 -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
 
 	</dependencies>
   

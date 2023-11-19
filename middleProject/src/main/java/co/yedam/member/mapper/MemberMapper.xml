@@ -26,5 +26,9 @@
 		delete from member where mid = #{mid }
 	</delete>
 	
+	<update id="updatePass" parameterType="co.yedam.member.service.MemberVO">
+		update member set pass=#{pass} where mid=#{mid}
+	</update>
+	
 
 </mapper>
