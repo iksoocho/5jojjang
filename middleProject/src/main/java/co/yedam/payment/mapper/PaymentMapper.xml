@@ -16,4 +16,10 @@
 		ORDER BY pno
 
 	</select>
+	
+	<insert id="orderList" parameterType="co.yedam.payment.service.PaymentVO">
+	insert into payment
+	values(#{pid})
+	</insert>
 </mapper>
+	<!-- insert 작성해오기-->

@@ -6,11 +6,12 @@ import lombok.Data;
 public class QnaVO {
 
 	private int qno;
+	private int seq_qno;
 	private String qid;
 	private String qtitle;
 	private String qcontent;
-	private String qwriteDate;
-	private String qlastUpdate;
+	private String qwritedate;
+	private String qlastupdate;
 	private String qpass;
 
 

@@ -5,21 +5,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
 <form action="modifyQnaForm.do" name="qnaForm">
+<input type="hidden" name="qno" value="${qno.qno }">
 
 <input type="hidden" name="mid" value="${loginId }">
 <input type="hidden" name="responsibility" value="${responsibility }">
 
-	<input type="hidden" name="qno" value="${qno.qno }">
+
 	<table border="1" class="table">
 		<tr>
 			<th>글번호</th>
-			<td class="qno">${qno.qno }</td>
+			<td>${qno.qno }</td>
+
+			<th>작성일시</th>
+			<td>${qno.qwritedate }</td>
+			
+			<th>작성자</th>
+			<td>${loginId }</td>
 		</tr>
 		
-		<tr>
-			<th>작성일시</th>
-			<td>${qno.qwriteDate }"</td>
-			
+		<tr>	
 			<th>글제목</th>
 			<td colspan="3">${qno.qtitle }</td>
 		</tr>
@@ -28,13 +32,6 @@
 		<th>내용</th>
 			<td colspan="4"><textarea rows="5" cols="40" class="form-control">${qno.qcontent }</textarea></td>
 		</tr>
-
-
-		<tr>
-			<th>작성자</th>
-			<td>${qno.qid }</td>
-		</tr>
-		
 
 		
 		<tr>
@@ -66,13 +63,19 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 
 </script>
 
-<!-- 
+
+
+
+
+
+
+
 <h3> Qna 게시글에 댓글 등록하기</h3>
 <table>
 <tr>
-<th>댓글입력하기</th>
+<th>답변  </th>
 <td><input type="text" id="content"></td>
-<td><button id="addReply">댓글 등록하기! </button></td>
+<td><button id="addReply">입력 </button></td>
 </tr>
 </table>
 

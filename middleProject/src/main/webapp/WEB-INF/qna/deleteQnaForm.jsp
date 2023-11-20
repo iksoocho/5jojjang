@@ -10,29 +10,27 @@
 	<h3>게시글 삭제 화면</h3>
 	<form action="removeQna.do" method="post">
 		<input type="hidden" name="qno" value="${vo.qno}">
-		<!-- 아이디값 가져와서 수정하니까 value에 보드넘버로 가져옴. -->
 
-
-
-		<!-- 파일첨부 처리하려면 multipart/form-data  -->
 		<table border="1">
 			<tr>
 				<th>번호</th>
-				<td><input type="text" name="fcode" value="${vo.qno }"></td>
+				<td><input type="text" name="qno" value="${vo.qno }"></td>
 				<th>제목</th>
-				<td><input type="text" name="fname" value="${vo.qtitle}"></td>
+				<td><input type="text" name="qtitle" value="${vo.qtitle}"></td>
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td><input type="text" name="fphone" value="${vo.qcontent}"></td>
+				<td><input type="text" name="qcontent" value="${vo.qcontent}"></td>
 				<th>날짜</th>
-				<td><input type="text" name="fplace" value="${vo.qwriteDate}"></td>
+				<td><input type="text" name="qwritedate" value="${vo.qwritedate}"></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
-				<td><input type="image" name="fimage" value="${vo.qpass}"></td>
+				<td><input type="password" name="" value="${vo.qpass}"></td>
 			</tr>
-		
+			<tr>
+			<td><input type="submit" value="확인"></td>
+			</tr>
 		</table>
 
 

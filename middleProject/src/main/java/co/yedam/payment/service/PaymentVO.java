@@ -10,6 +10,6 @@ public class PaymentVO {
 	private int adcnt;
 	private int chcnt;
 	private String fcode;
-	//private int totalprice;
+	private int total_amount;
 	
 }

@@ -201,48 +201,36 @@ td {
 							<td><a href="festivalInfo.do?fno=${vo.fcode }">${vo.fname }</a><span
 								class="payment__list__smartstore"> 오조짱축제</span> <span
 								class="price">${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</span>
+								<span><input type="button" value="후기작성" name="main" onclick="location.href='reviewList.do?=rid'" class="payment__bigorderbtn right"></span>
 							</td>
-							<td class="payment__list__period">
+							<td class="payment__list__option">
 								<p>${vo.fsdate }~ ${vo.fedate }</p>
 							</td>
 							<td class="payment__list__option">
-								<p>수량 : 어른 ${vo.adcnt }매, 아동 ${vo.chcnt }매</p> <!--                             <button class="cart__list__optionbtn">주문조건 추가/변경</button> -->
+								<p>수량 : 어른 ${vo.adcnt }매, 아동 ${vo.chcnt }매</p>
 							</td>
 							<td><span class="price">${vo.adcnt * vo.fprice1 + vo.chcnt * vo.fprice2}</span><br>
 								<button class="payment__list__orderbtn">취소하기</button>
 						</tr>
 					</tbody>
-				</c:forEach><tfoot>
+				</c:forEach>
+				<tfoot>
                     <tr>
                         <td colspan="3"><input type="checkbox"> <button class="payment__list__optionbtn">선택상품 삭제</button>
                             <button class="payment__list__optionbtn">선택상품 찜</button>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    
                     </tr>
                 </tfoot>
             </form>
         </table>
         <div class="payment__mainbtns">
         <input type="button" value="메인페이지" name="main" onclick="location.href='main.do'" class="payment__bigorderbtn left">
-            <button class="payment__bigorderbtn right"></button>
+        <input type="button" value="후기 구경하러 가기" name="main" onclick="location.href='reviewList.do'" class="payment__bigorderbtn right">
         </div>
     </section>
 	<input type="hidden" id="mid" value="${loginId }">
-
 	<script>
-
-// function main(){
-	
-// let mid =document.getElementById('mid').value;
-// fetch('main.do?mid=' + mid)
-// 	.then(resolve => resolve.json())
-// 	.then(result => {
-// 		console.log(result);
-// 	})
-// 	.catch(err => console.log(err));
-// };
 
 </script>
 </body>

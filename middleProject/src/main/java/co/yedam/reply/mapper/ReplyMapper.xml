@@ -10,7 +10,7 @@
 	<insert id="insertReply"
 		parameterType="co.yedam.reply.service.ReplyVO">
 		insert into reply(rpno, rpqno, rpcontent)
-		values (seq_rpno.nextval,#{rpqno},#{rpcontent})
+		values (seq2_rpno.nextval,#{rpqno},#{rpcontent})
 	</insert>
 
 

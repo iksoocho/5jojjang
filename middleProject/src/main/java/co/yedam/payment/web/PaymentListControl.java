@@ -17,10 +17,10 @@ public class PaymentListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		String mid = req.getParameter("pid");
-		System.out.println(mid);
+		String pid = req.getParameter("pid");
+		System.out.println(pid);
 		PaymentService svc = new PaymentServiceImpl();
-		List <PaymentVO> list = svc.paymentList(mid);
+		List <PaymentVO> list = svc.paymentList(pid);
 		req.setAttribute("list", list);
 		
 		try {

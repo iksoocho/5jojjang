@@ -216,7 +216,7 @@ td {
 
 
 		<div class="cart__mainbtns">
-			<button class="cart__bigorderbtn right">결제하기</button>
+			<button class="cart__bigorderbtn right" onclick="kakaoPay()" id="buybtn">결제하기</button>
 			
 		</div>
 	</section>

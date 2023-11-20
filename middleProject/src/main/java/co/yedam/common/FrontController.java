@@ -61,7 +61,6 @@ import co.yedam.wish.web.DelWishControl;
 import co.yedam.wish.web.WishControl;
 import co.yedam.wish.web.WishListControl;
 
-
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
 	// 위해 나눠놈
 	Map<String, Command> map = new HashMap<>();
@@ -87,9 +86,8 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/cartList.do", new CartListControl()); //장바구니 목록 보기
 		map.put("/delCart.do", new DelCartControl()); //장바구니 목록 보기
 		// 결제하기
-		map.put("/payment.do", new PaymentControl()); //결제하기
+		map.put("/payment.do", new PaymentControl()); //결제정보 확인하기
 		map.put("/paymentList.do", new PaymentListControl());  //구매내역
-		map.put("/paymentapprove.do", new PaymentApproveControl()); //결제 실행창
 
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());

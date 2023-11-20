@@ -30,7 +30,7 @@ public class QnaListControl implements Command {
 
 		req.setAttribute("list", list);
 	
-
+		//System.out.println("큐앤에이컨트롤 list : " + list);
 
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);

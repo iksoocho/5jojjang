@@ -5,21 +5,19 @@
 	<select id="selectList"
 		resultType="co.yedam.qna.service.QnaVO">
 
-		
 		select * from qna
 
-		 
 	</select>
 
 	<select id="select"
 		resultType="co.yedam.qna.service.QnaVO" parameterType="int">
-		select * from qna where qno = #{seq_qno}
+		select * from qna where qno = #{qno}
 	</select>
 	
 	<insert id="insert"
 		parameterType="co.yedam.qna.service.QnaVO">
 		insert into qna(qno, qid, qtitle, qcontent,  qpass)
-		values (seq_qno.nextval, #{qid},#{qtitle},#{qcontent}, #{qpass})
+		values (seq2_qno.nextval, #{qid},#{qtitle},#{qcontent}, #{qpass})
 	</insert>
 
 	<update id="update"
@@ -29,7 +27,7 @@
 
 
 	<delete id="delete" parameterType="int">
-		delete from qna where qno=#{seq_qno}
+		delete from qna where qno=#{qno}
 	</delete>
 	
 	<select id="getTotalCnt" resultType="int">

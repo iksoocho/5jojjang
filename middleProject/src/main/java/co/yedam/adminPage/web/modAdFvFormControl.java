@@ -16,7 +16,7 @@ public class modAdFvFormControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		String path = "admin/modAdFvForm.tiles";
+		String path = "adminPage/modAdFvForm.tiles";
 		
 		String fcode = req.getParameter("fcode"); //게시글번호를 하나 알고있으면 전체 정보를 알수있는 method 이용할거임
 		
