@@ -39,7 +39,7 @@ a {
 						<div class="card h-100">
 							<!-- Sale badge-->
 							<div class="badge bg-dark text-white position-absolute"
-								style="top: 0.5rem; right: 0.5rem">${loginId }님의 후기</div>
+								style="top: 0.5rem; right: 0.5rem">${vo.rid }님의 후기</div>
 							<img class="card-img-top" src="reviewResources/images/${vo.rimage}" style="height:360px;"
 								alt="..." />
 								
@@ -50,7 +50,7 @@ a {
 									<h5 class="fw-bolder">${vo.rtitle  }</h5>
 
 								
-									<p> ${vo.rwriteDate }</p>
+									<p> ${vo.rwritedate }</p>
 								</div>
 							</div>
 						</div>

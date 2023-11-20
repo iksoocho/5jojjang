@@ -22,6 +22,7 @@ public class AddReplyControl implements Command {
 		
 		
 		//파라메터
+		
 		String rpqno = req.getParameter("rpqno"); //게시글번호
 		String rpcontent = req.getParameter("rpcontent"); //내용
 		

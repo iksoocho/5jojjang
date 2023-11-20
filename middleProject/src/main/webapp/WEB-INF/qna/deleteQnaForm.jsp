@@ -15,21 +15,28 @@
 			<tr>
 				<th>번호</th>
 				<td><input type="text" name="qno" value="${vo.qno }"></td>
+			</tr>
+			<tr>
 				<th>제목</th>
 				<td><input type="text" name="qtitle" value="${vo.qtitle}"></td>
 			</tr>
 			<tr>
 				<th>내용</th>
 				<td><input type="text" name="qcontent" value="${vo.qcontent}"></td>
+				</tr>
+				<tr>
 				<th>날짜</th>
 				<td><input type="text" name="qwritedate" value="${vo.qwritedate}"></td>
 			</tr>
+			
+	<%-- 			<th>비밀번호</th>
+				
+				
+				<td><input type="password" name="qpass" value="${vo.qpass}"></td>
+				
+			</tr> --%>
 			<tr>
-				<th>비밀번호</th>
-				<td><input type="password" name="" value="${vo.qpass}"></td>
-			</tr>
-			<tr>
-			<td><input type="submit" value="확인"></td>
+			<td><input type="submit" value="네. 삭제하겠습니다."></td>
 			</tr>
 		</table>
 

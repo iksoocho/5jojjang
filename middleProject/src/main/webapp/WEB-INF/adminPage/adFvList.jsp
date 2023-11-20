@@ -54,8 +54,8 @@
 				<td>${vo.fcontent }</td>
 				<td>${vo.fprice1 }</td>
 				<td>${vo.fprice2 }</td>
-				<!-- <td><input type="button" value="삭제" >  </td> -->
-				<td><button onclick="doDel(${vo.fcode})">삭제</button>
+				 <td><input type="button" value="삭제" onclick="doDel('${vo.fcode}')">  </td> 
+				
 				
 			
 			</tr>
@@ -75,42 +75,16 @@
 
 <script>
 
-/* document.querySelector('input[type=button]').addEventListener('click', function(e){
-	document.forms.qnaForm.action = 'removeQnaForm.do';
-	document.forms.qnaForm.submit();
-})
- */
-/* function delMfucn(e) {
-	   // console.log(e.target.parentElement.parentElement.children[4].innerHTML)
-	   let id = e.target.parentElement.parentElement.children[0].innerHTML;
-	   fetch('adRemoveMember.do', {
-	         method: 'post',
-	         headers: {
-	            'Content-Type': 'application/x-www-form-urlencoded'
-	         },
-	         body: 'id=' + id
-	      })
-	      .then(resolve => resolve.json())
-	      .then(result => {
-	         if (result.retCode == 'OK') {
-	            alert('Success!!');
-	            e.target.parentElement.parentElement.remove();
-	         } else {
-	            alert('Error!!');
-	         }
-	      })
-	      .catch(err => console.log(err));
-	}
- */
  
-/*    function doDel(code){
-	   let tr =  e.target.parentElement.parentElement.children[0].innerHTML;
+  function doDel(code){
+	   let tr =  document.getElementById("listTr");
 	  
-	   
+	
 	   fetch('deleteAdFv.do', {
 		   method : 'post',
 		   headers : {'Content-Type': 'application/x-www-form-urlencoded'},
-		   body : 'fcode=' + fcode  
+		   body : 'fcode=' + code  
+		   
 	   })
 	   .then(resolve => resolve.json())
 	   .then(result => {
@@ -123,7 +97,7 @@
 	   })
 	   .catch(err => console.log(err));
 
-   }  */
+   }  
 
  
 
