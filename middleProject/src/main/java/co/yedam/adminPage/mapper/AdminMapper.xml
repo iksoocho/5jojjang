@@ -14,8 +14,8 @@
 	
 	<insert id="insert"
 		parameterType="co.yedam.adminPage.service.AdminVO">
-		insert into festival(fcode, fname, fphone,  fimage, fsdate, fedate,  fcontent, fprice1, fprice2)
-		values (#{fcode}, #{fname},#{fphone},#{fimage},#{fsdate}, #{fedate},  #{fcontent}, #{fprice1}, #{fprice2})
+		insert into festival(fcode, fname, fphone,  fimage, fsdate, fedate, fplace, flat, flng, fcontent, fprice1, fprice2)
+		values (#{fcode}, #{fname},#{fphone},#{fimage},#{fsdate}, #{fedate}, #{fplace}, #{flat}, #{flng},  #{fcontent}, #{fprice1}, #{fprice2})
 	</insert>
 
 	<update id="update"

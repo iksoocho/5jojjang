@@ -63,13 +63,19 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 
 </script>
 
-<!-- 
+
+
+
+
+
+
+
 <h3> Qna 게시글에 댓글 등록하기</h3>
 <table>
 <tr>
-<th>댓글입력하기</th>
+<th>답변  </th>
 <td><input type="text" id="content"></td>
-<td><button id="addReply">댓글 등록하기! </button></td>
+<td><button id="addReply">입력 </button></td>
 </tr>
 </table>
 

@@ -54,7 +54,9 @@
 				<td>${vo.fcontent }</td>
 				<td>${vo.fprice1 }</td>
 				<td>${vo.fprice2 }</td>
-				<td><input type="button" value="삭제"></td>
+				<!-- <td><input type="button" value="삭제" >  </td> -->
+				<td><button onclick="doDel(${vo.fcode})">삭제</button>
+				
 			
 			</tr>
 		</c:forEach>
@@ -72,51 +74,58 @@
 	
 
 <script>
-/* function doDel(code) {
-    alert("삭제하시겠습니까");
-    
-    let tr = document.getElementById('listTr');
-    let fcode = code;
-    	
-    fetch('deleteAdFv.do?fcode='+ fcode)
-    .then(resolve => resolve.json())
-    .then(result => {
-    	if(result.retCode == 'OK'){
-    		alert('삭제 완료! ');
-    		tr.remove();
-    	}else{
-    		alert('삭제 실패! ');
-    	}
-    })
-   .catch(err => console.log(err));
-  }  
-   */
-document.querySelector('input[type=button]').addEventListener('click', function(e){
-	document.forms.insertForm.action = 'deleteAdFvForm.do'; 
-	document.forms.insertForm.submit(); 
-});
 
-  
-/*   
-function del(vo){
-	let tr = document.getElementById('tr');
-	let cno = vo;
-	console.log(vo);
-	fetch('delCart.do?cno='+ cno)
-	.then(resolve => resolve.json())
-	.then(result => {
-	   console.log(result);
-	   if(result.retCode == 'OK'){
-	      alert('장바구니목록에서 삭제되었습니다');
-	      tr.remove();
-	   }else {
-	      alert('삭제실패');
-	   }
-	})//두번째then
-	.catch(err => console.log(err));
-}
+/* document.querySelector('input[type=button]').addEventListener('click', function(e){
+	document.forms.qnaForm.action = 'removeQnaForm.do';
+	document.forms.qnaForm.submit();
+})
  */
+/* function delMfucn(e) {
+	   // console.log(e.target.parentElement.parentElement.children[4].innerHTML)
+	   let id = e.target.parentElement.parentElement.children[0].innerHTML;
+	   fetch('adRemoveMember.do', {
+	         method: 'post',
+	         headers: {
+	            'Content-Type': 'application/x-www-form-urlencoded'
+	         },
+	         body: 'id=' + id
+	      })
+	      .then(resolve => resolve.json())
+	      .then(result => {
+	         if (result.retCode == 'OK') {
+	            alert('Success!!');
+	            e.target.parentElement.parentElement.remove();
+	         } else {
+	            alert('Error!!');
+	         }
+	      })
+	      .catch(err => console.log(err));
+	}
+ */
+ 
+/*    function doDel(code){
+	   let tr =  e.target.parentElement.parentElement.children[0].innerHTML;
+	  
+	   
+	   fetch('deleteAdFv.do', {
+		   method : 'post',
+		   headers : {'Content-Type': 'application/x-www-form-urlencoded'},
+		   body : 'fcode=' + fcode  
+	   })
+	   .then(resolve => resolve.json())
+	   .then(result => {
+		   if(result.retCode == 'OK'){
+			   alert("삭제하였습니다.")
+			  tr.remove();
+		   }else{
+			   alert("삭제 실패");
+		   }
+	   })
+	   .catch(err => console.log(err));
 
+   }  */
+
+ 
 
 
 </script>

@@ -27,16 +27,16 @@
 			<tr>
 			<th>내용</th>
 				<td colspan="2"><textarea cols="40" rows="5"
-						name="qcontent">${vo. fcontent }</textarea></td>
+						name="fcontent">${vo.fcontent }</textarea></td>
 			</tr>
 			
 			<tr>
 				<th>가격1</th>
-				<td><input type="text" name="price1" value="${vo.fprice1 }"></td>
+				<td><input type="text" name="fprice1" value="${vo.fprice1 }"></td>
 			</tr>
 			<tr>
 				<th>가격2</th>
-				<td><input type="text" name="price2" value="${vo.fprice2 }"></td>
+				<td><input type="text" name="fprice2" value="${vo.fprice2 }"></td>
 			</tr>
 			
 	

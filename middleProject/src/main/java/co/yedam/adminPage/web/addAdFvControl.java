@@ -36,6 +36,10 @@ public class addAdFvControl implements Command {
 			String fphone = mr.getParameter("fphone");
 			String fsdate = mr.getParameter("fsdate");
 			String fedate = mr.getParameter("fedate");
+			String fplace = mr.getParameter("fplace");
+			String flat = mr.getParameter("flat");
+			String flng = mr.getParameter("flng");
+			
 			String fcontent = mr.getParameter("fcontent");
 			String fimage = mr.getFilesystemName("fimage");
 			String fprice1 = mr.getParameter("fprice1");
@@ -47,6 +51,9 @@ public class addAdFvControl implements Command {
 			vo.setFphone(fphone);
 			vo.setFsdate(fsdate);
 			vo.setFedate(fedate);
+			vo.setFplace(fplace);
+			vo.setFlat(flat);
+			vo.setFlng(flng);
 			vo.setFcontent(fcontent);
 			vo.setFimage(fimage);
 			vo.setFprice1(Integer.parseInt(fprice1));

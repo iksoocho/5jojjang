@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
-<form action="modifyQnaForm.do" name="qnaForm">
+<form action="modifyAdFvForm.do" name="modForm">
 	<input type="hidden" name="fcode" value="${fcode.fcode }">
 	<table border="1" class="table">
 	
@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<th>이미지삽입</th>
-			<td>${fcode.fimage }</td>
+			<td><img src="adminResources/images/${fcode.fimage }" ></td>
 		</tr>
 		<tr>
 			<th>시작날짜</th>
@@ -59,4 +59,13 @@
 
 	</table>
 </form>
+
+<script>
+
+document.querySelector('input[type=button]').addEventListener('click', function(e){
+	document.forms.modForm.action = 'deleteAdFv.do';
+	document.forms.modForm.submit();
+})
+
+</script>
 

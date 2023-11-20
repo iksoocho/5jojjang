@@ -27,6 +27,16 @@
 			<th>종료일</th>
 			<td><input type="text" class="form-control" name="fedate"></td>
 		</tr>
+		
+		<tr>
+			<th>위치</th>
+			<td><input type="text" class="form-control" name="fplace"></td>
+			<th>위도</th>
+			<td><input type="text" class="form-control" name="flat"></td>
+			<th>경도</th>
+			<td><input type="text" class="form-control" name="flng"></td>
+		</tr>
+		
 		<tr>
 			<th>축제설명</th>
 			<td colspan="2"><textarea cols="40" rows="5" name="fcontent"
