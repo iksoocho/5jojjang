@@ -1,7 +1,9 @@
 package co.yedam.payment.web;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,6 +24,9 @@ public class PaymentControl implements Command {
 		
 		PaymentService svc = new PaymentServiceImpl();
 		PaymentVO vo = new PaymentVO();
+		List <PaymentVO> list = svc.paymentList(pid);
+		
+		req.setAttribute("list", list);
 		
 		vo.setPid(pid);
 		vo.setAdcnt(Integer.parseInt(adcnt));
@@ -29,20 +34,11 @@ public class PaymentControl implements Command {
 		vo.setFcode(fcode);
 		
 		System.out.println(vo);
-		
-		if(svc.appPayment(vo)) {
-			try {
-				resp.getWriter().print("{\"retCode\":\"OK\"}");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}else {
-			try {
-				resp.getWriter().print("{\"retCode\" : \"NG\"}");
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
+		try {
+			req.getRequestDispatcher("payment/payment.tiles").forward(req, resp);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		
 	}
 }

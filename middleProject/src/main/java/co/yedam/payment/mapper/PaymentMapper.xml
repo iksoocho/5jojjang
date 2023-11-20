@@ -14,12 +14,6 @@
 		select * from payment p left join festival f on p.fcode = f.fcode
 		where pid =#{mid}
 		ORDER BY pno
-
 	</select>
-	
-	<insert id="orderList" parameterType="co.yedam.payment.service.PaymentVO">
-	insert into payment
-	values(#{pid})
-	</insert>
+
 </mapper>
-	<!-- insert 작성해오기-->
