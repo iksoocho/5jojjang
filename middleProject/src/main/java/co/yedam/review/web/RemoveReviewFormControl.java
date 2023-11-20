@@ -12,6 +12,9 @@ public class RemoveReviewFormControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+		
+		String path = "review/removeReviewForm.tiles";
+		
 		String rno = req.getParameter("rno");
 
 		ReviewService svc = new ReviewServiceImpl();
@@ -20,7 +23,7 @@ public class RemoveReviewFormControl implements Command {
 			
 
 		try {
-			req.getRequestDispatcher("WEB-INF/review/removeReviewForm.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 					
 			e.printStackTrace();

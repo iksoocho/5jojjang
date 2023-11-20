@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
-<form action="modifyReviewForm.do" name="reiewForm">
+<form action="modifyReviewForm.do" name="reviewForm">
 
 	<input type="hidden" name="rno" value="${rno.rno }">
 	<input type="hidden" name="mid" value="${loginId }">
@@ -15,7 +15,7 @@
 		
 		<tr>
 			<th>작성일시</th>
-			<td>${rno.rwriteDate }"</td>
+			<td>${rno.rwritedate }"</td>
 			
 			<th>글제목</th>
 			<td colspan="3">${rno.rtitle }</td>
@@ -63,9 +63,32 @@
 
 
 
+
+
 <p><a href = "reviewList.do"> 이전 페이지로 이동 </a>
 
+<script>
 
+document.querySelector('input[type=button]').addEventListener('click', function(e){
+	
+/* 	let pmt = prompt('비밀번호를 입력하세요!');
+	let pwd = Number(pmt);
+	
+	if(pwd == ${qno.qpass}){
+		document.forms.qnaForm.action = 'removeQnaForm.do';
+		document.forms.qnaForm.submit();
+	}else{
+		alert("비밀번호가 틀렸습니다.");
+	} */
+	
+	
+ 	document.forms.reviewForm.action = 'removeReviewForm.do';
+	document.forms.reviewForm.submit();
+	 
+	
+})
+
+</script>
 
 
 
