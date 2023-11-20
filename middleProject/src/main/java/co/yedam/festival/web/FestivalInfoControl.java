@@ -20,6 +20,8 @@ public class FestivalInfoControl implements Command {
 		String fcode = req.getParameter("fno"); 
 		String path = "festival/festivalInfo.tiles";
 		FestivalVO vo = svc.getfestivalInfo(fcode);
+		
+		
 
 		List<FestivalVO> list = svc.selectLike(fcode); // 별점 높은순 목록
 

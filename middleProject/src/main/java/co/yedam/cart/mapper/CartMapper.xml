@@ -26,12 +26,14 @@
    
    <select id = "cartCnt"  resultType="int" parameterType ="string">
 		
-		
 	select count(*)
 	from cart
 	where cid = #{cid}
 
 	</select>
+   
+ 
+   
    
    
 
