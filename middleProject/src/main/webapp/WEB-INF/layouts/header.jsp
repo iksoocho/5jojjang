@@ -37,17 +37,15 @@
 								관리</a></li>
 					</c:when>
 					<c:otherwise>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" id="navbarDropdown"
-							href="myPageForm.do" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false">마이 페이지</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item"
-									href="getMember.do?mid=${loginId }">회원 정보</a></li>
-
-								<li><a class="dropdown-item" href="#!">찜 목록</a></li>
-								<li><a class="dropdown-item" href="#!">구매 내역</a></li>
-							</ul></li>
+						<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">마이페이지</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="getMember.do?mid=${loginId }">회원 정보</a></li>
+                                
+                                <li><a class="dropdown-item" href="#!">찜 목록</a></li>
+                                <li><a class="dropdown-item" href="#!">구매 내역</a></li>
+                            </ul>
+                        </li>
 					</c:otherwise>
 				</c:choose>
 

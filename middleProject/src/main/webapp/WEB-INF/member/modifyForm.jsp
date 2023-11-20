@@ -14,7 +14,7 @@
 		<table class="table">
 			<tr>
 				<th>이름</th>
-				<td><input type="text" name="name" ></td>
+				<td><input type="text" name="name" value="${mid.name }"></td>
 			</tr>
 			<tr>
 				<th>비밀번호</th>
@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<th>연락처</th>
-				<td><input  type="text" name="phone"></td>
+				<td><input  type="text" name="phone" value="${mid.phone }"></td>
 			</tr>
 			
 			<tr>

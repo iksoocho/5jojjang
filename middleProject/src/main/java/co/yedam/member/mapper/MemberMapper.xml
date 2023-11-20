@@ -6,6 +6,10 @@
 		select * from member where mid=#{id} and pass=#{pw}
 	</select>
 	
+	<select id="getIdEmail" resultType="co.yedam.member.service.MemberVO">
+		select * from member where name=#{name} and email=#{email}
+	</select>
+	
 	<select id="list" resultType="co.yedam.member.service.MemberVO">
 		select * from member
 	</select>

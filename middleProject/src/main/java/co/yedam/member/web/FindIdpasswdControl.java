@@ -25,7 +25,7 @@ public class FindIdpasswdControl implements Command {
 		if(svc.getMember(mid) == null) {
 			req.setAttribute("message", "존재하지 않는 아이디입니다.");
 			try {
-				resp.sendRedirect("/findIdpasswdForm.do");
+				resp.sendRedirect("findIdpasswdForm.do");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

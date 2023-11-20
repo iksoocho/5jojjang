@@ -1,4 +1,5 @@
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -7,109 +8,119 @@
 <html>
 
 <head>
-   <meta charset="UTF-8">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/ko.js"></script>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale/ko.js"></script>
 
 
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
-   </script>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+	crossorigin="anonymous">
+<!-- <script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+	crossorigin="anonymous">
+   </script> -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
-   <title>축제 일정</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+<title>축제 일정</title>
 
-   <style>
-      #calendar {
-      	width : 600px;
-      	margin : 30px auto;
-      }
+<style>
+#calendar {
+	width: 600px;
+	margin: 30px auto;
+}
 
-      .seatDiv {
-         cursor: pointer;
-         width: 90px;
-         aspect-ratio: 1/1 auto;
-         margin: 10px;
-      }
+.seatDiv {
+	cursor: pointer;
+	width: 90px;
+	aspect-ratio: 1/1 auto;
+	margin: 10px;
+}
 
-      #allTimeList td {
-         cursor: pointer;
-      }
+#allTimeList td {
+	cursor: pointer;
+}
 
-      .disabledDiv {
-         background-color: #A4A4A4;
-         margin: 10px;
-         padding: 5px;
-      }
+.disabledDiv {
+	background-color: #A4A4A4;
+	margin: 10px;
+	padding: 5px;
+}
 
-      .pickDiv {
-         background-color: #E3F6CE;
-      }
+.pickDiv {
+	background-color: #E3F6CE;
+}
 
-      .choiceday {
-         background-color: #fcf8e3;
-      }
+.choiceday {
+	background-color: #fcf8e3;
+}
 
-      .addLine {
-         text-decoration: line-through;
-         background-color: #F2F2F2;
-         color: #BDBDBD;
-      }
+.addLine {
+	text-decoration: line-through;
+	background-color: #F2F2F2;
+	color: #BDBDBD;
+}
 
-      #calendarDiv {
-         width: 60%;
-         margin: 40px auto;
-      }
+#calendarDiv {
+	width: 60%;
+	margin: 40px auto;
+}
 
-      #topdiv {
-         width: 1000px;
-         margin: 20px auto;
-      }
+#topdiv {
+	width: 1000px;
+	margin: 20px auto;
+}
 
-      #btndiv {
-         width: 90%;
-         text-align: right;
-      }
+#btndiv {
+	width: 90%;
+	text-align: right;
+}
 
-      #timeTable {
-         width: 800px;
-         margin: 20px auto;
-         padding: 10px;
-      }
+#timeTable {
+	width: 800px;
+	margin: 20px auto;
+	padding: 10px;
+}
 
-      .ableDiv {
-         margin: 10px;
-         padding: 5px;
+.ableDiv {
+	margin: 10px;
+	padding: 5px;
+}
 
-      }
-
-      #reserveDiv {
-         width: 1000px;
-         margin: 20px auto;
-         padding: 10px;
-      }
-   </style>
+#reserveDiv {
+	width: 1000px;
+	margin: 20px auto;
+	padding: 10px;
+}
+</style>
 </head>
 
 <body>
 
 
-   <div id="calendar"> </div>
+	<div id="calendar"></div>
 
-   <!-- 더보기 버튼생성, totalList.do로 이동 -->
-   <button onclick="selectAllFestival()" value="축제 전체 보기">축제 전체보기</button>
-   <!--게시글 목록-->
-   <div id="boardList">
-
-   </div>
-   <script>
+	<!-- 더보기 버튼생성, totalList.do로 이동 -->
+	<button onclick="selectAllFestival()" value="축제 전체 보기">축제 전체보기</button>
+	<!--게시글 목록-->
+	<div id="boardList"></div>
+	<script>
       var lastCkVal = "true";
       var lastOverlapCK = "true";
       var lastOverlapCKtime = "true";

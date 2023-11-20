@@ -126,4 +126,10 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.updatePass(vo)==1;
 	}
 
+	@Override
+	public MemberVO getIdEmail(String name, String email) {
+		// TODO Auto-generated method stub
+		return mapper.getIdEmail(name, email);
+	}
+
 }

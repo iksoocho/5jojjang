@@ -19,5 +19,8 @@ public interface MemberService {
 	
 	//비밀번호 변경
 	public boolean editPass(MemberVO vo);
+	
+	//아이디 , 이메일로 사람 찾기
+	public MemberVO getIdEmail(String name, String email);
 
 }

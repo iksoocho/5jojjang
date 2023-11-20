@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html>
 <head>
+<meta charset="UTF-8">
+<title>id 찾기</title>
 
-    <meta charset="UTF-8">
-
-    <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></head>
+<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"></head>
 
     <script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
@@ -51,23 +49,20 @@
         }
 
     </style>
-
 </head>
-
-<body>
-
-    <div class="card" style="width : 600px; margin : 30px auto">
+<body>	
+ <div class="card" style="width : 600px; margin : 30px auto">
 
         <div class="card-body" id="cardDiv">
 
-            <h4 class="mb-2">✔️ 비밀번호를 찾을 아이디를 입력해주세요.</h4>
+            <h4 class="mb-2">✔️ 이름과 이메일 주소를 입력해 주세요.</h4>
 
             <div class="mb-3">
 
-                <form id="myFrm" action="findIdpasswd.do">
+                <form id="myFrm" action="findId.do">
 
-                    <input type="text" class="form-control mb-2" id="mid" name="mid" required placeholder="ID">
-
+                    <input type="text" class="form-control mb-2" id="name" name="name" required placeholder="이름">
+					<input type="email" class="form-control mb-2" placeholder="email" id="email" name="email"/>
                     <button type="submit" class="btn btn-outline-secondary">찾기</button>
 
                 </form>
@@ -75,9 +70,6 @@
             </div>
 
         </div>
-
-    </div>
-
+        </div>
 </body>
-
 </html>
