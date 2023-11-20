@@ -17,7 +17,7 @@ public class MainControl implements Command {
 		
 		FestivalService svc = new FestivalServiceImpl();
 		
-		List <FestivalVO> list = svc.festivalList();
+		List<FestivalVO> list = svc.selectLike("F031");  // (축제코드 "F031" 제외 )메인페이지에 별점 높은거 3개 출력 
 		
 		req.setAttribute("list", list);
 		

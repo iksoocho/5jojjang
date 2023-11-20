@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import co.yedam.cart.service.CartService;
+import co.yedam.cart.serviceImpl.CartServiceImpl;
 import co.yedam.member.service.MemberService;
 import co.yedam.member.service.MemberVO;
 import co.yedam.member.serviceImpl.MemberServiceImpl;
@@ -55,6 +57,13 @@ public class LoginControl implements Command {
 				e.printStackTrace();
 			}
 		}
+		
+		
+		CartService svd =  new CartServiceImpl(); //로그인했을때 장바구니 갯수 띄울라고 추가함 
+		int sum = svd.cartCnt(id);  //sum에 카트에 든 총 갯수가 들어감
+		HttpSession session = req.getSession(); // session 객체 생성
+		session.setAttribute("cartcnt", sum); // 카트에 담긴 갯수 저장 
+		
 		
 		
 	}

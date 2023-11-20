@@ -38,19 +38,18 @@ input {
 						<tr>
 							<td>어른 ${vo.fprice1}원</td>
 							<td><lable>수량 : <input type="number" name="adcnt"
-									value="0" onclick="total();"></lable></td>
+									value="0" onclick="total();" min="0" max="10" step="1"></lable></td>
 						</tr>
 
 						<tr>
 							<td>아동 ${vo.fprice2}원</td>
 							<td><lable>수량 : <input type="number" name="chcnt"
-									value="0" onclick="total();"></lable></td>
+									value="0" onclick="total();" min="0" max="10" step="1"></lable></td>
 						</tr>
 					</table>
 				</div>
 				<br>
-				<h3>총 금액</h3>
-				<h3 id='total'></h3>
+				<p id='total' style="font-weight:bold; font-size: large;" > </p>
 				<br> <span><button type="button" id="cartbtn">
 						<i>장바구니에 담기</i>
 					</button></span> <span><button onclick="paybtn()" value="바로구매">
@@ -129,7 +128,7 @@ input {
 						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">보러가기</a>
+								<a class="btn btn-outline-dark mt-auto" href="festivalInfo.do?fno=${vo.fcode }">보러가기</a>
 							</div>
 						</div>
 					</div>
@@ -139,18 +138,12 @@ input {
 	</div>
 </section>
 
-<<<<<<< HEAD
 
 
 
 <input type = "hidden" id= "mid" value="${loginId }">							
 								
 								
-=======
-<input type="hidden" id="mid" value="${loginId }">
-
-
->>>>>>> refs/remotes/origin/3
 <script>
 
 
@@ -178,17 +171,18 @@ document.getElementById('cartbtn').addEventListener('click',function(e){
 	
 	let adcnt =document.querySelector('input[name=adcnt]').value;
 	let chcnt =document.querySelector('input[name=chcnt]').value;
-	let tto
+	
 	fetch('cart.do?fcode='+'${vo.fcode }' + '&cid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt )
 	.then(resolve => resolve.json())
 	.then(result => {
-		console.log(result);
+	
 		if(result.retCode == 'OK'){
 			alert('장바구니 목록에 추가되었습니다');
 		}else{
-			alert('장바구니 ');
+			alert('최소 하나이상의 수량을 선택하세요');
 		}
-	})
+		
+	})//두번째 then 
 	.catch(err => console.log(err));
 			
 });//장바구니 추가 이벤트 
@@ -210,11 +204,9 @@ function total(){
 	
 	console.log(total);
 	
-	document.getElementById('total').innerHTML = total;
+	document.getElementById('total').innerHTML = '총 결제 금액 : '+ total+' 원';
 	
-	
-	 
-};
+}; //총합계 계산 
 
 //바로구매
 

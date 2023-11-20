@@ -1,10 +1,7 @@
 package co.yedam.common;
 
-import java.util.List;
-
-import co.yedam.wish.service.WishService;
-import co.yedam.wish.service.WishVO;
-import co.yedam.wish.serviceImpl.WishServiceImpl;
+import co.yedam.cart.service.CartService;
+import co.yedam.cart.serviceImpl.CartServiceImpl;
 
 public class main {
 
@@ -12,6 +9,10 @@ public class main {
 
 
 		
+		CartService svc = new CartServiceImpl();
+		String cid = "user1";
+		
+		System.out.println(svc.cartCnt(cid));
 		
 		
 		
