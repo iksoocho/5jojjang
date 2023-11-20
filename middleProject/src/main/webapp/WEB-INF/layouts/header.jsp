@@ -81,14 +81,22 @@
 				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 
 			</ul>
-			  <form class="d-flex" action="cartList.do">
-			  <input type = "hidden" name="midd" value="${loginId }">
+			
+			
+			
+			
+			<c:choose>
+				<c:when test="${!empty loginId }">
+			  	<form class="d-flex" action="cartList.do">
+			  	<input type = "hidden" name="midd" value="${loginId }">
 				<button class="btn btn-outline-dark" type="submit" style="margin-right:20px;'">
 					<i class="bi-cart-fill me-1"></i> Cart <span
 						class="badge bg-dark text-white ms-1 rounded-pill">${cartcnt }</span>
 				</button>
-			</form>
-
+				 </form>
+			 	</c:when>
+			</c:choose>
+			
 			
 		</div>
 		<c:choose>

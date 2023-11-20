@@ -147,10 +147,14 @@ input {
 <script>
 
 
-let mid =document.getElementById('mid').value; 
+let mid =document.getElementById('mid').value;  //아이디 세션 저장한 변수 
 
 document.getElementById('jbtn').addEventListener('click',function(e){
 	
+	if(mid == '') {
+		alert('로그인 후 이용해주세요');
+		return;
+	}
 
 	fetch('wish.do?fcode='+'${vo.fcode }' + '&wid=' + mid)
 	.then(resolve => resolve.json())
@@ -169,12 +173,19 @@ document.getElementById('jbtn').addEventListener('click',function(e){
 
 document.getElementById('cartbtn').addEventListener('click',function(e){
 	
+	if(mid == '') {
+		alert('로그인 후 이용해주세요');
+		return;
+	}
+	
+	
 	let adcnt =document.querySelector('input[name=adcnt]').value;
 	let chcnt =document.querySelector('input[name=chcnt]').value;
 	
 	fetch('cart.do?fcode='+'${vo.fcode }' + '&cid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt )
 	.then(resolve => resolve.json())
 	.then(result => {
+		
 	
 		if(result.retCode == 'OK'){
 			alert('장바구니 목록에 추가되었습니다');
