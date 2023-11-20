@@ -6,7 +6,7 @@ import java.util.List;
 import co.yedam.member.service.MemberService;
 import co.yedam.member.service.MemberVO;
 import co.yedam.member.serviceImpl.MemberServiceImpl;
-
+import co.yedam.member.web.UserSha256;
 
 import java.util.List;
 
@@ -27,18 +27,14 @@ public class MainExe {
 		//MemberMapper mapper = session.getMapper(MemberMapper.class);
 		
 		
+
+		
 		MemberService svc = new MemberServiceImpl();
+		String pass = UserSha256.encrypt("hodu");
 		
-		MemberVO vo = new MemberVO();
-		vo.setName("조익수");
-		vo.setMid("cho");
-		vo.setPass("pass");
-		vo.setSsn("ssn");
-		vo.setPhone("phone");
-		vo.setEmail("email");
+		MemberVO vo = svc.getMemberForPass(pass);
 		
-		System.out.println(svc.addMember(vo));
-		
+		System.out.println(vo.getMid());
 		
 		
 		

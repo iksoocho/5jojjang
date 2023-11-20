@@ -176,7 +176,37 @@
 	    .then(result=>{
 	    	console.log(result.retCode)
 	    	 if(result.retCode=="NG"){
-	    		alert('아이디 혹은 비밀번호를 확인해 주세요');
+	    		 
+	    		 
+	    		 fetch('checkId.do',{
+	    		    	method: 'post',
+	    				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	    			 	body: 'mid='+ mid 
+	    		    })
+	    		    .then(resolve=>resolve.json())
+	    		    .then(result=>{
+	    		    	if(result.retCode=="OK"){
+	    		    		alert('존재하지 않는 아이디 입니다.')
+	    		    	}else{
+	    		    		
+	    		    		
+	    		    		 fetch('checkPass.do',{
+	    		    		    	method: 'post',
+	    		    				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	    		    			 	body: 'pass='+ pass 
+	    		    		    })
+	    		    		    .then(resolve=>resolve.json())
+	    		    		    .then(result=>{
+	    		    		    	if(result.retCode=="NG"){
+	    		    		    		alert('비밀번호가 틀렸습니다.')
+	    		    		    	}
+	    		    		    })
+	    		    		    .catch(err=>console.log(err))
+	    		    	}
+	    		    })
+	    		    .catch(err=>console.log(err))
+	    		 
+	    		 
 	    	}else{
 	    		alert(mid+' 님 환영합니다.')
 	    		document.getElementById("login").submit();
