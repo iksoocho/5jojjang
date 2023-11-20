@@ -35,7 +35,6 @@ import co.yedam.member.web.MyPageFormControl;
 import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
 import co.yedam.member.web.getMemberControl;
-import co.yedam.payment.web.PaymentApproveControl;
 import co.yedam.payment.web.PaymentControl;
 import co.yedam.payment.web.PaymentListControl;
 import co.yedam.qna.web.AddQnaControl;
@@ -84,7 +83,8 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 장바구니
 		map.put("/cart.do", new CartControl()); //장바구니추가하기
 		map.put("/cartList.do", new CartListControl()); //장바구니 목록 보기
-		map.put("/delCart.do", new DelCartControl()); //장바구니 목록 보기
+		map.put("/delCart.do", new DelCartControl()); //장바구니 목록 보기'
+		
 		// 결제하기
 		map.put("/payment.do", new PaymentControl()); //결제정보 확인하기
 		map.put("/paymentList.do", new PaymentListControl());  //구매내역

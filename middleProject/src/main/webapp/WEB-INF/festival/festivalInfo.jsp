@@ -46,19 +46,18 @@ input {
 						<tr>
 							<td>어른 ${vo.fprice1}원</td>
 							<td><lable>수량 : <input type="number" name="adcnt"
-									value="0" onclick="total();"></lable></td>
+									value="0" onclick="total();" min="0" max="10" step="1"></lable></td>
 						</tr>
 
 						<tr>
 							<td>아동 ${vo.fprice2}원</td>
 							<td><lable>수량 : <input type="number" name="chcnt"
-									value="0" onclick="total();"></lable></td>
+									value="0" onclick="total();" min="0" max="10" step="1"></lable></td>
 						</tr>
 					</table>
 				</div>
 				<br>
-				<h3>총 금액</h3>
-				<h3 id='total'></h3>
+				<p id='total' style="font-weight:bold; font-size: large;" > </p>
 				<br> <span><button type="button" id="cartbtn">
 						<i>장바구니에 담기</i>
 					</button></span> <span><button onclick="kakaoPay()" value="바로구매" id="buybtn">
@@ -138,7 +137,7 @@ input {
 						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 							<div class="text-center">
-								<a class="btn btn-outline-dark mt-auto" href="#">보러가기</a>
+								<a class="btn btn-outline-dark mt-auto" href="festivalInfo.do?fno=${vo.fcode }">보러가기</a>
 							</div>
 						</div>
 					</div>
@@ -148,8 +147,12 @@ input {
 	</div>
 </section>
 
-<input type="hidden" id="mid" value="${loginId }">
 
+
+<input type = "hidden" id= "mid" value="${loginId }">							
+								
+								
+>>>>>>> refs/heads/2
 <script>
 	let mid = document.getElementById('mid').value;
 
@@ -278,12 +281,86 @@ input {
 		} else if (rsp.success == false) { // 결제 실패시
 			alert(rsp.error_msg)
 		}
+<<<<<<< HEAD
 		})
 		//} else { // 비회원 결제 불가
 			//alert('로그인이 필요합니다!')
 			//}
 		} else { // 구매 확인 알림창 취소 클릭시 돌아가기
 			return false;
+=======
+	})
+	.catch(err => console.log(err));
+			
+});//찜추가이벤트 
+
+
+document.getElementById('cartbtn').addEventListener('click',function(e){
+	
+	let adcnt =document.querySelector('input[name=adcnt]').value;
+	let chcnt =document.querySelector('input[name=chcnt]').value;
+	
+	fetch('cart.do?fcode='+'${vo.fcode }' + '&cid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt )
+	.then(resolve => resolve.json())
+	.then(result => {
+	
+		if(result.retCode == 'OK'){
+			alert('장바구니 목록에 추가되었습니다');
+		}else{
+			alert('최소 하나이상의 수량을 선택하세요');
+>>>>>>> refs/heads/2
 		}
+<<<<<<< HEAD
 	}
 </script>
+=======
+		
+	})//두번째 then 
+	.catch(err => console.log(err));
+			
+});//장바구니 추가 이벤트 
+
+
+
+
+function total(){
+	
+	let fprice1 = "${vo.fprice1 }";  //어른가격 
+	let fprice2 = "${vo.fprice2 }";  //아동가격 
+	let adcnt = document.querySelector('input[name=adcnt]').value;  //어른티켓갯수
+	let chcnt = document.querySelector('input[name=chcnt]').value;  //아동티켓갯수
+	
+	let adtotal = adcnt*fprice1;
+	let chtotal = chcnt*fprice2;
+	
+	let total = adtotal + chtotal;  //어른 + 아이 총 합계
+	
+	console.log(total);
+	
+	document.getElementById('total').innerHTML = '총 결제 금액 : '+ total+' 원';
+	
+}; //총합계 계산 
+
+//바로구매
+
+function paybtn(){
+	
+	let adcnt = document.querySelector('input[name=adcnt]').value;
+	let chcnt = document.querySelector('input[name=chcnt]').value;
+	
+	fetch('payment.do?fcode='+'${vo.fcode }' + '&pid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt)
+	.then(resolve => resolve.json())
+	.then(result => {
+		console.log(result);
+		if(result.retCode == 'OK'){
+			alert('성공');
+		}else{
+			alert('실패');
+		}
+	})
+	.catch(err => console.log(err));
+};
+
+</script>
+
+>>>>>>> refs/heads/2

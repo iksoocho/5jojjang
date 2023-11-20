@@ -31,6 +31,9 @@ public class DayListControl implements Command {
 		
 		req.setAttribute("list", list);
 		
+		
+		
+		
 
 		try {
 			req.getRequestDispatcher("WEB-INF/festival/dayList.jsp").forward(req, resp);
