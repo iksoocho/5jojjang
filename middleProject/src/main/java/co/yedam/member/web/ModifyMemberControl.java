@@ -17,7 +17,7 @@ public class ModifyMemberControl implements Command {
 		// TODO Auto-generated method stub
 		MemberVO vo = new MemberVO();
 		vo.setName(req.getParameter("name"));
-		vo.setPass(req.getParameter("pass"));
+		vo.setPass(UserSha256.encrypt(req.getParameter("pass")));
 		vo.setPhone(req.getParameter("phone"));
 		vo.setMid(req.getParameter("mid"));
 		

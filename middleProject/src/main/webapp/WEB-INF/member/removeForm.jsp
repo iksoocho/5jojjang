@@ -16,7 +16,7 @@
 			
 			<tr>
 				<th>비밀번호 확인</th>
-				<td><input  type="text" name="passCheck"></td>
+				<td><input  type="password" name="passCheck"></td>
 			</tr>
 			
 			
