@@ -14,7 +14,7 @@ public class ReviewListControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-		//String path = "qna/qnaList.tiles";
+		String path = "review/reviewList.tiles";
 		
 		ReviewService svc = new ReviewServiceImpl();
 		List<ReviewVO> list = svc.reviewList();
@@ -22,7 +22,7 @@ public class ReviewListControl implements Command {
 				
 		// 나중에 경로 path로 바꾸기! 
 		try {
-			req.getRequestDispatcher("WEB-INF/review/reviewList.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 			} 

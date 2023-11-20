@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
 <form action="modifyForm.do" name="myForm">
-	<table class="table">
+<input type="hidden" name="mid" value="${loginId }">
+	<table class="table" style="text-align: center;">
+		
 		<tr>
 			<th>이름</th>
 			<td class="name">${mid.name }</td>
@@ -23,14 +25,17 @@
 		</tr>
 		<tr>
 			<td colspan="4" align="center">
-			
-			
-			<input type="submit" class="btn btn-primary" value="정보 수정">
-			<input type="button" class="btn btn-warning" value="회원 탈퇴">
-				
-				
+				<input type="submit" class="btn btn-primary" value="정보 수정"> 
+				<input type="button" class="btn btn-warning" value="회원 탈퇴">
 			</td>
 		</tr>
 	</table>
 
 </form>
+<script>
+	document.querySelector('input[type=button]').addEventListener('click',
+			function(e) {
+				document.forms.myForm.action = 'removeForm.do';
+				document.forms.myForm.submit();
+			});
+</script>

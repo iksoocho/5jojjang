@@ -6,15 +6,16 @@
 <head>
 <meta charset="UTF-8">
 
-<title>modifyForm.jsp</title>
+<title>modifyReviewForm.jsp</title>
 </head>
 <body>
 	<h3>리뷰 수정 화면</h3>
 	
 	${vo}
 	
-	<form action="modifyReview.do" method="post" > <!-- enctype="multipart/form-data"이거 파일수정안하니까 얘는 빼야지.. -->
+	<form action="modifyReview.do" method="post" enctype="multipart/form-data"> <!-- enctype="multipart/form-data"이거 파일수정안하니까 얘는 빼야지.. -->
 		<input type="hidden" name="rno" value="${vo.rno}"> <!-- 아이디값 가져와서 수정하니까 value에 보드넘버로 가져옴. -->
+		<input type="hidden" name="rid" value="${loginId }">
 		<!-- 파일첨부 처리하려면 multipart/form-data  -->
 		<table border="1">
 			<tr>
@@ -24,13 +25,14 @@
 			</tr>
 			
 			<tr>
+			<th>내용</th>
 				<td colspan="2"><textarea cols="40" rows="5"
 						name="content">${vo.rcontent }</textarea></td>
 			</tr>
 			
 			<tr>
 				<th>작성자</th>
-				<td><input type="text" name="writer" value="${logId }"></td>
+				<td><input type="text" name="writer" value="${loginId }" readonly></td>
 			</tr>
 			
 			<tr>

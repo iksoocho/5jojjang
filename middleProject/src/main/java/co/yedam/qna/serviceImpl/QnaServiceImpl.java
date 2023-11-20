@@ -38,5 +38,10 @@ public class QnaServiceImpl implements QnaService {
 	public boolean removeQna(int qno) {
 		return mapper.delete(qno) == 1;
 	}
+	
+	@Override
+	public int getTotalCnt() {
+		return mapper.getTotalCnt();
+	}
 
 }

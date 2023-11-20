@@ -4,13 +4,15 @@
 
 	<select id="selectList"
 		resultType="co.yedam.reply.service.ReplyVO">
-		select * from reply order by rpno where rpqno=#{rpqno}
+		<!-- select * from reply order by seq2_rpno where rpqno=#{rpqno} -->
+		<!-- select * from reply where rpqno=#{rpqno} order by rpno; -->
+		select * from reply where rpqno=#{rpqno}
 	</select>
 
 	<insert id="insertReply"
 		parameterType="co.yedam.reply.service.ReplyVO">
 		insert into reply(rpno, rpqno, rpcontent)
-		values (seq_rpno.nextval,#{rpqno},#{rpcontent})
+		values (seq2_rpno.nextval,#{rpqno},#{rpcontent})
 	</insert>
 
 

@@ -10,7 +10,7 @@ public class MyPageFormControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		String path = "WEB-INF/member/myPage.jsp";
+		String path = "member/myPage.tiles";
 		
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);

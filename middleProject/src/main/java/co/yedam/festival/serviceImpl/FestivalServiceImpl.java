@@ -30,4 +30,9 @@ public class FestivalServiceImpl implements FestivalService {
 		return mapper.dayList(day);
 	}
 
+
+	public List<FestivalVO> selectLike(String fcode) {
+		return mapper.selectLike(fcode);
+	}
+
 }

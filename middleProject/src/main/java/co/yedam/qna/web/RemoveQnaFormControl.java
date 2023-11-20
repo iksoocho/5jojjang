@@ -15,7 +15,9 @@ public class RemoveQnaFormControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
-	String qno = req.getParameter("qno");
+	String path = "qna/deleteQnaForm.tiles";
+		
+		String qno = req.getParameter("qno");
 
 	QnaService svc = new QnaServiceImpl();
 	QnaVO vo = svc.getQna(Integer.parseInt(qno));
@@ -23,7 +25,7 @@ public class RemoveQnaFormControl implements Command {
 		
 
 	try {
-		req.getRequestDispatcher("WEB-INF/qna/deleteQnaForm.jsp").forward(req, resp);
+		req.getRequestDispatcher(path).forward(req, resp);
 	} catch (Exception e) {
 				// TODO Auto-generated catch block
 		e.printStackTrace();

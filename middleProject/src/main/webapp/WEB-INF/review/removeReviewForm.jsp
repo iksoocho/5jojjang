@@ -16,25 +16,21 @@
 		<table border="1">
 			<tr>
 				<th>제목</th>
-				<td><input type="text" name="title" value="${vo.qtitle}"></td>
+				<td><input type="text" name="title" value="${vo.rtitle}"></td>
 				<!-- vo 값들을 넣어주는거임. -->
 			</tr>
 			
 			<tr>
 				<td colspan="2"><textarea cols="40" rows="5"
-						name="content">${vo.qcontent}</textarea></td>
+						name="content">${vo.rcontent}</textarea></td>
 			</tr>
 			
 			<tr>
 				<th>작성자</th>
-				<td><input type="text" name="writer" value="${logId}"></td>
+				<td><input type="text" name="writer" value="${loginId}"></td>
 			</tr>
 			
-			<tr>
-				<th>비밀번호</th>
-				<td><input type="password" name="password"></td>
-			</tr>
-
+		
 			<tr>
 				<td colspan="2"><input type="submit" value="삭제"> 
 				<input type="reset" value="초기화"></td>

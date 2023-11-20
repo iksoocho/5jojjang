@@ -10,6 +10,7 @@ public interface QnaService {
 	public boolean editQna(QnaVO vo);
 	public boolean removeQna(int qno);
 	
-	
+	//전체 게시글 건수
+	public int getTotalCnt();
 	
 }

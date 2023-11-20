@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.adminPage.mapper.AdminMapper">
+
+	<select id="selectList"
+		resultType="co.yedam.adminPage.service.AdminVO">
+		select * from festival 	
+	</select>
+
+	<select id="select"
+		resultType="co.yedam.adminPage.service.AdminVO" parameterType="string">
+		select * from festival where fcode=#{fcode}
+	</select>
+	
+	<insert id="insert"
+		parameterType="co.yedam.adminPage.service.AdminVO">
+		insert into festival(fcode, fname, fphone,  fimage, fsdate, fedate, fplace, flat, flng, fcontent, fprice1, fprice2)
+		values (#{fcode}, #{fname},#{fphone},#{fimage},#{fsdate}, #{fedate}, #{fplace}, #{flat}, #{flng},  #{fcontent}, #{fprice1}, #{fprice2})
+	</insert>
+
+	<update id="update"
+		parameterType="co.yedam.adminPage.service.AdminVO">
+		update festival set fname=#{fname}, fcontent=#{fcontent}, fprice1=#{fprice1},fprice2=#{fprice2} where fcode=#{fcode}
+	</update>
+
+
+	<delete id="delete" parameterType="string">
+		delete from festival where fcode=#{fcode}
+	</delete>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

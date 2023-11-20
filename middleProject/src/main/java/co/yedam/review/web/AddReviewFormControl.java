@@ -16,8 +16,19 @@ public class AddReviewFormControl implements Command {
 		
 		HttpSession session = req.getSession();
 		
-		 
-		if(session.getAttribute("logId") == null){
+		String path = "review/addReviewForm.tiles";
+		
+		
+		
+		/*
+		 * try { req.getRequestDispatcher(path).forward(req, resp); } catch
+		 * (ServletException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); } catch (IOException e) { // TODO Auto-generated catch
+		 * block e.printStackTrace(); }
+		 */
+		
+	
+		if(session.getAttribute("loginId") == null){
 			try {
 			resp.sendRedirect("loginForm.do"); // **로그인폼 주소 물어보기~ 
 		}catch(IOException e) {
@@ -26,7 +37,7 @@ public class AddReviewFormControl implements Command {
 		} else {
 
 	try {
-		req.getRequestDispatcher("WEB-INF/review/addReviewForm.jsp") //로그인정보있으면 등록화면으로 이동.
+		req.getRequestDispatcher(path) //로그인정보있으면 등록화면으로 이동.
 		.forward(req, resp);
 	} catch (ServletException e) {
 		e.printStackTrace();
@@ -34,6 +45,7 @@ public class AddReviewFormControl implements Command {
 		e.printStackTrace();
 	}
 		}
+		
 
 	}
 

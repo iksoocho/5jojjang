@@ -20,6 +20,19 @@
       resultType="co.yedam.festival.service.FestivalVO"
       parameterType="string"> select * from festival where fcode=#{fcode}
    </select>
-
+   
+   
+   <select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
+	  <![CDATA[  
+	   select * from (select * from 
+           (SELECT *
+           FROM festival
+           where likeit >=4)
+           ORDER BY dbms_random.value
+           ) b
+           where rownum <= 3 and fcode != #{fno}
+   	]]>
+	</select>
+  
 </mapper>
    

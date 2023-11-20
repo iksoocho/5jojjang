@@ -1,5 +1,7 @@
 package co.yedam.wish.serviceImpl;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSourceMybatis;
@@ -19,7 +21,28 @@ public class WishServiceImpl implements WishService {
 		return mapper.insert(vo) == 1;  //찜추가 
 	}
 
+
+	@Override
+	public WishVO checkWish(String wid, String fcode) {
+		
+		return mapper.check(wid, fcode);
+	}
+
+
+	@Override
+	public List<WishVO> wishList(String mid) {
+		
+		return mapper.wishList(mid);
+	}
+
+
+	@Override
+	public boolean removeWish(int wno) {
 	
+		return mapper.delete(wno) == 1;
+	}
+
+
 	
 	
 }

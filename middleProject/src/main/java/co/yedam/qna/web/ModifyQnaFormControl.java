@@ -15,16 +15,18 @@ public class ModifyQnaFormControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
+		String path = "qna/modifyQnaForm.tiles";
+		
 		String qno = req.getParameter("qno"); 
 		
 		QnaService svc = new QnaServiceImpl();
 		QnaVO vo = svc.getQna(Integer.parseInt(qno));
 		req.setAttribute("vo", vo); //  vo값 담아서 modify페이지에서 정보 읽게
-		
+		System.out.println("모디파이큐엔에이폼 : "+ vo );
 		
 		//수정폼열기
 		try {
-			req.getRequestDispatcher("WEB-INF/qna/modifyQnaForm.jsp").forward(req, resp);
+			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

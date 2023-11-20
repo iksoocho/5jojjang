@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "mybatis-3-mapper.dtd">
+
+
+<mapper namespace="co.yedam.cart.mapper.CartMapper">
+
+	<insert id="insert" parameterType="co.yedam.cart.service.CartVO">
+		insert into cart 
+		values(seq_cart.nextval,#{fcode},#{cid},#{adcnt},#{chcnt})
+	</insert>
+	
+	
+	<select id = "cartList"  resultType="co.yedam.cart.service.CartVO" parameterType ="string">
+		
+		select *
+		from cart c left join festival f on c.fcode =f.fcode
+		where cid =#{mid}
+		ORDER BY cno
+
+	</select>
+	
+	<delete id = "delete" parameterType ="int">
+		delete from cart where cno = #{cno} 
+	</delete>
+
+   
+   <select id = "cartCnt"  resultType="int" parameterType ="string">
+		
+	select count(*)
+	from cart
+	where cid = #{cid}
+
+	</select>
+   
+ 
+   
+   
+   
+
+</mapper>

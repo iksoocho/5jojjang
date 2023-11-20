@@ -6,6 +6,10 @@
 		select * from member where mid=#{id} and pass=#{pw}
 	</select>
 	
+	<select id="getIdEmail" resultType="co.yedam.member.service.MemberVO">
+		select * from member where name=#{name} and email=#{email}
+	</select>
+	
 	<select id="list" resultType="co.yedam.member.service.MemberVO">
 		select * from member
 	</select>
@@ -21,5 +25,14 @@
 	<update id="update" parameterType="co.yedam.member.service.MemberVO">
 		update member set name=#{name},pass=#{pass},phone=#{phone} where mid=#{mid}
 	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from member where mid = #{mid }
+	</delete>
+	
+	<update id="updatePass" parameterType="co.yedam.member.service.MemberVO">
+		update member set pass=#{pass} where mid=#{mid}
+	</update>
+	
 
 </mapper>
