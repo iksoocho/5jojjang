@@ -11,7 +11,7 @@
 
 	<select id="paymentList"
 		resultType="co.yedam.payment.service.PaymentVO" parameterType="string">
-		select * from payment c left join festival f on p.fcode =f.fcode
+		select * from payment p left join festival f on p.fcode = f.fcode
 		where pid =#{mid}
 		ORDER BY pno
 

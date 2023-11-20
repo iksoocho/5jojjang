@@ -139,18 +139,8 @@ input {
 	</div>
 </section>
 
-<<<<<<< HEAD
-
-
-
-<input type = "hidden" id= "mid" value="${loginId }">							
-								
-								
-=======
 <input type="hidden" id="mid" value="${loginId }">
 
-
->>>>>>> refs/remotes/origin/3
 <script>
 
 
