@@ -13,7 +13,7 @@ public class ReviewVO {
 	private String rtitle;
 	private String rcontent;
 	private String rwriteDate;
-	private Date rlastUpdate;
+	private String rlastUpdate;
 
 	private String rimage;
 

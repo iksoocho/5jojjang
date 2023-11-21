@@ -19,6 +19,8 @@ public class AdminVO {
 	private String flat;
 	private String flng;
 	private String fcontent;
+	private String likeIt;
+	
 
 
 }

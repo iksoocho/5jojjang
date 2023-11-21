@@ -48,7 +48,7 @@ public class AddReviewControl implements Command {
 				vo.setRimage(image);
 				vo.setRwriteDate(date);
 				
-
+				req.setAttribute("vo", vo);
 				
 				System.out.println("addReview control " + vo);
 			} catch (Exception e) {

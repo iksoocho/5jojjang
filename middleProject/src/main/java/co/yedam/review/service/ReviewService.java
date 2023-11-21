@@ -13,6 +13,7 @@ public interface ReviewService {
 	public boolean editReview(ReviewVO vo);
 	public boolean removeReview(int rno);
 	
+	public List<ReviewVO> myReview(String rid);
 	
 	
 }

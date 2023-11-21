@@ -42,9 +42,9 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">마이페이지</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="getMember.do?mid=${loginId }">회원 정보</a></li>
-                                
                                 <li><a class="dropdown-item" href="wishList.do?mid=${loginId }">찜 목록</a></li>
                                 <li><a class="dropdown-item" href="paymentList.do?mid=${loginId }">구매 내역</a></li>
+                                 <li><a class="dropdown-item" href="myReview.do?mid=${loginId }">내가쓴리뷰</a></li>
                             </ul>
                         </li>
 

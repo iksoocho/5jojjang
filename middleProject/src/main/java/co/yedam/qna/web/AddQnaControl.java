@@ -23,6 +23,7 @@ public class AddQnaControl implements Command {
 			String pass = req.getParameter("qpass");
 			String qid = req.getParameter("qid");
 			
+			
 			// form에 action넣고 일로 넘어온거임.
 			QnaVO vo = new QnaVO();
 			//vo.setQno(Integer.parseInt(qno));

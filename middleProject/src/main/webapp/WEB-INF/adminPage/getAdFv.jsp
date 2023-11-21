@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<th>이미지삽입</th>
-			<td><img src="adminResources/images/${fcode.fimage }" ></td>
+			<td><img src="resources/images/${fcode.fimage }" ></td>
 		</tr>
 		<tr>
 			<th>시작날짜</th>
@@ -36,7 +36,7 @@
 		</tr>
 		<tr>
 			<th>상세설명</th>
-			<td colspan="4"><textarea rows="5" cols="40" >${fcode.fcontent }</textarea></td>
+			<td colspan="4"><textarea rows="5" cols="150" >${fcode.fcontent }</textarea></td>
 		</tr>
 		<tr>
 			<th>가격1</th>
@@ -49,8 +49,8 @@
 		
 		<tr>
 			<td colspan="4" align="center">
-				<input type="submit" value="수정">
-				<input type="button" value="삭제">
+				<input type="submit" value="수정" >
+				<!-- <input type="button" value="삭제"> -->
 			</td>
 			</tr>	
 				
@@ -62,10 +62,10 @@
 
 <script>
 
-document.querySelector('input[type=button]').addEventListener('click', function(e){
+/* document.querySelector('input[type=button]').addEventListener('click', function(e){
 	document.forms.modForm.action = 'deleteAdFv.do';
 	document.forms.modForm.submit();
 })
-
+ */
 </script>
 
