@@ -17,7 +17,8 @@ public class PaymentListControl implements Command {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		String pid = req.getParameter("pid");
+		String pid = req.getParameter("mid");
+		
 		System.out.println(pid);
 		PaymentService svc = new PaymentServiceImpl();
 		List <PaymentVO> list = svc.paymentList(pid);
@@ -32,3 +33,5 @@ public class PaymentListControl implements Command {
 	}
 
 }
+
+

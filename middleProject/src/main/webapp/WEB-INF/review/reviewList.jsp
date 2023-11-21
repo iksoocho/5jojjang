@@ -7,7 +7,7 @@
 <form action="modifyReviewForm.do" name="reviewForm">
 
 
-<h3>template.jsp</h3>
+<h3> </h3>
 <!-- 아래는 부트스트랩 다운받고 안에있는 index.html파일 내용 복사해 놓은것 -->
 
 

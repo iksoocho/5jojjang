@@ -6,7 +6,7 @@
 	<insert id="insert"
 		parameterType="co.yedam.payment.service.PaymentVO">
 		insert into payment
-		values(#{pid},seq_payment.nextval,#{adcnt}, #{chcnt}, #{fcode})
+		values(#{pid},seq_payment.nextval,#{adcnt}, #{chcnt}, #{fcode}, #{merchantUid})
 	</insert>
 
 	<select id="paymentList"

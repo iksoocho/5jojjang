@@ -16,7 +16,7 @@ public class PaymentServiceImpl implements PaymentService {
 	@Override
 	public boolean appPayment(PaymentVO vo) {
 		// TODO Auto-generated method stub
-		return mapper.insert(vo) ==1;
+		return mapper.insert(vo) == 1;
 	}
 
 	@Override
