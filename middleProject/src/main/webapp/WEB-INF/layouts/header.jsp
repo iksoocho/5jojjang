@@ -45,6 +45,7 @@
                                 
                                 <li><a class="dropdown-item" href="wishList.do?mid=${loginId }">찜 목록</a></li>
                                 <li><a class="dropdown-item" href="#!">구매 내역</a></li>
+                                 <li><a class="dropdown-item" href="myReview.do?mid=${loginId }">내가쓴리뷰</a></li>
                             </ul>
                         </li>
 

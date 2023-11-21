@@ -2,6 +2,7 @@ package co.yedam.review.web;
 
 import java.io.IOException;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -38,11 +39,13 @@ public class ModifyReviewControl implements Command {
 		String image = mr.getFilesystemName("image");
 		
 		
+		
 		vo = new ReviewVO();
 		vo.setRtitle(title);
 		vo.setRcontent(content);
 		vo.setRno(Integer.parseInt(rno));
 		vo.setRimage(image);
+		
 		
 			System.out.println("모디파이리뷰보" + vo );
 		} catch (Exception e) {

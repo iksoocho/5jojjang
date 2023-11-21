@@ -1,6 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-     
+    
+ <style>
+@import "https://germanfrelo.github.io/base-css-stylesheet/base.css" layer(base);
+@import "https://codepen.io/germanfrelo/pen/mdMYKza.css" layer(styles);
+
+:root {
+  --page-max-inline-size: 100%;
+}
+
+body {
+  padding-block: 2rem;
+}
+
+caption {
+  text-align: start;
+}
+</style>    
+    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
@@ -15,17 +32,19 @@
 		<tr>
 			<th>글번호</th>
 			<td>${qno.qno }</td>
-
+		</tr>
+		<tr>
 			<th>작성일시</th>
 			<td>${qno.qwritedate }</td>
-			
+		</tr>
+		<tr>	
 			<th>작성자</th>
-			<td>${loginId }</td>
+			<td>${qno.qid}</td>
 		</tr>
 		
 		<tr>	
 			<th>글제목</th>
-			<td colspan="3">${qno.qtitle }</td>
+			<td >${qno.qtitle }</td>
 		</tr>
 
 		<tr>
@@ -38,14 +57,14 @@
 			<td colspan="4" align="center">
 			
 			<c:choose>
-			<%-- 	<c:when test="${!empty loginId && loginId == qno.qid}"> --%>
-				<c:when test="${!empty loginId}" >
+				<c:when test="${(!empty loginId && loginId == qno.qid) || responsibility == ('admin') }"> 
+			<%-- 	<c:when test="${!empty loginId && loginId == qno.qid}">  --%>
 					<input type="submit" value="수정">
 					<input type="button" value="삭제">
 				</c:when>
 				 <c:otherwise>
-					<input disabled type="submit" value="수정2">
-					<input disabled type="button" value="삭제2">
+					<input disabled type="submit" value="수정">
+					<input disabled type="button" value="삭제">
 				</c:otherwise>
 			</c:choose>
 			</td>
@@ -57,21 +76,40 @@
 <script>
 
 document.querySelector('input[type=button]').addEventListener('click', function(e){
-	let pmt = prompt('비밀번호를 입력하세요!');
+	
+/* 	let pmt = prompt('비밀번호를 입력하세요!');
 	let pwd = Number(pmt);
 	
 	if(pwd == ${qno.qpass}){
-		document.forms.qnaForm.action = 'removeQnaForm.do';
+		document.forms.qnaForm.action = 'removeQna.do';
 		document.forms.qnaForm.submit();
 	}else{
 		alert("비밀번호가 틀렸습니다.");
-	}
+	} */
 	
 	
 /* 	document.forms.qnaForm.action = 'removeQnaForm.do';
 	document.forms.qnaForm.submit();
 	 */
 	
+	 
+	if (confirm("정말 삭제 하시겠습니까?")){
+		let pmt = prompt('비밀번호를 입력하세요!');
+		let pwd = Number(pmt);
+		
+		if(pwd == ${qno.qpass}){
+			
+	 	alert('문의글을 삭제합니다.')
+	 	document.forms.qnaForm.action = 'removeQna.do';
+		document.forms.qnaForm.submit();
+		}else {
+			alert("비밀번호가 틀렸습니다.");
+		}
+		
+	}else{
+		
+		alert('문의글이 삭제 되지 않았습니다.')
+	}
 })
 
 </script>
@@ -83,7 +121,7 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 
 
 
-<h3> Qna 게시글에 댓글 등록하기</h3>
+<h1> ▍ 댓글 </h1>
 <table>
 <tr>
 <th>답변 </th>
@@ -93,14 +131,15 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 </table>
 
 
-<h2>  관리자가 단 댓글 보여줄 곳 </h2>
+<h2>  </h2>
 
 <ul id="replylist">
 	<li style="display: none" id="template"><span>관리자</span><b>관리자의 댓글 내용</b>
 	<button id='delBtn'>삭제</button></li>
 </ul>
 
-<p><a href="qnaList.do"> 돌아가기  </a></p>
+
+<button type="button" onclick="location.href='qnaList.do'">⏮ QnA 게시판으로 돌아가기 </button>
 
 
 <script>
@@ -151,7 +190,7 @@ showList();
 		
 		function deleteCallback(e){
 			//** 관리자가 아니면 댓글 못쓰도록! 조건 걸어줘야 함!
-			if(response == ("user")){
+			if(response == ("user") ){
 				alert('권한이 없습니다');
 				return;
 			}
@@ -222,4 +261,3 @@ showList();
 	
 </script>
 
- -->
