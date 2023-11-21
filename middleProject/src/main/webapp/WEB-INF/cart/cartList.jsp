@@ -38,7 +38,7 @@
       width: 80%;
       margin: auto;
       padding: 30px;
-      
+
    }
 
    .cart ul {
@@ -111,7 +111,7 @@
       background-color: lightgrey;
       left: 0px;
       top: 25px;
-      
+
    }
 
    .cart__list__optionbtn {
@@ -177,12 +177,11 @@
 <!-- 포트원 결제 -->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 <!-- jQuery -->
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <!-- iamport.payment.js -->
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 <!-- 포트원 결제 -->
+
 <body>
    <section class="cart">
       <div class="cart__information">
@@ -195,16 +194,16 @@
 
       <form>
          <table class="cart__list">
-         
+
             <thead>
-            
+
                <tr>
                   <td colspan="4">상품정보</td>
                   <td>옵션</td>
                   <td colspan="1">상품금액</td>
                   <td>삭제</td>
                </tr>
-               
+
             </thead>
 
 
@@ -212,9 +211,11 @@
             <tbody>
 
                <c:forEach items="${list}" var="vo">
-               
-                  <tr class="cart__list__detail" data-fprice1="${vo.fprice1 }" data-fprice2="${vo.fprice2 }" data-cno="${vo.cno }" data-adcnt="${vo.adcnt }" data-chcnt="${vo.chcnt }">
-                      <td><input type="checkbox" id="check" checked  onchange="calculateSum(event)" /></td>
+
+                  <tr class="cart__list__detail" data-fprice1="${vo.fprice1 }" data-fprice2="${vo.fprice2 }"
+                     data-cno="${vo.cno }" data-adcnt="${vo.adcnt }" data-chcnt="${vo.chcnt }"
+                     data-fcode="${vo.fcode }">
+                     <td><input type="checkbox" id="check" checked onchange="calculateSum(event)" /></td>
                      <td>${vo.cno }</td>
                      <td>
                         <img src="resources/images/${vo.fimage }" alt="..." style="height: 130px; width:120px;">
@@ -233,7 +234,7 @@
                            onchange="calculateSum(event)" min="0" max="10" step="1">
                      </td>
                      <td>
-                        <span class="price totalAmount"> ${vo.adcnt * vo.fprice1 + vo.chcnt *   
+                        <span class="price totalAmount"> ${vo.adcnt * vo.fprice1 + vo.chcnt *
                            vo.fprice2}
                         </span>
                      </td>
@@ -241,62 +242,61 @@
                         <button class="cart__list__optionbtn" type="button" onclick="del(event)">장바구니 삭제</button>
                      </td>
                   </tr>
-                  
+
                </c:forEach>
-                     
+
             </tbody>
          </table>
       </form>
-      
-         <div class="cart__mainbtns">
+
+      <div class="cart__mainbtns">
          <button class="cart__bigorderbtn right" id="buybtn">결제하기</button>
-            <div style="text-align:right; position: absolute; right:20%; top:40px" >
-               <h4>총 결제금액</h4>
-               <p id="totalAmount">원</p>
-            </div>
+         <div style="text-align:right; position: absolute; right:20%; top:40px">
+            <h4>총 결제금액</h4>
+            <p id="totalAmount">원</p>
          </div>
-         
-         
+      </div>
+
+
    </section>
-   
-         
-   
+
+
+
 </body>
 
-<input type = "hidden" id= "mid" value="${loginId }">                     
-                        
+<input type="hidden" id="mid" value="${loginId }">
+
 
 <script>
+   let mid = document.getElementById('mid').value;
 
-   let mid =document.getElementById('mid').value; 
+   cal();
 
-    cal();
+   //화면 띄우면 바로 장바구니 안의 모든 애들의 합계가 나오게 
+   function cal() {
 
-    //화면 띄우면 바로 장바구니 안의 모든 애들의 합계가 나오게 
-   function cal(){
-   
       //장바구니 총 합계계산.
       let totalAmt = 0;
       document.querySelectorAll('.totalAmount').forEach(item => {
-          totalAmt += parseInt(item.innerHTML)
-          
+         totalAmt += parseInt(item.innerHTML)
+
       });
-      
+
       document.querySelector('#totalAmount').innerHTML = totalAmt + '원';
-      
+
    };
 
 
    function del(e) {
-      
+
       //console.log(e);
-      
+
       let parentTr = e.target.parentElement.parentElement;
       //console.log(parentTr);
-      let cno = parentTr.dataset.cno;  //장바구니 번호가들어가있음
+      let cno = parentTr.dataset.cno; //장바구니 번호가들어가있음
       console.log(cno);
-      
-      fetch('delCart.do?cno=' + cno +'&cid=' + mid)
+
+      fetch('delCart.do?cno=' + cno + '&cid=' + mid)
          .then(resolve => resolve.json())
          .then(result => {
             console.log(result);
@@ -308,7 +308,7 @@
             }
          }) //두번째then
          .catch(err => console.log(err));
-      
+
    }; //장바구니 삭제 
 
    //장바구니 각각의 상품합계와  // 선택된 애들만 총합 구해서 밑에 보여주는 함수 
@@ -316,133 +316,146 @@
       let adTotal = 0,
          chTotal = 0;
       //console.log(e);//이벤트 받는 애 >>수량조절버튼 
-      let parentTr = e.target.parentElement.parentElement;  //가격 데이터를 가져올 tr 접근 
+      let parentTr = e.target.parentElement.parentElement; //가격 데이터를 가져올 tr 접근 
       //console.log(parentTr.dataset.fprice1, parentTr.querySelector('input[name=adcnt]'))
       // target => adcnt(fprice1), chcnt(fprice2) 구별. => class="totalAmount"
 
-      adTotal = parentTr.dataset.fprice1 * parentTr.querySelector('input[name=adcnt]').value;  // 가격 *수량 
+      adTotal = parentTr.dataset.fprice1 * parentTr.querySelector('input[name=adcnt]').value; // 가격 *수량 
       chTotal = parentTr.dataset.fprice2 * parentTr.querySelector('input[name=chcnt]').value;
 
-      parentTr.querySelector('.totalAmount').innerHTML = parseInt(adTotal) + parseInt(chTotal);   //상품별 총합애 금액 넣어주고 
-      
-      
+      parentTr.querySelector('.totalAmount').innerHTML = parseInt(adTotal) + parseInt(chTotal); //상품별 총합애 금액 넣어주고 
+
+
       //체크당한애 만 장바구니 총 합계계산되도록
-      
+
       let totalAmt = 0;
-      document.querySelectorAll('.totalAmount').forEach(item => {   
-         
-         if(item.parentElement.parentElement.children[0].children[0].checked == true){   //체크당한 item만 가져와서 누적 
-             totalAmt += parseInt(item.innerHTML);
+      document.querySelectorAll('.totalAmount').forEach(item => {
+
+         if (item.parentElement.parentElement.children[0].children[0].checked == true) { //체크당한 item만 가져와서 누적 
+            totalAmt += parseInt(item.innerHTML);
          };
-            
-      });//v포이치
-      
-      document.querySelector('#totalAmount').innerHTML = totalAmt +'원';   //총합계에 totalAmt
-      
-   };// 장바구니 금액 함수 
 
-   
-// 결제창 함수 넣어주기
-	const buyButton = document.getElementById('buybtn')
-	buyButton.setAttribute('onclick', `kakaoPay()`)
+      }); //v포이치
 
-	var IMP = window.IMP;
+      document.querySelector('#totalAmount').innerHTML = totalAmt + '원'; //총합계에 totalAmt
 
-	var today = new Date();
-
-	var hours = today.getHours(); // 시
-	var minutes = today.getMinutes(); // 분
-	var seconds = today.getSeconds(); // 초
-	var milliseconds = today.getMilliseconds();
-	var makeMerchantUid = hours + minutes + seconds + milliseconds; //적절하게 시분초 바꾸기
-
-	function kakaoPay() {
-		let useremail = 'test';
-		let username = 'test2';
-		let merchant_uid = new Date().getTime();
-		let adcnt = document.querySelector('input[name=adcnt]').value;
-		let chcnt = document.querySelector('input[name=chcnt]').value;
-// 		let fname = document.querySelector()
-		
-		
-		if (confirm("구매 하시겠습니까?")) { // 구매 클릭시 한번 더 확인하기
-			//if (localStorage.getItem("access")) { // 회원만 결제 가능
-			// const emoticonName = document.getElementById('title').innerText
-
-			IMP.init("imp71655134"); // 가맹점 식별코드
-			IMP.request_pay({
-					pg: 'kakaopay.TC0ONETIME', // PG사 코드표에서 선택
-					pay_method: 'card', // 결제 방식
-					merchant_uid: merchant_uid, // 결제 고유 번호
-					name: 'test', // 제품명
-					amount: document.querySelector('#totalAmount').innerHTML, // 가격
-					//구매자 정보
-					buyer_email: useremail,
-					buyer_name: username
-				},
-				async function (rsp) { // callback
-					if (rsp.success) { //결제 성공시
-						console.log(rsp);
-						//결제 성공시 프로젝트 DB저장 요청
-						//                     if (rsp.status == 200) { // DB저장 성공시
-						//                         alert('결제 완료!')
-						fetch('payment.do?fcode=' + 'F001' + '&pid=' + mid + '&adcnt=' + adcnt +
-								'&chcnt=' + chcnt +'&merchant_uid=' + merchant_uid)
-							.then(resolve => resolve.json())
-							.then(result => {
-								console.log(rsp);
-								window.location.href = 'paymentList.do?mid=' + mid
-							})
-							.catch(err => console.log(err))
-
-						//                     } else { // 결제완료 후 DB저장 실패시
-						//                         alert(`error:[${rsp.status}]\n결제요청이 승인된 경우 관리자에게 문의바랍니다.`);
-						//                         // DB저장 실패시 status에 따라 추가적인 작업 가능성
-						//                     }
-					} else if (rsp.success == false) { // 결제 실패시
-						alert(rsp.error_msg);
-					}
-				})
-		} else { // 구매 확인 알림창 취소 클릭시 돌아가기
-			return false;
-		}
-	};
+   }; // 장바구니 금액 함수 
 
 
-	
-	
-	//장바구니 각각의 상품합계와  // 선택된 애들만 총합 구해서 밑에 보여주는 함수 
-	function calculateSum(e) {
-		let adTotal = 0,
-			chTotal = 0;
-		//console.log(e);//이벤트 받는 애 >>수량조절버튼 
-		let parentTr = e.target.parentElement.parentElement;  //가격 데이터를 가져올 tr 접근 
-		//console.log(parentTr.dataset.fprice1, parentTr.querySelector('input[name=adcnt]'))
-		// target => adcnt(fprice1), chcnt(fprice2) 구별. => class="totalAmount"
+   // 결제창 함수 넣어주기
+   const buyButton = document.getElementById('buybtn')
+   buyButton.setAttribute('onclick', `kakaoPay()`)
 
-		adTotal = parentTr.dataset.fprice1 * parentTr.querySelector('input[name=adcnt]').value;  // 가격 *수량 
-		chTotal = parentTr.dataset.fprice2 * parentTr.querySelector('input[name=chcnt]').value;
+   var IMP = window.IMP;
 
-		parentTr.querySelector('.totalAmount').innerHTML = parseInt(adTotal) + parseInt(chTotal);   //상품별 총합애 금액 넣어주고 
-		
-		
-		//체크당한애 만 장바구니 총 합계계산되도록
-		
-		let totalAmt = 0;
-		document.querySelectorAll('.totalAmount').forEach(item => {   
-			
-			if(item.parentElement.parentElement.children[0].children[0].checked == true){   //체크당한 item만 가져와서 누적 
-				 totalAmt += parseInt(item.innerHTML);
-			};
-				
-		});//v포이치
-		
-		document.querySelector('#totalAmount').innerHTML = totalAmt +'원';   //총합계에 totalAmt
-		
-	};// 장바구니 금액 함수 
+   var today = new Date();
 
-	//1121커밋
+   var hours = today.getHours(); // 시
+   var minutes = today.getMinutes(); // 분
+   var seconds = today.getSeconds(); // 초
+   var milliseconds = today.getMilliseconds();
+   var makeMerchantUid = hours + minutes + seconds + milliseconds; //적절하게 시분초 바꾸기
 
+   function kakaoPay() {
+      let useremail = 'test';
+      let username = 'test2';
+      let merchant_uid = new Date().getTime();
+      // 		let fname = document.querySelector()
+
+
+      if (confirm("구매 하시겠습니까?")) { // 구매 클릭시 한번 더 확인하기
+         //if (localStorage.getItem("access")) { // 회원만 결제 가능
+         // const emoticonName = document.getElementById('title').innerText
+
+         IMP.init("imp71655134"); // 가맹점 식별코드
+         IMP.request_pay({
+               pg: 'kakaopay.TC0ONETIME', // PG사 코드표에서 선택
+               pay_method: 'card', // 결제 방식
+               merchant_uid: merchant_uid, // 결제 고유 번호
+               name: 'test', // 제품명
+               amount: document.querySelector('#totalAmount').innerHTML, // 가격
+               //구매자 정보
+               buyer_email: useremail,
+               buyer_name: username
+            },
+            async function (rsp) { // callback
+               if (rsp.success) { //결제 성공시
+                  console.log(rsp);
+                  //결제 성공시 프로젝트 DB저장 요청
+                  //                     if (rsp.status == 200) { // DB저장 성공시
+                  //                         alert('결제 완료!')
+                  let totalCnt = 0;
+                  document.querySelectorAll('.totalAmount').forEach((item, idx, ary) => {
+                     let parentTR = item.parentElement.parentElement;
+                     let adcnt = parentTR.dataset.adcnt;
+                     let chcnt = parentTR.dataset.chcnt;
+                     let fcode = parentTR.dataset.fcode;
+                     if (item.parentElement.parentElement.children[0].children[0].checked ==
+                        true) { //체크당한 item만 가져와서 누적 
+                        totalCnt++;
+                        fetch('payment.do?fcode=' + fcode + '&pid=' + mid + '&adcnt=' + adcnt +
+                              '&chcnt=' + chcnt + '&merchant_uid=' + merchant_uid)
+                           .then(resolve => resolve.json())
+                           .then(result => {
+                              console.log(rsp);
+                              //
+                              if (totalCnt == ary.length) {
+                                 window.location.href = 'paymentList.do?mid=' + mid
+                              }
+                           })
+                           .catch(err => console.log(err))
+                     };
+
+                  }); //v포이치
+
+
+                  //                     } else { // 결제완료 후 DB저장 실패시
+                  //                         alert(`error:[${rsp.status}]\n결제요청이 승인된 경우 관리자에게 문의바랍니다.`);
+                  //                         // DB저장 실패시 status에 따라 추가적인 작업 가능성
+                  //                     }
+               } else if (rsp.success == false) { // 결제 실패시
+                  alert(rsp.error_msg);
+               }
+            })
+      } else { // 구매 확인 알림창 취소 클릭시 돌아가기
+         return false;
+      }
+   };
+
+
+
+
+   //장바구니 각각의 상품합계와  // 선택된 애들만 총합 구해서 밑에 보여주는 함수 
+   function calculateSum(e) {
+      let adTotal = 0,
+         chTotal = 0;
+      //console.log(e);//이벤트 받는 애 >>수량조절버튼 
+      let parentTr = e.target.parentElement.parentElement; //가격 데이터를 가져올 tr 접근 
+      //console.log(parentTr.dataset.fprice1, parentTr.querySelector('input[name=adcnt]'))
+      // target => adcnt(fprice1), chcnt(fprice2) 구별. => class="totalAmount"
+
+      adTotal = parentTr.dataset.fprice1 * parentTr.querySelector('input[name=adcnt]').value; // 가격 *수량 
+      chTotal = parentTr.dataset.fprice2 * parentTr.querySelector('input[name=chcnt]').value;
+
+      parentTr.querySelector('.totalAmount').innerHTML = parseInt(adTotal) + parseInt(chTotal); //상품별 총합애 금액 넣어주고 
+
+
+      //체크당한애 만 장바구니 총 합계계산되도록
+
+      let totalAmt = 0;
+      document.querySelectorAll('.totalAmount').forEach(item => {
+
+         if (item.parentElement.parentElement.children[0].children[0].checked == true) { //체크당한 item만 가져와서 누적 
+            totalAmt += parseInt(item.innerHTML);
+         };
+
+      }); //v포이치
+
+      document.querySelector('#totalAmount').innerHTML = totalAmt + '원'; //총합계에 totalAmt
+
+   }; // 장바구니 금액 함수 
+
+   //1121커밋
 </script>
 
 </html>
