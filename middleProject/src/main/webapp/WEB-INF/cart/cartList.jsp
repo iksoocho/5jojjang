@@ -38,6 +38,7 @@
 		width: 80%;
 		margin: auto;
 		padding: 30px;
+		
 	}
 
 	.cart ul {
@@ -110,7 +111,7 @@
 		background-color: lightgrey;
 		left: 0px;
 		top: 25px;
-		position: absolute;
+		
 	}
 
 	.cart__list__optionbtn {
@@ -118,6 +119,7 @@
 		font-size: 10px;
 		border: lightgrey solid 1px;
 		padding: 7px;
+		margin-left: 20%;
 	}
 
 	.cart__list__detail :nth-child(4),
@@ -146,18 +148,18 @@
 	}
 
 	.cart__mainbtns {
-		width: 420px;
+		width: 100%;
 		height: 200px;
 		padding-top: 40px;
 		display: block;
-		margin: auto;
+		position: relative;
 	}
 
 	.cart__bigorderbtn {
 		width: 200px;
 		height: 50px;
 		font-size: 16px;
-		margin: auto;
+		margin-left: 30%;
 		border-radius: 5px;
 	}
 
@@ -189,7 +191,7 @@
 				<thead>
 				
 					<tr>
-						<td colspan="3">상품정보</td>
+						<td colspan="4">상품정보</td>
 						<td>옵션</td>
 						<td colspan="1">상품금액</td>
 						<td>삭제</td>
@@ -204,6 +206,7 @@
 					<c:forEach items="${list}" var="vo">
 					
 						<tr class="cart__list__detail" data-fprice1="${vo.fprice1 }" data-fprice2="${vo.fprice2 }" data-cno="${vo.cno }" data-adcnt="${vo.adcnt }" data-chcnt="${vo.chcnt }">
+						    <td><input type="checkbox" id="check" checked  onchange="calculateSum(event)" /></td>
 							<td>${vo.cno }</td>
 							<td>
 								<img src="resources/images/${vo.fimage }" alt="..." style="height: 130px; width:120px;">
@@ -222,7 +225,7 @@
 									onchange="calculateSum(event)" min="0" max="10" step="1">
 							</td>
 							<td>
-								<span class="price totalAmount"> ${vo.adcnt * vo.fprice1 + vo.chcnt *
+								<span class="price totalAmount"> ${vo.adcnt * vo.fprice1 + vo.chcnt *   
 									vo.fprice2}
 								</span>
 							</td>
@@ -236,19 +239,20 @@
 				</tbody>
 			</table>
 		</form>
-
-						
-		<h2>총합계</h2>
-		<span id="totalAmount">  </span>
-							
-
-
-
-		<div class="cart__mainbtns">
-			<button class="cart__bigorderbtn right">결제하기</button>
-		</div>
 		
+			<div class="cart__mainbtns">
+			<button class="cart__bigorderbtn right">결제하기</button>
+				<div style="text-align:right; position: absolute; right:20%; top:40px" >
+					<h4>총 결제금액</h4>
+					<p id="totalAmount">원</p>
+				</div>
+			</div>
+			
+			
 	</section>
+	
+			
+	
 </body>
 
 <input type = "hidden" id= "mid" value="${loginId }">							
@@ -260,7 +264,7 @@
 
  	cal();
 
- 	
+ 	//화면 띄우면 바로 장바구니 안의 모든 애들의 합계가 나오게 
 	function cal(){
 	
 		//장바구니 총 합계계산.
@@ -270,7 +274,7 @@
 			 
 		});
 		
-		document.querySelector('#totalAmount').innerHTML = totalAmt;
+		document.querySelector('#totalAmount').innerHTML = totalAmt + '원';
 		
 	};
 
@@ -303,31 +307,38 @@
 
 	
 	
+	//장바구니 각각의 상품합계와  // 선택된 애들만 총합 구해서 밑에 보여주는 함수 
 	function calculateSum(e) {
 		let adTotal = 0,
 			chTotal = 0;
-		console.log(e);//이벤트 받는 애 
+		//console.log(e);//이벤트 받는 애 >>수량조절버튼 
 		let parentTr = e.target.parentElement.parentElement;  //가격 데이터를 가져올 tr 접근 
-		console.log(parentTr.dataset.fprice1, parentTr.querySelector('input[name=adcnt]'))
+		//console.log(parentTr.dataset.fprice1, parentTr.querySelector('input[name=adcnt]'))
 		// target => adcnt(fprice1), chcnt(fprice2) 구별. => class="totalAmount"
 
 		adTotal = parentTr.dataset.fprice1 * parentTr.querySelector('input[name=adcnt]').value;  // 가격 *수량 
 		chTotal = parentTr.dataset.fprice2 * parentTr.querySelector('input[name=chcnt]').value;
 
-		parentTr.querySelector('.totalAmount').innerHTML = parseInt(adTotal) + parseInt(chTotal); 
+		parentTr.querySelector('.totalAmount').innerHTML = parseInt(adTotal) + parseInt(chTotal);   //상품별 총합애 금액 넣어주고 
 		
-		//장바구니 총 합계계산.
+		
+		//체크당한애 만 장바구니 총 합계계산되도록
+		
 		let totalAmt = 0;
-		document.querySelectorAll('.totalAmount').forEach(item => {
-			 totalAmt += parseInt(item.innerHTML)
-			 
-		});
+		document.querySelectorAll('.totalAmount').forEach(item => {   
+			
+			if(item.parentElement.parentElement.children[0].children[0].checked == true){   //체크당한 item만 가져와서 누적 
+				 totalAmt += parseInt(item.innerHTML);
+			};
+				
+		});//v포이치
 		
-		document.querySelector('#totalAmount').innerHTML = totalAmt;
-	};
+		document.querySelector('#totalAmount').innerHTML = totalAmt +'원';   //총합계에 totalAmt
+		
+	};// 장바구니 금액 함수 
 
 	
-
+	
 
 </script>
 
