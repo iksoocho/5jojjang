@@ -19,7 +19,7 @@ public class AddReviewControl implements Command {
 		
 		req.getMethod().equals("POST");
 		
-		String saveDir = req.getServletContext().getRealPath("images"); // 이 경로에 파일 업로드 (webapp밑에 images 폴더 생성했음)
+		String saveDir = req.getServletContext().getRealPath("reviewResources/images"); // 이 경로에 파일 업로드 (webapp밑에 images 폴더 생성했음)
 		int size = 5 * 1024 * 1024; // 최대 사이즈	
 	
 			
@@ -31,17 +31,26 @@ public class AddReviewControl implements Command {
 								"UTF-8", // 인코딩방식
 								new DefaultFileRenamePolicy());// 리네임정책
 				
-				String title = mr.getParameter("rtitle");
+				String rid = mr.getParameter("rid");
+;				String title = mr.getParameter("rtitle");
 				String content = mr.getParameter("rcontent");
-				String image = mr.getParameter("rimage");
+				String date = mr.getParameter("rwritedate");
+				
+				String image = mr.getFilesystemName("rimage");
 
 
 				// 이 네개의 값을 담아줌
 				vo = new ReviewVO();
+			
+				vo.setRid(rid);
 				vo.setRtitle(title);
 				vo.setRcontent(content);
 				vo.setRimage(image);
+				vo.setRwritedate(date);
+				
 
+				
+				System.out.println("addReview control " + vo);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

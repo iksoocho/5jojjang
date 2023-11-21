@@ -154,6 +154,7 @@ input {
 
 
 
+<<<<<<< HEAD
 
 <input type="hidden" id="mid" value="${loginId }">
 
@@ -318,3 +319,105 @@ input {
 		}
 	};
 </script>
+=======
+<input type = "hidden" id= "mid" value="${loginId }">							
+								
+								
+<script>
+
+
+let mid =document.getElementById('mid').value;  //아이디 세션 저장한 변수 
+
+document.getElementById('jbtn').addEventListener('click',function(e){
+	
+	if(mid == '') {
+		alert('로그인 후 이용해주세요');
+		return;
+	}
+
+	fetch('wish.do?fcode='+'${vo.fcode }' + '&wid=' + mid)
+	.then(resolve => resolve.json())
+	.then(result => {
+		console.log(result);
+		if(result.retCode == 'OK'){
+			alert('찜 목록에 추가되었습니다');
+		}else{
+			alert('이미 찜목록에 추가된 축제입니다');
+		}
+	})
+	.catch(err => console.log(err));
+			
+});//찜추가이벤트 
+
+
+document.getElementById('cartbtn').addEventListener('click',function(e){
+	
+	if(mid == '') {
+		alert('로그인 후 이용해주세요');
+		return;
+	}
+	
+	
+	let adcnt =document.querySelector('input[name=adcnt]').value;
+	let chcnt =document.querySelector('input[name=chcnt]').value;
+	
+	fetch('cart.do?fcode='+'${vo.fcode }' + '&cid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt )
+	.then(resolve => resolve.json())
+	.then(result => {
+		
+	
+		if(result.retCode == 'OK'){
+			alert('장바구니 목록에 추가되었습니다');
+		}else{
+			alert('최소 하나이상의 수량을 선택하세요');
+		}
+		
+	})//두번째 then 
+	.catch(err => console.log(err));
+			
+});//장바구니 추가 이벤트 
+
+
+
+
+function total(){
+	
+	let fprice1 = "${vo.fprice1 }";  //어른가격 
+	let fprice2 = "${vo.fprice2 }";  //아동가격 
+	let adcnt = document.querySelector('input[name=adcnt]').value;  //어른티켓갯수
+	let chcnt = document.querySelector('input[name=chcnt]').value;  //아동티켓갯수
+	
+	let adtotal = adcnt*fprice1;
+	let chtotal = chcnt*fprice2;
+	
+	let total = adtotal + chtotal;  //어른 + 아이 총 합계
+	
+	console.log(total);
+	
+	document.getElementById('total').innerHTML = '총 결제 금액 : '+ total+' 원';
+	
+}; //총합계 계산 
+
+//바로구매
+
+function paybtn(){
+	
+	let adcnt = document.querySelector('input[name=adcnt]').value;
+	let chcnt = document.querySelector('input[name=chcnt]').value;
+	
+	fetch('payment.do?fcode='+'${vo.fcode }' + '&pid=' + mid +'&adcnt=' + adcnt +'&chcnt=' + chcnt)
+	.then(resolve => resolve.json())
+	.then(result => {
+		console.log(result);
+		if(result.retCode == 'OK'){
+			alert('성공');
+		}else{
+			alert('실패');
+		}
+	})
+	.catch(err => console.log(err));
+};
+
+</script>
+
+>>>>>>> refs/remotes/origin/2

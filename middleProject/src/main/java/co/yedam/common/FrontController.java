@@ -27,6 +27,13 @@ import co.yedam.festival.web.FestivalListControl;
 import co.yedam.festival.web.TotalListControl;
 import co.yedam.member.web.CheckIdControl;
 import co.yedam.member.web.CheckModifyControl;
+
+import co.yedam.member.web.CkNumberFormControl;
+import co.yedam.member.web.FindIdControl;
+import co.yedam.member.web.FindIdFromControl;
+import co.yedam.member.web.FindIdpasswdControl;
+import co.yedam.member.web.FindIdpasswdForm;
+
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
@@ -34,9 +41,25 @@ import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
 import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
+
+import co.yedam.member.web.SelectFindIdOrPasswd;
+
 import co.yedam.member.web.getMemberControl;
+<<<<<<< HEAD
+=======
+
+import co.yedam.payment.web.PaymentApproveControl;
+>>>>>>> refs/remotes/origin/2
 import co.yedam.payment.web.PaymentControl;
+<<<<<<< HEAD
 import co.yedam.payment.web.PaymentListControl;
+=======
+
+import co.yedam.member.web.modifyPasswdControl;
+import co.yedam.member.web.modifyPasswdFormControl;
+//import co.yedam.payment.web.paymentFormControl;
+
+>>>>>>> refs/remotes/origin/2
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
@@ -83,7 +106,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 장바구니
 		map.put("/cart.do", new CartControl()); //장바구니추가하기
 		map.put("/cartList.do", new CartListControl()); //장바구니 목록 보기
-		map.put("/delCart.do", new DelCartControl()); //장바구니 목록 보기'
+		map.put("/delCart.do", new DelCartControl()); //장바구니 삭제 
 		
 		// 결제하기
 		map.put("/payment.do", new PaymentControl()); //결제 정보확인
@@ -93,6 +116,14 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/loginForm.do", new LoginFormControl());
 		map.put("/login.do", new LoginControl());
 		map.put("/logout.do", new LogoutControl());
+		map.put("/findIdpasswdForm.do", new FindIdpasswdForm());
+		map.put("/findIdpasswd.do", new FindIdpasswdControl());
+		map.put("/ckNumberForm.do", new CkNumberFormControl());
+		map.put("/modifyPasswdForm.do", new modifyPasswdFormControl());
+		map.put("/modifyPasswd.do", new modifyPasswdControl());
+		map.put("/SelectFindIdOrPasswd.do", new SelectFindIdOrPasswd()); //아이디찾기, 비번 찾기 고르는거 
+		map.put("/findIdForm.do", new FindIdFromControl());
+		map.put("/findId.do", new FindIdControl());
 
 		// 회원가입
 		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면

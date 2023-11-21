@@ -11,4 +11,6 @@ public class MemberVO {
 	private String phone;
 	private String email;
 	private String responsibility;
+	
+	private String ckNumber;
 }

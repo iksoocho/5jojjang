@@ -14,16 +14,21 @@
   	<put-attribute name="body" value="/WEB-INF/{1}/{2}.jsp" />
   </definition>
   
- <!--  <definition name="productpage" template="/WEB-INF/layouts/template.jsp">
+  
+  
+  
+ <definition name="mypage" template="/WEB-INF/myPageLayouts/template.jsp">
     <put-attribute name="title" value="상품목록" />
-    <put-attribute name="header" value="/WEB-INF/layouts/header.jsp" />
-    <put-attribute name="body" value="/WEB-INF/layouts/getbody.jsp" />
-    <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/myPageLayouts/menu.jsp" />
+    <put-attribute name="header" value="/WEB-INF/myPageLayouts/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/myPageLayouts/body.jsp" />
+    
+    <put-attribute name="footer" value="/WEB-INF/myPageLayouts/footer.jsp" />
   </definition>
   
-  <definition name="WILDCARD:product/*" extends="productpage">
-  	<put-attribute name="body" value="/WEB-INF/product/{1}.jsp" />
-  </definition> -->
+  <definition name="WILDCARD:mypage/*" extends="mypage">
+  	<put-attribute name="body" value="/WEB-INF/mypage/{1}.jsp" />
+  </definition>
   
   
  

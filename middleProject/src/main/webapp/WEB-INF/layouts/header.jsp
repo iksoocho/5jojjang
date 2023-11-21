@@ -37,6 +37,7 @@
 								관리</a></li>
 					</c:when>
 					<c:otherwise>
+<<<<<<< HEAD
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" id="navbarDropdown"
 							href="myPageForm.do" role="button" data-bs-toggle="dropdown"
@@ -48,6 +49,19 @@
 								<li><a class="dropdown-item" href="wishList.do?mid=${loginId }">찜 목록</a></li>
 								<li><a class="dropdown-item" href="paymentList.do?mid=${loginId }">구매 내역</a></li>
 							</ul></li>
+=======
+
+						<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">마이페이지</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="getMember.do?mid=${loginId }">회원 정보</a></li>
+                                
+                                <li><a class="dropdown-item" href="wishList.do?mid=${loginId }">찜 목록</a></li>
+                                <li><a class="dropdown-item" href="#!">구매 내역</a></li>
+                            </ul>
+                        </li>
+
+>>>>>>> refs/remotes/origin/2
 					</c:otherwise>
 				</c:choose>
 
@@ -55,7 +69,11 @@
 				<c:choose>
 					<c:when
 						test="${!empty responsibility && responsibility == 'admin' }">
-						<<li class="nav-item"><a class="nav-link" href="adFvList.do">축제 관리</a></li>
+
+						<li class="nav-item"><a class="nav-link" href="adFvList.do">축제 관리</a></li>
+
+						
+
 					</c:when>
 					<c:otherwise>
 						<li class="nav-item"><a class="nav-link" href="calendar.do">축제
@@ -77,14 +95,22 @@
 				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 
 			</ul>
-			  <form class="d-flex" action="cartList.do">
-			  <input type = "hidden" name="midd" value="${loginId }">
+			
+			
+			
+			
+			<c:choose>
+				<c:when test="${!empty loginId }">
+			  	<form class="d-flex" action="cartList.do">
+			  	<input type = "hidden" name="midd" value="${loginId }">
 				<button class="btn btn-outline-dark" type="submit" style="margin-right:20px;'">
 					<i class="bi-cart-fill me-1"></i> Cart <span
 						class="badge bg-dark text-white ms-1 rounded-pill">${cartcnt }</span>
 				</button>
-			</form>
-
+				 </form>
+			 	</c:when>
+			</c:choose>
+			
 			
 		</div>
 		<c:choose>

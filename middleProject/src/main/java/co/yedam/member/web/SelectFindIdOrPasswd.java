@@ -5,12 +5,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Command;
 
-public class MyPageFormControl implements Command {
+public class SelectFindIdOrPasswd implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		String path = "member/myPage.tiles";
+		
+		String path = "WEB-INF/member/selectFindIdOrPasswd.jsp";
 		
 		try {
 			req.getRequestDispatcher(path).forward(req, resp);
@@ -18,6 +19,7 @@ public class MyPageFormControl implements Command {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
 }

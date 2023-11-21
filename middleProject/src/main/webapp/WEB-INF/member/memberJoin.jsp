@@ -206,9 +206,9 @@ color:#fff
         <div class="field birth" name="ssn">
             <b>주민 등록 번호</b>
             <div>
-                <input type="text" placeholder="앞자리(6자)" name="fssn"   maxlength="6">                
+                <input type="text" placeholder="주민등록번호 앞자리(6자)" name="fssn"   maxlength="6">                
                
-                <input type="text" placeholder="주민등록번호 뒷자리(7자리)" name="bssn" pattern="[0-9]{7}" required title="7자리를 확인하세요" >
+                <input type="password" placeholder="주민등록번호 뒷자리(7자리)" name="bssn" maxlength="7" >
             </div>
         </div>
 

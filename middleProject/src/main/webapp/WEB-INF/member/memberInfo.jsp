@@ -4,7 +4,9 @@
 
 
 <form action="modifyForm.do" name="myForm">
-	<table class="table">
+<input type="hidden" name="mid" value="${loginId }">
+	<table class="table" style="text-align: center;">
+		
 		<tr>
 			<th>이름</th>
 			<td class="name">${mid.name }</td>
