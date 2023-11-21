@@ -4,10 +4,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<form action="modifyReviewForm.do" name="reviewForm">
 
 
-<h3>template.jsp</h3>
+<h3> ꔚ 축제 Review </h3>
 <!-- 아래는 부트스트랩 다운받고 안에있는 index.html파일 내용 복사해 놓은것 -->
 
 
@@ -17,6 +16,7 @@
 </head>
 
 <body>
+
 <style>
 a {
 	text-decoration: none;
@@ -50,7 +50,7 @@ a {
 									<h5 class="fw-bolder">${vo.rtitle  }</h5>
 
 								
-									<p> ${vo.rwritedate }</p>
+									
 								</div>
 							</div>
 						</div>
@@ -63,13 +63,26 @@ a {
 	</div>
 </section>
 
+<%-- 		<c:forEach items="${rlist }" var="vo"> --%>
+<!-- 			<tr> -->
+<%-- 				<td>${vo.rno }</td> --%>
+<%-- 				<td><a href="getReview.do?rno=${vo.rno }"> ${vo.rtitle }</a></td> --%>
+<%-- 				<td>${vo.rid }</td> --%>
+<%-- 				<td>${vo.rwriteDate }</td> --%>
+<%-- 				<td><input src ="reviewResources/images/${vo.rimage}"  name="image" width="200"></td>  --%>
+				
+				
+<!-- 			</tr> -->
+<%-- 		</c:forEach> --%>
 
+	</tbody>
+</table> 
 
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
 <div class= "pagination"></div>
-	<p><a href="addReviewForm.do"> REVIEW 게시글 등록화면 </a></p>
 	
+	<button type="button" onclick="location.href='addReviewForm.do'"> 🎵 Review 쓰기 </button>
 	
 	
 	

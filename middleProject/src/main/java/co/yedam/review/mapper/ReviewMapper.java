@@ -12,5 +12,7 @@ public interface ReviewMapper {
 	public int insertReview(ReviewVO vo); // 등록
 	public int updateReview(ReviewVO vo); //수정
 	public int deleteReview(int rno); //삭제
+	
+	public List<ReviewVO> selectReview(String rid);
 
 }

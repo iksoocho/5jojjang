@@ -8,9 +8,10 @@
 <title>관리자 축제 수정</title>
 </head>
 <body>
-	<h3>축제 수정 화면</h3>
+	<h3> ✔ 축제 수정하기 </h3>
+	<h3> </h3>
 	
-	${vo}
+	
 	
 	<form action="modifyAdFv.do" method="post" > <!-- enctype="multipart/form-data"이거 파일수정안하니까 얘는 빼야지.. -->
 		<input type="hidden" name="fcode" value="${vo.fcode}"> 
@@ -26,7 +27,7 @@
 			
 			<tr>
 			<th>내용</th>
-				<td colspan="2"><textarea cols="40" rows="5"
+				<td colspan="2"><textarea cols="50" rows="5"
 						name="fcontent">${vo.fcontent }</textarea></td>
 			</tr>
 			
@@ -42,8 +43,8 @@
 	
 
 			<tr>
-				<td colspan="2"><input type="submit" value="수정"> 
-				<input type="reset" value="초기화"></td>
+				<td colspan="2"><input type="submit" value="수정" > 
+				<input type="reset" value="다시 쓰기"></td>
 			</tr>
 		</table>
 	</form>

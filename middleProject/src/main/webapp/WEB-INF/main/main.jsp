@@ -11,6 +11,9 @@
 
 <title>Insert title here</title>
 
+<br>
+
+
 
 
 <section class="py-5 bg-light">
@@ -61,6 +64,15 @@
 
 
 
+<<<<<<< HEAD
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+crossorigin="anonymous"></script>
+<script src="adminResource/js/scripts.js"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+crossorigin="anonymous"></script>
+=======
 
 
 
@@ -68,6 +80,7 @@
 
 
 
+>>>>>>> refs/remotes/origin/2
 <script src="adminResource/js/datatables-simple-demo.js"></script>
 
 

@@ -7,36 +7,34 @@
 <body>
 <div class="card mb-4">
 				<div class="card-header">
-					<i class="fas fa-table me-1"></i> QNA 목록
+					<i class="fas fa-table me-1"></i> ${loginId }님의 리뷰
 				</div>
 				<div class="card-body">
+				
+				
+				<input type="hidden" name="mid" value="mid.rid">
 					<table id="datatablesSimple">
 						<thead>
 							<tr>
-								<th>게시물 번호</th>
-								<th>작성자</th>
 								<th>제목</th>
-								
-								<th>작성 일자</th>
+								<th>작성날짜</th>
+								<th>내용</th>
 							</tr>
 						</thead>
 						
 						<tbody>
-							<c:forEach items="${list }" var="user">
+							<c:forEach items="${rlist }" var="vo">
 								<tr>
-									<td>${user.qno }</td>
-									<td>${user.qid }</td>
-									<%-- <td>${user.qtitle }</td> --%>
-									<td><a href="getQna.do?qno=${user.qno }"> ${user.qtitle }</a></td>
-									<td>${user.qwritedate }</td>
+									 <td><a href="getReview.do?rno=${vo.rno}">${vo.rtitle }</a></td> 
+									
+									<td>${vo.rwritedate }</td>
+									<td>${vo.rcontent }</td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 					
 						
-						<button type="button" onclick="location.href='addQnaForm.do'"> ✎QnA 글쓰기 </button>
-
 				</div>
 			</div>
 
@@ -56,18 +54,3 @@
 	crossorigin="anonymous"></script>
 <script src="adminResource/js2/datatables-simple-demo.js"></script>
 <link href="adminResource/css2/styles.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

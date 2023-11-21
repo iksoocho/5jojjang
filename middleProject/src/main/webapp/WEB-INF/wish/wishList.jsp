@@ -238,11 +238,7 @@ function del(vo){
 
 </script>
 
-<<<<<<< HEAD
 
-
-</html>
-=======
 </body>
 </html>
->>>>>>> refs/remotes/origin/3
+
