@@ -11,18 +11,20 @@
 		<tr>
 			<th>글번호</th>
 			<td class="rno">${rno.rno }</td>
-		</tr>
 		
-		<tr>
+		
+		
 			<th>작성일시</th>
-			<td>${rno.rwritedate }"</td>
-			
+			<td>${rno.rwritedate }</td>
+		</tr>
+		<tr>	
 			<th>글제목</th>
-			<td colspan="3">${rno.rtitle }</td>
+			<td colspan="2">${rno.rtitle }</td>
 		</tr>
 
 		<tr>
-			<td colspan="4"><textarea rows="5" cols="40" >${rno.rcontent }</textarea></td>
+		<th>내용</th>
+			<td colspan="4" align="center"><textarea rows="6" cols="100" >${rno.rcontent }</textarea></td>
 		</tr>
 
 
@@ -40,7 +42,7 @@
 		</tr>
 		
 		<tr>
-			<th>내용</th>
+			
 			<td colspan="4" align="center">
 			
 			<c:choose>

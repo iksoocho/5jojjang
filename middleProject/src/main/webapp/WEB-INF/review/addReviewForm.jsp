@@ -7,6 +7,8 @@
 
 
 	<form action="addReview.do" method="post" enctype="multipart/form-data"> <!-- 파일첨부 처리하려면(파일업로드할때) multipart/form-data  -->
+	
+	
 		<table  border="1">
 			<tr>
 				<th>제목</th>

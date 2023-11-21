@@ -83,7 +83,7 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 
 
 
-<h3> Qna 게시글에 댓글 등록하기</h3>
+<h3> </h3>
 <table>
 <tr>
 <th>답변 </th>
@@ -93,7 +93,7 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 </table>
 
 
-<h2>  관리자가 단 댓글 보여줄 곳 </h2>
+<h2>  </h2>
 
 <ul id="replylist">
 	<li style="display: none" id="template"><span>관리자</span><b>관리자의 댓글 내용</b>

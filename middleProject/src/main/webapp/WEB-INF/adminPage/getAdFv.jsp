@@ -25,8 +25,13 @@
 			<td>${fcode.flng }</td>
 		</tr>
 		<tr>
-			<th>이미지삽입</th>
-			<td><img src="adminResources/images/${fcode.fimage }" ></td>
+			<%-- <th>이미지</th>
+			<td><img src="adminResources/images/${fcode.fimage }" ></td> --%>
+			<th>이미지</th>
+			<c:if test="${!empty fcode.fimage }">
+				<td><img style="align: center" width="100px" src="webapp/resources/images/${fcode.fimage }"></td>
+			</c:if>
+			
 		</tr>
 		<tr>
 			<th>시작날짜</th>
