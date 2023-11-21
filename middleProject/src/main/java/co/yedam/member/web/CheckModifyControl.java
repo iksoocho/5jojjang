@@ -16,15 +16,15 @@ public class CheckModifyControl implements Command {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
 		MemberVO vo = new MemberVO();
-		vo.setName(req.getParameter("name"));
+		
 		vo.setPass(req.getParameter("pass"));
-		vo.setPhone(req.getParameter("phone"));
+		
 		vo.setMid(req.getParameter("mid"));
 		
 		MemberService svc = new MemberServiceImpl();
 		
 		System.out.println(vo);
-		if(svc.aditMember(vo)) {
+		if(svc.editPass(vo)) {
 			try {
 				resp.getWriter().print("{\"retCode\":\"OK\"}");
 			} catch (IOException e) {

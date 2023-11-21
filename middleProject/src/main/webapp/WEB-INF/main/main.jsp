@@ -68,7 +68,7 @@
 
 
 
-<script src="adminResource/js/datatables-simple-demo.js"></script>
+<!-- <script src="adminResource/js/datatables-simple-demo.js"></script> -->
 
 
 </html>

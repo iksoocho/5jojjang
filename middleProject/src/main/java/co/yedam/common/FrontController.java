@@ -36,6 +36,7 @@ import co.yedam.member.web.FindIdpasswdForm;
 
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
+import co.yedam.member.web.MemberListControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
@@ -141,6 +142,9 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/myPageForm.do", new MyPageFormControl());
 		map.put("/modifyForm.do", new ModifyFormControl());
 		map.put("/modifyMember.do", new ModifyMemberControl());
+		
+		//회원 목록
+		map.put("/memberList.do", new MemberListControl());
 
 
 		// Qna

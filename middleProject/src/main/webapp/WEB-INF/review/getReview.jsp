@@ -34,7 +34,7 @@
 		<tr>
 			<th>이미지</th>
 			<c:if test="${!empty rno.rimage }">
-				<td><img style="align: center" width="80px" src="reviewResources/images/${vo.rimage}"></td>
+				<td><img style="align: center" width="80px" src="reviewResources/images/${rno.rimage}"></td>
 			</c:if>
 		
 		</tr>
