@@ -73,13 +73,6 @@ img {
 		
 		</tr>
 		
-		<tr>
-			<th>작성일시</th>
-			<td>${rno.rwritedate }</td>
-		</tr>
-		
-			
-		
 		
 		<tr>	
 			<th>글제목</th>
@@ -97,7 +90,7 @@ img {
 		<tr>
 			<th>이미지</th>
 			<c:if test="${!empty rno.rimage }">
-				<td><img style="align: center" width="400px" src="reviewResources/images/${rno.rimage}"></td>
+				<td colspan="4"><img style="align: center" width="400px" src="reviewResources/images/${rno.rimage}"></td>
 			</c:if>
 		
 		</tr>

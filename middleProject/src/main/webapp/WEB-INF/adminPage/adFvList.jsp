@@ -11,12 +11,12 @@
 <body>
 <div class="card mb-4">
 				<div class="card-header">
-					<i class="fas fa-table me-1"></i> QNA 목록
+					<i class="fas fa-table me-1"></i> ☀ Festival List
 				</div>
 <div class="card-body">
 
 
-<h3> ☀ Festival List</h3>
+
 <form action = 'addAdFvForm.do' name = 'insertForm'>
 
 	<table id="datatablesSimple">
@@ -56,7 +56,7 @@
 				<td>${vo.fprice1 }</td>
 				<td>${vo.fprice2 }</td>
 				<td>${vo.likeIt }</td>
-				<td><input type="button" value="삭제" onclick="doDel('${vo.fcode}')">  </td> 
+				<td><input type="button" value="삭제" onclick="doDel(event)">  </td> 
 				
 				
 			
@@ -78,21 +78,23 @@
 <script>
 
  
-  function doDel(code){
-	   let tr =  document.getElementById("listTr");
+  function doDel(e){
+	/*    let tr =  document.getElementById("listTr"); */
+	let tr = e.target.parentElement.parentElement.children[0].innerHTML;
+	   console.log(tr);
 	  
 	
 	   fetch('deleteAdFv.do', {
 		   method : 'post',
 		   headers : {'Content-Type': 'application/x-www-form-urlencoded'},
-		   body : 'fcode=' + code  
+		   body : 'fcode=' + tr 
 		   
 	   })
 	   .then(resolve => resolve.json())
 	   .then(result => {
 		   if(result.retCode == 'OK'){
 			   alert("삭제하였습니다.")
-			  tr.remove();
+			  e.target.parentElement.parentElement.remove();
 		   }else{
 			   alert("삭제 실패");
 		   }

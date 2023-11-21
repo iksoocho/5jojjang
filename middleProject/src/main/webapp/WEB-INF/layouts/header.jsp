@@ -62,11 +62,15 @@
 						
 
 					</c:when>
-					<c:otherwise>
+					</c:choose>
+					
+					
+					
 						<li class="nav-item"><a class="nav-link" href="calendar.do">축제
 								일정</a></li>
-					</c:otherwise>
-				</c:choose>
+					
+			
+
 
 
 
