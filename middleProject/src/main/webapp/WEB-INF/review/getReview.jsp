@@ -15,7 +15,7 @@
 		
 		<tr>
 			<th>작성일시</th>
-			<td>${rno.rwritedate }"</td>
+			<td>${rno.rwriteDate }"</td>
 			
 			<th>글제목</th>
 			<td colspan="3">${rno.rtitle }</td>
