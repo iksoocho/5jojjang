@@ -86,6 +86,11 @@
 				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 
 			</ul>
+			
+			
+	   <!-- 카트 보이는 부분입니다 로그인했을때만 카트 보이게 한거니까 수정하지마세요 !!!-->
+		<c:choose>
+			<c:when test="${!empty loginId }">
 			<form class="d-flex" action="cartList.do">
 				<input type="hidden" name="midd" value="${loginId }">
 				<button class="btn btn-outline-dark" type="submit"
@@ -94,6 +99,9 @@
 						class="badge bg-dark text-white ms-1 rounded-pill">${cartcnt }</span>
 				</button>
 			</form>
+		</c:when>
+	</c:choose>  
+		<!-- 카트 보이는 부분입니다 로그인했을때만 카트 보이게 한거니까 수정하지마세요 !!!-->
 
 
 		</div>
