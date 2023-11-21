@@ -4,11 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<form action="modifyReviewForm.do" name="reviewForm">
 
 
 
-<!-- 아래는 부트스트랩 다운받고 안에있는 index.html파일 내용 복사해 놓은것 -->
+
+<h3> 🎵 REVIEW </h3>
+
+
 
 
 <head>
@@ -17,6 +19,7 @@
 </head>
 
 <body>
+
 <style>
 a {
 	text-decoration: none;
@@ -49,8 +52,9 @@ a {
 									<!-- Product name-->
 									<h5 class="fw-bolder">${vo.rtitle  }</h5>
 
-								
-									<p> ${vo.rwritedate }</p>
+									<!-- Product price-->
+								<span> ${vo.rwritedate } </span> 
+									
 								</div>
 							</div>
 						</div>
@@ -58,8 +62,8 @@ a {
 				</div>
 
 			</c:forEach>
-
 		</div>
+	
 	</div>
 </section>
 
@@ -68,8 +72,8 @@ a {
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
 <div class= "pagination"></div>
-	<p><a href="addReviewForm.do"> REVIEW 게시글 등록화면 </a></p>
 	
+	<button type="button" onclick="location.href='addReviewForm.do'"> 🎵 Review 쓰기 </button>
 	
 	
 	

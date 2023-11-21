@@ -72,6 +72,7 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
+import co.yedam.review.web.myReviewControl;
 import co.yedam.wish.web.DelWishControl;
 import co.yedam.wish.web.WishControl;
 import co.yedam.wish.web.WishListControl;
@@ -185,6 +186,9 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 
 		map.put("/removeReviewForm.do", new RemoveReviewFormControl()); // 리뷰 삭제 폼
 		map.put("/removeReview.do", new RemoveReviewControl()); // 리뷰 삭제
+		
+		map.put("/myReview.do", new myReviewControl());
+		
 
 
 		map.put("/main.do", new MainControl());

@@ -11,5 +11,6 @@
 	<a href="removeForm.do">회원 탈퇴</a>
 	<a href="main.do">메인 화면으로</a>
 	<a href="wishList.do">찜 내역</a>
+	<a href="myReview.do">리뷰 내역</a>
 </body>
 </html>

@@ -40,4 +40,10 @@ public class ReviewServiceImpl implements ReviewService {
 		return mapper.deleteReview(rno) == 1;
 	}
 
+	
+	@Override
+	public List<ReviewVO> myReview(String rid) {
+		
+		return mapper.selectReview(rid);
+	}
 }

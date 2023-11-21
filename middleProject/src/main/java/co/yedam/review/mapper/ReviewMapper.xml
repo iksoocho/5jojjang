@@ -20,7 +20,9 @@
 	<insert id="insertReview"
 		parameterType="co.yedam.review.service.ReviewVO">
 		insert into review(rno, rid, rtitle, rcontent, rwritedate, rimage)
-		values (seq_rno.nextval, #{rid}, #{rtitle}, #{rcontent}, #{rwritedate}, #{rimage})
+
+		values (seq2_rno.nextval, #{rid}, #{rtitle}, #{rcontent}, sysdate, #{rimage})
+
 	</insert>
 
 	<update id="updateReview"
@@ -34,6 +36,10 @@
 	</delete>
 
 
+	<select id="selectReview" resultType="co.yedam.review.service.ReviewVO"
+		parameterType="string">
+		select * from review where rid=#{rid}
+	</select>
 
 
 

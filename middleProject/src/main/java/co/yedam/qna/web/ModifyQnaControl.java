@@ -19,13 +19,9 @@ public class ModifyQnaControl implements Command {
 			//파라메터받아옴 -> 데이터수정 -> 목록이동.
 			
 				String qno = req.getParameter("qno");
-			
 				String title = req.getParameter("qtitle");
-				String content = req.getParameter("qcontent");
-				
+				String content = req.getParameter("qcontent");	
 				String pass = req.getParameter("qpass");
-				
-				
 				QnaVO vo = new QnaVO();
 				vo.setQtitle(title);
 				vo.setQcontent(content);
