@@ -10,6 +10,13 @@ public class PaymentVO {
 	private int adcnt;
 	private int chcnt;
 	private String fcode;
-	//private int totalprice;
+	private String fimage;
+	private String fname;
+	private int fprice1;
+	private int fprice2;
+	private String fsdate;
+	private String fedate;
+	private String merchantUid;
+	
 	
 }

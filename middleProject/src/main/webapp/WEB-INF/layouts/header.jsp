@@ -47,7 +47,7 @@
 
 								<li><a class="dropdown-item"
 									href="wishList.do?mid=${loginId }">찜 목록</a></li>
-								<li><a class="dropdown-item" href="#!">구매 내역</a></li>
+								<li><a class="dropdown-item" href="paymentList.do?mid=${loginId }">구매 내역</a></li>
 							</ul></li>
 
 					</c:otherwise>

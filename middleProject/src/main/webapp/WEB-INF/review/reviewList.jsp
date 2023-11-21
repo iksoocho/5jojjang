@@ -7,7 +7,7 @@
 <form action="modifyReviewForm.do" name="reviewForm">
 
 
-<h3>template.jsp</h3>
+<h3> </h3>
 <!-- 아래는 부트스트랩 다운받고 안에있는 index.html파일 내용 복사해 놓은것 -->
 
 
@@ -63,7 +63,20 @@ a {
 	</div>
 </section>
 
+<%-- 		<c:forEach items="${rlist }" var="vo"> --%>
+<!-- 			<tr> -->
+<%-- 				<td>${vo.rno }</td> --%>
+<%-- 				<td><a href="getReview.do?rno=${vo.rno }"> ${vo.rtitle }</a></td> --%>
+<%-- 				<td>${vo.rid }</td> --%>
+<%-- 				<td>${vo.rwriteDate }</td> --%>
+<%-- 				<td><input src ="reviewResources/images/${vo.rimage}"  name="image" width="200"></td>  --%>
+				
+				
+<!-- 			</tr> -->
+<%-- 		</c:forEach> --%>
 
+	</tbody>
+</table> 
 
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->
