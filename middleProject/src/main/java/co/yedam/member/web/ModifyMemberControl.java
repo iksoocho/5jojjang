@@ -16,14 +16,14 @@ public class ModifyMemberControl implements Command {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
 		MemberVO vo = new MemberVO();
-		vo.setName(req.getParameter("name"));
+		
 		vo.setPass(UserSha256.encrypt(req.getParameter("pass")));
-		vo.setPhone(req.getParameter("phone"));
+		
 		vo.setMid(req.getParameter("mid"));
 		
 		MemberService svc = new MemberServiceImpl();
 		
-		if(svc.aditMember(vo)) {
+		if(svc.editPass(vo)) {
 			try {
 				resp.sendRedirect("logout.do");
 			} catch (IOException e) {

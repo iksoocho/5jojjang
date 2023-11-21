@@ -18,4 +18,6 @@ public interface MemberMapper {
 	public int updatePass(MemberVO vo);
 	
 	public MemberVO getIdEmail(@Param("name")String name, @Param("email")String email);
+	
+	public MemberVO getMemberForPass(String pass);
 }

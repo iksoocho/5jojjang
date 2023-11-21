@@ -50,7 +50,9 @@ a {
 									<h5 class="fw-bolder">${vo.rtitle  }</h5>
 
 								
-									
+
+									<p> ${vo.rwriteDate }</p>
+
 								</div>
 							</div>
 						</div>
