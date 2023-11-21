@@ -221,7 +221,7 @@
 								</span>
 								<br> <span><input type="button" value="후기작성" name="main"
 										onclick="location.href='reviewList.do?=rid'" class="list__optionbtn"></span>
-								<button class="list__optionbtn">취소요청</button>
+							
 							</td>
 						</tr>
 

@@ -27,13 +27,11 @@ import co.yedam.festival.web.FestivalListControl;
 import co.yedam.festival.web.TotalListControl;
 import co.yedam.member.web.CheckIdControl;
 import co.yedam.member.web.CheckModifyControl;
-
 import co.yedam.member.web.CkNumberFormControl;
 import co.yedam.member.web.FindIdControl;
 import co.yedam.member.web.FindIdFromControl;
 import co.yedam.member.web.FindIdpasswdControl;
 import co.yedam.member.web.FindIdpasswdForm;
-
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
 import co.yedam.member.web.ModifyFormControl;
@@ -41,25 +39,12 @@ import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
 import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
-
 import co.yedam.member.web.SelectFindIdOrPasswd;
-
 import co.yedam.member.web.getMemberControl;
-<<<<<<< HEAD
-=======
-
-import co.yedam.payment.web.PaymentApproveControl;
->>>>>>> refs/remotes/origin/2
-import co.yedam.payment.web.PaymentControl;
-<<<<<<< HEAD
-import co.yedam.payment.web.PaymentListControl;
-=======
-
 import co.yedam.member.web.modifyPasswdControl;
 import co.yedam.member.web.modifyPasswdFormControl;
-//import co.yedam.payment.web.paymentFormControl;
-
->>>>>>> refs/remotes/origin/2
+import co.yedam.payment.web.PaymentControl;
+import co.yedam.payment.web.PaymentListControl;
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;

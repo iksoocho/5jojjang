@@ -12,14 +12,9 @@ public class ReviewVO {
 	private String rid;
 	private String rtitle;
 	private String rcontent;
-<<<<<<< HEAD
 	private String rwriteDate;
 	private Date rlastUpdate;
 
-=======
-	private String rwritedate;
-	private String rlastupdate;
->>>>>>> refs/remotes/origin/2
 	private String rimage;
 
 

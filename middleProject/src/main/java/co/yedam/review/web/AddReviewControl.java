@@ -46,7 +46,7 @@ public class AddReviewControl implements Command {
 				vo.setRtitle(title);
 				vo.setRcontent(content);
 				vo.setRimage(image);
-				vo.setRwritedate(date);
+				vo.setRwriteDate(date);
 				
 
 				
