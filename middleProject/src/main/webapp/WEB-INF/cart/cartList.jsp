@@ -252,8 +252,8 @@
       <div class="cart__mainbtns">
          <button class="cart__bigorderbtn right" id="buybtn">결제하기</button>
          <div style="text-align:right; position: absolute; right:20%; top:40px">
-            <h4>총 결제금액</h4>
-            <p id="totalAmount">원</p>
+            <h4>💲총 결제금액</h4>
+            <p id="totalAmount"></p>
          </div>
       </div>
 

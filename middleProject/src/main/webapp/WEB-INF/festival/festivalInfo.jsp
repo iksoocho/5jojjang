@@ -164,12 +164,14 @@ input {
 
 
 <script>
+
 	let mid = document.getElementById('mid').value; //아이디 세션 저장한 변수 
 
 	document.getElementById('jbtn').addEventListener('click', function (e) {
 
 		if (mid == '') {
 			alert('로그인 후 이용해주세요');
+			window.location.href='loginForm.do';
 			return;
 		}
 
@@ -186,12 +188,17 @@ input {
 			.catch(err => console.log(err));
 
 	}); //찜추가이벤트 
+	
+	
+	
+	
 
 
 	document.getElementById('cartbtn').addEventListener('click', function (e) {
 
 		if (mid == '') {
 			alert('로그인 후 이용해주세요');
+			window.location.href='loginForm.do';
 			return;
 		}
 
@@ -305,4 +312,4 @@ input {
 
 
 
-</script>
+
