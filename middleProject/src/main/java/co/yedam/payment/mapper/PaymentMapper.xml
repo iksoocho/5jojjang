@@ -15,5 +15,12 @@
 		where pid =#{mid}
 		ORDER BY pno
 	</select>
+	
+	<select id="getCountByWriter" resultType="map">
+		SELECT T1.fname, COUNT(*)  AS cnt
+		FROM festival T1
+		RIGHT JOIN payment T2 ON T1.fcode = T2.fcode
+		GROUP BY T1.fname
+	</select>
 
 </mapper>

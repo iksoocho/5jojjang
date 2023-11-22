@@ -97,7 +97,11 @@ img {
 		<tr>
 			<th>이미지</th>
 			<c:if test="${!empty rno.rimage }">
-				<td colspan="4"><img style="align: center" width="400px" src="reviewResources/images/${rno.rimage}"></td>
+
+
+				<td><img style="align: center" width="80px" src="reviewResources/images/${rno.rimage}"></td>
+
+
 			</c:if>
 		
 		</tr>

@@ -187,15 +187,16 @@ color:#fff
         <!-- 2. 필드 -->
         <div class="field">
             <b>아이디</b>
-            <span class="placehold-text"><input type="text" name="mid"></span>
+            <span class="placehold-text"><input type="text" name="mid" id="mid"></span>
+            <button type="button" id="btn" value="No" onclick="idCheck()">중복 확인</button>
         </div>
         <div class="field">
             <b>비밀번호</b>
-            <input class="userpw" type="password" name="pass">
+            <input class="userpw" type="password" name="pass" id="pass">
         </div>
         <div class="field">
             <b>비밀번호 재확인</b>
-            <input class="userpw-confirm" type="password" name="checkPass">
+            <input class="userpw-confirm" type="password" name="checkPass" id="checkPass">
         </div>
         <div class="field">
             <b>이름</b>
@@ -244,6 +245,23 @@ color:#fff
 	</form>
 	
 	<script>
+	function idCheck() { //아이디 중복체크
+		let id = join.mid.value;
+		let url ="checkId.do?mid=" + id;
+		fetch(url)
+			.then(response => response.json())
+			.then(result => { //결과 처리 함수
+				if(result.retCode=="OK"){
+					alert(id + "는 사용가능한 아이디입니다.")
+					join.btn.value= 'Yes'; 
+				} else{
+					alert(id + "는 이미 사용 중인 아이디입니다.")
+					join.mid.value="";
+					join.id.focus();
+				};
+			});
+	}
+	
 	function checkNull() {
 	   var name = document.getElementsByName("name")[0].value;
 	    var mid = document.getElementsByName("mid")[0].value;
@@ -263,8 +281,29 @@ color:#fff
 	        alert('값을 모두 입력하세요.');
 	    } else {
 	        // 유효성 검사 통과 시 폼 제출
-	       
-	        fetch('checkId.do',{
+	       if(join.btn.value == 'No'){
+	    	   alert("아이디 중복체크를 해주세요.");
+				return false;
+	       }else{
+	    	   if(pass!=checkPass){
+	    			alert('비밀번호가 일치하지 않습니다.')
+	    			join.pass.value = "";
+	    			join.checkPass.value ="";
+	    			join.pass.focus();
+	    			return false;
+	    		}else{
+	    			if(confirm("회원가입 하시겠습니까?")){
+			    	 	alert('회원 가입 성공')
+			    		document.getElementById("join").submit();
+			     	}else{
+			    	 alert('취소');
+			     	}
+	    		}
+	       }
+	    	   
+	    	   
+	    	   
+	        /* fetch('checkId.do',{
 		    	method: 'post',
 				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
 				body: 'mid='+ mid
@@ -289,7 +328,7 @@ color:#fff
 		    		
 		    	}
 		    })
-		    .catch(err=>console.log(err))
+		    .catch(err=>console.log(err)) */
 	    }  
 	    
 	     

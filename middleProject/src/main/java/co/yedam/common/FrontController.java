@@ -82,6 +82,10 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		
 		//메인
 		map.put("/main.do", new MainControl());
+		
+		//차트
+		map.put("/chartForm.do", new ChartFormControl());
+		map.put("/drawChart.do", new DrawChartControl());
 
 		// 축제관련
 		map.put("/festivalInfo.do", new FestivalInfoControl()); // 축제 하나 상세조회
