@@ -97,11 +97,9 @@ img {
 		<tr>
 			<th>이미지</th>
 			<c:if test="${!empty rno.rimage }">
-<<<<<<< HEAD
-				<td><img style="align: center" width="400px" src="reviewResources/images/${rno.rimage}"></td>
-=======
+
 				<td><img style="align: center" width="80px" src="reviewResources/images/${rno.rimage}"></td>
->>>>>>> refs/heads/4
+
 			</c:if>
 		
 		</tr>

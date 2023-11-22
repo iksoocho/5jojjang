@@ -27,7 +27,7 @@
 								<tr>
 									 <td><a href="getReview.do?rno=${vo.rno}">${vo.rtitle }</a></td> 
 									
-									<td>${vo.rwritedate }</td>
+									<td>${vo.rwriteDate }</td>
 									<td>${vo.rcontent }</td>
 								</tr>
 							</c:forEach>
