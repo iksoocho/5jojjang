@@ -25,7 +25,7 @@
 		</tr>
 		<tr>
 			<td colspan="4" align="center">
-				<input type="submit" class="btn btn-primary" value="정보 수정"> 
+				<input type="submit" class="btn btn-primary" value="비밀번호 변경"> 
 				<input type="button" class="btn btn-warning" value="회원 탈퇴">
 			</td>
 		</tr>

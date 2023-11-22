@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-		11월 20일 오후 5시 28분
-		
-		11월 21일 오후 6시 10분
-		
-		
+
+
+
+ <!--1122 장바구니 결제완 10:30  -->
 </body>
 </html>

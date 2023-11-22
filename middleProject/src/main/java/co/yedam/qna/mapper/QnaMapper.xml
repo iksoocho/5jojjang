@@ -5,7 +5,7 @@
 	<select id="selectList"
 		resultType="co.yedam.qna.service.QnaVO">
 
-		select * from qna
+		select * from qna order by qno desc
 
 	</select>
 
@@ -17,12 +17,12 @@
 	<insert id="insert"
 		parameterType="co.yedam.qna.service.QnaVO">
 		insert into qna(qno, qid, qtitle, qcontent,  qpass)
-		values (seq2_qno.nextval, #{qid}, #{qtitle}, #{qcontent}, #{qpass})
+		values (seq_qno.nextval, #{qid}, #{qtitle}, #{qcontent}, #{qpass})
 	</insert>
 
 	<update id="update"
 		parameterType="co.yedam.qna.service.QnaVO">
-		update qna set qtitle=#{qtitle}, qcontent=#{qcontent}, qpass=#{qpass} where qno=#{qno}
+		update qna set qtitle=#{qtitle}, qcontent=#{qcontent} where qno=#{qno}
 	</update>
 
 

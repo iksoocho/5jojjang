@@ -62,7 +62,7 @@ img {
 <title>modifyForm.jsp</title>
 </head>
 <body>
-	<h3>게시글 수정 화면</h3>
+	<h3>░ Q&A 수정하기 </h3>
 	
 
 	
@@ -89,19 +89,20 @@ img {
 				<td><input type="text" name="writer" value="${loginId }"></td>
 			</tr>
 			
-			<tr>
+			<%-- <tr>
 				<th>비밀번호</th>
 				<td><input type="password" name="qpass" value="${vo.qpass }"></td>
-			</tr>
+			</tr> --%>
 
 			<tr>
 				<td colspan="2">
 				
 				<input type="submit" value="수정"> 
-				<input type="reset" value="초기화">
+				<input type="reset" value="다시쓰기">
 				</td>
 			</tr>
 		</table>
+		<button type="button" onclick="location.href='qnaList.do'"> ⫷ 목록으로 </button>
 	</form>
 
 

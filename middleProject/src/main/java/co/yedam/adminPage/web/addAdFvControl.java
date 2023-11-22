@@ -21,7 +21,7 @@ public class addAdFvControl implements Command {
 
 		req.getMethod().equals("POST");
 
-		String saveDir = req.getServletContext().getRealPath("images");
+		String saveDir = req.getServletContext().getRealPath("resources/images"); 
 		int size = 5 * 1024 * 1024;
 
 		try {

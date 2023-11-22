@@ -6,8 +6,11 @@
 
 
 
-<h3> ꔚ 축제 Review </h3>
-<!-- 아래는 부트스트랩 다운받고 안에있는 index.html파일 내용 복사해 놓은것 -->
+
+
+<h3> 🎵 REVIEW </h3>
+
+
 
 
 <head>
@@ -49,7 +52,8 @@ a {
 									<!-- Product name-->
 									<h5 class="fw-bolder">${vo.rtitle  }</h5>
 
-								
+									<!-- Product price-->
+								<span> ${vo.rwritedate } </span> 
 									
 								</div>
 							</div>
@@ -58,25 +62,12 @@ a {
 				</div>
 
 			</c:forEach>
-
 		</div>
+	
 	</div>
 </section>
 
-<%-- 		<c:forEach items="${rlist }" var="vo"> --%>
-<!-- 			<tr> -->
-<%-- 				<td>${vo.rno }</td> --%>
-<%-- 				<td><a href="getReview.do?rno=${vo.rno }"> ${vo.rtitle }</a></td> --%>
-<%-- 				<td>${vo.rid }</td> --%>
-<%-- 				<td>${vo.rwriteDate }</td> --%>
-<%-- 				<td><input src ="reviewResources/images/${vo.rimage}"  name="image" width="200"></td>  --%>
-				
-				
-<!-- 			</tr> -->
-<%-- 		</c:forEach> --%>
 
-	</tbody>
-</table> 
 
 
 <!-- qna랑 review 게시판 아래에 페이징해야됨!  -->

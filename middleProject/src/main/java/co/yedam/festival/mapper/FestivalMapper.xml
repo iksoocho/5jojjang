@@ -7,6 +7,8 @@
    <select id="festivalList"
       resultType="co.yedam.festival.service.FestivalVO">
       select *from festival
+      order by fsdate
+
 
    </select>
    <select id="dayList"
@@ -21,8 +23,9 @@
       parameterType="string"> select * from festival where fcode=#{fcode}
    </select>
    
-   
-   <select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
+ 
+ <select id="selectLike" resultType="co.yedam.festival.service.FestivalVO" parameterType="string">
+ 
 	  <![CDATA[  
 	   select * from (select * from 
            (SELECT *
@@ -32,7 +35,7 @@
            ) b
            where rownum <= 3 and fcode != #{fno}
    	]]>
-	</select>
-  
+	</select> 
+ 
 </mapper>
    

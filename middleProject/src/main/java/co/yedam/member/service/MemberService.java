@@ -22,5 +22,8 @@ public interface MemberService {
 	
 	//아이디 , 이메일로 사람 찾기
 	public MemberVO getIdEmail(String name, String email);
+	
+	//비밀번호 체크
+	public MemberVO getMemberForPass(String pass);
 
 }

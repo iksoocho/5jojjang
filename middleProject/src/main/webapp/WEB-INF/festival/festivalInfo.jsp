@@ -10,6 +10,13 @@ input {
 	font-size: 20px;
 }
 
+li {
+	list-style-type: none;
+}
+
+ul {
+	padding-left: 0px;
+}
 </style>
 <!-- 포트원 결제 -->
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
@@ -32,21 +39,28 @@ input {
 			<div class="col-md-6">
 				<div class="small mb-1">축제코드 : ${vo.fcode }</div>
 				<h1 class="display-5 fw-bolder">${vo.fname }</h1>
+
 				<br>
+
 				<div class="fs-5 mb-5">
-					🎫 티켓금액 : <span>어른 - ${vo.fprice1 }원</span> <span>아동 -
-						${vo.fprice2 }원</span>
-					<br>📢 주소 :  ${vo.fplace }
-					<br>☎ 전화번호 : ${vo.fphone }
-					<br>❤ ${vo.fcontent } 
+					<ul>
+
+						<li>📅 축제기간 : ${vo.fsdate} ~ ${vo.fedate }</li>
+						<li>🎫 티켓금액 : <span>어른 - ${vo.fprice1 }원</span> / <span>아동
+								- ${vo.fprice2 }원</span>
+						<li>📢 주소 : ${vo.fplace }</li>
+						<li>📞 전화번호 : ${vo.fphone }</li>
+						<li>💚 축제내용 : ${vo.fcontent }</li>
+
+					</ul>
 				</div>
-		
+
 				<div class="d-flex">
 					<button class="btn btn-outline-dark flex-shrink-0" type="button"
 						id="jbtn">
 						<i class="bi-cart-fill me-1">찜하기</i>
 					</button>
-					
+
 				</div>
 				<br>
 				<table>
@@ -78,18 +92,18 @@ input {
 </section>
 
 <section class="py-5 bg-light">
-	<div class="container px-4 px-lg-5 mt-5 justify-content-center" >
+	<div class="container px-4 px-lg-5 mt-5 justify-content-center">
 		<h2 class="fw-bolder mb-4">🎆 오시는 길</h2>
-		
+
 		<script type="text/javascript"
 			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e277ea05d3d85bc8b38b63f21cfaedd">
 		</script>
-		
+
 	</div>
-		
-		<div id="map" style="width: 800px; height: 500px;margin-left: 20%;"></div>
-		
-		<script>
+
+	<div id="map" style="width: 800px; height: 500px; margin-left: 20%;"></div>
+
+	<script>
 			const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 			let options = { //지도를 생성할 때 필요한 기본 옵션
 				center: new kakao.maps.LatLng(${vo.flat }, ${vo.flng }), //지도의 중심좌표.
@@ -115,16 +129,18 @@ input {
 <!-- Related items section-->
 <section class="py-5 bg-light">
 	<div class="container px-4 px-lg-5 mt-5" style="clear: both;">
-		<h2 class="fw-bolder mb-4" >이런 축제는 어때요?</h2>
+		<h2 class="fw-bolder mb-4">이런 축제는 어때요?</h2>
 		<div
-			class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" >
+			class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 			<c:forEach items="${list }" var="vo">
 				<!-- 상품목록 -->
 				<div class="col mb-5">
 					<div class="card h-100">
 						<!-- Sale badge-->
-						<div class="badge bg-black text-white position-absolute"
-							style="top: 0.5rem; right: 0.5rem">개최중</div>
+						<c:if test="${vo.fsdate == now}">
+							<div class="badge bg-dark text-white position-absolute"
+								style="top: 0.5rem; right: 0.5rem">개최중</div>
+						</c:if>
 						<!-- Product image-->
 						<img class="card-img-top" src="resources/images/${vo.fimage}"
 							style="height: 360px;" alt="..." />
@@ -164,12 +180,14 @@ input {
 
 
 <script>
+
 	let mid = document.getElementById('mid').value; //아이디 세션 저장한 변수 
 
 	document.getElementById('jbtn').addEventListener('click', function (e) {
 
 		if (mid == '') {
 			alert('로그인 후 이용해주세요');
+			window.location.href='loginForm.do';
 			return;
 		}
 
@@ -186,12 +204,17 @@ input {
 			.catch(err => console.log(err));
 
 	}); //찜추가이벤트 
+	
+	
+	
+	
 
 
 	document.getElementById('cartbtn').addEventListener('click', function (e) {
 
 		if (mid == '') {
 			alert('로그인 후 이용해주세요');
+			window.location.href='loginForm.do';
 			return;
 		}
 
@@ -305,4 +328,4 @@ input {
 
 
 
-</script>
+

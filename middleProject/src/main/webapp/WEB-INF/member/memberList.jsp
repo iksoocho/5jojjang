@@ -1,40 +1,29 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
 <body>
 <div class="card mb-4">
 				<div class="card-header">
-					<i class="fas fa-table me-1"></i> ${loginId }님의 리뷰
+					<i class="fas fa-table me-1"></i> 회원 목록
 				</div>
 				<div class="card-body">
-				
-				
-				<input type="hidden" name="mid" value="mid.rid">
 					<table id="datatablesSimple">
 						<thead>
 							<tr>
-								<th>제목</th>
-								<th>작성날짜</th>
-								<th>내용</th>
-								<th> </th>
-								
-								
-								
+								<th>회원 아이디</th>
+								<th>이름</th>
+								<th>연락처</th>
+								<th>이메일</th>
 							</tr>
 						</thead>
 						
 						<tbody>
-							<c:forEach items="${rlist }" var="vo">
+							<c:forEach items="${list }" var="vo">
 								<tr>
-									 <td><a href="getReview.do?rno=${vo.rno}">${vo.rtitle }</a></td> 
-									
-									<td>${vo.rwritedate }</td>
-									<td>${vo.rcontent }</td>
-									<td><button type="button" onclick="location.href='modifyReviewForm.do?rno=${vo.rno}'"> ➥ 후기 수정 </button>
-									</td>
+									<td>${vo.mid }</td>
+									<td>${vo.name }</td>
+									<td> ${vo.phone }</td>
+									<td>${vo.email }</td>
 								</tr>
 							</c:forEach>
 						</tbody>
