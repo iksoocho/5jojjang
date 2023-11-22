@@ -50,7 +50,7 @@ public class AddReviewControl implements Command {
 				vo.setRtitle(title);
 				vo.setRcontent(content);
 				vo.setRimage(image);
-				vo.setRwriteDate(date);
+				vo.setRwritedate(date);
 				
 				req.setAttribute("vo", vo);
 				
