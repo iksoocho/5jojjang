@@ -35,8 +35,7 @@
 								가입</a></li>
 					</c:when>
 					<c:when test="${loginId =='admin' }">
-						<li class="nav-item"><a class="nav-link" href="joinForm.do">회원
-								관리</a></li>
+						
 						<li class="nav-item"><a class="nav-link" href="memberList.do">회원
 								목록</a></li>
 					</c:when>
