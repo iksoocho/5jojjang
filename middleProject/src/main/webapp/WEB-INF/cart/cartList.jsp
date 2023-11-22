@@ -383,7 +383,7 @@
                   console.log(rsp);
                   //결제 성공시 프로젝트 DB저장 요청
                   //                     if (rsp.status == 200) { // DB저장 성공시
-                  //                         alert('결제 완료!')
+                  alert('결제 완료!')
                   let totalCnt = 0;
                   document.querySelectorAll('.totalAmount').forEach((item, idx, ary) => {
                      let parentTR = item.parentElement.parentElement;
