@@ -89,10 +89,10 @@ img {
 				<td><input type="text" name="writer" value="${loginId }"></td>
 			</tr>
 			
-			<tr>
+			<%-- <tr>
 				<th>비밀번호</th>
 				<td><input type="password" name="qpass" value="${vo.qpass }"></td>
-			</tr>
+			</tr> --%>
 
 			<tr>
 				<td colspan="2">

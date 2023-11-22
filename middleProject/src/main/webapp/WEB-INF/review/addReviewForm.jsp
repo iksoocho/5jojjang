@@ -67,7 +67,7 @@ img {
 		<table  border="1">
 			<tr>
 				<th>제목</th>
-				<td><input type="text" name="rtitle"></td>
+				<td><input type="text" name="rtitle" autofocus></td>
 			</tr>
 			
 			<tr>
@@ -79,7 +79,7 @@ img {
 
 			<tr>
 			<th>내용</th>
-				<td colspan="2"><textarea cols="40" rows="5" name="rcontent" ></textarea></td>
+				<td colspan="2"><textarea cols="40" rows="5" name="rcontent" placeholder="축제 후기를 작성해주세요" ></textarea></td>
 			</tr>
 			
 			<tr>
@@ -88,13 +88,7 @@ img {
 			
 			</tr>
 			
-				<tr>
-				<th>날짜</th>
-				<!-- <td><input type="text" name="rwritedate" value="{"></td> -->
-				<td><fm:formatDate value="${vo.rwritedate }" pattern="yyyy-MM-dd HH:mm:ss"></fm:formatDate></td>
-			
-			</tr>
-			
+				
 
 		<tr>
 			<td align="center" colspan="2"><input type="submit" value="✅저장" > 
@@ -104,3 +98,5 @@ img {
 
 
 	</form>
+	
+	<button type="button" onclick="location.href='reviewList.do'"> ⫷ 이전 페이지로 </button>

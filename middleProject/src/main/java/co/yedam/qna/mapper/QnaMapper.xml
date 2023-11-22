@@ -5,7 +5,7 @@
 	<select id="selectList"
 		resultType="co.yedam.qna.service.QnaVO">
 
-		select * from qna
+		select * from qna order by qno desc
 
 	</select>
 
@@ -22,7 +22,7 @@
 
 	<update id="update"
 		parameterType="co.yedam.qna.service.QnaVO">
-		update qna set qtitle=#{qtitle}, qcontent=#{qcontent}, qpass=#{qpass} where qno=#{qno}
+		update qna set qtitle=#{qtitle}, qcontent=#{qcontent} where qno=#{qno}
 	</update>
 
 

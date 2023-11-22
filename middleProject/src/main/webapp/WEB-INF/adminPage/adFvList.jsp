@@ -31,8 +31,8 @@
 			<th>위도</th>
 			<th>경도</th>
 			<th>상세설명</th>
-			<th>가격1</th>
-			<th>가격2</th>
+			<th>성인(\)</th>
+			<th>청소년(\) </th>
 			<th>좋아요</th>
 			<th> </th>
 		</tr>
@@ -66,7 +66,7 @@
 	</tbody>
 </table>
 
-	<input type='submit' value='새 축제 등록하기'>
+	<input type='submit' value='✎새 축제 등록하기'>
 	</form>
 
 		</div>

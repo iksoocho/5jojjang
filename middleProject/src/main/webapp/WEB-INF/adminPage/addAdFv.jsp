@@ -9,7 +9,7 @@
 	<table class="table" border="1">
 		<tr>
 			<th>▫ 축제코드</th>
-			<td><input type="text" class="form-control" name="fcode" autofocus placeholder="F0XX"></td>
+			<td><input type="text" class="form-control" name="fcode" autofocus placeholder=" F+3자리숫자"></td>
 		</tr>
 		<tr>
 			<th>▫ 축제명</th>

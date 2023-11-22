@@ -6,7 +6,7 @@
 
    <select id="festivalList"
       resultType="co.yedam.festival.service.FestivalVO">
-      select *from festival
+      select *from festival order by fsdate
 
    </select>
    <select id="dayList"

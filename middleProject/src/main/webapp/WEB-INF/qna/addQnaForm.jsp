@@ -84,7 +84,7 @@ img {
 			
 			<tr>
 				<th>내용</th>
-				<td colspan="2"><textarea cols="40" rows="5" name="qcontent" ></textarea></td>
+				<td colspan="2"><textarea cols="40" rows="5" name="qcontent" placeholder="문의 내용을 입력해주세요!"></textarea></td>
 			</tr>
 			
 			<tr>
