@@ -220,7 +220,7 @@
 									vo.fprice2}원
 								</span>
 								<br> <span><input type="button" value="후기작성" name="main"
-										onclick="location.href='reviewList.do?=rid'" class="list__optionbtn"></span>
+										onclick="location.href='addReviewForm.do'" class="list__optionbtn"></span>
 							
 							</td>
 						</tr>

@@ -5,7 +5,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container px-4 px-lg-5">
+
 		<a class="navbar-brand" href="main.do"><strong>오조짱축제</strong></a>
+
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -33,8 +35,7 @@
 								가입</a></li>
 					</c:when>
 					<c:when test="${loginId =='admin' }">
-						<li class="nav-item"><a class="nav-link" href="joinForm.do">회원
-								관리</a></li>
+						
 						<li class="nav-item"><a class="nav-link" href="memberList.do">회원
 								목록</a></li>
 					</c:when>
@@ -61,8 +62,18 @@
 					<c:when
 						test="${!empty responsibility && responsibility == 'admin' }">
 
-						<li class="nav-item"><a class="nav-link" href="adFvList.do">축제
-								관리</a></li>
+
+						
+						<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">축제</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="adFvList.do">축제 관리</a></li>
+                                <li><a class="dropdown-item" href="chartForm.do">판매량</a></li>
+                                
+                            </ul>
+                        </li>
+	
+
 
 					</c:when>
 				</c:choose>

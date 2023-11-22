@@ -19,4 +19,6 @@ public class PaymentVO {
 	private String merchantUid;
 	
 	
+	
+	
 }

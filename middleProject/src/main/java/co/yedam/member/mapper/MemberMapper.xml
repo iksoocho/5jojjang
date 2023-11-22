@@ -11,7 +11,7 @@
 	</select>
 	
 	<select id="list" resultType="co.yedam.member.service.MemberVO">
-		select * from member WHERE mid != 'admin'
+		select * from member WHERE mid != 'admin' order by mid
 	</select>
 	
 	<select id="select" resultType="co.yedam.member.service.MemberVO">

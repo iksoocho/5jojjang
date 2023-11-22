@@ -131,9 +131,9 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
+<!-- <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-</head>
+</head> -->
 <body>
 	<form id="login" action="login.do" method="post">
 		<div class="box ">
@@ -175,6 +175,7 @@
 	    .then(resolve=>resolve.json())
 	    .then(result=>{
 	    	console.log(result.retCode)
+	    	
 	    	 if(result.retCode=="NG"){
 	    		 
 	    		 
