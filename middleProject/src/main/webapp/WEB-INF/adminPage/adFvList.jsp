@@ -83,23 +83,28 @@
 	let tr = e.target.parentElement.parentElement.children[0].innerHTML;
 	   console.log(tr);
 	  
-	
-	   fetch('deleteAdFv.do', {
-		   method : 'post',
-		   headers : {'Content-Type': 'application/x-www-form-urlencoded'},
-		   body : 'fcode=' + tr 
+	   if(confirm('삭제 하시겠습니까?')){
 		   
-	   })
-	   .then(resolve => resolve.json())
-	   .then(result => {
-		   if(result.retCode == 'OK'){
-			   alert("삭제하였습니다.")
-			  e.target.parentElement.parentElement.remove();
+		   fetch('deleteAdFv.do', {
+			   method : 'post',
+			   headers : {'Content-Type': 'application/x-www-form-urlencoded'},
+			   body : 'fcode=' + tr 
+			   
+		   })
+		   .then(resolve => resolve.json())
+		   .then(result => {
+			  
+			   if(result.retCode == 'OK'){
+				   alert("삭제하였습니다.")
+				  e.target.parentElement.parentElement.remove();
+			   }else{
+				   alert("삭제 실패");
+			   }
+		   })
+		   .catch(err => console.log(err));
 		   }else{
-			   alert("삭제 실패");
+			   alert("삭제 취소");
 		   }
-	   })
-	   .catch(err => console.log(err));
 
    }  
 
