@@ -29,31 +29,27 @@ import co.yedam.festival.web.TotalListControl;
 import co.yedam.member.web.CheckIdControl;
 import co.yedam.member.web.CheckModifyControl;
 
+import co.yedam.member.web.CheckPassControl;
+
 import co.yedam.member.web.CkNumberFormControl;
 import co.yedam.member.web.FindIdControl;
 import co.yedam.member.web.FindIdFromControl;
 import co.yedam.member.web.FindIdpasswdControl;
 import co.yedam.member.web.FindIdpasswdForm;
-
 import co.yedam.member.web.JoinControl;
 import co.yedam.member.web.JoinFormControl;
+import co.yedam.member.web.MemberListControl;
 import co.yedam.member.web.ModifyFormControl;
 import co.yedam.member.web.ModifyMemberControl;
 import co.yedam.member.web.MyPageFormControl;
 import co.yedam.member.web.RemoveFormControl;
 import co.yedam.member.web.RemoveMemberControl;
-
 import co.yedam.member.web.SelectFindIdOrPasswd;
-
 import co.yedam.member.web.getMemberControl;
-
-import co.yedam.payment.web.PaymentApproveControl;
-import co.yedam.payment.web.PaymentControl;
-
 import co.yedam.member.web.modifyPasswdControl;
 import co.yedam.member.web.modifyPasswdFormControl;
-//import co.yedam.payment.web.paymentFormControl;
-
+import co.yedam.payment.web.PaymentControl;
+import co.yedam.payment.web.PaymentListControl;
 import co.yedam.qna.web.AddQnaControl;
 import co.yedam.qna.web.AddQnaFormControl;
 import co.yedam.qna.web.GetQnaControl;
@@ -73,10 +69,10 @@ import co.yedam.review.web.ModifyReviewFormControl;
 import co.yedam.review.web.RemoveReviewControl;
 import co.yedam.review.web.RemoveReviewFormControl;
 import co.yedam.review.web.ReviewListControl;
+import co.yedam.review.web.myReviewControl;
 import co.yedam.wish.web.DelWishControl;
 import co.yedam.wish.web.WishControl;
 import co.yedam.wish.web.WishListControl;
-
 
 public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상 FrontController가 실행되는데 어떤 .do 냐 따라서 다른 매소드들을 실행해주기
 	// 위해 나눠놈
@@ -87,6 +83,10 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		
 		//메인
 		map.put("/main.do", new MainControl());
+		
+		//차트
+		map.put("/chartForm.do", new ChartFormControl());
+		map.put("/drawChart.do", new DrawChartControl());
 
 		// 축제관련
 		map.put("/festivalInfo.do", new FestivalInfoControl()); // 축제 하나 상세조회
@@ -101,11 +101,11 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		// 장바구니
 		map.put("/cart.do", new CartControl()); //장바구니추가하기
 		map.put("/cartList.do", new CartListControl()); //장바구니 목록 보기
-		map.put("/delCart.do", new DelCartControl()); //장바구니 목록 보기'
+		map.put("/delCart.do", new DelCartControl()); //장바구니 삭제 
 		
 		// 결제하기
-		map.put("/payment.do", new PaymentControl());
-		map.put("/paymentapprove.do", new PaymentApproveControl());
+		map.put("/payment.do", new PaymentControl()); //결제 정보확인
+		map.put("/paymentList.do", new PaymentListControl());  //구매내역
 
 		// 로그인
 		map.put("/loginForm.do", new LoginFormControl());
@@ -119,6 +119,7 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/SelectFindIdOrPasswd.do", new SelectFindIdOrPasswd()); //아이디찾기, 비번 찾기 고르는거 
 		map.put("/findIdForm.do", new FindIdFromControl());
 		map.put("/findId.do", new FindIdControl());
+		map.put("/checkPass.do", new CheckPassControl());
 
 		// 회원가입
 		map.put("/joinForm.do", new JoinFormControl()); // 회원가입 화면
@@ -141,6 +142,9 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 		map.put("/myPageForm.do", new MyPageFormControl());
 		map.put("/modifyForm.do", new ModifyFormControl());
 		map.put("/modifyMember.do", new ModifyMemberControl());
+		
+		//회원 목록
+		map.put("/memberList.do", new MemberListControl());
 
 
 		// Qna
@@ -186,6 +190,9 @@ public class FrontController extends HttpServlet { // ??.do 로 끝나면 항상
 
 		map.put("/removeReviewForm.do", new RemoveReviewFormControl()); // 리뷰 삭제 폼
 		map.put("/removeReview.do", new RemoveReviewControl()); // 리뷰 삭제
+		
+		map.put("/myReview.do", new myReviewControl());
+		
 
 
 		map.put("/main.do", new MainControl());

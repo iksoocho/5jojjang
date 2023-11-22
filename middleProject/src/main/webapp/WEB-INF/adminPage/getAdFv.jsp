@@ -4,7 +4,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
+
 <form action="modifyAdFvForm.do" name="modForm">
+<button type="button" onclick="location.href='adFvList.do'"> ⫷ 이전 페이지로 </button>
 	<input type="hidden" name="fcode" value="${fcode.fcode }">
 	<table border="1" class="table">
 	
@@ -25,8 +27,16 @@
 			<td>${fcode.flng }</td>
 		</tr>
 		<tr>
-			<th>이미지삽입</th>
-			<td><img src="adminResources/images/${fcode.fimage }" ></td>
+
+		<%-- 	<th>이미지</th>
+			<c:if test="${!empty fcode.fimage }">
+				<td><img style="align: center" width="100px" src="webapp/resources/images/${fcode.fimage }"></td>
+			</c:if> --%>
+			
+
+			<th>img</th>
+			<td><img src="resources/images/${fcode.fimage }" ></td>
+
 		</tr>
 		<tr>
 			<th>시작날짜</th>
@@ -36,12 +46,12 @@
 		</tr>
 		<tr>
 			<th>상세설명</th>
-			<td colspan="4"><textarea rows="5" cols="40" >${fcode.fcontent }</textarea></td>
+			<td colspan="4"><textarea rows="5" cols="150" >${fcode.fcontent }</textarea></td>
 		</tr>
 		<tr>
-			<th>가격1</th>
+			<th>성인</th>
 			<td>${fcode.fprice1 }</td>
-			<th>가격2</th>
+			<th>청소년</th>
 			<td>${fcode.fprice2 }</td>
 		</tr>
 	
@@ -49,8 +59,8 @@
 		
 		<tr>
 			<td colspan="4" align="center">
-				<input type="submit" value="수정">
-				<input type="button" value="삭제">
+				<input type="submit" value="✄수정" >
+				<!-- <input type="button" value="삭제"> -->
 			</td>
 			</tr>	
 				
@@ -62,10 +72,10 @@
 
 <script>
 
-document.querySelector('input[type=button]').addEventListener('click', function(e){
+/* document.querySelector('input[type=button]').addEventListener('click', function(e){
 	document.forms.modForm.action = 'deleteAdFv.do';
 	document.forms.modForm.submit();
 })
-
+ */
 </script>
 

@@ -1,5 +1,8 @@
 package co.yedam.payment.serviceImpl;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
 import co.yedam.common.DataSourceMybatis;
@@ -14,7 +17,20 @@ public class PaymentServiceImpl implements PaymentService {
 	@Override
 	public boolean appPayment(PaymentVO vo) {
 		// TODO Auto-generated method stub
-		return mapper.insert(vo) ==1;
+		return mapper.insert(vo) == 1;
 	}
+
+	@Override
+	public List<PaymentVO> paymentList(String mid) {
+		// TODO Auto-generated method stub
+		return mapper.paymentList(mid);
+	}
+
+	@Override
+	public List<Map<String, Object>> getCountByWriter() {
+		// TODO Auto-generated method stub
+		return mapper.getCountByWriter();
+	}
+	
 
 }

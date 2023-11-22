@@ -34,7 +34,9 @@
 						</tbody>
 					</table>
 					
-						<p><a href="addQnaForm.do"> Qna 게시글 등록화면 </a></p>
+						
+						<button type="button" onclick="location.href='addQnaForm.do'"> ✎QnA 글쓰기 </button>
+
 				</div>
 			</div>
 

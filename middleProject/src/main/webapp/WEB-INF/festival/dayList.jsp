@@ -23,8 +23,10 @@ a {
 					<a href="festivalInfo.do?fno=${vo.fcode }">
 						<div class="card h-100">
 							<!-- Sale badge-->
+							<c:if test="${vo.fsdate == now}">
 							<div class="badge bg-dark text-white position-absolute"
 								style="top: 0.5rem; right: 0.5rem">개최중</div>
+						</c:if>
 							<img class="card-img-top" src="resources/images/${vo.fimage }" style="height:360px;"
 								alt="..." />
 							<!-- Product details-->

@@ -131,9 +131,9 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
+<!-- <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-</head>
+</head> -->
 <body>
 	<form id="login" action="login.do" method="post">
 		<div class="box ">
@@ -175,10 +175,33 @@
 	    .then(resolve=>resolve.json())
 	    .then(result=>{
 	    	console.log(result.retCode)
+	    	
 	    	 if(result.retCode=="NG"){
-	    		alert('아이디 혹은 비밀번호를 확인해 주세요');
+	    		 
+	    		 
+	    		 fetch('checkId.do',{
+	    		    	method: 'post',
+	    				headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	    			 	body: 'mid='+ mid 
+	    		    })
+	    		    .then(resolve=>resolve.json())
+	    		    .then(result=>{
+	    		    	if(result.retCode=="OK"){
+	    		    		alert('존재하지 않는 아이디 입니다.')
+	    		    	}else{
+	    		    		alert('비밀번호가 틀렸습니다.')
+	    		    	}
+	    		    })
+	    		    .catch(err=>console.log(err))
+	    		 
+	    		 
 	    	}else{
+	    		if(mid == 'admin'){
+	    			alert('관리자 님 환영합니다.')
+	    		}else{
+	    			
 	    		alert(mid+' 님 환영합니다.')
+	    		}
 	    		document.getElementById("login").submit();
 	    	}
 	    })

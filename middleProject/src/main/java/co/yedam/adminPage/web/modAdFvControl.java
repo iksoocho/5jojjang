@@ -22,6 +22,8 @@ public class modAdFvControl implements Command {
 		String price1 = req.getParameter("fprice1");
 		String price2 = req.getParameter("fprice2");
 		String code = req.getParameter("fcode");
+	
+				
 		
 		
 		
@@ -31,6 +33,7 @@ public class modAdFvControl implements Command {
 		vo.setFprice1(Integer.parseInt(price1));
 		vo.setFprice2(Integer.parseInt(price2));
 		vo.setFcode(code);
+	
 		
 		
 

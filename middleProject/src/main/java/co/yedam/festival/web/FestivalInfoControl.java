@@ -22,7 +22,7 @@ public class FestivalInfoControl implements Command {
 		FestivalVO vo = svc.getfestivalInfo(fcode);
 		
 		
-
+		///라라라라
 		List<FestivalVO> list = svc.selectLike(fcode); // 별점 높은순 목록
 
 		req.setAttribute("list", list);  //별점 리스트 
@@ -33,7 +33,7 @@ public class FestivalInfoControl implements Command {
 			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 
 }

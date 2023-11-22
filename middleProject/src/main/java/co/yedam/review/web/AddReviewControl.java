@@ -31,6 +31,8 @@ public class AddReviewControl implements Command {
 								"UTF-8", // 인코딩방식
 								new DefaultFileRenamePolicy());// 리네임정책
 				
+				//String rno = mr.getParameter("rno");
+				
 				String rid = mr.getParameter("rid");
 ;				String title = mr.getParameter("rtitle");
 				String content = mr.getParameter("rcontent");
@@ -42,13 +44,15 @@ public class AddReviewControl implements Command {
 				// 이 네개의 값을 담아줌
 				vo = new ReviewVO();
 			
+			//	vo.setRno(Integer.parseInt(rno));
+				
 				vo.setRid(rid);
 				vo.setRtitle(title);
 				vo.setRcontent(content);
 				vo.setRimage(image);
 				vo.setRwritedate(date);
 				
-
+				req.setAttribute("vo", vo);
 				
 				System.out.println("addReview control " + vo);
 			} catch (Exception e) {

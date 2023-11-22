@@ -11,7 +11,7 @@
 	</select>
 	
 	<select id="list" resultType="co.yedam.member.service.MemberVO">
-		select * from member
+		select * from member WHERE mid != 'admin'
 	</select>
 	
 	<select id="select" resultType="co.yedam.member.service.MemberVO">
@@ -33,6 +33,11 @@
 	<update id="updatePass" parameterType="co.yedam.member.service.MemberVO">
 		update member set pass=#{pass} where mid=#{mid}
 	</update>
+	
+	
+	<select id="getMemberForPass" resultType="co.yedam.member.service.MemberVO">
+		select * from member where pass = #{pass }
+	</select>
 	
 
 </mapper>

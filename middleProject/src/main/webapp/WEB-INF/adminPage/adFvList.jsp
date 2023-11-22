@@ -11,12 +11,12 @@
 <body>
 <div class="card mb-4">
 				<div class="card-header">
-					<i class="fas fa-table me-1"></i> QNA 목록
+					<i class="fas fa-table me-1"></i> ☀ Festival List
 				</div>
 <div class="card-body">
 
 
-<h3> 관리자 - 페스티발 전체 리스트보기</h3>
+
 <form action = 'addAdFvForm.do' name = 'insertForm'>
 
 	<table id="datatablesSimple">
@@ -31,8 +31,9 @@
 			<th>위도</th>
 			<th>경도</th>
 			<th>상세설명</th>
-			<th>가격1</th>
-			<th>가격2</th>
+			<th>성인(\)</th>
+			<th>청소년(\) </th>
+			<th>좋아요</th>
 			<th> </th>
 		</tr>
 	</thead>
@@ -54,7 +55,8 @@
 				<td>${vo.fcontent }</td>
 				<td>${vo.fprice1 }</td>
 				<td>${vo.fprice2 }</td>
-				 <td><input type="button" value="삭제" onclick="doDel('${vo.fcode}')">  </td> 
+				<td>${vo.likeIt }</td>
+				<td><input type="button" value="✘" onclick="doDel(event)">  </td> 
 				
 				
 			
@@ -64,7 +66,7 @@
 	</tbody>
 </table>
 
-	<input type='submit' value='새 축제 등록하기'>
+	<input type='submit' value='✎새 축제 등록하기'>
 	</form>
 
 		</div>
@@ -76,21 +78,23 @@
 <script>
 
  
-  function doDel(code){
-	   let tr =  document.getElementById("listTr");
+  function doDel(e){
+	/*    let tr =  document.getElementById("listTr"); */
+	let tr = e.target.parentElement.parentElement.children[0].innerHTML;
+	   console.log(tr);
 	  
 	
 	   fetch('deleteAdFv.do', {
 		   method : 'post',
 		   headers : {'Content-Type': 'application/x-www-form-urlencoded'},
-		   body : 'fcode=' + code  
+		   body : 'fcode=' + tr 
 		   
 	   })
 	   .then(resolve => resolve.json())
 	   .then(result => {
 		   if(result.retCode == 'OK'){
 			   alert("삭제하였습니다.")
-			  tr.remove();
+			  e.target.parentElement.parentElement.remove();
 		   }else{
 			   alert("삭제 실패");
 		   }
