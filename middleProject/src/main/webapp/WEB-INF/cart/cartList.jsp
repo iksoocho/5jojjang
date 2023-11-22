@@ -386,7 +386,7 @@
           }); //v포이치
 
           
-      if (confirm("구매 하시겠습니까?")) { 
+      if (confirm("구매 하시겠습니까?")) {   ///결제 버튼을 누르면 
         
 
          IMP.init("imp71655134"); // 가맹점 식별코드
@@ -424,46 +424,34 @@
                            .then(resolve => resolve.json())
                            .then(result => {
                               console.log(rsp);
-                              if (totalCnt == ary.length) {
-                                  window.location.href = 'paymentList.do?mid=' + mid  //찜 페이지로 이동
-                                  delcart(); 
-                               }
-                              
+                              if (document.querySelectorAll('tbody input[type=checkbox]:checked').length == totalCnt){
+                            	  delcart(mid); 
+                             	 window.location.href = 'paymentList.do?mid=' + mid
+                             	 
+                              }//이프
                            })//2then
                            .catch(err => console.log(err))
-                        
-                     } else{
-                    	 window.location.href = 'paymentList.do?mid=' + mid  //찜 페이지로 이동
-                         delcart(); 
-                     }
-
+                     }//체크가 되어있는 애들만 
                   }); //v포이치
-                  
-                
                } else if (rsp.success == false) { // 결제 실패시
                   alert(rsp.error_msg);
                }
-               
-               
             })// IMP.request_pay 함수 끝 
-            
       } else { 
          return false;  //구매하시겠습니까?에서 취소누르면 
       }
-      
    };//카카오 페이 실행 함수 
 
    
    
    
 //결제완료후 장바구니 지우기 
-function delcart(){
+function delcart(mid){
 	   
 	   document.querySelectorAll('.totalAmount').forEach((item, idx, ary) => {
            
-      		let parentTR = item.parentElement.parentElement;
+      	   let parentTR = item.parentElement.parentElement;
            let cno = parentTR.dataset.cno;
-           
            
            if (item.parentElement.parentElement.children[0].children[0].checked ==
               true) { 
@@ -477,7 +465,6 @@ function delcart(){
                  .catch(err => console.log(err))
            };//이프
         }); //v포이치
-	   
    }//delcart()
 
 
