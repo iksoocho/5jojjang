@@ -29,9 +29,9 @@
 				<div class="col mb-5">
 					<div class="card h-100">
 						<!-- Sale badge-->
-							<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss"
-								var="now" />
-							<c:out value="${now}" />
+						<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss"
+							var="now" />
+						<c:out value="${now}" />
 						<c:if test="${vo.fsdate == now}">
 							<div class="badge bg-dark text-white position-absolute"
 								style="top: 0.5rem; right: 0.5rem">개최중</div>
@@ -53,10 +53,8 @@
 									</c:forEach>
 								</div>
 								<!-- Product price-->
-								<span>${vo.fsdate } ~ ${vo.fedate }</span> 
-								<br>
-								<span>어른 ${vo.fprice1 } 원</span> <span>아동 ${vo.fprice2 }
-									원</span>
+								<span>${vo.fsdate } ~ ${vo.fedate }</span> <br> <span>어른
+									${vo.fprice1 } 원</span> <span>아동 ${vo.fprice2 } 원</span>
 
 							</div>
 						</div>
@@ -83,5 +81,14 @@
 <!-- \ -->
 <!-- <script src="adminResource/js/datatables-simple-demo.js"></script> -->
 
-
 </html>
+
+<!-- <script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+crossorigin="anonymous"></script>
+<script src="adminResource/js/scripts.js"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+crossorigin="anonymous"></script>
+
+ -->

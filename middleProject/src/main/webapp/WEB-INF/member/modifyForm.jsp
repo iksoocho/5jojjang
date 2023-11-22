@@ -12,17 +12,14 @@
 		<input type="hidden" name="mid" value="${loginId }">
 		
 		<table class="table">
-			<tr>
-				<th>이름</th>
-				<td><input type="text" name="name" value="${mid.name }"></td>
-			</tr>
+			
 			<tr>
 				<th>비밀번호</th>
-				<td><input  type="text" name="pass"></td>
+				<td><input  type="password" name="pass"></td>
 			</tr>
 			<tr>
-				<th>연락처</th>
-				<td><input  type="text" name="phone" value="${mid.phone }"></td>
+				<th>비밀번호 확인</th>
+				<td><input  type="password" name="checkPass" ></td>
 			</tr>
 			
 			<tr>
@@ -36,22 +33,26 @@
 </body>
 <script>
 	function checkModify(){
-		var name = document.getElementsByName("name")[0].value;
+		var checkPass = document.getElementsByName("checkPass")[0].value;
 	    var pass = document.getElementsByName("pass")[0].value;
-	    var phone = document.getElementsByName("phone")[0].value;
 	    var mid = document.getElementsByName("mid")[0].value;
+	   
 	    
-	    if (mid === '' || pass === ''|| phone === '') {
+	    if (pass === ''|| checkPass === '') {
 	        alert('값을 입력하세요.');
 	    } else {
 		fetch('checkModify.do',{
 	    	method: 'post',
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-		 	body: 'name='+ name + '&pass='+pass+'&phone='+phone+'&mid='+mid
+		 	body:'&pass='+pass+'&mid='+mid
 	    })
 	    .then(resolve=>resolve.json())
 	    .then(result=>{
 	    	console.log(result.retCode)
+	    	if(pass != checkPass){
+	    		alert('비밀번호가 같지 않습니다.')
+	    	}else{
+	    		
 	    	 if(result.retCode=="OK"){
 	    		if(confirm('회원 정보를 수정 하시겠습니까?')){
 	    			alert('다시 로그인 해 주세요.')
@@ -59,6 +60,9 @@
 	    		
 	    		}
 	    	}
+	    		
+	    	}
+	    	
 	    		
 	    	
 	    })

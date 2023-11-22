@@ -7,38 +7,38 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Command;
 import co.yedam.member.service.MemberService;
-import co.yedam.member.service.MemberVO;
 import co.yedam.member.serviceImpl.MemberServiceImpl;
 
-public class CheckModifyControl implements Command {
+public class CheckPassControl implements Command {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		// TODO Auto-generated method stub
-		MemberVO vo = new MemberVO();
-		
-		vo.setPass(req.getParameter("pass"));
-		
-		vo.setMid(req.getParameter("mid"));
-		
 		MemberService svc = new MemberServiceImpl();
+		String pass = UserSha256.encrypt(req.getParameter("pass"));
+		//MemberVO vo = new MemberVO();
+		//vo.setMid(mid);
 		
-		System.out.println(vo);
-		if(svc.editPass(vo)) {
-			try {
-				resp.getWriter().print("{\"retCode\":\"OK\"}");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else {
+		if(svc.getMemberForPass(pass)==null) {
 			try {
 				resp.getWriter().print("{\"retCode\":\"NG\"}");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}else {
+			try {
+				resp.getWriter().print("{\"retCode\":\"OK\"}");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
+		
+		
+		
+		
+		
 	}
 
 }
