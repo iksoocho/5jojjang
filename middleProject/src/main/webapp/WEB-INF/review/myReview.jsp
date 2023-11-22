@@ -31,7 +31,7 @@
 								<tr>
 									 <td><a href="getReview.do?rno=${vo.rno}">${vo.rtitle }</a></td> 
 									
-									<td>${vo.rwriteDate }</td>
+									<td>${vo.rwritedate }</td>
 									<td>${vo.rcontent }</td>
 									<td><button type="button" onclick="location.href='modifyReviewForm.do?rno=${vo.rno}'"> ➥ 후기 수정 </button>
 									</td>

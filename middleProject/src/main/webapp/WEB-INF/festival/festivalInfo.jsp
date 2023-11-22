@@ -302,7 +302,7 @@ ul {
 						console.log(rsp);
 						//결제 성공시 프로젝트 DB저장 요청
 						//                     if (rsp.status == 200) { // DB저장 성공시
-						//                         alert('결제 완료!')
+						 alert('결제 완료!')
 						fetch('payment.do?fcode=' + '${vo.fcode }' + '&pid=' + mid + '&adcnt=' + adcnt +
 								'&chcnt=' + chcnt +'&merchant_uid=' + merchant_uid)
 							.then(resolve => resolve.json())
