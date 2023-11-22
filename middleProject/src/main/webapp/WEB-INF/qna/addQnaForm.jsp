@@ -58,7 +58,7 @@ img {
   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<h3>Qna게시글 등록</h3>
+<h3>░ Q&A  </h3>
 
 	
 	<form action="addQna.do" method="post" > <!-- 파일첨부 처리하려면(파일업로드할때) multipart/form-data  -->
@@ -69,7 +69,7 @@ img {
 		
 			<tr>
 				<th>제목</th>
-				<td><input type="text" name="qtitle"></td>
+				<td><input type="text" name="qtitle" autofocus></td>
 			</tr>
 			
 			<tr>
@@ -84,12 +84,12 @@ img {
 			
 			<tr>
 				<th>내용</th>
-				<td colspan="2"><textarea cols="40" rows="5" name="qcontent" ></textarea></td>
+				<td colspan="2"><textarea cols="40" rows="5" name="qcontent" placeholder="문의 내용을 입력해주세요!"></textarea></td>
 			</tr>
 			
 			<tr>
 				<th>비밀번호</th>
-				<td><input type="password" name="qpass"></td>
+				<td><input type="password" name="qpass" placeholder="4자리 숫자" ></td>
 			</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="저장" > 
@@ -98,4 +98,5 @@ img {
 		</table>
 
 
+<button type="button" onclick="location.href='qnaList.do'"> ⫷ 이전 페이지로 </button>
 	</form>

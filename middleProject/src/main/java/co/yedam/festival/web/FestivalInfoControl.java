@@ -33,7 +33,7 @@ public class FestivalInfoControl implements Command {
 			req.getRequestDispatcher(path).forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 
 }

@@ -19,6 +19,10 @@
 								<th>제목</th>
 								<th>작성날짜</th>
 								<th>내용</th>
+								<th> </th>
+								
+								
+								
 							</tr>
 						</thead>
 						
@@ -29,6 +33,8 @@
 									
 									<td>${vo.rwritedate }</td>
 									<td>${vo.rcontent }</td>
+									<td><button type="button" onclick="location.href='modifyReviewForm.do?rno=${vo.rno}'"> ➥ 후기 수정 </button>
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>

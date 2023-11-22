@@ -62,25 +62,23 @@ img {
 	<input type="hidden" name="rno" value="${rno.rno }">
 	<input type="hidden" name="mid" value="${loginId }">
 	
-	<h2> ✅ 후기 </h2>
+	<h2> ▓ 후기 </h2>
 	<table border="1" >
 		<tr>
 			<th>글번호</th>
 			<td class="rno">${rno.rno }</td>
+
 				
 			<th>작성자</th>
 			<td>${rno.rid }</td>
 		
 		</tr>
+
 		
-		<tr>
 			<th>작성일시</th>
+			<td colspan="3">${rno.rwritedate }</td>
+		</tr>
 
-			<td>${rno.rwriteDate }"</td>
-
-			
-		
-		
 		<tr>	
 			<th>글제목</th>
 			<td colspan="3">${rno.rtitle }</td>
@@ -88,7 +86,9 @@ img {
 
 		<tr>
 		<th>내용</th>
+
 			<td colspan="4"><textarea rows="5" cols="60" >${rno.rcontent }</textarea></td>
+
 		</tr>
 
 
@@ -97,11 +97,7 @@ img {
 		<tr>
 			<th>이미지</th>
 			<c:if test="${!empty rno.rimage }">
-<<<<<<< HEAD
-				<td><img style="align: center" width="400px" src="reviewResources/images/${rno.rimage}"></td>
-=======
-				<td><img style="align: center" width="80px" src="reviewResources/images/${rno.rimage}"></td>
->>>>>>> refs/heads/4
+				<td colspan="4"><img style="align: center" width="400px" src="reviewResources/images/${rno.rimage}"></td>
 			</c:if>
 		
 		</tr>
@@ -114,8 +110,8 @@ img {
 
 			
 				<c:when test="${(!empty loginId && loginId == rno.rid) || responsibility == ('admin')}"> 
-					<input type="submit" value="수정">
-					<input type="button" value="삭제">
+					<input type="submit" value="✄수정">
+					<input type="button" value="⌧삭제">
 				</c:when>
 				 <c:otherwise>
 					<input disabled type="submit" value="수정">
@@ -142,13 +138,13 @@ img {
 document.querySelector('input[type=button]').addEventListener('click', function(e){
 	
 
-		if (confirm("정말 삭제 하시겠습니까?")){
+		if (confirm("⚠정말 삭제 하시겠습니까?")){
 
-		 	alert('후기 게시글을 삭제합니다.')
+		 	alert('✔ 후기 게시글을 삭제합니다.')
 		 	document.forms.reviewForm.action = 'removeReview.do';
 			document.forms.reviewForm.submit();
 		}else{
-			alert('후기 게시글이 삭제 되지 않았습니다.')
+			alert('☒후기 게시글이 삭제 되지 않았습니다.')
 		}
 	
 	
@@ -157,7 +153,6 @@ document.querySelector('input[type=button]').addEventListener('click', function(
 
 
 </script>
-
 
 
 

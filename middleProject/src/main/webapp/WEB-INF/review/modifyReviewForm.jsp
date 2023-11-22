@@ -75,7 +75,7 @@ img {
 		<table border="1">
 			<tr>
 				<th>제목</th>
-				<td><input type="text" name="title" value="${vo.rtitle }"></td>
+				<td><input type="text" name="title" value="${vo.rtitle }" autofocus></td>
 				<!-- vo 값들을 넣어주는거임. -->
 			</tr>
 			
@@ -95,20 +95,18 @@ img {
 				<td><input type="file" name="image"></td>
 			</tr>
 			
-			<tr>
-				<th>수정날짜</th>
-				<!-- <td><input type="text" name="rwritedate" value="{"></td> -->
-				<td><fm:formatDate value="${vo.rlastupdate }" pattern="yyyy-MM-dd HH:mm:ss"></fm:formatDate></td>
 			
-			</tr>
+			
+			
 
 			<tr align="center">
-				<td colspan="2"><input type="submit" value="수정"> 
-				<input type="reset" value="초기화"></td>
+				<td colspan="2"><input type="submit" value="✄수정"> 
+				<input type="reset" value="다시쓰기"></td>
 			</tr>
-		</table>
+		</table> 
 	</form>
-
+<button type="button" onclick="location.href='reviewList.do'"> ⫷ Review 게시판 </button>
+<button type="button" onclick="location.href='myReview.do?mid=${loginId}'"> ⫷ 내가쓴리뷰  </button>
 
 </body>
 </html>

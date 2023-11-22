@@ -4,7 +4,7 @@
 
 	<select id="selectList"
 		resultType="co.yedam.adminPage.service.AdminVO">
-		select * from festival 	
+		select * from festival 	order by fcode desc
 	</select>
 
 	<select id="select"
