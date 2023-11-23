@@ -156,10 +156,14 @@ ul {
 										<div class="bi-star-fill"></div>
 									</c:forEach>
 								</div>
+								
+								${vo.fsdate }~${vo.fedate }
 								<!-- Product price-->
+								<br>
 								<span>어른 ${vo.fprice1 } 원</span> <span>아동 ${vo.fprice2 }
 									원</span>
-
+								
+								
 							</div>
 						</div>
 						<!-- Product actions-->

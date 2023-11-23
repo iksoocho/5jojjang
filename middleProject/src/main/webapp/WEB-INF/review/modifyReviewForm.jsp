@@ -96,10 +96,7 @@ img {
 			</tr>
 			
 
-			<tr>
-				<th>수정날짜</th>
-				<!-- <td><input type="text" name="rwritedate" value="{"></td> -->
-				<td><fm:formatDate value="${vo.rlastupdate }" pattern="yyyy-MM-dd HH:mm:ss"></fm:formatDate></td>
+			
 
 			
 			
