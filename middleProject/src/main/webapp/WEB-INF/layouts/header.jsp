@@ -35,7 +35,7 @@
 								가입</a></li>
 					</c:when>
 					<c:when test="${loginId =='admin' }">
-						
+
 						<li class="nav-item"><a class="nav-link" href="memberList.do">회원
 								목록</a></li>
 					</c:when>
@@ -61,25 +61,23 @@
 				<c:choose>
 					<c:when
 						test="${!empty responsibility && responsibility == 'admin' }">
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">축제</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="calendar.do">축제 일정</a></li>
+								<li><a class="dropdown-item" href="adFvList.do">축제 관리</a></li>
+								<li><a class="dropdown-item" href="chartForm.do">판매량</a></li>
 
-
-						
-						<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">축제</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="adFvList.do">축제 관리</a></li>
-                                <li><a class="dropdown-item" href="chartForm.do">판매량</a></li>
-                                
-                            </ul>
-                        </li>
-	
-
-
+							</ul></li>
 					</c:when>
+					<c:otherwise>
+						<li class="nav-item"><a class="nav-link" href="calendar.do">축제
+								일정</a></li>
+					</c:otherwise>
 				</c:choose>
 
-				<li class="nav-item"><a class="nav-link" href="calendar.do">축제
-						일정</a></li>
+
 				<li class="nav-item"><a class="nav-link" href="reviewList.do">리뷰게시판</a></li>
 				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 			</ul>
@@ -160,7 +158,7 @@
 <!-- 		<div class="absoluteText"></div> -->
 
 <!-- 	</div> -->
-	<!--  <div class="container px-4 px-lg-5 my-5">
+<!--  <div class="container px-4 px-lg-5 my-5">
 	
 		<div class="text-center text-white">
 			<h1 class="display-4 fw-bolder">축제 티켓 팝니다</h1>

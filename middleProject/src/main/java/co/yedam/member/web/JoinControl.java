@@ -46,7 +46,7 @@ public class JoinControl implements Command {
 		
 		if(svc.addMember(vo)) {
 			try {
-				resp.sendRedirect("main.do");
+				resp.sendRedirect("loginForm.do");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

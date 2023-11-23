@@ -37,7 +37,7 @@
 		
 		if(passCheck == pass){
 			if(confirm('회원 탈퇴 하시겠습니까?')){
-    			alert('다시 로그인 해 주세요.');
+    			alert('회원 탈퇴 되었습니다.');
     			document.getElementById("remove").submit();
     		}
 		}else{
