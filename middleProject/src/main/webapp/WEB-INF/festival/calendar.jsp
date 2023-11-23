@@ -42,7 +42,7 @@
 
 <style>
 #calendar {
-	width: 600px;
+	width: 900px;
 	margin: 30px auto;
 }
 
@@ -78,7 +78,7 @@
 }
 
 #calendarDiv {
-	width: 60%;
+	width: 80%;
 	margin: 40px auto;
 }
 

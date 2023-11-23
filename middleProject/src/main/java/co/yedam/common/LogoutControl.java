@@ -13,7 +13,7 @@ public class LogoutControl implements Command {
 		req.getSession().invalidate();
 		//세연 삭제후 메인으로 이동
 		try {
-			resp.sendRedirect("main.do");
+			resp.sendRedirect("loginForm.do");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

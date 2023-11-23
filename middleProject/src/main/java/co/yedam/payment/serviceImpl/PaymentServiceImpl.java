@@ -1,6 +1,7 @@
 package co.yedam.payment.serviceImpl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -23,6 +24,12 @@ public class PaymentServiceImpl implements PaymentService {
 	public List<PaymentVO> paymentList(String mid) {
 		// TODO Auto-generated method stub
 		return mapper.paymentList(mid);
+	}
+
+	@Override
+	public List<Map<String, Object>> getCountByWriter() {
+		// TODO Auto-generated method stub
+		return mapper.getCountByWriter();
 	}
 	
 
