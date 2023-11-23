@@ -33,7 +33,7 @@
 						<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss"
 							var="now" />
 						<c:out value="${now}" />
-						<c:if test="${vo.fsdate != now}">
+						<c:if test="${vo.fsdate == now}">
 							<div class="badge bg-dark text-white position-absolute"
 								style="top: 0.5rem; right: 0.5rem">개최중</div>
 						</c:if>
