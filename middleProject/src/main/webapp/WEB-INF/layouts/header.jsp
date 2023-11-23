@@ -67,6 +67,7 @@
 						<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">축제</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            	<li><a class="dropdown-item" href="calendar.do">축제 일정</a></li>
                                 <li><a class="dropdown-item" href="adFvList.do">축제 관리</a></li>
                                 <li><a class="dropdown-item" href="chartForm.do">판매량</a></li>
                                 
@@ -76,10 +77,13 @@
 
 
 					</c:when>
+					<c:otherwise>
+						<li class="nav-item"><a class="nav-link" href="calendar.do">축제
+						일정</a></li>
+					</c:otherwise>
 				</c:choose>
 
-				<li class="nav-item"><a class="nav-link" href="calendar.do">축제
-						일정</a></li>
+				
 				<li class="nav-item"><a class="nav-link" href="reviewList.do">리뷰게시판</a></li>
 				<li class="nav-item"><a class="nav-link" href="qnaList.do">QNA</a></li>
 			</ul>
