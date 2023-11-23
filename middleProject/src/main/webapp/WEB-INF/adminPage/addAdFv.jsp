@@ -60,8 +60,7 @@
 
 		<tr>
 			<td colspan="2"><input type="submit" value="☑저장"
-				> <input type="reset" value="⌦다시쓰기 "
-				></td>
+				> <input type="reset" value="⌦다시쓰기 "></td>
 		</tr>
 	</table>
 </form>

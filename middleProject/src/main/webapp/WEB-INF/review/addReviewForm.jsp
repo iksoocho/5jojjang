@@ -62,7 +62,7 @@ img {
 
 		
 		<input type="hidden" name="vo" value="${vo.rno }"> 
-		
+		<%-- <input type="hidden" name= "rwritedate" value="${vo.rwritedate }"> --%>
 
 		<table  border="1">
 			<tr>
@@ -75,6 +75,8 @@ img {
 				 <td><input type="text" name="rid" value ="${loginId }" readonly></td>  <!-- 세션에서 값 읽어오도록!   -->
 				
 			</tr>
+			
+		
 			
 
 			<tr>

@@ -74,7 +74,7 @@ img {
 		
 		</tr>
 
-		
+		<tr>
 			<th>작성일시</th>
 			<td colspan="3">${rno.rwritedate }</td>
 		</tr>

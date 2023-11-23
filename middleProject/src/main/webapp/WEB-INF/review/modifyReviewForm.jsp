@@ -95,13 +95,13 @@ img {
 				<td><input type="file" name="image"></td>
 			</tr>
 			
-			
-			
-			
-
+<!-- <button type="reset">초기화</button>
+<input type="reset" value="초기화"> -->
 			<tr align="center">
-				<td colspan="2"><input type="submit" value="✄수정"> 
-				<input type="reset" value="다시쓰기"></td>
+				<td colspan="2">
+				<input type="submit" value="✄수정"> 
+				<input type="reset" value="초기화" >
+				</td>
 			</tr>
 		</table> 
 	</form>
